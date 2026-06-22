@@ -25,6 +25,7 @@ type list interface {
 func FormatList(s fmt.State, r rune, vs list) {
 	io.WriteString(s, formatListOpt(vs, true, r == 'v' && (s.Flag('+') || s.Flag('#'))))
 }
+
 func formatListOpt(vs list, isRoot, allowMulti bool) string {
 	start, end := "[", "]"
 	if isRoot {

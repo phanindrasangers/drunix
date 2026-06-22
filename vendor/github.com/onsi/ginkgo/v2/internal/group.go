@@ -8,7 +8,7 @@ import (
 )
 
 type runOncePair struct {
-	//nodeId should only run once...
+	// nodeId should only run once...
 	nodeID   uint
 	nodeType types.NodeType
 	//...for specs in a hierarchy that includes this context
@@ -223,7 +223,7 @@ func (g *group) attemptSpec(isFinalAttempt bool, spec Spec) bool {
 		}
 		nodes = nodes.Filter(func(node Node) bool {
 			if afterNodeWasRun[node.ID] {
-				//this node has already been run on this attempt, don't rerun it
+				// this node has already been run on this attempt, don't rerun it
 				return false
 			}
 			var pair runOncePair
@@ -247,9 +247,9 @@ func (g *group) attemptSpec(isFinalAttempt bool, spec Spec) bool {
 			isLastSpecWithPair := g.isLastSpecWithPair(spec.SubjectID(), pair)
 
 			switch g.suite.currentSpecReport.State {
-			case types.SpecStatePassed: //this attempt is passing...
+			case types.SpecStatePassed: // this attempt is passing...
 				return isLastSpecWithPair //...we should run-once if we'this is our last chance
-			case types.SpecStateSkipped: //the spec was skipped by the user...
+			case types.SpecStateSkipped: // the spec was skipped by the user...
 				if isLastSpecWithPair {
 					return true //...we're the last spec, so we should run the AfterNode
 				}
@@ -319,7 +319,7 @@ func (g *group) run(specs Specs) {
 		g.suite.currentSpecReport.StartTime = time.Now()
 		failedInARunOnceBefore := false
 		if !skip {
-			var maxAttempts = 1
+			maxAttempts := 1
 
 			if g.suite.config.MustPassRepeatedly > 0 {
 				maxAttempts = g.suite.config.MustPassRepeatedly

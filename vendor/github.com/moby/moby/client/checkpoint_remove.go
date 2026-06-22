@@ -12,8 +12,7 @@ type CheckpointRemoveOptions struct {
 }
 
 // CheckpointRemoveResult represents the result of [Client.CheckpointRemove].
-type CheckpointRemoveResult struct {
-	// No fields currently; placeholder for future use.
+type CheckpointRemoveResult struct { // No fields currently; placeholder for future use.
 }
 
 // CheckpointRemove deletes the checkpoint with the given name from the given container.

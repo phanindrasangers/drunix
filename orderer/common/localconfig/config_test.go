@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/npci/drunix/core/config/configtest"
 	"github.com/mitchellh/mapstructure"
+	"github.com/npci/drunix/core/config/configtest"
 	"github.com/stretchr/testify/require"
 )
 

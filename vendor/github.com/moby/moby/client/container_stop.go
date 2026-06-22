@@ -25,8 +25,7 @@ type ContainerStopOptions struct {
 }
 
 // ContainerStopResult holds the result of [Client.ContainerStop],
-type ContainerStopResult struct {
-	// Add future fields here.
+type ContainerStopResult struct { // Add future fields here.
 }
 
 // ContainerStop stops a container. In case the container fails to stop

@@ -8,8 +8,7 @@ import (
 )
 
 // PluginInspectOptions holds parameters to inspect a plugin.
-type PluginInspectOptions struct {
-	// Add future optional parameters here
+type PluginInspectOptions struct { // Add future optional parameters here
 }
 
 // PluginInspectResult holds the result from the [Client.PluginInspect] method.

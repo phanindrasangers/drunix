@@ -13,9 +13,9 @@ import (
 	"reflect"
 	"strings"
 
+	"github.com/mitchellh/mapstructure"
 	"github.com/npci/drunix/bccsp"
 	"github.com/npci/drunix/bccsp/pkcs11"
-	"github.com/mitchellh/mapstructure"
 	"github.com/pkg/errors"
 )
 

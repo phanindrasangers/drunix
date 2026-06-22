@@ -1108,6 +1108,7 @@ var heapzSampleTypes = [][]string{
 	{"alloc_objects", "alloc_space"},
 	{"alloc_objects", "alloc_space", "inuse_objects", "inuse_space"}, // Go pprof legacy profiles
 }
+
 var contentionzSampleTypes = [][]string{
 	{"contentions", "delay"},
 }

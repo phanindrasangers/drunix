@@ -11,11 +11,12 @@
 package peer
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	common "github.com/hyperledger/fabric-protos-go-apiv2/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -423,15 +424,18 @@ func file_peer_collection_proto_rawDescGZIP() []byte {
 	return file_peer_collection_proto_rawDescData
 }
 
-var file_peer_collection_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_peer_collection_proto_goTypes = []any{
-	(*CollectionConfigPackage)(nil),        // 0: protos.CollectionConfigPackage
-	(*CollectionConfig)(nil),               // 1: protos.CollectionConfig
-	(*StaticCollectionConfig)(nil),         // 2: protos.StaticCollectionConfig
-	(*CollectionPolicyConfig)(nil),         // 3: protos.CollectionPolicyConfig
-	(*ApplicationPolicy)(nil),              // 4: protos.ApplicationPolicy
-	(*common.SignaturePolicyEnvelope)(nil), // 5: common.SignaturePolicyEnvelope
-}
+var (
+	file_peer_collection_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+	file_peer_collection_proto_goTypes  = []any{
+		(*CollectionConfigPackage)(nil),        // 0: protos.CollectionConfigPackage
+		(*CollectionConfig)(nil),               // 1: protos.CollectionConfig
+		(*StaticCollectionConfig)(nil),         // 2: protos.StaticCollectionConfig
+		(*CollectionPolicyConfig)(nil),         // 3: protos.CollectionPolicyConfig
+		(*ApplicationPolicy)(nil),              // 4: protos.ApplicationPolicy
+		(*common.SignaturePolicyEnvelope)(nil), // 5: common.SignaturePolicyEnvelope
+	}
+)
+
 var file_peer_collection_proto_depIdxs = []int32{
 	1, // 0: protos.CollectionConfigPackage.config:type_name -> protos.CollectionConfig
 	2, // 1: protos.CollectionConfig.static_collection_config:type_name -> protos.StaticCollectionConfig

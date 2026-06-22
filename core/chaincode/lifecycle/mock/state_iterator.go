@@ -10,9 +10,8 @@ import (
 type StateIterator struct {
 	CloseStub        func() error
 	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
-	closeReturns struct {
+	closeArgsForCall []struct{}
+	closeReturns     struct {
 		result1 error
 	}
 	closeReturnsOnCall map[int]struct {
@@ -20,9 +19,8 @@ type StateIterator struct {
 	}
 	HasNextStub        func() bool
 	hasNextMutex       sync.RWMutex
-	hasNextArgsForCall []struct {
-	}
-	hasNextReturns struct {
+	hasNextArgsForCall []struct{}
+	hasNextReturns     struct {
 		result1 bool
 	}
 	hasNextReturnsOnCall map[int]struct {
@@ -30,9 +28,8 @@ type StateIterator struct {
 	}
 	NextStub        func() (*queryresult.KV, error)
 	nextMutex       sync.RWMutex
-	nextArgsForCall []struct {
-	}
-	nextReturns struct {
+	nextArgsForCall []struct{}
+	nextReturns     struct {
 		result1 *queryresult.KV
 		result2 error
 	}
@@ -47,8 +44,7 @@ type StateIterator struct {
 func (fake *StateIterator) Close() error {
 	fake.closeMutex.Lock()
 	ret, specificReturn := fake.closeReturnsOnCall[len(fake.closeArgsForCall)]
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	fake.recordInvocation("Close", []interface{}{})
 	fake.closeMutex.Unlock()
 	if fake.CloseStub != nil {
@@ -99,8 +95,7 @@ func (fake *StateIterator) CloseReturnsOnCall(i int, result1 error) {
 func (fake *StateIterator) HasNext() bool {
 	fake.hasNextMutex.Lock()
 	ret, specificReturn := fake.hasNextReturnsOnCall[len(fake.hasNextArgsForCall)]
-	fake.hasNextArgsForCall = append(fake.hasNextArgsForCall, struct {
-	}{})
+	fake.hasNextArgsForCall = append(fake.hasNextArgsForCall, struct{}{})
 	fake.recordInvocation("HasNext", []interface{}{})
 	fake.hasNextMutex.Unlock()
 	if fake.HasNextStub != nil {
@@ -151,8 +146,7 @@ func (fake *StateIterator) HasNextReturnsOnCall(i int, result1 bool) {
 func (fake *StateIterator) Next() (*queryresult.KV, error) {
 	fake.nextMutex.Lock()
 	ret, specificReturn := fake.nextReturnsOnCall[len(fake.nextArgsForCall)]
-	fake.nextArgsForCall = append(fake.nextArgsForCall, struct {
-	}{})
+	fake.nextArgsForCall = append(fake.nextArgsForCall, struct{}{})
 	fake.recordInvocation("Next", []interface{}{})
 	fake.nextMutex.Unlock()
 	if fake.NextStub != nil {

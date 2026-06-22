@@ -92,7 +92,6 @@ func Merge(srcs []*Profile) (*Profile, error) {
 // ratio of the sum of the base profile's values of that sample type to the sum of the
 // source profile's value of that sample type.
 func (p *Profile) Normalize(pb *Profile) error {
-
 	if err := p.compatible(pb); err != nil {
 		return err
 	}

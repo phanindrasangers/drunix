@@ -5,14 +5,17 @@ package sparseblock
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -46,15 +49,19 @@ func (*OrgBlockDetailsProto) Descriptor() ([]byte, []int) {
 func (m *OrgBlockDetailsProto) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_OrgBlockDetailsProto.Unmarshal(m, b)
 }
+
 func (m *OrgBlockDetailsProto) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_OrgBlockDetailsProto.Marshal(b, m, deterministic)
 }
+
 func (m *OrgBlockDetailsProto) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_OrgBlockDetailsProto.Merge(m, src)
 }
+
 func (m *OrgBlockDetailsProto) XXX_Size() int {
 	return xxx_messageInfo_OrgBlockDetailsProto.Size(m)
 }
+
 func (m *OrgBlockDetailsProto) XXX_DiscardUnknown() {
 	xxx_messageInfo_OrgBlockDetailsProto.DiscardUnknown(m)
 }
@@ -151,15 +158,19 @@ func (*LastBlockMappingProto) Descriptor() ([]byte, []int) {
 func (m *LastBlockMappingProto) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LastBlockMappingProto.Unmarshal(m, b)
 }
+
 func (m *LastBlockMappingProto) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_LastBlockMappingProto.Marshal(b, m, deterministic)
 }
+
 func (m *LastBlockMappingProto) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_LastBlockMappingProto.Merge(m, src)
 }
+
 func (m *LastBlockMappingProto) XXX_Size() int {
 	return xxx_messageInfo_LastBlockMappingProto.Size(m)
 }
+
 func (m *LastBlockMappingProto) XXX_DiscardUnknown() {
 	xxx_messageInfo_LastBlockMappingProto.DiscardUnknown(m)
 }
@@ -212,15 +223,19 @@ func (*ChannelHeadInfoProto) Descriptor() ([]byte, []int) {
 func (m *ChannelHeadInfoProto) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChannelHeadInfoProto.Unmarshal(m, b)
 }
+
 func (m *ChannelHeadInfoProto) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChannelHeadInfoProto.Marshal(b, m, deterministic)
 }
+
 func (m *ChannelHeadInfoProto) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChannelHeadInfoProto.Merge(m, src)
 }
+
 func (m *ChannelHeadInfoProto) XXX_Size() int {
 	return xxx_messageInfo_ChannelHeadInfoProto.Size(m)
 }
+
 func (m *ChannelHeadInfoProto) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChannelHeadInfoProto.DiscardUnknown(m)
 }
@@ -259,15 +274,19 @@ func (*FatBlockMerkleInfoProto) Descriptor() ([]byte, []int) {
 func (m *FatBlockMerkleInfoProto) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FatBlockMerkleInfoProto.Unmarshal(m, b)
 }
+
 func (m *FatBlockMerkleInfoProto) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_FatBlockMerkleInfoProto.Marshal(b, m, deterministic)
 }
+
 func (m *FatBlockMerkleInfoProto) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_FatBlockMerkleInfoProto.Merge(m, src)
 }
+
 func (m *FatBlockMerkleInfoProto) XXX_Size() int {
 	return xxx_messageInfo_FatBlockMerkleInfoProto.Size(m)
 }
+
 func (m *FatBlockMerkleInfoProto) XXX_DiscardUnknown() {
 	xxx_messageInfo_FatBlockMerkleInfoProto.DiscardUnknown(m)
 }
@@ -306,15 +325,19 @@ func (*TxnInfoProto) Descriptor() ([]byte, []int) {
 func (m *TxnInfoProto) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TxnInfoProto.Unmarshal(m, b)
 }
+
 func (m *TxnInfoProto) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TxnInfoProto.Marshal(b, m, deterministic)
 }
+
 func (m *TxnInfoProto) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_TxnInfoProto.Merge(m, src)
 }
+
 func (m *TxnInfoProto) XXX_Size() int {
 	return xxx_messageInfo_TxnInfoProto.Size(m)
 }
+
 func (m *TxnInfoProto) XXX_DiscardUnknown() {
 	xxx_messageInfo_TxnInfoProto.DiscardUnknown(m)
 }
@@ -353,15 +376,19 @@ func (*SparseTxnFilterProto) Descriptor() ([]byte, []int) {
 func (m *SparseTxnFilterProto) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SparseTxnFilterProto.Unmarshal(m, b)
 }
+
 func (m *SparseTxnFilterProto) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SparseTxnFilterProto.Marshal(b, m, deterministic)
 }
+
 func (m *SparseTxnFilterProto) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SparseTxnFilterProto.Merge(m, src)
 }
+
 func (m *SparseTxnFilterProto) XXX_Size() int {
 	return xxx_messageInfo_SparseTxnFilterProto.Size(m)
 }
+
 func (m *SparseTxnFilterProto) XXX_DiscardUnknown() {
 	xxx_messageInfo_SparseTxnFilterProto.DiscardUnknown(m)
 }

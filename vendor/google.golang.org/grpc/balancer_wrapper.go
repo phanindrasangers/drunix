@@ -35,14 +35,12 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-var (
-	// noOpRegisterHealthListenerFn is used when client side health checking is
-	// disabled. It sends a single READY update on the registered listener.
-	noOpRegisterHealthListenerFn = func(_ context.Context, listener func(balancer.SubConnState)) func() {
-		listener(balancer.SubConnState{ConnectivityState: connectivity.Ready})
-		return func() {}
-	}
-)
+// noOpRegisterHealthListenerFn is used when client side health checking is
+// disabled. It sends a single READY update on the registered listener.
+var noOpRegisterHealthListenerFn = func(_ context.Context, listener func(balancer.SubConnState)) func() {
+	listener(balancer.SubConnState{ConnectivityState: connectivity.Ready})
+	return func() {}
+}
 
 // ccBalancerWrapper sits between the ClientConn and the Balancer.
 //
@@ -362,7 +360,6 @@ func (acbw *acBalancerWrapper) NewStream(ctx context.Context, desc *StreamDesc, 
 	transport := acbw.ac.getReadyTransport()
 	if transport == nil {
 		return nil, status.Errorf(codes.Unavailable, "SubConn state is not Ready")
-
 	}
 	return newNonRetryClientStream(ctx, desc, method, transport, acbw.ac, opts...)
 }

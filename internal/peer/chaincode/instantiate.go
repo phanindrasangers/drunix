@@ -47,7 +47,7 @@ func instantiateCmd(cf *ChaincodeCmdFactory, cryptoProvider bccsp.BCCSP) *cobra.
 		"escc",
 		"vscc",
 		"collections-config",
-		"sql-config", //DRUNIX: sql-config flag for sql table migration
+		"sql-config", // DRUNIX: sql-config flag for sql table migration
 		"peerAddresses",
 		"tlsRootCertFiles",
 		"connectionProfile",

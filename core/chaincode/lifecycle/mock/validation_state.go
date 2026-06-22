@@ -8,10 +8,9 @@ import (
 )
 
 type ValidationState struct {
-	DoneStub        func()
-	doneMutex       sync.RWMutex
-	doneArgsForCall []struct {
-	}
+	DoneStub                                func()
+	doneMutex                               sync.RWMutex
+	doneArgsForCall                         []struct{}
 	GetPrivateDataMetadataByHashStub        func(string, string, []byte) (map[string][]byte, error)
 	getPrivateDataMetadataByHashMutex       sync.RWMutex
 	getPrivateDataMetadataByHashArgsForCall []struct {
@@ -76,8 +75,7 @@ type ValidationState struct {
 
 func (fake *ValidationState) Done() {
 	fake.doneMutex.Lock()
-	fake.doneArgsForCall = append(fake.doneArgsForCall, struct {
-	}{})
+	fake.doneArgsForCall = append(fake.doneArgsForCall, struct{}{})
 	fake.recordInvocation("Done", []interface{}{})
 	fake.doneMutex.Unlock()
 	if fake.DoneStub != nil {

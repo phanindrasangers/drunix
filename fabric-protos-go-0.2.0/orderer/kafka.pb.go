@@ -5,14 +5,17 @@ package orderer
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -72,15 +75,19 @@ func (*KafkaMessage) Descriptor() ([]byte, []int) {
 func (m *KafkaMessage) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KafkaMessage.Unmarshal(m, b)
 }
+
 func (m *KafkaMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KafkaMessage.Marshal(b, m, deterministic)
 }
+
 func (m *KafkaMessage) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KafkaMessage.Merge(m, src)
 }
+
 func (m *KafkaMessage) XXX_Size() int {
 	return xxx_messageInfo_KafkaMessage.Size(m)
 }
+
 func (m *KafkaMessage) XXX_DiscardUnknown() {
 	xxx_messageInfo_KafkaMessage.DiscardUnknown(m)
 }
@@ -167,15 +174,19 @@ func (*KafkaMessageRegular) Descriptor() ([]byte, []int) {
 func (m *KafkaMessageRegular) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KafkaMessageRegular.Unmarshal(m, b)
 }
+
 func (m *KafkaMessageRegular) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KafkaMessageRegular.Marshal(b, m, deterministic)
 }
+
 func (m *KafkaMessageRegular) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KafkaMessageRegular.Merge(m, src)
 }
+
 func (m *KafkaMessageRegular) XXX_Size() int {
 	return xxx_messageInfo_KafkaMessageRegular.Size(m)
 }
+
 func (m *KafkaMessageRegular) XXX_DiscardUnknown() {
 	xxx_messageInfo_KafkaMessageRegular.DiscardUnknown(m)
 }
@@ -229,15 +240,19 @@ func (*KafkaMessageTimeToCut) Descriptor() ([]byte, []int) {
 func (m *KafkaMessageTimeToCut) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KafkaMessageTimeToCut.Unmarshal(m, b)
 }
+
 func (m *KafkaMessageTimeToCut) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KafkaMessageTimeToCut.Marshal(b, m, deterministic)
 }
+
 func (m *KafkaMessageTimeToCut) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KafkaMessageTimeToCut.Merge(m, src)
 }
+
 func (m *KafkaMessageTimeToCut) XXX_Size() int {
 	return xxx_messageInfo_KafkaMessageTimeToCut.Size(m)
 }
+
 func (m *KafkaMessageTimeToCut) XXX_DiscardUnknown() {
 	xxx_messageInfo_KafkaMessageTimeToCut.DiscardUnknown(m)
 }
@@ -272,15 +287,19 @@ func (*KafkaMessageConnect) Descriptor() ([]byte, []int) {
 func (m *KafkaMessageConnect) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KafkaMessageConnect.Unmarshal(m, b)
 }
+
 func (m *KafkaMessageConnect) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KafkaMessageConnect.Marshal(b, m, deterministic)
 }
+
 func (m *KafkaMessageConnect) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KafkaMessageConnect.Merge(m, src)
 }
+
 func (m *KafkaMessageConnect) XXX_Size() int {
 	return xxx_messageInfo_KafkaMessageConnect.Size(m)
 }
+
 func (m *KafkaMessageConnect) XXX_DiscardUnknown() {
 	xxx_messageInfo_KafkaMessageConnect.DiscardUnknown(m)
 }
@@ -329,15 +348,19 @@ func (*KafkaMetadata) Descriptor() ([]byte, []int) {
 func (m *KafkaMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KafkaMetadata.Unmarshal(m, b)
 }
+
 func (m *KafkaMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KafkaMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *KafkaMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KafkaMetadata.Merge(m, src)
 }
+
 func (m *KafkaMetadata) XXX_Size() int {
 	return xxx_messageInfo_KafkaMetadata.Size(m)
 }
+
 func (m *KafkaMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_KafkaMetadata.DiscardUnknown(m)
 }

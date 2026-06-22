@@ -27,10 +27,8 @@ import (
 // It enables a more verbose logging of this package.
 var Debug = os.Getenv("SWAGGER_DEBUG") != ""
 
-var (
-	// specLogger is a debug logger for this package
-	specLogger *log.Logger
-)
+// specLogger is a debug logger for this package
+var specLogger *log.Logger
 
 func init() {
 	debugOptions()

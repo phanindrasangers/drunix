@@ -193,8 +193,10 @@ You can mark a particular entry as pending with XEntry.  This is equivalent to X
 */
 var XEntry = PEntry
 
-var contextType = reflect.TypeOf(new(context.Context)).Elem()
-var specContextType = reflect.TypeOf(new(SpecContext)).Elem()
+var (
+	contextType     = reflect.TypeOf(new(context.Context)).Elem()
+	specContextType = reflect.TypeOf(new(SpecContext)).Elem()
+)
 
 func generateTable(description string, isSubtree bool, args ...any) {
 	GinkgoHelper()
@@ -356,7 +358,7 @@ func validateParameters(function any, parameters []any, kind string, cl types.Co
 	if len(parameters) > limit && !funcType.IsVariadic() {
 		return types.GinkgoErrors.TooManyParametersToTableFunction(limit, len(parameters), kind, cl)
 	}
-	var i = 0
+	i := 0
 	for ; i < limit; i++ {
 		actual := reflect.TypeOf(parameters[i])
 		expected := funcType.In(i + offset)

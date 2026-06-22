@@ -24,9 +24,8 @@ type MSPManager struct {
 	}
 	GetMSPsStub        func() (map[string]msp.MSP, error)
 	getMSPsMutex       sync.RWMutex
-	getMSPsArgsForCall []struct {
-	}
-	getMSPsReturns struct {
+	getMSPsArgsForCall []struct{}
+	getMSPsReturns     struct {
 		result1 map[string]msp.MSP
 		result2 error
 	}
@@ -131,8 +130,7 @@ func (fake *MSPManager) DeserializeIdentityReturnsOnCall(i int, result1 msp.Iden
 func (fake *MSPManager) GetMSPs() (map[string]msp.MSP, error) {
 	fake.getMSPsMutex.Lock()
 	ret, specificReturn := fake.getMSPsReturnsOnCall[len(fake.getMSPsArgsForCall)]
-	fake.getMSPsArgsForCall = append(fake.getMSPsArgsForCall, struct {
-	}{})
+	fake.getMSPsArgsForCall = append(fake.getMSPsArgsForCall, struct{}{})
 	fake.recordInvocation("GetMSPs", []interface{}{})
 	fake.getMSPsMutex.Unlock()
 	if fake.GetMSPsStub != nil {

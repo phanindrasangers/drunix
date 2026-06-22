@@ -42,7 +42,6 @@ func (t *jsonSchemaType) IsTyped() bool {
 }
 
 func (t *jsonSchemaType) Add(etype string) error {
-
 	if !isStringInSlice(JSON_TYPES, etype) {
 		return errors.New(formatErrorDescription(Locale.NotAValidType(), ErrorDetails{"given": "/" + etype + "/", "expected": JSON_TYPES}))
 	}
@@ -57,7 +56,6 @@ func (t *jsonSchemaType) Add(etype string) error {
 }
 
 func (t *jsonSchemaType) Contains(etype string) bool {
-
 	for _, v := range t.types {
 		if v == etype {
 			return true
@@ -68,7 +66,6 @@ func (t *jsonSchemaType) Contains(etype string) bool {
 }
 
 func (t *jsonSchemaType) String() string {
-
 	if len(t.types) == 0 {
 		return STRING_UNDEFINED // should never happen
 	}

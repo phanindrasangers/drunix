@@ -11,9 +11,8 @@ import (
 type TransactionContext struct {
 	GetClientIdentityStub        func() cid.ClientIdentity
 	getClientIdentityMutex       sync.RWMutex
-	getClientIdentityArgsForCall []struct {
-	}
-	getClientIdentityReturns struct {
+	getClientIdentityArgsForCall []struct{}
+	getClientIdentityReturns     struct {
 		result1 cid.ClientIdentity
 	}
 	getClientIdentityReturnsOnCall map[int]struct {
@@ -21,9 +20,8 @@ type TransactionContext struct {
 	}
 	GetStubStub        func() shim.ChaincodeStubInterface
 	getStubMutex       sync.RWMutex
-	getStubArgsForCall []struct {
-	}
-	getStubReturns struct {
+	getStubArgsForCall []struct{}
+	getStubReturns     struct {
 		result1 shim.ChaincodeStubInterface
 	}
 	getStubReturnsOnCall map[int]struct {
@@ -36,8 +34,7 @@ type TransactionContext struct {
 func (fake *TransactionContext) GetClientIdentity() cid.ClientIdentity {
 	fake.getClientIdentityMutex.Lock()
 	ret, specificReturn := fake.getClientIdentityReturnsOnCall[len(fake.getClientIdentityArgsForCall)]
-	fake.getClientIdentityArgsForCall = append(fake.getClientIdentityArgsForCall, struct {
-	}{})
+	fake.getClientIdentityArgsForCall = append(fake.getClientIdentityArgsForCall, struct{}{})
 	stub := fake.GetClientIdentityStub
 	fakeReturns := fake.getClientIdentityReturns
 	fake.recordInvocation("GetClientIdentity", []interface{}{})
@@ -89,8 +86,7 @@ func (fake *TransactionContext) GetClientIdentityReturnsOnCall(i int, result1 ci
 func (fake *TransactionContext) GetStub() shim.ChaincodeStubInterface {
 	fake.getStubMutex.Lock()
 	ret, specificReturn := fake.getStubReturnsOnCall[len(fake.getStubArgsForCall)]
-	fake.getStubArgsForCall = append(fake.getStubArgsForCall, struct {
-	}{})
+	fake.getStubArgsForCall = append(fake.getStubArgsForCall, struct{}{})
 	stub := fake.GetStubStub
 	fakeReturns := fake.getStubReturns
 	fake.recordInvocation("GetStub", []interface{}{})

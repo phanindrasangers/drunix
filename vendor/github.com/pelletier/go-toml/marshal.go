@@ -72,15 +72,17 @@ const (
 	OrderPreserve
 )
 
-var timeType = reflect.TypeOf(time.Time{})
-var marshalerType = reflect.TypeOf(new(Marshaler)).Elem()
-var unmarshalerType = reflect.TypeOf(new(Unmarshaler)).Elem()
-var textMarshalerType = reflect.TypeOf(new(encoding.TextMarshaler)).Elem()
-var textUnmarshalerType = reflect.TypeOf(new(encoding.TextUnmarshaler)).Elem()
-var localDateType = reflect.TypeOf(LocalDate{})
-var localTimeType = reflect.TypeOf(LocalTime{})
-var localDateTimeType = reflect.TypeOf(LocalDateTime{})
-var mapStringInterfaceType = reflect.TypeOf(map[string]interface{}{})
+var (
+	timeType               = reflect.TypeOf(time.Time{})
+	marshalerType          = reflect.TypeOf(new(Marshaler)).Elem()
+	unmarshalerType        = reflect.TypeOf(new(Unmarshaler)).Elem()
+	textMarshalerType      = reflect.TypeOf(new(encoding.TextMarshaler)).Elem()
+	textUnmarshalerType    = reflect.TypeOf(new(encoding.TextUnmarshaler)).Elem()
+	localDateType          = reflect.TypeOf(LocalDate{})
+	localTimeType          = reflect.TypeOf(LocalTime{})
+	localDateTimeType      = reflect.TypeOf(LocalDateTime{})
+	mapStringInterfaceType = reflect.TypeOf(map[string]interface{}{})
+)
 
 // Check if the given marshal type maps to a Tree primitive
 func isPrimitive(mtype reflect.Type) bool {
@@ -222,10 +224,10 @@ function for sub-structs, and currently only definite types can be marshaled
 
 The following struct annotations are supported:
 
-  toml:"Field"      Overrides the field's name to output.
-  omitempty         When set, empty values and groups are not emitted.
-  comment:"comment" Emits a # comment on the same line. This supports new lines.
-  commented:"true"  Emits the value as commented.
+	toml:"Field"      Overrides the field's name to output.
+	omitempty         When set, empty values and groups are not emitted.
+	comment:"comment" Emits a # comment on the same line. This supports new lines.
+	commented:"true"  Emits the value as commented.
 
 Note that pointers are automatically assigned the "omitempty" option, as TOML
 explicitly does not handle null values (saying instead the label should be
@@ -233,19 +235,19 @@ dropped).
 
 Tree structural types and corresponding marshal types:
 
-  *Tree                            (*)struct, (*)map[string]interface{}
-  []*Tree                          (*)[](*)struct, (*)[](*)map[string]interface{}
-  []interface{} (as interface{})   (*)[]primitive, (*)[]([]interface{})
-  interface{}                      (*)primitive
+	*Tree                            (*)struct, (*)map[string]interface{}
+	[]*Tree                          (*)[](*)struct, (*)[](*)map[string]interface{}
+	[]interface{} (as interface{})   (*)[]primitive, (*)[]([]interface{})
+	interface{}                      (*)primitive
 
 Tree primitive types and corresponding marshal types:
 
-  uint64     uint, uint8-uint64, pointers to same
-  int64      int, int8-uint64, pointers to same
-  float64    float32, float64, pointers to same
-  string     string, pointers to same
-  bool       bool, pointers to same
-  time.LocalTime  time.LocalTime{}, pointers to same
+	uint64     uint, uint8-uint64, pointers to same
+	int64      int, int8-uint64, pointers to same
+	float64    float32, float64, pointers to same
+	string     string, pointers to same
+	bool       bool, pointers to same
+	time.LocalTime  time.LocalTime{}, pointers to same
 
 For additional flexibility, use the Encoder API.
 */
@@ -307,15 +309,15 @@ func (e *Encoder) QuoteMapKeys(v bool) *Encoder {
 //
 // For example:
 //
-//   A = [1,2,3]
+//	A = [1,2,3]
 //
 // Becomes
 //
-//   A = [
-//     1,
-//     2,
-//     3,
-//   ]
+//	A = [
+//	  1,
+//	  2,
+//	  3,
+//	]
 func (e *Encoder) ArraysWithOneElementPerLine(v bool) *Encoder {
 	e.arraysOneElementPerLine = v
 	return e
@@ -640,15 +642,15 @@ func (t *Tree) Marshal() ([]byte, error) {
 //
 // The following struct annotations are supported:
 //
-//   toml:"Field" Overrides the field's name to map to.
-//   default:"foo" Provides a default value.
+//	toml:"Field" Overrides the field's name to map to.
+//	default:"foo" Provides a default value.
 //
 // For default values, only fields of the following types are supported:
-//   * string
-//   * bool
-//   * int
-//   * int64
-//   * float64
+//   - string
+//   - bool
+//   - int
+//   - int64
+//   - float64
 //
 // See Marshal() documentation for types mapping table.
 func Unmarshal(data []byte, v interface{}) error {

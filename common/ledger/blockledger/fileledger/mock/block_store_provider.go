@@ -10,11 +10,10 @@ import (
 type BlockStoreProvider struct {
 	CloseStub        func()
 	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
-	DropStub        func(string) error
-	dropMutex       sync.RWMutex
-	dropArgsForCall []struct {
+	closeArgsForCall []struct{}
+	DropStub         func(string) error
+	dropMutex        sync.RWMutex
+	dropArgsForCall  []struct {
 		arg1 string
 	}
 	dropReturns struct {
@@ -25,9 +24,8 @@ type BlockStoreProvider struct {
 	}
 	ListStub        func() ([]string, error)
 	listMutex       sync.RWMutex
-	listArgsForCall []struct {
-	}
-	listReturns struct {
+	listArgsForCall []struct{}
+	listReturns     struct {
 		result1 []string
 		result2 error
 	}
@@ -54,8 +52,7 @@ type BlockStoreProvider struct {
 
 func (fake *BlockStoreProvider) Close() {
 	fake.closeMutex.Lock()
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	fake.recordInvocation("Close", []interface{}{})
 	fake.closeMutex.Unlock()
 	if fake.CloseStub != nil {
@@ -138,8 +135,7 @@ func (fake *BlockStoreProvider) DropReturnsOnCall(i int, result1 error) {
 func (fake *BlockStoreProvider) List() ([]string, error) {
 	fake.listMutex.Lock()
 	ret, specificReturn := fake.listReturnsOnCall[len(fake.listArgsForCall)]
-	fake.listArgsForCall = append(fake.listArgsForCall, struct {
-	}{})
+	fake.listArgsForCall = append(fake.listArgsForCall, struct{}{})
 	fake.recordInvocation("List", []interface{}{})
 	fake.listMutex.Unlock()
 	if fake.ListStub != nil {

@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -85,7 +85,6 @@ type kvStoreProvider struct {
 
 // NewStoreProvider instantiates TransientStoreProvider
 func NewKVStoreProvider(metrics metrics.Provider) (StoreProvider, error) {
-
 	provider, err := newKVStoreProvider()
 	if err != nil {
 		return nil, errors.WithMessagef(err, "could not construct KV storage provider")
@@ -114,7 +113,6 @@ func newKVStoreProvider() (*kvStoreProvider, error) {
 
 // OpenStore returns a handle to a ledgerId in Store
 func (provider *kvStoreProvider) OpenStore(ledgerID string) (*Store, error) {
-
 	provider.mux.Lock()
 	defer provider.mux.Unlock()
 	store := provider.stores[ledgerID]
@@ -140,7 +138,6 @@ func (provider *kvStoreProvider) OpenStore(ledgerID string) (*Store, error) {
 
 // Close closes the TransientStoreProvider
 func (provider *kvStoreProvider) Close() {
-
 	if provider.dbProvider != nil {
 		if err := provider.dbProvider.Client.Close(); err != nil {
 			logger.Errorf("failed to close the kvstore provider connection : %+v", err)
@@ -154,7 +151,6 @@ DRUNIX :
 	"GetTxPvtRWSetByTxidV2": retrives the private data from transient DB.
 */
 func (s *KVStore) GetTxPvtRWSetByTxidV2(rwsetKeysMap map[string][]ledger.PvtNsCollFilter) (map[string]map[string][]*EndorserPvtSimulationResults, error) {
-
 	scanKeys := make(map[string]string, len(rwsetKeysMap))
 	index := 0
 	for txId := range rwsetKeysMap {
@@ -202,7 +198,6 @@ func (s *KVStore) GetTxPvtRWSetByTxidV2(rwsetKeysMap map[string][]ledger.PvtNsCo
 }
 
 func (s *KVStore) ProcessPrivateData(dbKey []byte, dbVal []byte, filter ledger.PvtNsCollFilter) (*EndorserPvtSimulationResults, error) {
-
 	_, blockHeight, err := splitCompositeKeyOfPvtRWSet(dbKey)
 	if err != nil {
 		return nil, err
@@ -337,7 +332,6 @@ func (s *KVStore) Persist(txid string, blockHeight uint64,
 	}
 
 	return s.kvstorebatcher.Set(txid, kvdbBatch)
-
 }
 
 func (s *KVStore) PrivateDataHGetAllBatch(keys map[string]string) (map[string]map[string]string, error) {
@@ -364,7 +358,6 @@ func (s *KVStore) PrivateDataHGetAllBatch(keys map[string]string) (map[string]ma
 			res, _ := cmd.Result()
 			result[idx] = res
 		}
-
 	}
 	return result, nil
 }
@@ -378,7 +371,6 @@ the minHeight of the CP will be of the removed and txns won't be purged.
 this can be handled by removing the height of the removed peerId from transient store
 */
 func (s *KVStore) PurgeBelowHeight(thresholdHeight uint64) error {
-
 	/*
 		DRUNIX
 		Fetching the min height and peerId of the existing CPs,
@@ -428,7 +420,6 @@ func (s *KVStore) PurgeBelowHeight(thresholdHeight uint64) error {
 }
 
 func (s *KVStore) PurgeByTxids(txIds []string) error {
-
 	/*
 		DRUNIX
 		Fetching the min height and peerId of the existing CPs,

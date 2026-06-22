@@ -32,14 +32,12 @@ type JSONSerializer struct{}
 // For date-time types strings should be passed in RFC3339 format.
 func (js *JSONSerializer) FromString(param string, fieldType reflect.Type, paramMetadata *metadata.ParameterMetadata, components *metadata.ComponentMetadata) (reflect.Value, error) {
 	converted, err := convertArg(fieldType, param)
-
 	if err != nil {
 		return reflect.Value{}, err
 	}
 
 	if paramMetadata != nil {
 		err := validateAgainstSchema(paramMetadata.Name, fieldType, param, converted.Interface(), paramMetadata.CompiledSchema)
-
 		if err != nil {
 			return reflect.Value{}, err
 		}
@@ -74,7 +72,6 @@ func (js *JSONSerializer) ToString(result reflect.Value, resultType reflect.Type
 
 		if returns != nil {
 			err := validateAgainstSchema("return", resultType, str, result.Interface(), returns.CompiledSchema)
-
 			if err != nil {
 				return "", err
 			}
@@ -88,7 +85,6 @@ func createArraySliceMapOrStruct(param string, objType reflect.Type) (reflect.Va
 	obj := reflect.New(objType)
 
 	err := json.Unmarshal([]byte(param), obj.Interface())
-
 	if err != nil {
 		return reflect.Value{}, fmt.Errorf("value %s was not passed in expected format %s", param, objType.String())
 	}

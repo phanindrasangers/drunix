@@ -14,9 +14,7 @@ import (
 	"github.com/syndtr/goleveldb/leveldb/util"
 )
 
-var (
-	ErrIterReleased = errors.New("leveldb/iterator: iterator released")
-)
+var ErrIterReleased = errors.New("leveldb/iterator: iterator released")
 
 // IteratorSeeker is the interface that wraps the 'seeks method'.
 type IteratorSeeker interface {

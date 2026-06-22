@@ -44,8 +44,10 @@ var bitMask32 = [32]uint32{
 } // up to 32 bits
 
 // Initialize the fixedHuffmanDecoder only once upon first use.
-var fixedOnce sync.Once
-var fixedHuffmanDecoder huffmanDecoder
+var (
+	fixedOnce           sync.Once
+	fixedHuffmanDecoder huffmanDecoder
+)
 
 // A CorruptInputError reports the presence of corrupt input at a given offset.
 type CorruptInputError = flate.CorruptInputError
@@ -485,7 +487,7 @@ func (f *decompressor) readHuffman() error {
 	f.nb -= 5 + 5 + 4
 
 	// (HCLEN+4)*3 bits: code lengths in the magic codeOrder order.
-	for i := 0; i < nclen; i++ {
+	for i := range nclen {
 		for f.nb < 3 {
 			if err := f.moreBits(); err != nil {
 				return err
@@ -776,7 +778,7 @@ func fixedHuffmanDecoderInit() {
 	fixedOnce.Do(func() {
 		// These come from the RFC section 3.2.6.
 		var bits [288]int
-		for i := 0; i < 144; i++ {
+		for i := range 144 {
 			bits[i] = 8
 		}
 		for i := 144; i < 256; i++ {

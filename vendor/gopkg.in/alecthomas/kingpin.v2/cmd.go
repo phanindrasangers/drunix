@@ -88,7 +88,6 @@ func (c *cmdMixin) FlagCompletion(flagName string, flagValue string) (choices []
 	}
 	// No Flag directly matched.
 	return options, false, false
-
 }
 
 type cmdGroup struct {

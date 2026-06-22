@@ -83,7 +83,7 @@ func (r *Reader) FileTime() (f FileTime, err error) {
 
 // UTF16String returns a string that is UTF16 encoded in a byte slice. n is the number of bytes representing the string
 func (r *Reader) UTF16String(n int) (str string, err error) {
-	//Length divided by 2 as each run is 16bits = 2bytes
+	// Length divided by 2 as each run is 16bits = 2bytes
 	s := make([]rune, n/2, n/2)
 	for i := 0; i < len(s); i++ {
 		var u uint16
@@ -99,7 +99,7 @@ func (r *Reader) UTF16String(n int) (str string, err error) {
 
 // readBytes returns a number of bytes from the NDR byte stream.
 func (r *Reader) ReadBytes(n int) ([]byte, error) {
-	//TODO make this take an int64 as input to allow for larger values on all systems?
+	// TODO make this take an int64 as input to allow for larger values on all systems?
 	b := make([]byte, n, n)
 	m, err := r.r.Read(b)
 	if err != nil || m != n {

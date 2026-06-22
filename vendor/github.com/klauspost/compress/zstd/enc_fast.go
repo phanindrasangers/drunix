@@ -143,10 +143,7 @@ encodeLoop:
 				// and have to do special offset treatment.
 				startLimit := nextEmit + 1
 
-				sMin := s - e.maxMatchOff
-				if sMin < 0 {
-					sMin = 0
-				}
+				sMin := max(s-e.maxMatchOff, 0)
 				for repIndex > sMin && start > startLimit && src[repIndex-1] == src[start-1] && seq.matchLen < maxMatchLength-zstdMinMatch {
 					repIndex--
 					start--
@@ -165,7 +162,6 @@ encodeLoop:
 				if s >= sLimit {
 					if debugEncoder {
 						println("repeat ended", s, length)
-
 					}
 					break encodeLoop
 				}
@@ -223,10 +219,7 @@ encodeLoop:
 		l := e.matchlen(s+4, t+4, src) + 4
 
 		// Extend backwards
-		tMin := s - e.maxMatchOff
-		if tMin < 0 {
-			tMin = 0
-		}
+		tMin := max(s-e.maxMatchOff, 0)
 		for t > tMin && s > nextEmit && src[t-1] == src[s-1] && l < maxMatchLength {
 			s--
 			t--
@@ -387,10 +380,7 @@ encodeLoop:
 				// and have to do special offset treatment.
 				startLimit := nextEmit + 1
 
-				sMin := s - e.maxMatchOff
-				if sMin < 0 {
-					sMin = 0
-				}
+				sMin := max(s-e.maxMatchOff, 0)
 				for repIndex > sMin && start > startLimit && src[repIndex-1] == src[start-1] {
 					repIndex--
 					start--
@@ -409,7 +399,6 @@ encodeLoop:
 				if s >= sLimit {
 					if debugEncoder {
 						println("repeat ended", s, length)
-
 					}
 					break encodeLoop
 				}
@@ -469,10 +458,7 @@ encodeLoop:
 		l := e.matchlen(s+4, t+4, src) + 4
 
 		// Extend backwards
-		tMin := s - e.maxMatchOff
-		if tMin < 0 {
-			tMin = 0
-		}
+		tMin := max(s-e.maxMatchOff, 0)
 		for t > tMin && s > nextEmit && src[t-1] == src[s-1] {
 			s--
 			t--
@@ -655,10 +641,7 @@ encodeLoop:
 				// and have to do special offset treatment.
 				startLimit := nextEmit + 1
 
-				sMin := s - e.maxMatchOff
-				if sMin < 0 {
-					sMin = 0
-				}
+				sMin := max(s-e.maxMatchOff, 0)
 				for repIndex > sMin && start > startLimit && src[repIndex-1] == src[start-1] && seq.matchLen < maxMatchLength-zstdMinMatch {
 					repIndex--
 					start--
@@ -677,7 +660,6 @@ encodeLoop:
 				if s >= sLimit {
 					if debugEncoder {
 						println("repeat ended", s, length)
-
 					}
 					break encodeLoop
 				}
@@ -735,10 +717,7 @@ encodeLoop:
 		l := e.matchlen(s+4, t+4, src) + 4
 
 		// Extend backwards
-		tMin := s - e.maxMatchOff
-		if tMin < 0 {
-			tMin = 0
-		}
+		tMin := max(s-e.maxMatchOff, 0)
 		for t > tMin && s > nextEmit && src[t-1] == src[s-1] && l < maxMatchLength {
 			s--
 			t--
@@ -862,7 +841,7 @@ func (e *fastEncoderDict) Reset(d *dict, singleBlock bool) {
 	const shardCnt = tableShardCnt
 	const shardSize = tableShardSize
 	if e.allDirty || dirtyShardCnt > shardCnt*4/6 {
-		//copy(e.table[:], e.dictTable)
+		// copy(e.table[:], e.dictTable)
 		e.table = *(*[tableSize]tableEntry)(e.dictTable)
 		for i := range e.tableShardDirty {
 			e.tableShardDirty[i] = false
@@ -875,7 +854,7 @@ func (e *fastEncoderDict) Reset(d *dict, singleBlock bool) {
 			continue
 		}
 
-		//copy(e.table[i*shardSize:(i+1)*shardSize], e.dictTable[i*shardSize:(i+1)*shardSize])
+		// copy(e.table[i*shardSize:(i+1)*shardSize], e.dictTable[i*shardSize:(i+1)*shardSize])
 		*(*[shardSize]tableEntry)(e.table[i*shardSize:]) = *(*[shardSize]tableEntry)(e.dictTable[i*shardSize:])
 		e.tableShardDirty[i] = false
 	}

@@ -82,7 +82,6 @@ func NewChaincode(contracts ...ContractInterface) (*ContractChaincode, error) {
 		}
 
 		err := cc.addContract(contract, append(ciMethods, additionalExcludes...))
-
 		if err != nil {
 			return nil, err
 		}
@@ -155,7 +154,6 @@ func (cc *ContractChaincode) Init(stub shim.ChaincodeStubInterface) *peer.Respon
 // transaction context is passed as a pointer to before, after, named and unknown functions on each Invoke.
 // If no contract name is passed then the default contract is used.
 func (cc *ContractChaincode) Invoke(stub shim.ChaincodeStubInterface) *peer.Response {
-
 	ns, fn, params := cc.getNamespaceFunctionAndParams(stub)
 
 	nsContract, ok := cc.contracts[ns]

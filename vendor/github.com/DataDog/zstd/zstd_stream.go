@@ -61,6 +61,7 @@ static void ZSTD_decompressStream_wrapper(decompressStream2_result* result, ZSTD
 }
 */
 import "C"
+
 import (
 	"errors"
 	"fmt"
@@ -70,9 +71,11 @@ import (
 	"unsafe"
 )
 
-var errShortRead = errors.New("short read")
-var errReaderClosed = errors.New("Reader is closed")
-var ErrNoParallelSupport = errors.New("No parallel support")
+var (
+	errShortRead         = errors.New("short read")
+	errReaderClosed      = errors.New("Reader is closed")
+	ErrNoParallelSupport = errors.New("No parallel support")
+)
 
 // Writer is an io.WriteCloser that zstd-compresses its input.
 type Writer struct {
@@ -111,7 +114,6 @@ func NewWriter(w io.Writer) *Writer {
 // and BestCompression inclusive.
 func NewWriterLevel(w io.Writer, level int) *Writer {
 	return NewWriterLevelDict(w, level, nil)
-
 }
 
 // NewWriterLevelDict is like NewWriterLevel but specifies a dictionary to
@@ -206,7 +208,6 @@ func (w *Writer) Write(p []byte) (int, error) {
 	written := int(w.resultBuffer.bytes_written)
 	// Write to underlying buffer
 	_, err := w.underlyingWriter.Write(w.dstBuffer[:written])
-
 	// Same behaviour as zlib, we can't know how much data we wrote, only
 	// if there was an error
 	if err != nil {

@@ -15,7 +15,7 @@ type ClientInfo struct {
 
 // Unmarshal bytes into the ClientInfo struct
 func (k *ClientInfo) Unmarshal(b []byte) (err error) {
-	//The PAC_CLIENT_INFO structure is a simple structure that is not NDR-encoded.
+	// The PAC_CLIENT_INFO structure is a simple structure that is not NDR-encoded.
 	r := mstypes.NewReader(bytes.NewReader(b))
 
 	k.ClientID, err = r.FileTime()

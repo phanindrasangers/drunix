@@ -3116,6 +3116,7 @@ type LoopInfo64 struct {
 	Encrypt_key      [32]uint8
 	Init             [2]uint64
 }
+
 type LoopConfig struct {
 	Fd   uint32
 	Size uint32
@@ -6139,6 +6140,7 @@ type Cachestat_t struct {
 	Evicted          uint64
 	Recently_evicted uint64
 }
+
 type CachestatRange struct {
 	Off uint64
 	Len uint64

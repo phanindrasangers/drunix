@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -158,7 +158,6 @@ func validateLtxPvtdata(tx *ltxTransaction, pvtdata *ledger.TxPvtData) error {
 }
 
 func extractSparseFilter(blk *common.Block) (sparseblock.SparseTxnFilterProto, error) {
-
 	if blk.Header.Number == 0 {
 		logger.Warnf("Genesis Block received")
 		return sparseblock.SparseTxnFilterProto{
@@ -197,7 +196,6 @@ func preprocessLtxProtoBlock(postOrderSimulatorProvider PostOrderSimulatorProvid
 	blk *common.Block, doMVCCValidation bool,
 	customTxProcessors map[common.HeaderType]ledger.CustomTxProcessor,
 ) (*ltxBlock, []*LtxStatInfo, error) {
-
 	sparseFilterExist := true
 	sparseFilter, err := extractSparseFilter(blk)
 	if err != nil {

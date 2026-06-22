@@ -10,13 +10,11 @@ import (
 type ResultsIterator struct {
 	CloseStub        func()
 	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
-	NextStub        func() (*statedb.VersionedKV, error)
-	nextMutex       sync.RWMutex
-	nextArgsForCall []struct {
-	}
-	nextReturns struct {
+	closeArgsForCall []struct{}
+	NextStub         func() (*statedb.VersionedKV, error)
+	nextMutex        sync.RWMutex
+	nextArgsForCall  []struct{}
+	nextReturns      struct {
 		result1 *statedb.VersionedKV
 		result2 error
 	}
@@ -30,8 +28,7 @@ type ResultsIterator struct {
 
 func (fake *ResultsIterator) Close() {
 	fake.closeMutex.Lock()
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	fake.recordInvocation("Close", []interface{}{})
 	fake.closeMutex.Unlock()
 	if fake.CloseStub != nil {
@@ -54,8 +51,7 @@ func (fake *ResultsIterator) CloseCalls(stub func()) {
 func (fake *ResultsIterator) Next() (*statedb.VersionedKV, error) {
 	fake.nextMutex.Lock()
 	ret, specificReturn := fake.nextReturnsOnCall[len(fake.nextArgsForCall)]
-	fake.nextArgsForCall = append(fake.nextArgsForCall, struct {
-	}{})
+	fake.nextArgsForCall = append(fake.nextArgsForCall, struct{}{})
 	fake.recordInvocation("Next", []interface{}{})
 	fake.nextMutex.Unlock()
 	if fake.NextStub != nil {

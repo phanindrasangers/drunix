@@ -24,11 +24,12 @@
 package grpc_health_v1
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -297,16 +298,19 @@ func file_grpc_health_v1_health_proto_rawDescGZIP() []byte {
 	return file_grpc_health_v1_health_proto_rawDescData
 }
 
-var file_grpc_health_v1_health_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_grpc_health_v1_health_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_grpc_health_v1_health_proto_goTypes = []any{
-	(HealthCheckResponse_ServingStatus)(0), // 0: grpc.health.v1.HealthCheckResponse.ServingStatus
-	(*HealthCheckRequest)(nil),             // 1: grpc.health.v1.HealthCheckRequest
-	(*HealthCheckResponse)(nil),            // 2: grpc.health.v1.HealthCheckResponse
-	(*HealthListRequest)(nil),              // 3: grpc.health.v1.HealthListRequest
-	(*HealthListResponse)(nil),             // 4: grpc.health.v1.HealthListResponse
-	nil,                                    // 5: grpc.health.v1.HealthListResponse.StatusesEntry
-}
+var (
+	file_grpc_health_v1_health_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+	file_grpc_health_v1_health_proto_msgTypes  = make([]protoimpl.MessageInfo, 5)
+	file_grpc_health_v1_health_proto_goTypes   = []any{
+		(HealthCheckResponse_ServingStatus)(0), // 0: grpc.health.v1.HealthCheckResponse.ServingStatus
+		(*HealthCheckRequest)(nil),             // 1: grpc.health.v1.HealthCheckRequest
+		(*HealthCheckResponse)(nil),            // 2: grpc.health.v1.HealthCheckResponse
+		(*HealthListRequest)(nil),              // 3: grpc.health.v1.HealthListRequest
+		(*HealthListResponse)(nil),             // 4: grpc.health.v1.HealthListResponse
+		nil,                                    // 5: grpc.health.v1.HealthListResponse.StatusesEntry
+	}
+)
+
 var file_grpc_health_v1_health_proto_depIdxs = []int32{
 	0, // 0: grpc.health.v1.HealthCheckResponse.status:type_name -> grpc.health.v1.HealthCheckResponse.ServingStatus
 	5, // 1: grpc.health.v1.HealthListResponse.statuses:type_name -> grpc.health.v1.HealthListResponse.StatusesEntry

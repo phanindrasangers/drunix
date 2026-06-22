@@ -21,9 +21,8 @@ type ChaincodeStore struct {
 	}
 	ListInstalledChaincodesStub        func() ([]chaincode.InstalledChaincode, error)
 	listInstalledChaincodesMutex       sync.RWMutex
-	listInstalledChaincodesArgsForCall []struct {
-	}
-	listInstalledChaincodesReturns struct {
+	listInstalledChaincodesArgsForCall []struct{}
+	listInstalledChaincodesReturns     struct {
 		result1 []chaincode.InstalledChaincode
 		result2 error
 	}
@@ -125,8 +124,7 @@ func (fake *ChaincodeStore) DeleteReturnsOnCall(i int, result1 error) {
 func (fake *ChaincodeStore) ListInstalledChaincodes() ([]chaincode.InstalledChaincode, error) {
 	fake.listInstalledChaincodesMutex.Lock()
 	ret, specificReturn := fake.listInstalledChaincodesReturnsOnCall[len(fake.listInstalledChaincodesArgsForCall)]
-	fake.listInstalledChaincodesArgsForCall = append(fake.listInstalledChaincodesArgsForCall, struct {
-	}{})
+	fake.listInstalledChaincodesArgsForCall = append(fake.listInstalledChaincodesArgsForCall, struct{}{})
 	fake.recordInvocation("ListInstalledChaincodes", []interface{}{})
 	fake.listInstalledChaincodesMutex.Unlock()
 	if fake.ListInstalledChaincodesStub != nil {

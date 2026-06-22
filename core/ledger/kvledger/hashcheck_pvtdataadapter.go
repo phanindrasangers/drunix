@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package kvledger
@@ -15,7 +15,7 @@ import (
 /*
 DRUNIX:
 	helper methods to process lite format transactions during reconciliation
-*/ 
+*/
 
 func retrieveRwsetForLtx(blkNum uint64, txNum uint64, blockStore *blkstorage.BlockStore) (*rwsetutil.TxRwSet, error) {
 	// retrieve the txEnvelope from the block store so that the hash of
@@ -33,7 +33,6 @@ func retrieveRwsetForLtx(blkNum uint64, txNum uint64, blockStore *blkstorage.Blo
 	}
 
 	return txRWSet, nil
-
 }
 
 func GetNsRwSetFromLtx(ns []*common.NsReadWriteSet) []*rwsetutil.NsRwSet {
@@ -84,7 +83,6 @@ func GetKvRwSetFromLtx(rwset *common.KVRWSet) *kvrwset.KVRWSet {
 }
 
 func GetVersionFromLtx(kVersion *common.Version) *kvrwset.Version {
-
 	if kVersion == nil {
 		return nil
 	} else {
@@ -96,7 +94,6 @@ func GetVersionFromLtx(kVersion *common.Version) *kvrwset.Version {
 }
 
 func GetCollHashRwSetFromLtx(hrwset *common.CollectionHashedReadWriteSet) *rwsetutil.CollHashedRwSet {
-
 	cNs := &rwsetutil.CollHashedRwSet{
 		CollectionName: hrwset.CollectionName,
 		HashedRwSet:    GetHashRWSetFromLtx(hrwset.HashedRwset),
@@ -107,7 +104,6 @@ func GetCollHashRwSetFromLtx(hrwset *common.CollectionHashedReadWriteSet) *rwset
 }
 
 func GetHashRWSetFromLtx(hrwset *common.HashedRWSet) *kvrwset.HashedRWSet {
-
 	cNs := &kvrwset.HashedRWSet{
 		HashedReads:    []*kvrwset.KVReadHash{},
 		HashedWrites:   []*kvrwset.KVWriteHash{},

@@ -24,7 +24,6 @@ to forward CommitStatus requests and interact with the peer that maintains
 the ledger state
 */
 func newCommittingPeerClient(config *peer.CommittingPeerConfig) gateway.GatewayClient {
-
 	if !config.ForwardCommitStatusEnabled {
 		return nil
 	}

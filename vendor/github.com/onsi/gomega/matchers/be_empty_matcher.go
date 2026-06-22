@@ -10,8 +10,7 @@ import (
 	"github.com/onsi/gomega/matchers/internal/miter"
 )
 
-type BeEmptyMatcher struct {
-}
+type BeEmptyMatcher struct{}
 
 func (matcher *BeEmptyMatcher) Match(actual any) (success bool, err error) {
 	// short-circuit the iterator case, as we only need to see the first

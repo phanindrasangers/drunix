@@ -37,7 +37,6 @@ type policyCheckerFactoryV20Adapter struct {
 }
 
 func (p *policyCheckerFactoryV20Adapter) Evaluator(ccEP []byte) RWSetPolicyEvaluator {
-
 	return &baseEvaluatorAdapter{
 		baseEvaluator: &baseEvaluator{
 			epEvaluator: &policyCheckerV20{

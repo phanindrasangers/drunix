@@ -5,14 +5,17 @@ package pvtstatepurgemgmt
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -37,15 +40,19 @@ func (*PvtdataKeys) Descriptor() ([]byte, []int) {
 func (m *PvtdataKeys) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PvtdataKeys.Unmarshal(m, b)
 }
+
 func (m *PvtdataKeys) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PvtdataKeys.Marshal(b, m, deterministic)
 }
+
 func (m *PvtdataKeys) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PvtdataKeys.Merge(m, src)
 }
+
 func (m *PvtdataKeys) XXX_Size() int {
 	return xxx_messageInfo_PvtdataKeys.Size(m)
 }
+
 func (m *PvtdataKeys) XXX_DiscardUnknown() {
 	xxx_messageInfo_PvtdataKeys.DiscardUnknown(m)
 }
@@ -76,15 +83,19 @@ func (*Collections) Descriptor() ([]byte, []int) {
 func (m *Collections) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Collections.Unmarshal(m, b)
 }
+
 func (m *Collections) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Collections.Marshal(b, m, deterministic)
 }
+
 func (m *Collections) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Collections.Merge(m, src)
 }
+
 func (m *Collections) XXX_Size() int {
 	return xxx_messageInfo_Collections.Size(m)
 }
+
 func (m *Collections) XXX_DiscardUnknown() {
 	xxx_messageInfo_Collections.DiscardUnknown(m)
 }
@@ -115,15 +126,19 @@ func (*KeysAndHashes) Descriptor() ([]byte, []int) {
 func (m *KeysAndHashes) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KeysAndHashes.Unmarshal(m, b)
 }
+
 func (m *KeysAndHashes) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KeysAndHashes.Marshal(b, m, deterministic)
 }
+
 func (m *KeysAndHashes) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KeysAndHashes.Merge(m, src)
 }
+
 func (m *KeysAndHashes) XXX_Size() int {
 	return xxx_messageInfo_KeysAndHashes.Size(m)
 }
+
 func (m *KeysAndHashes) XXX_DiscardUnknown() {
 	xxx_messageInfo_KeysAndHashes.DiscardUnknown(m)
 }
@@ -155,15 +170,19 @@ func (*KeyAndHash) Descriptor() ([]byte, []int) {
 func (m *KeyAndHash) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KeyAndHash.Unmarshal(m, b)
 }
+
 func (m *KeyAndHash) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KeyAndHash.Marshal(b, m, deterministic)
 }
+
 func (m *KeyAndHash) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KeyAndHash.Merge(m, src)
 }
+
 func (m *KeyAndHash) XXX_Size() int {
 	return xxx_messageInfo_KeyAndHash.Size(m)
 }
+
 func (m *KeyAndHash) XXX_DiscardUnknown() {
 	xxx_messageInfo_KeyAndHash.DiscardUnknown(m)
 }

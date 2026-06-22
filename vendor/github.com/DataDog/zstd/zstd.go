@@ -9,6 +9,7 @@ package zstd
 #include "zstd.h"
 */
 import "C"
+
 import (
 	"bytes"
 	"errors"
@@ -23,10 +24,8 @@ const (
 	DefaultCompression = 5
 )
 
-var (
-	// ErrEmptySlice is returned when there is nothing to compress
-	ErrEmptySlice = errors.New("Bytes slice is empty")
-)
+// ErrEmptySlice is returned when there is nothing to compress
+var ErrEmptySlice = errors.New("Bytes slice is empty")
 
 const (
 	// decompressSizeBufferLimit is the limit we set on creating a decompression buffer for the Decompress API

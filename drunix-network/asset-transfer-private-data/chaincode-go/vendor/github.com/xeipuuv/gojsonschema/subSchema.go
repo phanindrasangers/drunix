@@ -27,9 +27,10 @@
 package gojsonschema
 
 import (
-	"github.com/xeipuuv/gojsonreference"
 	"math/big"
 	"regexp"
+
+	"github.com/xeipuuv/gojsonreference"
 )
 
 // Constants
@@ -135,7 +136,7 @@ type subSchema struct {
 	additionalItems interface{}
 
 	// validation : all
-	_const *string //const is a golang keyword
+	_const *string // const is a golang keyword
 	enum   []string
 
 	// validation : subSchema

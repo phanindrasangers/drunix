@@ -5,14 +5,17 @@ package msp
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -44,15 +47,19 @@ func (*MSPConfig) Descriptor() ([]byte, []int) {
 func (m *MSPConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MSPConfig.Unmarshal(m, b)
 }
+
 func (m *MSPConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MSPConfig.Marshal(b, m, deterministic)
 }
+
 func (m *MSPConfig) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_MSPConfig.Merge(m, src)
 }
+
 func (m *MSPConfig) XXX_Size() int {
 	return xxx_messageInfo_MSPConfig.Size(m)
 }
+
 func (m *MSPConfig) XXX_DiscardUnknown() {
 	xxx_messageInfo_MSPConfig.DiscardUnknown(m)
 }
@@ -140,15 +147,19 @@ func (*FabricMSPConfig) Descriptor() ([]byte, []int) {
 func (m *FabricMSPConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FabricMSPConfig.Unmarshal(m, b)
 }
+
 func (m *FabricMSPConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_FabricMSPConfig.Marshal(b, m, deterministic)
 }
+
 func (m *FabricMSPConfig) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_FabricMSPConfig.Merge(m, src)
 }
+
 func (m *FabricMSPConfig) XXX_Size() int {
 	return xxx_messageInfo_FabricMSPConfig.Size(m)
 }
+
 func (m *FabricMSPConfig) XXX_DiscardUnknown() {
 	xxx_messageInfo_FabricMSPConfig.DiscardUnknown(m)
 }
@@ -259,15 +270,19 @@ func (*FabricCryptoConfig) Descriptor() ([]byte, []int) {
 func (m *FabricCryptoConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FabricCryptoConfig.Unmarshal(m, b)
 }
+
 func (m *FabricCryptoConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_FabricCryptoConfig.Marshal(b, m, deterministic)
 }
+
 func (m *FabricCryptoConfig) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_FabricCryptoConfig.Merge(m, src)
 }
+
 func (m *FabricCryptoConfig) XXX_Size() int {
 	return xxx_messageInfo_FabricCryptoConfig.Size(m)
 }
+
 func (m *FabricCryptoConfig) XXX_DiscardUnknown() {
 	xxx_messageInfo_FabricCryptoConfig.DiscardUnknown(m)
 }
@@ -316,15 +331,19 @@ func (*IdemixMSPConfig) Descriptor() ([]byte, []int) {
 func (m *IdemixMSPConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IdemixMSPConfig.Unmarshal(m, b)
 }
+
 func (m *IdemixMSPConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_IdemixMSPConfig.Marshal(b, m, deterministic)
 }
+
 func (m *IdemixMSPConfig) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_IdemixMSPConfig.Merge(m, src)
 }
+
 func (m *IdemixMSPConfig) XXX_Size() int {
 	return xxx_messageInfo_IdemixMSPConfig.Size(m)
 }
+
 func (m *IdemixMSPConfig) XXX_DiscardUnknown() {
 	xxx_messageInfo_IdemixMSPConfig.DiscardUnknown(m)
 }
@@ -395,15 +414,19 @@ func (*IdemixMSPSignerConfig) Descriptor() ([]byte, []int) {
 func (m *IdemixMSPSignerConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IdemixMSPSignerConfig.Unmarshal(m, b)
 }
+
 func (m *IdemixMSPSignerConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_IdemixMSPSignerConfig.Marshal(b, m, deterministic)
 }
+
 func (m *IdemixMSPSignerConfig) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_IdemixMSPSignerConfig.Merge(m, src)
 }
+
 func (m *IdemixMSPSignerConfig) XXX_Size() int {
 	return xxx_messageInfo_IdemixMSPSignerConfig.Size(m)
 }
+
 func (m *IdemixMSPSignerConfig) XXX_DiscardUnknown() {
 	xxx_messageInfo_IdemixMSPSignerConfig.DiscardUnknown(m)
 }
@@ -478,15 +501,19 @@ func (*SigningIdentityInfo) Descriptor() ([]byte, []int) {
 func (m *SigningIdentityInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SigningIdentityInfo.Unmarshal(m, b)
 }
+
 func (m *SigningIdentityInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SigningIdentityInfo.Marshal(b, m, deterministic)
 }
+
 func (m *SigningIdentityInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SigningIdentityInfo.Merge(m, src)
 }
+
 func (m *SigningIdentityInfo) XXX_Size() int {
 	return xxx_messageInfo_SigningIdentityInfo.Size(m)
 }
+
 func (m *SigningIdentityInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_SigningIdentityInfo.DiscardUnknown(m)
 }
@@ -534,15 +561,19 @@ func (*KeyInfo) Descriptor() ([]byte, []int) {
 func (m *KeyInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KeyInfo.Unmarshal(m, b)
 }
+
 func (m *KeyInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KeyInfo.Marshal(b, m, deterministic)
 }
+
 func (m *KeyInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KeyInfo.Merge(m, src)
 }
+
 func (m *KeyInfo) XXX_Size() int {
 	return xxx_messageInfo_KeyInfo.Size(m)
 }
+
 func (m *KeyInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_KeyInfo.DiscardUnknown(m)
 }
@@ -592,15 +623,19 @@ func (*FabricOUIdentifier) Descriptor() ([]byte, []int) {
 func (m *FabricOUIdentifier) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FabricOUIdentifier.Unmarshal(m, b)
 }
+
 func (m *FabricOUIdentifier) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_FabricOUIdentifier.Marshal(b, m, deterministic)
 }
+
 func (m *FabricOUIdentifier) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_FabricOUIdentifier.Merge(m, src)
 }
+
 func (m *FabricOUIdentifier) XXX_Size() int {
 	return xxx_messageInfo_FabricOUIdentifier.Size(m)
 }
+
 func (m *FabricOUIdentifier) XXX_DiscardUnknown() {
 	xxx_messageInfo_FabricOUIdentifier.DiscardUnknown(m)
 }
@@ -650,15 +685,19 @@ func (*FabricNodeOUs) Descriptor() ([]byte, []int) {
 func (m *FabricNodeOUs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FabricNodeOUs.Unmarshal(m, b)
 }
+
 func (m *FabricNodeOUs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_FabricNodeOUs.Marshal(b, m, deterministic)
 }
+
 func (m *FabricNodeOUs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_FabricNodeOUs.Merge(m, src)
 }
+
 func (m *FabricNodeOUs) XXX_Size() int {
 	return xxx_messageInfo_FabricNodeOUs.Size(m)
 }
+
 func (m *FabricNodeOUs) XXX_DiscardUnknown() {
 	xxx_messageInfo_FabricNodeOUs.DiscardUnknown(m)
 }

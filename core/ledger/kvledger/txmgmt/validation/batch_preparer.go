@@ -196,7 +196,6 @@ func preprocessProtoBlock(postOrderSimulatorProvider PostOrderSimulatorProvider,
 	blk *common.Block, doMVCCValidation bool,
 	customTxProcessors map[common.HeaderType]ledger.CustomTxProcessor,
 ) (*block, []*TxStatInfo, error) {
-
 	// DRUNIX : for vanilla transactions we need to extract fatblock number from sparse filter, otherwise lifecycle keys mismatch occurs in lite-peer and committing-peer
 	sparseFilterExist := true
 	sparseFilter, err := extractSparseFilter(blk)

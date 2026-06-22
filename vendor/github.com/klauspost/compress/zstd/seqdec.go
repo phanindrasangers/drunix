@@ -132,7 +132,7 @@ func (s *sequenceDecs) execute(seqs []seqVals, hist []byte) error {
 		printf("Execute %d seqs with hist %d, dict %d, literals: %d into %d bytes\n", len(seqs), len(hist), len(s.dict), len(s.literals), s.seqSize)
 	}
 
-	var t = len(s.out)
+	t := len(s.out)
 	out := s.out[:t+s.seqSize]
 
 	for _, seq := range seqs {
@@ -231,10 +231,7 @@ func (s *sequenceDecs) decodeSync(hist []byte) error {
 	llTable, mlTable, ofTable := s.litLengths.fse.dt[:maxTablesize], s.matchLengths.fse.dt[:maxTablesize], s.offsets.fse.dt[:maxTablesize]
 	llState, mlState, ofState := s.litLengths.state.state, s.matchLengths.state.state, s.offsets.state.state
 	out := s.out
-	maxBlockSize := maxCompressedBlockSize
-	if s.windowSize < maxBlockSize {
-		maxBlockSize = s.windowSize
-	}
+	maxBlockSize := min(s.windowSize, maxCompressedBlockSize)
 
 	if debugDecoder {
 		println("decodeSync: decoding", seqs, "sequences", br.remain(), "bits remain on stream")

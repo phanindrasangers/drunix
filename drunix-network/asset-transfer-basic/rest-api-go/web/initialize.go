@@ -81,7 +81,6 @@ func (setup OrgSetup) newSign() identity.Sign {
 		panic(fmt.Errorf("failed to read private key directory: %w", err))
 	}
 	privateKeyPEM, err := os.ReadFile(path.Join(setup.KeyPath, files[0].Name()))
-
 	if err != nil {
 		panic(fmt.Errorf("failed to read private key file: %w", err))
 	}

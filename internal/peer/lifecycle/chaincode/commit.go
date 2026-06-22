@@ -156,7 +156,6 @@ func CommitCmd(c *Committer, cryptoProvider bccsp.BCCSP) *cobra.Command {
 
 // Commit submits a CommitChaincodeDefinition proposal
 func (c *Committer) Commit() error {
-
 	/*
 		DRUNIX:
 		if sqlSchema value is provided, then create the transaction embedding the DB query so it can be executed during the block commit.

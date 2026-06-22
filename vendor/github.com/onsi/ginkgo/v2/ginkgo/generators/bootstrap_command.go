@@ -17,23 +17,32 @@ func BuildBootstrapCommand() command.Command {
 	conf := GeneratorsConfig{}
 	flags, err := types.NewGinkgoFlagSet(
 		types.GinkgoFlags{
-			{Name: "agouti", KeyPath: "Agouti",
-				Usage: "If set, bootstrap will generate a bootstrap file for writing Agouti tests"},
-			{Name: "nodot", KeyPath: "NoDot",
-				Usage: "If set, bootstrap will generate a bootstrap test file that does not dot-import ginkgo and gomega"},
-			{Name: "internal", KeyPath: "Internal",
-				Usage: "If set, bootstrap will generate a bootstrap test file that uses the regular package name (i.e. `package X`, not `package X_test`)"},
-			{Name: "template", KeyPath: "CustomTemplate",
+			{
+				Name: "agouti", KeyPath: "Agouti",
+				Usage: "If set, bootstrap will generate a bootstrap file for writing Agouti tests",
+			},
+			{
+				Name: "nodot", KeyPath: "NoDot",
+				Usage: "If set, bootstrap will generate a bootstrap test file that does not dot-import ginkgo and gomega",
+			},
+			{
+				Name: "internal", KeyPath: "Internal",
+				Usage: "If set, bootstrap will generate a bootstrap test file that uses the regular package name (i.e. `package X`, not `package X_test`)",
+			},
+			{
+				Name: "template", KeyPath: "CustomTemplate",
 				UsageArgument: "template-file",
-				Usage:         "If specified, generate will use the contents of the file passed as the bootstrap template"},
-			{Name: "template-data", KeyPath: "CustomTemplateData",
+				Usage:         "If specified, generate will use the contents of the file passed as the bootstrap template",
+			},
+			{
+				Name: "template-data", KeyPath: "CustomTemplateData",
 				UsageArgument: "template-data-file",
-				Usage:         "If specified, generate will use the contents of the file passed as data to be rendered in the bootstrap template"},
+				Usage:         "If specified, generate will use the contents of the file passed as data to be rendered in the bootstrap template",
+			},
 		},
 		&conf,
 		types.GinkgoFlagSections{},
 	)
-
 	if err != nil {
 		panic(err)
 	}
@@ -107,7 +116,7 @@ func generateBootstrap(conf GeneratorsConfig) {
 			if !json.Valid([]byte(tplCustomData)) {
 				command.AbortWith("Invalid JSON object in custom data file.")
 			}
-			//create map from the custom template data
+			// create map from the custom template data
 			json.Unmarshal(tplCustomData, &tplCustomDataMap)
 			data.CustomData = tplCustomDataMap
 		}
@@ -117,13 +126,13 @@ func generateBootstrap(conf GeneratorsConfig) {
 		templateText = bootstrapText
 	}
 
-	//Setting the option to explicitly fail if template is rendered trying to access missing key
+	// Setting the option to explicitly fail if template is rendered trying to access missing key
 	bootstrapTemplate, err := template.New("bootstrap").Funcs(sprig.TxtFuncMap()).Option("missingkey=error").Parse(templateText)
 	command.AbortIfError("Failed to parse bootstrap template:", err)
 
 	buf := &bytes.Buffer{}
-	//Being explicit about failing sooner during template rendering
-	//when accessing custom data rather than during the go fmt command
+	// Being explicit about failing sooner during template rendering
+	// when accessing custom data rather than during the go fmt command
 	err = bootstrapTemplate.Execute(buf, data)
 	command.AbortIfError("Failed to render bootstrap template:", err)
 

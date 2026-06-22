@@ -8,8 +8,7 @@ import (
 )
 
 // ServerVersionOptions specifies options for the server version request.
-type ServerVersionOptions struct {
-	// Currently no options are supported.
+type ServerVersionOptions struct { // Currently no options are supported.
 }
 
 // ServerVersionResult contains information about the Docker server host.

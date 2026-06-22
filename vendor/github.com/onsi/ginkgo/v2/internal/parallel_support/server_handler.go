@@ -11,8 +11,10 @@ import (
 
 type Void struct{}
 
-var voidReceiver *Void = &Void{}
-var voidSender Void
+var (
+	voidReceiver *Void = &Void{}
+	voidSender   Void
+)
 
 // ServerHandler is an RPC-compatible handler that is shared between the http server and the rpc server.
 // It handles all the business logic to avoid duplication between the two servers

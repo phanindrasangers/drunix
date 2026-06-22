@@ -11,9 +11,8 @@ import (
 type SigFilterSupport struct {
 	OrdererConfigStub        func() (channelconfig.Orderer, bool)
 	ordererConfigMutex       sync.RWMutex
-	ordererConfigArgsForCall []struct {
-	}
-	ordererConfigReturns struct {
+	ordererConfigArgsForCall []struct{}
+	ordererConfigReturns     struct {
 		result1 channelconfig.Orderer
 		result2 bool
 	}
@@ -23,9 +22,8 @@ type SigFilterSupport struct {
 	}
 	PolicyManagerStub        func() policies.Manager
 	policyManagerMutex       sync.RWMutex
-	policyManagerArgsForCall []struct {
-	}
-	policyManagerReturns struct {
+	policyManagerArgsForCall []struct{}
+	policyManagerReturns     struct {
 		result1 policies.Manager
 	}
 	policyManagerReturnsOnCall map[int]struct {
@@ -38,8 +36,7 @@ type SigFilterSupport struct {
 func (fake *SigFilterSupport) OrdererConfig() (channelconfig.Orderer, bool) {
 	fake.ordererConfigMutex.Lock()
 	ret, specificReturn := fake.ordererConfigReturnsOnCall[len(fake.ordererConfigArgsForCall)]
-	fake.ordererConfigArgsForCall = append(fake.ordererConfigArgsForCall, struct {
-	}{})
+	fake.ordererConfigArgsForCall = append(fake.ordererConfigArgsForCall, struct{}{})
 	fake.recordInvocation("OrdererConfig", []interface{}{})
 	fake.ordererConfigMutex.Unlock()
 	if fake.OrdererConfigStub != nil {
@@ -93,8 +90,7 @@ func (fake *SigFilterSupport) OrdererConfigReturnsOnCall(i int, result1 channelc
 func (fake *SigFilterSupport) PolicyManager() policies.Manager {
 	fake.policyManagerMutex.Lock()
 	ret, specificReturn := fake.policyManagerReturnsOnCall[len(fake.policyManagerArgsForCall)]
-	fake.policyManagerArgsForCall = append(fake.policyManagerArgsForCall, struct {
-	}{})
+	fake.policyManagerArgsForCall = append(fake.policyManagerArgsForCall, struct{}{})
 	fake.recordInvocation("PolicyManager", []interface{}{})
 	fake.policyManagerMutex.Unlock()
 	if fake.PolicyManagerStub != nil {

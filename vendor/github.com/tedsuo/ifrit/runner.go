@@ -11,12 +11,12 @@ standard library.
 
 An implementation of Runner has the following responibilities:
 
- - setup within a finite amount of time.
- - close the ready channel when setup is complete.
- - once ready, perform the unit of work, which may be infinite.
- - respond to shutdown signals by exiting within a finite amount of time.
- - return nil if shutdown is successful.
- - return an error if an exception has prevented a clean shutdown.
+  - setup within a finite amount of time.
+  - close the ready channel when setup is complete.
+  - once ready, perform the unit of work, which may be infinite.
+  - respond to shutdown signals by exiting within a finite amount of time.
+  - return nil if shutdown is successful.
+  - return an error if an exception has prevented a clean shutdown.
 
 By default, Runners are not considered restartable; Run will only be called once.
 See the ifrit/restart package for details on restartable Runners.

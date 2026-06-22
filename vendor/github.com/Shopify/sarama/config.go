@@ -58,7 +58,7 @@ type Config struct {
 			// (defaults to true). You should only set this to false if you're using
 			// a non-Kafka SASL proxy.
 			Handshake bool
-			//username and password for SASL/PLAIN authentication
+			// username and password for SASL/PLAIN authentication
 			User     string
 			Password string
 		}

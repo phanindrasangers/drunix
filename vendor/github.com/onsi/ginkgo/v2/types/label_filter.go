@@ -366,7 +366,7 @@ func tokenize(input string) func() (*treeNode, error) {
 		}()
 
 		if lastToken == lfTokenSetKey {
-			//we should get a valid set operation next
+			// we should get a valid set operation next
 			value, n := consumeUntil(" )")
 			if validSetOperations[strings.ToLower(value)] == "" {
 				return &treeNode{}, GinkgoErrors.SyntaxErrorParsingLabelFilter(input, i, fmt.Sprintf("Invalid set operation '%s'.", value))
@@ -376,8 +376,8 @@ func tokenize(input string) func() (*treeNode, error) {
 			return node, nil
 		}
 		if lastToken == lfTokenSetOperation {
-			//we should get an argument next, if we aren't isempty
-			var arg = ""
+			// we should get an argument next, if we aren't isempty
+			arg := ""
 			origI := i
 			if runes[i] == '{' {
 				i += 1
@@ -442,14 +442,14 @@ func tokenize(input string) func() (*treeNode, error) {
 			i += n
 			value = strings.TrimSpace(value)
 
-			//are we the beginning of a set operation?
+			// are we the beginning of a set operation?
 			if i < len(runes) && runes[i] == ':' {
 				if peekIs(' ') {
 					if value == "" {
 						return &treeNode{}, GinkgoErrors.SyntaxErrorParsingLabelFilter(input, i, "Missing set key.")
 					}
 					i += 1
-					//we are the beginning of a set operation
+					// we are the beginning of a set operation
 					node.token, node.value = lfTokenSetKey, value
 					return node, nil
 				}
@@ -550,7 +550,7 @@ LOOP:
 			if firstUnmatchedOpenNode == current && current.rightNode == nil {
 				return nil, GinkgoErrors.SyntaxErrorParsingLabelFilter(input, node.location, "Found empty '()' group.")
 			}
-			firstUnmatchedOpenNode.token = lfTokenCloseGroup //signify the group is now closed
+			firstUnmatchedOpenNode.token = lfTokenCloseGroup // signify the group is now closed
 			current = firstUnmatchedOpenNode.parent
 		default:
 			return nil, GinkgoErrors.SyntaxErrorParsingLabelFilter(input, node.location, fmt.Sprintf("Unknown token '%s'.", node.token))

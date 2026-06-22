@@ -25,6 +25,7 @@ package grpc_health_v1
 
 import (
 	context "context"
+
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -190,9 +191,11 @@ type UnimplementedHealthServer struct{}
 func (UnimplementedHealthServer) Check(context.Context, *HealthCheckRequest) (*HealthCheckResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method Check not implemented")
 }
+
 func (UnimplementedHealthServer) List(context.Context, *HealthListRequest) (*HealthListResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method List not implemented")
 }
+
 func (UnimplementedHealthServer) Watch(*HealthCheckRequest, grpc.ServerStreamingServer[HealthCheckResponse]) error {
 	return status.Error(codes.Unimplemented, "method Watch not implemented")
 }

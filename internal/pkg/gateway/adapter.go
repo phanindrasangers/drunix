@@ -20,7 +20,6 @@ import (
 )
 
 func (gs *Server) EndorseLeanTxn(ctx context.Context, request *gp.EndorseRequest) (*gp.EndorseResponse, error) {
-
 	if request == nil {
 		// gs.metrics.GatewayEndorseFailures.Add(1)
 		return nil, status.Error(codes.InvalidArgument, "an endorse request is required")
@@ -207,7 +206,6 @@ func (gs *Server) EndorseLeanTxn(ctx context.Context, request *gp.EndorseRequest
 }
 
 func prepareLeanTransaction(lenv *common.LEnvelope, header *common.LightHeader, signer *deliver.SigningIdentity) (*common.Envelope, error) {
-
 	leanEnvelope := &common.LeanEnvelope{
 		ChannelId:    lenv.Header.ChannelHeader.ChannelId,
 		TxId:         lenv.Header.ChannelHeader.TxId,

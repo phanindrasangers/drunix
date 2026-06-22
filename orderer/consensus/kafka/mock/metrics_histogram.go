@@ -10,13 +10,11 @@ import (
 type MetricsHistogram struct {
 	ClearStub        func()
 	clearMutex       sync.RWMutex
-	clearArgsForCall []struct {
-	}
+	clearArgsForCall []struct{}
 	CountStub        func() int64
 	countMutex       sync.RWMutex
-	countArgsForCall []struct {
-	}
-	countReturns struct {
+	countArgsForCall []struct{}
+	countReturns     struct {
 		result1 int64
 	}
 	countReturnsOnCall map[int]struct {
@@ -24,9 +22,8 @@ type MetricsHistogram struct {
 	}
 	MaxStub        func() int64
 	maxMutex       sync.RWMutex
-	maxArgsForCall []struct {
-	}
-	maxReturns struct {
+	maxArgsForCall []struct{}
+	maxReturns     struct {
 		result1 int64
 	}
 	maxReturnsOnCall map[int]struct {
@@ -34,9 +31,8 @@ type MetricsHistogram struct {
 	}
 	MeanStub        func() float64
 	meanMutex       sync.RWMutex
-	meanArgsForCall []struct {
-	}
-	meanReturns struct {
+	meanArgsForCall []struct{}
+	meanReturns     struct {
 		result1 float64
 	}
 	meanReturnsOnCall map[int]struct {
@@ -44,9 +40,8 @@ type MetricsHistogram struct {
 	}
 	MinStub        func() int64
 	minMutex       sync.RWMutex
-	minArgsForCall []struct {
-	}
-	minReturns struct {
+	minArgsForCall []struct{}
+	minReturns     struct {
 		result1 int64
 	}
 	minReturnsOnCall map[int]struct {
@@ -76,9 +71,8 @@ type MetricsHistogram struct {
 	}
 	SampleStub        func() metrics.Sample
 	sampleMutex       sync.RWMutex
-	sampleArgsForCall []struct {
-	}
-	sampleReturns struct {
+	sampleArgsForCall []struct{}
+	sampleReturns     struct {
 		result1 metrics.Sample
 	}
 	sampleReturnsOnCall map[int]struct {
@@ -86,9 +80,8 @@ type MetricsHistogram struct {
 	}
 	SnapshotStub        func() metrics.Histogram
 	snapshotMutex       sync.RWMutex
-	snapshotArgsForCall []struct {
-	}
-	snapshotReturns struct {
+	snapshotArgsForCall []struct{}
+	snapshotReturns     struct {
 		result1 metrics.Histogram
 	}
 	snapshotReturnsOnCall map[int]struct {
@@ -96,9 +89,8 @@ type MetricsHistogram struct {
 	}
 	StdDevStub        func() float64
 	stdDevMutex       sync.RWMutex
-	stdDevArgsForCall []struct {
-	}
-	stdDevReturns struct {
+	stdDevArgsForCall []struct{}
+	stdDevReturns     struct {
 		result1 float64
 	}
 	stdDevReturnsOnCall map[int]struct {
@@ -106,9 +98,8 @@ type MetricsHistogram struct {
 	}
 	SumStub        func() int64
 	sumMutex       sync.RWMutex
-	sumArgsForCall []struct {
-	}
-	sumReturns struct {
+	sumArgsForCall []struct{}
+	sumReturns     struct {
 		result1 int64
 	}
 	sumReturnsOnCall map[int]struct {
@@ -121,9 +112,8 @@ type MetricsHistogram struct {
 	}
 	VarianceStub        func() float64
 	varianceMutex       sync.RWMutex
-	varianceArgsForCall []struct {
-	}
-	varianceReturns struct {
+	varianceArgsForCall []struct{}
+	varianceReturns     struct {
 		result1 float64
 	}
 	varianceReturnsOnCall map[int]struct {
@@ -135,8 +125,7 @@ type MetricsHistogram struct {
 
 func (fake *MetricsHistogram) Clear() {
 	fake.clearMutex.Lock()
-	fake.clearArgsForCall = append(fake.clearArgsForCall, struct {
-	}{})
+	fake.clearArgsForCall = append(fake.clearArgsForCall, struct{}{})
 	fake.recordInvocation("Clear", []interface{}{})
 	fake.clearMutex.Unlock()
 	if fake.ClearStub != nil {
@@ -159,8 +148,7 @@ func (fake *MetricsHistogram) ClearCalls(stub func()) {
 func (fake *MetricsHistogram) Count() int64 {
 	fake.countMutex.Lock()
 	ret, specificReturn := fake.countReturnsOnCall[len(fake.countArgsForCall)]
-	fake.countArgsForCall = append(fake.countArgsForCall, struct {
-	}{})
+	fake.countArgsForCall = append(fake.countArgsForCall, struct{}{})
 	fake.recordInvocation("Count", []interface{}{})
 	fake.countMutex.Unlock()
 	if fake.CountStub != nil {
@@ -211,8 +199,7 @@ func (fake *MetricsHistogram) CountReturnsOnCall(i int, result1 int64) {
 func (fake *MetricsHistogram) Max() int64 {
 	fake.maxMutex.Lock()
 	ret, specificReturn := fake.maxReturnsOnCall[len(fake.maxArgsForCall)]
-	fake.maxArgsForCall = append(fake.maxArgsForCall, struct {
-	}{})
+	fake.maxArgsForCall = append(fake.maxArgsForCall, struct{}{})
 	fake.recordInvocation("Max", []interface{}{})
 	fake.maxMutex.Unlock()
 	if fake.MaxStub != nil {
@@ -263,8 +250,7 @@ func (fake *MetricsHistogram) MaxReturnsOnCall(i int, result1 int64) {
 func (fake *MetricsHistogram) Mean() float64 {
 	fake.meanMutex.Lock()
 	ret, specificReturn := fake.meanReturnsOnCall[len(fake.meanArgsForCall)]
-	fake.meanArgsForCall = append(fake.meanArgsForCall, struct {
-	}{})
+	fake.meanArgsForCall = append(fake.meanArgsForCall, struct{}{})
 	fake.recordInvocation("Mean", []interface{}{})
 	fake.meanMutex.Unlock()
 	if fake.MeanStub != nil {
@@ -315,8 +301,7 @@ func (fake *MetricsHistogram) MeanReturnsOnCall(i int, result1 float64) {
 func (fake *MetricsHistogram) Min() int64 {
 	fake.minMutex.Lock()
 	ret, specificReturn := fake.minReturnsOnCall[len(fake.minArgsForCall)]
-	fake.minArgsForCall = append(fake.minArgsForCall, struct {
-	}{})
+	fake.minArgsForCall = append(fake.minArgsForCall, struct{}{})
 	fake.recordInvocation("Min", []interface{}{})
 	fake.minMutex.Unlock()
 	if fake.MinStub != nil {
@@ -492,8 +477,7 @@ func (fake *MetricsHistogram) PercentilesReturnsOnCall(i int, result1 []float64)
 func (fake *MetricsHistogram) Sample() metrics.Sample {
 	fake.sampleMutex.Lock()
 	ret, specificReturn := fake.sampleReturnsOnCall[len(fake.sampleArgsForCall)]
-	fake.sampleArgsForCall = append(fake.sampleArgsForCall, struct {
-	}{})
+	fake.sampleArgsForCall = append(fake.sampleArgsForCall, struct{}{})
 	fake.recordInvocation("Sample", []interface{}{})
 	fake.sampleMutex.Unlock()
 	if fake.SampleStub != nil {
@@ -544,8 +528,7 @@ func (fake *MetricsHistogram) SampleReturnsOnCall(i int, result1 metrics.Sample)
 func (fake *MetricsHistogram) Snapshot() metrics.Histogram {
 	fake.snapshotMutex.Lock()
 	ret, specificReturn := fake.snapshotReturnsOnCall[len(fake.snapshotArgsForCall)]
-	fake.snapshotArgsForCall = append(fake.snapshotArgsForCall, struct {
-	}{})
+	fake.snapshotArgsForCall = append(fake.snapshotArgsForCall, struct{}{})
 	fake.recordInvocation("Snapshot", []interface{}{})
 	fake.snapshotMutex.Unlock()
 	if fake.SnapshotStub != nil {
@@ -596,8 +579,7 @@ func (fake *MetricsHistogram) SnapshotReturnsOnCall(i int, result1 metrics.Histo
 func (fake *MetricsHistogram) StdDev() float64 {
 	fake.stdDevMutex.Lock()
 	ret, specificReturn := fake.stdDevReturnsOnCall[len(fake.stdDevArgsForCall)]
-	fake.stdDevArgsForCall = append(fake.stdDevArgsForCall, struct {
-	}{})
+	fake.stdDevArgsForCall = append(fake.stdDevArgsForCall, struct{}{})
 	fake.recordInvocation("StdDev", []interface{}{})
 	fake.stdDevMutex.Unlock()
 	if fake.StdDevStub != nil {
@@ -648,8 +630,7 @@ func (fake *MetricsHistogram) StdDevReturnsOnCall(i int, result1 float64) {
 func (fake *MetricsHistogram) Sum() int64 {
 	fake.sumMutex.Lock()
 	ret, specificReturn := fake.sumReturnsOnCall[len(fake.sumArgsForCall)]
-	fake.sumArgsForCall = append(fake.sumArgsForCall, struct {
-	}{})
+	fake.sumArgsForCall = append(fake.sumArgsForCall, struct{}{})
 	fake.recordInvocation("Sum", []interface{}{})
 	fake.sumMutex.Unlock()
 	if fake.SumStub != nil {
@@ -731,8 +712,7 @@ func (fake *MetricsHistogram) UpdateArgsForCall(i int) int64 {
 func (fake *MetricsHistogram) Variance() float64 {
 	fake.varianceMutex.Lock()
 	ret, specificReturn := fake.varianceReturnsOnCall[len(fake.varianceArgsForCall)]
-	fake.varianceArgsForCall = append(fake.varianceArgsForCall, struct {
-	}{})
+	fake.varianceArgsForCall = append(fake.varianceArgsForCall, struct{}{})
 	fake.recordInvocation("Variance", []interface{}{})
 	fake.varianceMutex.Unlock()
 	if fake.VarianceStub != nil {

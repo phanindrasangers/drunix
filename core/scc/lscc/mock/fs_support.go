@@ -37,9 +37,8 @@ type FileSystemSupport struct {
 	}
 	GetChaincodesFromLocalStorageStub        func() (*peer.ChaincodeQueryResponse, error)
 	getChaincodesFromLocalStorageMutex       sync.RWMutex
-	getChaincodesFromLocalStorageArgsForCall []struct {
-	}
-	getChaincodesFromLocalStorageReturns struct {
+	getChaincodesFromLocalStorageArgsForCall []struct{}
+	getChaincodesFromLocalStorageReturns     struct {
 		result1 *peer.ChaincodeQueryResponse
 		result2 error
 	}
@@ -209,8 +208,7 @@ func (fake *FileSystemSupport) GetChaincodeFromLocalStorageReturnsOnCall(i int, 
 func (fake *FileSystemSupport) GetChaincodesFromLocalStorage() (*peer.ChaincodeQueryResponse, error) {
 	fake.getChaincodesFromLocalStorageMutex.Lock()
 	ret, specificReturn := fake.getChaincodesFromLocalStorageReturnsOnCall[len(fake.getChaincodesFromLocalStorageArgsForCall)]
-	fake.getChaincodesFromLocalStorageArgsForCall = append(fake.getChaincodesFromLocalStorageArgsForCall, struct {
-	}{})
+	fake.getChaincodesFromLocalStorageArgsForCall = append(fake.getChaincodesFromLocalStorageArgsForCall, struct{}{})
 	fake.recordInvocation("GetChaincodesFromLocalStorage", []interface{}{})
 	fake.getChaincodesFromLocalStorageMutex.Unlock()
 	if fake.GetChaincodesFromLocalStorageStub != nil {

@@ -145,7 +145,7 @@ func (opc *OrderedParallelCompiler) StartCompiling(suites TestSuites, goFlagsCon
 	for idx, suite := range suites {
 		opc.completionChannels[idx] = make(chan TestSuite, 1)
 		toCompile <- parallelSuiteBundle{suite, opc.completionChannels[idx]}
-		if idx == 0 { //compile first suite serially
+		if idx == 0 { // compile first suite serially
 			suite = <-opc.completionChannels[0]
 			opc.completionChannels[0] <- suite
 		}

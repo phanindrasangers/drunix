@@ -5,14 +5,17 @@ package rwset
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -63,15 +66,19 @@ func (*TxReadWriteSet) Descriptor() ([]byte, []int) {
 func (m *TxReadWriteSet) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TxReadWriteSet.Unmarshal(m, b)
 }
+
 func (m *TxReadWriteSet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TxReadWriteSet.Marshal(b, m, deterministic)
 }
+
 func (m *TxReadWriteSet) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_TxReadWriteSet.Merge(m, src)
 }
+
 func (m *TxReadWriteSet) XXX_Size() int {
 	return xxx_messageInfo_TxReadWriteSet.Size(m)
 }
+
 func (m *TxReadWriteSet) XXX_DiscardUnknown() {
 	xxx_messageInfo_TxReadWriteSet.DiscardUnknown(m)
 }
@@ -112,15 +119,19 @@ func (*NsReadWriteSet) Descriptor() ([]byte, []int) {
 func (m *NsReadWriteSet) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NsReadWriteSet.Unmarshal(m, b)
 }
+
 func (m *NsReadWriteSet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_NsReadWriteSet.Marshal(b, m, deterministic)
 }
+
 func (m *NsReadWriteSet) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_NsReadWriteSet.Merge(m, src)
 }
+
 func (m *NsReadWriteSet) XXX_Size() int {
 	return xxx_messageInfo_NsReadWriteSet.Size(m)
 }
+
 func (m *NsReadWriteSet) XXX_DiscardUnknown() {
 	xxx_messageInfo_NsReadWriteSet.DiscardUnknown(m)
 }
@@ -168,15 +179,19 @@ func (*CollectionHashedReadWriteSet) Descriptor() ([]byte, []int) {
 func (m *CollectionHashedReadWriteSet) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CollectionHashedReadWriteSet.Unmarshal(m, b)
 }
+
 func (m *CollectionHashedReadWriteSet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CollectionHashedReadWriteSet.Marshal(b, m, deterministic)
 }
+
 func (m *CollectionHashedReadWriteSet) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CollectionHashedReadWriteSet.Merge(m, src)
 }
+
 func (m *CollectionHashedReadWriteSet) XXX_Size() int {
 	return xxx_messageInfo_CollectionHashedReadWriteSet.Size(m)
 }
+
 func (m *CollectionHashedReadWriteSet) XXX_DiscardUnknown() {
 	xxx_messageInfo_CollectionHashedReadWriteSet.DiscardUnknown(m)
 }
@@ -223,15 +238,19 @@ func (*TxPvtReadWriteSet) Descriptor() ([]byte, []int) {
 func (m *TxPvtReadWriteSet) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TxPvtReadWriteSet.Unmarshal(m, b)
 }
+
 func (m *TxPvtReadWriteSet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TxPvtReadWriteSet.Marshal(b, m, deterministic)
 }
+
 func (m *TxPvtReadWriteSet) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_TxPvtReadWriteSet.Merge(m, src)
 }
+
 func (m *TxPvtReadWriteSet) XXX_Size() int {
 	return xxx_messageInfo_TxPvtReadWriteSet.Size(m)
 }
+
 func (m *TxPvtReadWriteSet) XXX_DiscardUnknown() {
 	xxx_messageInfo_TxPvtReadWriteSet.DiscardUnknown(m)
 }
@@ -271,15 +290,19 @@ func (*NsPvtReadWriteSet) Descriptor() ([]byte, []int) {
 func (m *NsPvtReadWriteSet) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NsPvtReadWriteSet.Unmarshal(m, b)
 }
+
 func (m *NsPvtReadWriteSet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_NsPvtReadWriteSet.Marshal(b, m, deterministic)
 }
+
 func (m *NsPvtReadWriteSet) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_NsPvtReadWriteSet.Merge(m, src)
 }
+
 func (m *NsPvtReadWriteSet) XXX_Size() int {
 	return xxx_messageInfo_NsPvtReadWriteSet.Size(m)
 }
+
 func (m *NsPvtReadWriteSet) XXX_DiscardUnknown() {
 	xxx_messageInfo_NsPvtReadWriteSet.DiscardUnknown(m)
 }
@@ -319,15 +342,19 @@ func (*CollectionPvtReadWriteSet) Descriptor() ([]byte, []int) {
 func (m *CollectionPvtReadWriteSet) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CollectionPvtReadWriteSet.Unmarshal(m, b)
 }
+
 func (m *CollectionPvtReadWriteSet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CollectionPvtReadWriteSet.Marshal(b, m, deterministic)
 }
+
 func (m *CollectionPvtReadWriteSet) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CollectionPvtReadWriteSet.Merge(m, src)
 }
+
 func (m *CollectionPvtReadWriteSet) XXX_Size() int {
 	return xxx_messageInfo_CollectionPvtReadWriteSet.Size(m)
 }
+
 func (m *CollectionPvtReadWriteSet) XXX_DiscardUnknown() {
 	xxx_messageInfo_CollectionPvtReadWriteSet.DiscardUnknown(m)
 }

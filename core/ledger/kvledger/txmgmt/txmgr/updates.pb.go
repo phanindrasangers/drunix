@@ -5,14 +5,17 @@ package txmgr
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -42,15 +45,19 @@ func (*KVWrite) Descriptor() ([]byte, []int) {
 func (m *KVWrite) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KVWrite.Unmarshal(m, b)
 }
+
 func (m *KVWrite) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KVWrite.Marshal(b, m, deterministic)
 }
+
 func (m *KVWrite) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KVWrite.Merge(m, src)
 }
+
 func (m *KVWrite) XXX_Size() int {
 	return xxx_messageInfo_KVWrite.Size(m)
 }
+
 func (m *KVWrite) XXX_DiscardUnknown() {
 	xxx_messageInfo_KVWrite.DiscardUnknown(m)
 }
@@ -116,15 +123,19 @@ func (*Updates) Descriptor() ([]byte, []int) {
 func (m *Updates) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Updates.Unmarshal(m, b)
 }
+
 func (m *Updates) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Updates.Marshal(b, m, deterministic)
 }
+
 func (m *Updates) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Updates.Merge(m, src)
 }
+
 func (m *Updates) XXX_Size() int {
 	return xxx_messageInfo_Updates.Size(m)
 }
+
 func (m *Updates) XXX_DiscardUnknown() {
 	xxx_messageInfo_Updates.DiscardUnknown(m)
 }

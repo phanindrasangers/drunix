@@ -12,8 +12,8 @@ package factory
 import (
 	"reflect"
 
-	"github.com/npci/drunix/bccsp"
 	"github.com/mitchellh/mapstructure"
+	"github.com/npci/drunix/bccsp"
 	"github.com/pkg/errors"
 )
 

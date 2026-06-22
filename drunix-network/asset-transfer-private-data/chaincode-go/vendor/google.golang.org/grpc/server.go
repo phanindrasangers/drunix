@@ -89,8 +89,10 @@ func init() {
 	}
 }
 
-var statusOK = status.New(codes.OK, "")
-var logger = grpclog.Component("core")
+var (
+	statusOK = status.New(codes.OK, "")
+	logger   = grpclog.Component("core")
+)
 
 // MethodHandler is a function type that processes a unary RPC method call.
 type MethodHandler func(srv any, ctx context.Context, dec func(any) error, interceptor UnaryServerInterceptor) (any, error)
@@ -868,7 +870,8 @@ func (s *Server) Serve(lis net.Listener) error {
 			Parent:        s.channelz,
 			RefName:       lis.Addr().String(),
 			LocalAddr:     lis.Addr(),
-			SocketOptions: channelz.GetSocketOption(lis)},
+			SocketOptions: channelz.GetSocketOption(lis),
+		},
 		),
 	}
 	s.lis[ls] = true

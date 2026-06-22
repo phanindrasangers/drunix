@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -52,7 +52,6 @@ type kvStoreBatcher struct {
 }
 
 func newKVStoreBatcher(store *Store) KVStoreBatcher {
-
 	channelBufferSize := 2000
 	if viper.IsSet("peer.endorserbatchchannelbuffer") {
 		channelBufferSize = viper.GetInt("peer.endorserbatchchannelbuffer")
@@ -76,7 +75,6 @@ func newKVStoreBatcher(store *Store) KVStoreBatcher {
 }
 
 func (kb *kvStoreBatcher) Set(key string, value map[string]string) error {
-
 	responseChan := make(chan error, 1)
 
 	kv := KeyValue{
@@ -96,7 +94,6 @@ func (kb *kvStoreBatcher) Set(key string, value map[string]string) error {
 }
 
 func (kb *kvStoreBatcher) startBatchListener() {
-
 	ticker := time.NewTicker(kb.batchInterval)
 
 	defer ticker.Stop()
@@ -121,11 +118,9 @@ func (kb *kvStoreBatcher) startBatchListener() {
 			}
 		}
 	}
-
 }
 
 func (kb *kvStoreBatcher) flushBatchToRedis(batchToFlush []KeyValue) {
-
 	// defer TimeIt("TransientStore flushBatchToRedis")()
 
 	logger.Debug("Flush TransientStore Batch Len : ", len(batchToFlush))

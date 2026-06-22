@@ -317,5 +317,4 @@ foundPartition:
 	pmatch.Replicas = replicas
 	pmatch.Isr = isr
 	pmatch.Err = err
-
 }

@@ -407,8 +407,10 @@ type framer struct {
 	errDetail error
 }
 
-var writeBufferPoolMap = make(map[int]*sync.Pool)
-var writeBufferMutex sync.Mutex
+var (
+	writeBufferPoolMap = make(map[int]*sync.Pool)
+	writeBufferMutex   sync.Mutex
+)
 
 func newFramer(conn io.ReadWriter, writeBufferSize, readBufferSize int, sharedWriteBuffer bool, maxHeaderListSize uint32, memPool mem.BufferPool) *framer {
 	if writeBufferSize < 0 {

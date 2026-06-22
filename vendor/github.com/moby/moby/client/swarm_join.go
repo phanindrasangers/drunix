@@ -17,8 +17,7 @@ type SwarmJoinOptions struct {
 }
 
 // SwarmJoinResult contains the result of joining a swarm.
-type SwarmJoinResult struct {
-	// No fields currently; placeholder for future use
+type SwarmJoinResult struct { // No fields currently; placeholder for future use
 }
 
 // SwarmJoin joins the swarm.

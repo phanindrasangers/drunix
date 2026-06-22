@@ -14,8 +14,7 @@ type CheckpointCreateOptions struct {
 }
 
 // CheckpointCreateResult holds the result from [client.CheckpointCreate].
-type CheckpointCreateResult struct {
-	// Add future fields here
+type CheckpointCreateResult struct { // Add future fields here
 }
 
 // CheckpointCreate creates a checkpoint from the given container.

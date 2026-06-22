@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -31,7 +31,6 @@ type RetrievedLtxPvtdata struct {
 }
 
 func (r *RetrievedLtxPvtdata) Purge() {
-
 	purgeStart := time.Now()
 	if r.transientStore.KVStore != nil {
 		r.PurgeKVStore()

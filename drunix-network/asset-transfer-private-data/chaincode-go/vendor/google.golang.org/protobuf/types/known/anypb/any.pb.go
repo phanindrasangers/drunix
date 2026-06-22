@@ -115,14 +115,15 @@
 package anypb
 
 import (
-	proto "google.golang.org/protobuf/proto"
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoregistry "google.golang.org/protobuf/reflect/protoregistry"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	strings "strings"
 	sync "sync"
 	unsafe "unsafe"
+
+	proto "google.golang.org/protobuf/proto"
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoregistry "google.golang.org/protobuf/reflect/protoregistry"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 // `Any` contains an arbitrary serialized protocol buffer message along with a
@@ -442,10 +443,13 @@ func file_google_protobuf_any_proto_rawDescGZIP() []byte {
 	return file_google_protobuf_any_proto_rawDescData
 }
 
-var file_google_protobuf_any_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_protobuf_any_proto_goTypes = []any{
-	(*Any)(nil), // 0: google.protobuf.Any
-}
+var (
+	file_google_protobuf_any_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+	file_google_protobuf_any_proto_goTypes  = []any{
+		(*Any)(nil), // 0: google.protobuf.Any
+	}
+)
+
 var file_google_protobuf_any_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type

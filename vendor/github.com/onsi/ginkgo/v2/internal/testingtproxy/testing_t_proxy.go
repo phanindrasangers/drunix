@@ -12,20 +12,24 @@ import (
 	"github.com/onsi/ginkgo/v2/types"
 )
 
-type failFunc func(message string, callerSkip ...int)
-type skipFunc func(message string, callerSkip ...int)
-type cleanupFunc func(args ...any)
-type reportFunc func() types.SpecReport
-type addReportEntryFunc func(names string, args ...any)
-type ginkgoWriterInterface interface {
-	io.Writer
+type (
+	failFunc              func(message string, callerSkip ...int)
+	skipFunc              func(message string, callerSkip ...int)
+	cleanupFunc           func(args ...any)
+	reportFunc            func() types.SpecReport
+	addReportEntryFunc    func(names string, args ...any)
+	ginkgoWriterInterface interface {
+		io.Writer
 
-	Print(a ...any)
-	Printf(format string, a ...any)
-	Println(a ...any)
-}
-type ginkgoRecoverFunc func()
-type attachProgressReporterFunc func(func() string) func()
+		Print(a ...any)
+		Printf(format string, a ...any)
+		Println(a ...any)
+	}
+)
+type (
+	ginkgoRecoverFunc          func()
+	attachProgressReporterFunc func(func() string) func()
+)
 
 func New(writer ginkgoWriterInterface, fail failFunc, skip skipFunc, cleanup cleanupFunc, report reportFunc, addReportEntry addReportEntryFunc, ginkgoRecover ginkgoRecoverFunc, attachProgressReporter attachProgressReporterFunc, randomSeed int64, parallelProcess int, parallelTotal int, noColor bool, offset int) *ginkgoTestingTProxy {
 	return &ginkgoTestingTProxy{
@@ -181,51 +185,66 @@ func (t *ginkgoTestingTProxy) AddReportEntryVisibilityAlways(name string, args .
 	finalArgs := []any{internal.Offset(1), types.ReportEntryVisibilityAlways}
 	t.addReportEntry(name, append(finalArgs, args...)...)
 }
+
 func (t *ginkgoTestingTProxy) AddReportEntryVisibilityFailureOrVerbose(name string, args ...any) {
 	finalArgs := []any{internal.Offset(1), types.ReportEntryVisibilityFailureOrVerbose}
 	t.addReportEntry(name, append(finalArgs, args...)...)
 }
+
 func (t *ginkgoTestingTProxy) AddReportEntryVisibilityNever(name string, args ...any) {
 	finalArgs := []any{internal.Offset(1), types.ReportEntryVisibilityNever}
 	t.addReportEntry(name, append(finalArgs, args...)...)
 }
+
 func (t *ginkgoTestingTProxy) Print(a ...any) {
 	t.writer.Print(a...)
 }
+
 func (t *ginkgoTestingTProxy) Printf(format string, a ...any) {
 	t.writer.Printf(format, a...)
 }
+
 func (t *ginkgoTestingTProxy) Println(a ...any) {
 	t.writer.Println(a...)
 }
+
 func (t *ginkgoTestingTProxy) F(format string, args ...any) string {
 	return t.f.F(format, args...)
 }
+
 func (t *ginkgoTestingTProxy) Fi(indentation uint, format string, args ...any) string {
 	return t.f.Fi(indentation, format, args...)
 }
+
 func (t *ginkgoTestingTProxy) Fiw(indentation uint, maxWidth uint, format string, args ...any) string {
 	return t.f.Fiw(indentation, maxWidth, format, args...)
 }
+
 func (t *ginkgoTestingTProxy) RenderTimeline() string {
 	return reporters.RenderTimeline(t.report(), false)
 }
+
 func (t *ginkgoTestingTProxy) GinkgoRecover() {
 	t.ginkgoRecover()
 }
+
 func (t *ginkgoTestingTProxy) DeferCleanup(args ...any) {
 	finalArgs := []any{internal.Offset(1)}
 	t.cleanup(append(finalArgs, args...)...)
 }
+
 func (t *ginkgoTestingTProxy) RandomSeed() int64 {
 	return t.randomSeed
 }
+
 func (t *ginkgoTestingTProxy) ParallelProcess() int {
 	return t.parallelProcess
 }
+
 func (t *ginkgoTestingTProxy) ParallelTotal() int {
 	return t.parallelTotal
 }
+
 func (t *ginkgoTestingTProxy) AttachProgressReporter(f func() string) func() {
 	return t.attachProgressReporter(f)
 }

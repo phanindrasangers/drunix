@@ -8,15 +8,13 @@ import (
 )
 
 type QueryResultsIterator struct {
-	CloseStub        func()
-	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
+	CloseStub                      func()
+	closeMutex                     sync.RWMutex
+	closeArgsForCall               []struct{}
 	GetBookmarkAndCloseStub        func() string
 	getBookmarkAndCloseMutex       sync.RWMutex
-	getBookmarkAndCloseArgsForCall []struct {
-	}
-	getBookmarkAndCloseReturns struct {
+	getBookmarkAndCloseArgsForCall []struct{}
+	getBookmarkAndCloseReturns     struct {
 		result1 string
 	}
 	getBookmarkAndCloseReturnsOnCall map[int]struct {
@@ -24,9 +22,8 @@ type QueryResultsIterator struct {
 	}
 	NextStub        func() (ledger.QueryResult, error)
 	nextMutex       sync.RWMutex
-	nextArgsForCall []struct {
-	}
-	nextReturns struct {
+	nextArgsForCall []struct{}
+	nextReturns     struct {
 		result1 ledger.QueryResult
 		result2 error
 	}
@@ -40,8 +37,7 @@ type QueryResultsIterator struct {
 
 func (fake *QueryResultsIterator) Close() {
 	fake.closeMutex.Lock()
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	fake.recordInvocation("Close", []interface{}{})
 	fake.closeMutex.Unlock()
 	if fake.CloseStub != nil {
@@ -64,8 +60,7 @@ func (fake *QueryResultsIterator) CloseCalls(stub func()) {
 func (fake *QueryResultsIterator) GetBookmarkAndClose() string {
 	fake.getBookmarkAndCloseMutex.Lock()
 	ret, specificReturn := fake.getBookmarkAndCloseReturnsOnCall[len(fake.getBookmarkAndCloseArgsForCall)]
-	fake.getBookmarkAndCloseArgsForCall = append(fake.getBookmarkAndCloseArgsForCall, struct {
-	}{})
+	fake.getBookmarkAndCloseArgsForCall = append(fake.getBookmarkAndCloseArgsForCall, struct{}{})
 	fake.recordInvocation("GetBookmarkAndClose", []interface{}{})
 	fake.getBookmarkAndCloseMutex.Unlock()
 	if fake.GetBookmarkAndCloseStub != nil {
@@ -116,8 +111,7 @@ func (fake *QueryResultsIterator) GetBookmarkAndCloseReturnsOnCall(i int, result
 func (fake *QueryResultsIterator) Next() (ledger.QueryResult, error) {
 	fake.nextMutex.Lock()
 	ret, specificReturn := fake.nextReturnsOnCall[len(fake.nextArgsForCall)]
-	fake.nextArgsForCall = append(fake.nextArgsForCall, struct {
-	}{})
+	fake.nextArgsForCall = append(fake.nextArgsForCall, struct{}{})
 	fake.recordInvocation("Next", []interface{}{})
 	fake.nextMutex.Unlock()
 	if fake.NextStub != nil {

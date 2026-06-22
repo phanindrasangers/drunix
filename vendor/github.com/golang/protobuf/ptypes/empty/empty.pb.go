@@ -4,10 +4,11 @@
 package empty
 
 import (
+	reflect "reflect"
+
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
-	reflect "reflect"
 )
 
 // Symbols defined in public import of google/protobuf/empty.proto.
@@ -28,14 +29,16 @@ var file_github_com_golang_protobuf_ptypes_empty_empty_proto_rawDesc = []byte{
 	0x70, 0x74, 0x79, 0x50, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
-var file_github_com_golang_protobuf_ptypes_empty_empty_proto_goTypes = []interface{}{}
-var file_github_com_golang_protobuf_ptypes_empty_empty_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
-}
+var (
+	file_github_com_golang_protobuf_ptypes_empty_empty_proto_goTypes = []interface{}{}
+	file_github_com_golang_protobuf_ptypes_empty_empty_proto_depIdxs = []int32{
+		0, // [0:0] is the sub-list for method output_type
+		0, // [0:0] is the sub-list for method input_type
+		0, // [0:0] is the sub-list for extension type_name
+		0, // [0:0] is the sub-list for extension extendee
+		0, // [0:0] is the sub-list for field type_name
+	}
+)
 
 func init() { file_github_com_golang_protobuf_ptypes_empty_empty_proto_init() }
 func file_github_com_golang_protobuf_ptypes_empty_empty_proto_init() {

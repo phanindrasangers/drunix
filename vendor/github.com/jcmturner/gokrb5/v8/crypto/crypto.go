@@ -59,7 +59,7 @@ func GetChksumEtype(id int32) (etype.EType, error) {
 	case chksumtype.KERB_CHECKSUM_HMAC_MD5:
 		var et RC4HMAC
 		return et, nil
-	//case chksumtype.KERB_CHECKSUM_HMAC_MD5_UNSIGNED:
+	// case chksumtype.KERB_CHECKSUM_HMAC_MD5_UNSIGNED:
 	//	var et RC4HMAC
 	//	return et, nil
 	default:

@@ -25,7 +25,6 @@ var mainCmd = &cobra.Command{Use: "vscc"}
 var loggingLevel string = "logging-level"
 
 func main() {
-
 	// For environment variables.
 	viper.SetEnvPrefix(common.CmdRoot)
 	viper.AutomaticEnv()

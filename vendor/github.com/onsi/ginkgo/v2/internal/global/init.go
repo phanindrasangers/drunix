@@ -4,9 +4,11 @@ import (
 	"github.com/onsi/ginkgo/v2/internal"
 )
 
-var Suite *internal.Suite
-var Failer *internal.Failer
-var backupSuite *internal.Suite
+var (
+	Suite       *internal.Suite
+	Failer      *internal.Failer
+	backupSuite *internal.Suite
+)
 
 func init() {
 	InitializeGlobals()

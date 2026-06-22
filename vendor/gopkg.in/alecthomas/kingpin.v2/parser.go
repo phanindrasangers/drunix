@@ -35,9 +35,7 @@ func (t TokenType) String() string {
 	return "?"
 }
 
-var (
-	TokenEOLMarker = Token{-1, TokenEOL, ""}
-)
+var TokenEOLMarker = Token{-1, TokenEOL, ""}
 
 type Token struct {
 	Index int

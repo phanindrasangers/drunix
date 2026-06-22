@@ -5,14 +5,17 @@ package peer
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -38,15 +41,19 @@ func (*AnchorPeers) Descriptor() ([]byte, []int) {
 func (m *AnchorPeers) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AnchorPeers.Unmarshal(m, b)
 }
+
 func (m *AnchorPeers) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AnchorPeers.Marshal(b, m, deterministic)
 }
+
 func (m *AnchorPeers) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AnchorPeers.Merge(m, src)
 }
+
 func (m *AnchorPeers) XXX_Size() int {
 	return xxx_messageInfo_AnchorPeers.Size(m)
 }
+
 func (m *AnchorPeers) XXX_DiscardUnknown() {
 	xxx_messageInfo_AnchorPeers.DiscardUnknown(m)
 }
@@ -80,15 +87,19 @@ func (*AnchorPeer) Descriptor() ([]byte, []int) {
 func (m *AnchorPeer) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AnchorPeer.Unmarshal(m, b)
 }
+
 func (m *AnchorPeer) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AnchorPeer.Marshal(b, m, deterministic)
 }
+
 func (m *AnchorPeer) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AnchorPeer.Merge(m, src)
 }
+
 func (m *AnchorPeer) XXX_Size() int {
 	return xxx_messageInfo_AnchorPeer.Size(m)
 }
+
 func (m *AnchorPeer) XXX_DiscardUnknown() {
 	xxx_messageInfo_AnchorPeer.DiscardUnknown(m)
 }
@@ -128,15 +139,19 @@ func (*APIResource) Descriptor() ([]byte, []int) {
 func (m *APIResource) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_APIResource.Unmarshal(m, b)
 }
+
 func (m *APIResource) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_APIResource.Marshal(b, m, deterministic)
 }
+
 func (m *APIResource) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_APIResource.Merge(m, src)
 }
+
 func (m *APIResource) XXX_Size() int {
 	return xxx_messageInfo_APIResource.Size(m)
 }
+
 func (m *APIResource) XXX_DiscardUnknown() {
 	xxx_messageInfo_APIResource.DiscardUnknown(m)
 }
@@ -169,15 +184,19 @@ func (*ACLs) Descriptor() ([]byte, []int) {
 func (m *ACLs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ACLs.Unmarshal(m, b)
 }
+
 func (m *ACLs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ACLs.Marshal(b, m, deterministic)
 }
+
 func (m *ACLs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ACLs.Merge(m, src)
 }
+
 func (m *ACLs) XXX_Size() int {
 	return xxx_messageInfo_ACLs.Size(m)
 }
+
 func (m *ACLs) XXX_DiscardUnknown() {
 	xxx_messageInfo_ACLs.DiscardUnknown(m)
 }

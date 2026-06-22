@@ -11,9 +11,10 @@
 package peer
 
 import (
+	reflect "reflect"
+
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
 )
 
 const (
@@ -53,6 +54,7 @@ var file_peer_peer_proto_goTypes = []any{
 	(*SignedProposal)(nil),   // 0: protos.SignedProposal
 	(*ProposalResponse)(nil), // 1: protos.ProposalResponse
 }
+
 var file_peer_peer_proto_depIdxs = []int32{
 	0, // 0: protos.Endorser.ProcessProposal:input_type -> protos.SignedProposal
 	1, // 1: protos.Endorser.ProcessProposal:output_type -> protos.ProposalResponse

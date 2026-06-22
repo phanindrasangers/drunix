@@ -99,9 +99,7 @@ const (
 	logRegexpMsg  = `(: )?(?P<msg>.*)`
 )
 
-var (
-	logRegexp = regexp.MustCompile(logRegexpDate + logRegexpTime + logRegexpFile + logRegexpMsg)
-)
+var logRegexp = regexp.MustCompile(logRegexpDate + logRegexpTime + logRegexpFile + logRegexpMsg)
 
 func subexps(line []byte) map[string]string {
 	m := logRegexp.FindSubmatch(line)

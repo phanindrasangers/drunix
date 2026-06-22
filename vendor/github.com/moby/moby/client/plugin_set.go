@@ -10,8 +10,7 @@ type PluginSetOptions struct {
 }
 
 // PluginSetResult represents the result of a plugin set operation.
-type PluginSetResult struct {
-	// Currently empty; can be extended in the future if needed.
+type PluginSetResult struct { // Currently empty; can be extended in the future if needed.
 }
 
 // PluginSet modifies settings for an existing plugin

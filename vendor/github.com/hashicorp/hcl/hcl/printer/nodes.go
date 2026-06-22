@@ -16,9 +16,7 @@ const (
 	infinity = 1 << 30 // offset or line
 )
 
-var (
-	unindent = []byte("\uE123") // in the private use space
-)
+var unindent = []byte("\uE123") // in the private use space
 
 type printer struct {
 	cfg  Config
@@ -721,10 +719,9 @@ func (p *printer) heredocIndent(buf []byte) []byte {
 //
 // A single line object:
 //
-//   * has no lead comments (hence multi-line)
-//   * has no assignment
-//   * has no values in the stanza (within {})
-//
+//   - has no lead comments (hence multi-line)
+//   - has no assignment
+//   - has no values in the stanza (within {})
 func (p *printer) isSingleLineObject(val *ast.ObjectItem) bool {
 	// If there is a lead comment, can't be one line
 	if val.LeadComment != nil {

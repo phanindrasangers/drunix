@@ -176,6 +176,7 @@ func (mi *MessageInfo) makeExtensionFieldsFunc(t reflect.Type, si structInfo) {
 		}
 	}
 }
+
 func (mi *MessageInfo) makeFieldTypes(si structInfo) {
 	md := mi.Desc
 	fds := md.Fields()
@@ -247,6 +248,7 @@ func (m *extensionMap) Range(f func(protoreflect.FieldDescriptor, protoreflect.V
 		}
 	}
 }
+
 func (m *extensionMap) Has(xd protoreflect.ExtensionTypeDescriptor) (ok bool) {
 	if m == nil {
 		return false
@@ -267,9 +269,11 @@ func (m *extensionMap) Has(xd protoreflect.ExtensionTypeDescriptor) (ok bool) {
 	}
 	return true
 }
+
 func (m *extensionMap) Clear(xd protoreflect.ExtensionTypeDescriptor) {
 	delete(*m, int32(xd.Number()))
 }
+
 func (m *extensionMap) Get(xd protoreflect.ExtensionTypeDescriptor) protoreflect.Value {
 	if m != nil {
 		if x, ok := (*m)[int32(xd.Number())]; ok {
@@ -278,6 +282,7 @@ func (m *extensionMap) Get(xd protoreflect.ExtensionTypeDescriptor) protoreflect
 	}
 	return xd.Type().Zero()
 }
+
 func (m *extensionMap) Set(xd protoreflect.ExtensionTypeDescriptor, v protoreflect.Value) {
 	xt := xd.Type()
 	isValid := true
@@ -302,6 +307,7 @@ func (m *extensionMap) Set(xd protoreflect.ExtensionTypeDescriptor, v protorefle
 	x.Set(xt, v)
 	(*m)[int32(xd.Number())] = x
 }
+
 func (m *extensionMap) Mutable(xd protoreflect.ExtensionTypeDescriptor) protoreflect.Value {
 	if xd.Kind() != protoreflect.MessageKind && xd.Kind() != protoreflect.GroupKind && !xd.IsList() && !xd.IsMap() {
 		panic("invalid Mutable on field with non-composite type")
@@ -418,9 +424,11 @@ func (m *messageIfaceWrapper) Reset() {
 		rv.Elem().Set(reflect.Zero(rv.Type().Elem()))
 	}
 }
+
 func (m *messageIfaceWrapper) ProtoReflect() protoreflect.Message {
 	return (*messageReflectWrapper)(m)
 }
+
 func (m *messageIfaceWrapper) protoUnwrap() any {
 	return m.p.AsIfaceOf(m.mi.GoReflectType.Elem())
 }

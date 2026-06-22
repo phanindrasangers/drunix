@@ -5,14 +5,17 @@ package etcdraft
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -40,15 +43,19 @@ func (*ConfigMetadata) Descriptor() ([]byte, []int) {
 func (m *ConfigMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfigMetadata.Unmarshal(m, b)
 }
+
 func (m *ConfigMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConfigMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *ConfigMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConfigMetadata.Merge(m, src)
 }
+
 func (m *ConfigMetadata) XXX_Size() int {
 	return xxx_messageInfo_ConfigMetadata.Size(m)
 }
+
 func (m *ConfigMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConfigMetadata.DiscardUnknown(m)
 }
@@ -90,15 +97,19 @@ func (*Consenter) Descriptor() ([]byte, []int) {
 func (m *Consenter) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Consenter.Unmarshal(m, b)
 }
+
 func (m *Consenter) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Consenter.Marshal(b, m, deterministic)
 }
+
 func (m *Consenter) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Consenter.Merge(m, src)
 }
+
 func (m *Consenter) XXX_Size() int {
 	return xxx_messageInfo_Consenter.Size(m)
 }
+
 func (m *Consenter) XXX_DiscardUnknown() {
 	xxx_messageInfo_Consenter.DiscardUnknown(m)
 }
@@ -157,15 +168,19 @@ func (*Options) Descriptor() ([]byte, []int) {
 func (m *Options) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Options.Unmarshal(m, b)
 }
+
 func (m *Options) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Options.Marshal(b, m, deterministic)
 }
+
 func (m *Options) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Options.Merge(m, src)
 }
+
 func (m *Options) XXX_Size() int {
 	return xxx_messageInfo_Options.Size(m)
 }
+
 func (m *Options) XXX_DiscardUnknown() {
 	xxx_messageInfo_Options.DiscardUnknown(m)
 }

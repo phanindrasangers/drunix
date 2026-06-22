@@ -16,8 +16,7 @@ type VolumeUpdateOptions struct {
 }
 
 // VolumeUpdateResult holds the result of [Client.VolumeUpdate],
-type VolumeUpdateResult struct {
-	// Add future fields here.
+type VolumeUpdateResult struct { // Add future fields here.
 }
 
 // VolumeUpdate updates a volume. This only works for Cluster Volumes, and

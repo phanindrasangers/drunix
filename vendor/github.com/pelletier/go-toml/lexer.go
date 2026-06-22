@@ -347,7 +347,6 @@ func (l *tomlLexer) lexDateTime() tomlLexStateFn {
 	r = l.peek()
 
 	if r == eof {
-
 		return l.lexRvalue
 	}
 
@@ -422,7 +421,6 @@ func (l *tomlLexer) lexDateTime() tomlLexStateFn {
 	l.emit(tokenLocalTime)
 
 	return l.lexTimeOffset
-
 }
 
 func (l *tomlLexer) lexTimeOffset() tomlLexStateFn {
@@ -509,7 +507,6 @@ func (l *tomlLexer) lexTime() tomlLexStateFn {
 
 	l.emit(tokenLocalTime)
 	return l.lexRvalue
-
 }
 
 func (l *tomlLexer) lexTrue() tomlLexStateFn {

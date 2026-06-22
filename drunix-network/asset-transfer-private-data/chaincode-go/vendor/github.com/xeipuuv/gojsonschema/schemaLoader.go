@@ -31,7 +31,6 @@ type SchemaLoader struct {
 
 // NewSchemaLoader creates a new NewSchemaLoader
 func NewSchemaLoader() *SchemaLoader {
-
 	ps := &SchemaLoader{
 		pool: &schemaPool{
 			schemaPoolDocuments: make(map[string]*schemaPoolDocument),
@@ -46,7 +45,6 @@ func NewSchemaLoader() *SchemaLoader {
 }
 
 func (sl *SchemaLoader) validateMetaschema(documentNode interface{}) error {
-
 	var (
 		schema string
 		err    error
@@ -66,11 +64,10 @@ func (sl *SchemaLoader) validateMetaschema(documentNode interface{}) error {
 		schema = drafts.GetSchemaURL(sl.Draft)
 	}
 
-	//Disable validation when loading the metaschema to prevent an infinite recursive loop
+	// Disable validation when loading the metaschema to prevent an infinite recursive loop
 	sl.Validate = false
 
 	metaSchema, err := sl.Compile(NewReferenceLoader(schema))
-
 	if err != nil {
 		return err
 	}
@@ -98,7 +95,6 @@ func (sl *SchemaLoader) AddSchemas(loaders ...JSONLoader) error {
 
 	for _, loader := range loaders {
 		doc, err := loader.LoadJSON()
-
 		if err != nil {
 			return err
 		}
@@ -119,17 +115,14 @@ func (sl *SchemaLoader) AddSchemas(loaders ...JSONLoader) error {
 	return nil
 }
 
-//AddSchema adds a schema under the provided URL to the schema cache
+// AddSchema adds a schema under the provided URL to the schema cache
 func (sl *SchemaLoader) AddSchema(url string, loader JSONLoader) error {
-
 	ref, err := gojsonreference.NewJsonReference(url)
-
 	if err != nil {
 		return err
 	}
 
 	doc, err := loader.LoadJSON()
-
 	if err != nil {
 		return err
 	}
@@ -145,9 +138,7 @@ func (sl *SchemaLoader) AddSchema(url string, loader JSONLoader) error {
 
 // Compile loads and compiles a schema
 func (sl *SchemaLoader) Compile(rootSchema JSONLoader) (*Schema, error) {
-
 	ref, err := rootSchema.JsonReference()
-
 	if err != nil {
 		return nil, err
 	}

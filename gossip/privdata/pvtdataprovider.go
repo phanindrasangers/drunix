@@ -58,7 +58,6 @@ func (r *RetrievedPvtdata) GetBlockPvtdata() *ledger.BlockPvtdata {
 // Purge purges private data for transactions in the block from the transient store.
 // Transactions older than the retention period are considered orphaned and also purged.
 func (r *RetrievedPvtdata) Purge() {
-
 	purgeStart := time.Now()
 	if r.transientStore.KVStore != nil {
 		r.PurgeKVStore()

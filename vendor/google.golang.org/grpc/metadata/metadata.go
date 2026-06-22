@@ -156,8 +156,10 @@ func Join(mds ...MD) MD {
 	return out
 }
 
-type mdIncomingKey struct{}
-type mdOutgoingKey struct{}
+type (
+	mdIncomingKey struct{}
+	mdOutgoingKey struct{}
+)
 
 // NewIncomingContext creates a new context with incoming md attached. md must
 // not be modified after calling this function.

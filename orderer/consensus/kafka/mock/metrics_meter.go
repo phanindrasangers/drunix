@@ -10,9 +10,8 @@ import (
 type MetricsMeter struct {
 	CountStub        func() int64
 	countMutex       sync.RWMutex
-	countArgsForCall []struct {
-	}
-	countReturns struct {
+	countArgsForCall []struct{}
+	countReturns     struct {
 		result1 int64
 	}
 	countReturnsOnCall map[int]struct {
@@ -25,9 +24,8 @@ type MetricsMeter struct {
 	}
 	Rate1Stub        func() float64
 	rate1Mutex       sync.RWMutex
-	rate1ArgsForCall []struct {
-	}
-	rate1Returns struct {
+	rate1ArgsForCall []struct{}
+	rate1Returns     struct {
 		result1 float64
 	}
 	rate1ReturnsOnCall map[int]struct {
@@ -35,9 +33,8 @@ type MetricsMeter struct {
 	}
 	Rate15Stub        func() float64
 	rate15Mutex       sync.RWMutex
-	rate15ArgsForCall []struct {
-	}
-	rate15Returns struct {
+	rate15ArgsForCall []struct{}
+	rate15Returns     struct {
 		result1 float64
 	}
 	rate15ReturnsOnCall map[int]struct {
@@ -45,9 +42,8 @@ type MetricsMeter struct {
 	}
 	Rate5Stub        func() float64
 	rate5Mutex       sync.RWMutex
-	rate5ArgsForCall []struct {
-	}
-	rate5Returns struct {
+	rate5ArgsForCall []struct{}
+	rate5Returns     struct {
 		result1 float64
 	}
 	rate5ReturnsOnCall map[int]struct {
@@ -55,9 +51,8 @@ type MetricsMeter struct {
 	}
 	RateMeanStub        func() float64
 	rateMeanMutex       sync.RWMutex
-	rateMeanArgsForCall []struct {
-	}
-	rateMeanReturns struct {
+	rateMeanArgsForCall []struct{}
+	rateMeanReturns     struct {
 		result1 float64
 	}
 	rateMeanReturnsOnCall map[int]struct {
@@ -65,18 +60,16 @@ type MetricsMeter struct {
 	}
 	SnapshotStub        func() metrics.Meter
 	snapshotMutex       sync.RWMutex
-	snapshotArgsForCall []struct {
-	}
-	snapshotReturns struct {
+	snapshotArgsForCall []struct{}
+	snapshotReturns     struct {
 		result1 metrics.Meter
 	}
 	snapshotReturnsOnCall map[int]struct {
 		result1 metrics.Meter
 	}
-	StopStub        func()
-	stopMutex       sync.RWMutex
-	stopArgsForCall []struct {
-	}
+	StopStub         func()
+	stopMutex        sync.RWMutex
+	stopArgsForCall  []struct{}
 	invocations      map[string][][]interface{}
 	invocationsMutex sync.RWMutex
 }
@@ -84,8 +77,7 @@ type MetricsMeter struct {
 func (fake *MetricsMeter) Count() int64 {
 	fake.countMutex.Lock()
 	ret, specificReturn := fake.countReturnsOnCall[len(fake.countArgsForCall)]
-	fake.countArgsForCall = append(fake.countArgsForCall, struct {
-	}{})
+	fake.countArgsForCall = append(fake.countArgsForCall, struct{}{})
 	fake.recordInvocation("Count", []interface{}{})
 	fake.countMutex.Unlock()
 	if fake.CountStub != nil {
@@ -167,8 +159,7 @@ func (fake *MetricsMeter) MarkArgsForCall(i int) int64 {
 func (fake *MetricsMeter) Rate1() float64 {
 	fake.rate1Mutex.Lock()
 	ret, specificReturn := fake.rate1ReturnsOnCall[len(fake.rate1ArgsForCall)]
-	fake.rate1ArgsForCall = append(fake.rate1ArgsForCall, struct {
-	}{})
+	fake.rate1ArgsForCall = append(fake.rate1ArgsForCall, struct{}{})
 	fake.recordInvocation("Rate1", []interface{}{})
 	fake.rate1Mutex.Unlock()
 	if fake.Rate1Stub != nil {
@@ -219,8 +210,7 @@ func (fake *MetricsMeter) Rate1ReturnsOnCall(i int, result1 float64) {
 func (fake *MetricsMeter) Rate15() float64 {
 	fake.rate15Mutex.Lock()
 	ret, specificReturn := fake.rate15ReturnsOnCall[len(fake.rate15ArgsForCall)]
-	fake.rate15ArgsForCall = append(fake.rate15ArgsForCall, struct {
-	}{})
+	fake.rate15ArgsForCall = append(fake.rate15ArgsForCall, struct{}{})
 	fake.recordInvocation("Rate15", []interface{}{})
 	fake.rate15Mutex.Unlock()
 	if fake.Rate15Stub != nil {
@@ -271,8 +261,7 @@ func (fake *MetricsMeter) Rate15ReturnsOnCall(i int, result1 float64) {
 func (fake *MetricsMeter) Rate5() float64 {
 	fake.rate5Mutex.Lock()
 	ret, specificReturn := fake.rate5ReturnsOnCall[len(fake.rate5ArgsForCall)]
-	fake.rate5ArgsForCall = append(fake.rate5ArgsForCall, struct {
-	}{})
+	fake.rate5ArgsForCall = append(fake.rate5ArgsForCall, struct{}{})
 	fake.recordInvocation("Rate5", []interface{}{})
 	fake.rate5Mutex.Unlock()
 	if fake.Rate5Stub != nil {
@@ -323,8 +312,7 @@ func (fake *MetricsMeter) Rate5ReturnsOnCall(i int, result1 float64) {
 func (fake *MetricsMeter) RateMean() float64 {
 	fake.rateMeanMutex.Lock()
 	ret, specificReturn := fake.rateMeanReturnsOnCall[len(fake.rateMeanArgsForCall)]
-	fake.rateMeanArgsForCall = append(fake.rateMeanArgsForCall, struct {
-	}{})
+	fake.rateMeanArgsForCall = append(fake.rateMeanArgsForCall, struct{}{})
 	fake.recordInvocation("RateMean", []interface{}{})
 	fake.rateMeanMutex.Unlock()
 	if fake.RateMeanStub != nil {
@@ -375,8 +363,7 @@ func (fake *MetricsMeter) RateMeanReturnsOnCall(i int, result1 float64) {
 func (fake *MetricsMeter) Snapshot() metrics.Meter {
 	fake.snapshotMutex.Lock()
 	ret, specificReturn := fake.snapshotReturnsOnCall[len(fake.snapshotArgsForCall)]
-	fake.snapshotArgsForCall = append(fake.snapshotArgsForCall, struct {
-	}{})
+	fake.snapshotArgsForCall = append(fake.snapshotArgsForCall, struct{}{})
 	fake.recordInvocation("Snapshot", []interface{}{})
 	fake.snapshotMutex.Unlock()
 	if fake.SnapshotStub != nil {
@@ -426,8 +413,7 @@ func (fake *MetricsMeter) SnapshotReturnsOnCall(i int, result1 metrics.Meter) {
 
 func (fake *MetricsMeter) Stop() {
 	fake.stopMutex.Lock()
-	fake.stopArgsForCall = append(fake.stopArgsForCall, struct {
-	}{})
+	fake.stopArgsForCall = append(fake.stopArgsForCall, struct{}{})
 	fake.recordInvocation("Stop", []interface{}{})
 	fake.stopMutex.Unlock()
 	if fake.StopStub != nil {

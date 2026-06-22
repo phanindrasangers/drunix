@@ -12,6 +12,7 @@ package peer
 
 import (
 	context "context"
+
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -101,9 +102,11 @@ type UnimplementedSnapshotServer struct{}
 func (UnimplementedSnapshotServer) Generate(context.Context, *SignedSnapshotRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Generate not implemented")
 }
+
 func (UnimplementedSnapshotServer) Cancel(context.Context, *SignedSnapshotRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Cancel not implemented")
 }
+
 func (UnimplementedSnapshotServer) QueryPendings(context.Context, *SignedSnapshotRequest) (*QueryPendingSnapshotsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method QueryPendings not implemented")
 }

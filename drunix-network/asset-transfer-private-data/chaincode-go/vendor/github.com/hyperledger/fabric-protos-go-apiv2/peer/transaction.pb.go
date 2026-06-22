@@ -11,11 +11,12 @@
 package peer
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	common "github.com/hyperledger/fabric-protos-go-apiv2/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -626,19 +627,22 @@ func file_peer_transaction_proto_rawDescGZIP() []byte {
 	return file_peer_transaction_proto_rawDescData
 }
 
-var file_peer_transaction_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_peer_transaction_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_peer_transaction_proto_goTypes = []any{
-	(TxValidationCode)(0),           // 0: protos.TxValidationCode
-	(MetaDataKeys)(0),               // 1: protos.MetaDataKeys
-	(*ProcessedTransaction)(nil),    // 2: protos.ProcessedTransaction
-	(*Transaction)(nil),             // 3: protos.Transaction
-	(*TransactionAction)(nil),       // 4: protos.TransactionAction
-	(*ChaincodeActionPayload)(nil),  // 5: protos.ChaincodeActionPayload
-	(*ChaincodeEndorsedAction)(nil), // 6: protos.ChaincodeEndorsedAction
-	(*common.Envelope)(nil),         // 7: common.Envelope
-	(*Endorsement)(nil),             // 8: protos.Endorsement
-}
+var (
+	file_peer_transaction_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+	file_peer_transaction_proto_msgTypes  = make([]protoimpl.MessageInfo, 5)
+	file_peer_transaction_proto_goTypes   = []any{
+		(TxValidationCode)(0),           // 0: protos.TxValidationCode
+		(MetaDataKeys)(0),               // 1: protos.MetaDataKeys
+		(*ProcessedTransaction)(nil),    // 2: protos.ProcessedTransaction
+		(*Transaction)(nil),             // 3: protos.Transaction
+		(*TransactionAction)(nil),       // 4: protos.TransactionAction
+		(*ChaincodeActionPayload)(nil),  // 5: protos.ChaincodeActionPayload
+		(*ChaincodeEndorsedAction)(nil), // 6: protos.ChaincodeEndorsedAction
+		(*common.Envelope)(nil),         // 7: common.Envelope
+		(*Endorsement)(nil),             // 8: protos.Endorsement
+	}
+)
+
 var file_peer_transaction_proto_depIdxs = []int32{
 	7, // 0: protos.ProcessedTransaction.transactionEnvelope:type_name -> common.Envelope
 	4, // 1: protos.Transaction.actions:type_name -> protos.TransactionAction

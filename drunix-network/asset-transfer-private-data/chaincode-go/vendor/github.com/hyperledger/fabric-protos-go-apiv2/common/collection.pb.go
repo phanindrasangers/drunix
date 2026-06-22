@@ -11,10 +11,11 @@
 package common
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -431,15 +432,18 @@ func file_common_collection_proto_rawDescGZIP() []byte {
 	return file_common_collection_proto_rawDescData
 }
 
-var file_common_collection_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_common_collection_proto_goTypes = []any{
-	(*CollectionConfigPackage)(nil), // 0: common.CollectionConfigPackage
-	(*CollectionConfig)(nil),        // 1: common.CollectionConfig
-	(*StaticCollectionConfig)(nil),  // 2: common.StaticCollectionConfig
-	(*CollectionPolicyConfig)(nil),  // 3: common.CollectionPolicyConfig
-	(*ApplicationPolicy)(nil),       // 4: common.ApplicationPolicy
-	(*SignaturePolicyEnvelope)(nil), // 5: common.SignaturePolicyEnvelope
-}
+var (
+	file_common_collection_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+	file_common_collection_proto_goTypes  = []any{
+		(*CollectionConfigPackage)(nil), // 0: common.CollectionConfigPackage
+		(*CollectionConfig)(nil),        // 1: common.CollectionConfig
+		(*StaticCollectionConfig)(nil),  // 2: common.StaticCollectionConfig
+		(*CollectionPolicyConfig)(nil),  // 3: common.CollectionPolicyConfig
+		(*ApplicationPolicy)(nil),       // 4: common.ApplicationPolicy
+		(*SignaturePolicyEnvelope)(nil), // 5: common.SignaturePolicyEnvelope
+	}
+)
+
 var file_common_collection_proto_depIdxs = []int32{
 	1, // 0: common.CollectionConfigPackage.config:type_name -> common.CollectionConfig
 	2, // 1: common.CollectionConfig.static_collection_config:type_name -> common.StaticCollectionConfig

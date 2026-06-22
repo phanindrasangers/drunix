@@ -251,7 +251,6 @@ func lexComment(l *lexer) stateFn {
 	l.pos += Pos(i + len(rightComment))
 	if !strings.HasPrefix(l.input[l.pos:], l.rightDelim) {
 		return l.errorf("comment ends before closing delimiter")
-
 	}
 	l.pos += Pos(len(l.rightDelim))
 	l.ignore()

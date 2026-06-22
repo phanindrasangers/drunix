@@ -11,8 +11,7 @@ type PluginRemoveOptions struct {
 }
 
 // PluginRemoveResult represents the result of a plugin removal.
-type PluginRemoveResult struct {
-	// Currently empty; can be extended in the future if needed.
+type PluginRemoveResult struct { // Currently empty; can be extended in the future if needed.
 }
 
 // PluginRemove removes a plugin

@@ -2015,7 +2015,6 @@ func (cs *clientStream) awaitFlowControl(maxBytes int) (taken int32, err error) 
 		if a := cs.flow.available(); a > 0 {
 			take := a
 			if int(take) > maxBytes {
-
 				take = int32(maxBytes) // can't truncate int; take is int32
 			}
 			if take > int32(cc.maxFrameSize) {

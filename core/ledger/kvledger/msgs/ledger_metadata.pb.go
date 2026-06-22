@@ -5,14 +5,17 @@ package msgs
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -71,15 +74,19 @@ func (*BootSnapshotMetadata) Descriptor() ([]byte, []int) {
 func (m *BootSnapshotMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BootSnapshotMetadata.Unmarshal(m, b)
 }
+
 func (m *BootSnapshotMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BootSnapshotMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *BootSnapshotMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BootSnapshotMetadata.Merge(m, src)
 }
+
 func (m *BootSnapshotMetadata) XXX_Size() int {
 	return xxx_messageInfo_BootSnapshotMetadata.Size(m)
 }
+
 func (m *BootSnapshotMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_BootSnapshotMetadata.DiscardUnknown(m)
 }
@@ -119,15 +126,19 @@ func (*LedgerMetadata) Descriptor() ([]byte, []int) {
 func (m *LedgerMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LedgerMetadata.Unmarshal(m, b)
 }
+
 func (m *LedgerMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_LedgerMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *LedgerMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_LedgerMetadata.Merge(m, src)
 }
+
 func (m *LedgerMetadata) XXX_Size() int {
 	return xxx_messageInfo_LedgerMetadata.Size(m)
 }
+
 func (m *LedgerMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_LedgerMetadata.DiscardUnknown(m)
 }

@@ -25,8 +25,7 @@ type ContainerRestartOptions struct {
 }
 
 // ContainerRestartResult holds the result of [Client.ContainerRestart],
-type ContainerRestartResult struct {
-	// Add future fields here.
+type ContainerRestartResult struct { // Add future fields here.
 }
 
 // ContainerRestart stops, and starts a container again.

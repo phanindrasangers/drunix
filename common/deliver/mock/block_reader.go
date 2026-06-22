@@ -12,9 +12,8 @@ import (
 type BlockReader struct {
 	HeightStub        func() uint64
 	heightMutex       sync.RWMutex
-	heightArgsForCall []struct {
-	}
-	heightReturns struct {
+	heightArgsForCall []struct{}
+	heightReturns     struct {
 		result1 uint64
 	}
 	heightReturnsOnCall map[int]struct {
@@ -53,8 +52,7 @@ type BlockReader struct {
 func (fake *BlockReader) Height() uint64 {
 	fake.heightMutex.Lock()
 	ret, specificReturn := fake.heightReturnsOnCall[len(fake.heightArgsForCall)]
-	fake.heightArgsForCall = append(fake.heightArgsForCall, struct {
-	}{})
+	fake.heightArgsForCall = append(fake.heightArgsForCall, struct{}{})
 	stub := fake.HeightStub
 	fakeReturns := fake.heightReturns
 	fake.recordInvocation("Height", []interface{}{})

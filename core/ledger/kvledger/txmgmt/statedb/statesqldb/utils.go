@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -46,6 +46,7 @@ type Cache interface {
 	Load(key statedb.CompositeKey) (*version.Height, bool)
 	Clear()
 }
+
 type cache struct {
 	mutex sync.RWMutex
 	data  map[statedb.CompositeKey]*version.Height

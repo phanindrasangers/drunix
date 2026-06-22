@@ -11,9 +11,8 @@ import (
 type OrdererConnectionSource struct {
 	RandomEndpointStub        func() (*orderers.Endpoint, error)
 	randomEndpointMutex       sync.RWMutex
-	randomEndpointArgsForCall []struct {
-	}
-	randomEndpointReturns struct {
+	randomEndpointArgsForCall []struct{}
+	randomEndpointReturns     struct {
 		result1 *orderers.Endpoint
 		result2 error
 	}
@@ -28,8 +27,7 @@ type OrdererConnectionSource struct {
 func (fake *OrdererConnectionSource) RandomEndpoint() (*orderers.Endpoint, error) {
 	fake.randomEndpointMutex.Lock()
 	ret, specificReturn := fake.randomEndpointReturnsOnCall[len(fake.randomEndpointArgsForCall)]
-	fake.randomEndpointArgsForCall = append(fake.randomEndpointArgsForCall, struct {
-	}{})
+	fake.randomEndpointArgsForCall = append(fake.randomEndpointArgsForCall, struct{}{})
 	fake.recordInvocation("RandomEndpoint", []interface{}{})
 	fake.randomEndpointMutex.Unlock()
 	if fake.RandomEndpointStub != nil {

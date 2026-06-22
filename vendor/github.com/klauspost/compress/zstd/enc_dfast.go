@@ -13,7 +13,7 @@ const (
 	dFastLongLen       = 8                       // Bytes used for table hash
 
 	dLongTableShardCnt  = 1 << (dFastLongTableBits - dictShardBits) // Number of shards in the table
-	dLongTableShardSize = dFastLongTableSize / tableShardCnt        // Size of an individual shard
+	dLongTableShardSize = dFastLongTableSize / dLongTableShardCnt   // Size of an individual shard
 
 	dFastShortTableBits = tableBits                // Bits used in the short match table
 	dFastShortTableSize = 1 << dFastShortTableBits // Size of the table
@@ -149,10 +149,7 @@ encodeLoop:
 					// and have to do special offset treatment.
 					startLimit := nextEmit + 1
 
-					tMin := s - e.maxMatchOff
-					if tMin < 0 {
-						tMin = 0
-					}
+					tMin := max(s-e.maxMatchOff, 0)
 					for repIndex > tMin && start > startLimit && src[repIndex-1] == src[start-1] && seq.matchLen < maxMatchLength-zstdMinMatch-1 {
 						repIndex--
 						start--
@@ -171,7 +168,6 @@ encodeLoop:
 					if s >= sLimit {
 						if debugEncoder {
 							println("repeat ended", s, length)
-
 						}
 						break encodeLoop
 					}
@@ -266,10 +262,7 @@ encodeLoop:
 		l := e.matchlen(s+4, t+4, src) + 4
 
 		// Extend backwards
-		tMin := s - e.maxMatchOff
-		if tMin < 0 {
-			tMin = 0
-		}
+		tMin := max(s-e.maxMatchOff, 0)
 		for t > tMin && s > nextEmit && src[t-1] == src[s-1] && l < maxMatchLength {
 			s--
 			t--
@@ -450,7 +443,7 @@ encodeLoop:
 				if load3232(src, repIndex) == uint32(cv>>(repOff*8)) {
 					// Consider history as well.
 					var seq seq
-					//length := 4 + e.matchlen(s+4+repOff, repIndex+4, src)
+					// length := 4 + e.matchlen(s+4+repOff, repIndex+4, src)
 					length := 4 + int32(matchLen(src[s+4+repOff:], src[repIndex+4:]))
 
 					seq.matchLen = uint32(length - zstdMinMatch)
@@ -462,10 +455,7 @@ encodeLoop:
 					// and have to do special offset treatment.
 					startLimit := nextEmit + 1
 
-					tMin := s - e.maxMatchOff
-					if tMin < 0 {
-						tMin = 0
-					}
+					tMin := max(s-e.maxMatchOff, 0)
 					for repIndex > tMin && start > startLimit && src[repIndex-1] == src[start-1] {
 						repIndex--
 						start--
@@ -484,7 +474,6 @@ encodeLoop:
 					if s >= sLimit {
 						if debugEncoder {
 							println("repeat ended", s, length)
-
 						}
 						break encodeLoop
 					}
@@ -572,14 +561,11 @@ encodeLoop:
 		}
 
 		// Extend the 4-byte match as long as possible.
-		//l := e.matchlen(s+4, t+4, src) + 4
+		// l := e.matchlen(s+4, t+4, src) + 4
 		l := int32(matchLen(src[s+4:], src[t+4:])) + 4
 
 		// Extend backwards
-		tMin := s - e.maxMatchOff
-		if tMin < 0 {
-			tMin = 0
-		}
+		tMin := max(s-e.maxMatchOff, 0)
 		for t > tMin && s > nextEmit && src[t-1] == src[s-1] {
 			s--
 			t--
@@ -644,7 +630,7 @@ encodeLoop:
 
 			// We have at least 4 byte match.
 			// No need to check backwards. We come straight from a match
-			//l := 4 + e.matchlen(s+4, o2+4, src)
+			// l := 4 + e.matchlen(s+4, o2+4, src)
 			l := 4 + int32(matchLen(src[s+4:], src[o2+4:]))
 
 			entry := tableEntry{offset: s + e.cur, val: uint32(cv)}
@@ -809,10 +795,7 @@ encodeLoop:
 					// and have to do special offset treatment.
 					startLimit := nextEmit + 1
 
-					tMin := s - e.maxMatchOff
-					if tMin < 0 {
-						tMin = 0
-					}
+					tMin := max(s-e.maxMatchOff, 0)
 					for repIndex > tMin && start > startLimit && src[repIndex-1] == src[start-1] && seq.matchLen < maxMatchLength-zstdMinMatch-1 {
 						repIndex--
 						start--
@@ -831,7 +814,6 @@ encodeLoop:
 					if s >= sLimit {
 						if debugEncoder {
 							println("repeat ended", s, length)
-
 						}
 						break encodeLoop
 					}
@@ -927,10 +909,7 @@ encodeLoop:
 		l := e.matchlen(s+4, t+4, src) + 4
 
 		// Extend backwards
-		tMin := s - e.maxMatchOff
-		if tMin < 0 {
-			tMin = 0
-		}
+		tMin := max(s-e.maxMatchOff, 0)
 		for t > tMin && s > nextEmit && src[t-1] == src[s-1] && l < maxMatchLength {
 			s--
 			t--
@@ -1099,7 +1078,7 @@ func (e *doubleFastEncoderDict) Reset(d *dict, singleBlock bool) {
 	}
 
 	if allDirty || dirtyShardCnt > dLongTableShardCnt/2 {
-		//copy(e.longTable[:], e.dictLongTable)
+		// copy(e.longTable[:], e.dictLongTable)
 		e.longTable = *(*[dFastLongTableSize]tableEntry)(e.dictLongTable)
 		for i := range e.longTableShardDirty {
 			e.longTableShardDirty[i] = false

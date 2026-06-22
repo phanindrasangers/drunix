@@ -152,6 +152,5 @@ type TmpfsOptions struct {
 }
 
 // ClusterOptions specifies options for a Cluster volume.
-type ClusterOptions struct {
-	// intentionally empty
+type ClusterOptions struct { // intentionally empty
 }

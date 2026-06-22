@@ -1,3 +1,4 @@
+//go:build windows
 // +build windows
 
 package pb
@@ -97,8 +98,10 @@ func setCursorPos(pos coordinates) error {
 
 var ErrPoolWasStarted = errors.New("Bar pool was started")
 
-var echoLocked bool
-var echoLockMutex sync.Mutex
+var (
+	echoLocked    bool
+	echoLockMutex sync.Mutex
+)
 
 var oldState word
 

@@ -3,9 +3,10 @@ package postgres
 import (
 	"database/sql"
 	"fmt"
-	"github.com/jackc/pgx/v5"
 	"regexp"
 	"strings"
+
+	"github.com/jackc/pgx/v5"
 
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
@@ -413,7 +414,6 @@ func (m Migrator) AlterColumn(value interface{}, field string) error {
 		}
 		return fmt.Errorf("failed to look up field with name: %s", field)
 	})
-
 	if err != nil {
 		return err
 	}
@@ -648,7 +648,6 @@ func (m Migrator) CurrentSchema(stmt *gorm.Statement, table string) (interface{}
 
 func (m Migrator) CreateSequence(tx *gorm.DB, stmt *gorm.Statement, field *schema.Field,
 	serialDatabaseType string) (err error) {
-
 	_, table := m.CurrentSchema(stmt, stmt.Table)
 	tableName := table.(string)
 
@@ -672,7 +671,6 @@ func (m Migrator) CreateSequence(tx *gorm.DB, stmt *gorm.Statement, field *schem
 
 func (m Migrator) UpdateSequence(tx *gorm.DB, stmt *gorm.Statement, field *schema.Field,
 	serialDatabaseType string) (err error) {
-
 	sequenceName, err := m.getColumnSequenceName(tx, stmt, field)
 	if err != nil {
 		return err
@@ -691,7 +689,6 @@ func (m Migrator) UpdateSequence(tx *gorm.DB, stmt *gorm.Statement, field *schem
 
 func (m Migrator) DeleteSequence(tx *gorm.DB, stmt *gorm.Statement, field *schema.Field,
 	fileType clause.Expr) (err error) {
-
 	sequenceName, err := m.getColumnSequenceName(tx, stmt, field)
 	if err != nil {
 		return err

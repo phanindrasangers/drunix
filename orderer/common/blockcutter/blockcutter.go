@@ -140,7 +140,6 @@ func (r *receiver) OrderedBatch(req *orderer.SubmitRequest) (messageBatches []*o
 	}
 
 	return
-
 }
 
 // NewReceiverImpl creates a Receiver implementation based on the given configtxorderer manager

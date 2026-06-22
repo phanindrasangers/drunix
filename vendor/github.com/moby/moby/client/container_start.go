@@ -12,8 +12,7 @@ type ContainerStartOptions struct {
 }
 
 // ContainerStartResult holds the result of [Client.ContainerStart],
-type ContainerStartResult struct {
-	// Add future fields here.
+type ContainerStartResult struct { // Add future fields here.
 }
 
 // ContainerStart sends a request to the docker daemon to start a container.

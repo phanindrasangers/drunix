@@ -3,13 +3,11 @@ package client
 import "context"
 
 // ContainerUnpauseOptions holds options for [Client.ContainerUnpause].
-type ContainerUnpauseOptions struct {
-	// Add future optional parameters here.
+type ContainerUnpauseOptions struct { // Add future optional parameters here.
 }
 
 // ContainerUnpauseResult holds the result of [Client.ContainerUnpause],
-type ContainerUnpauseResult struct {
-	// Add future fields here.
+type ContainerUnpauseResult struct { // Add future fields here.
 }
 
 // ContainerUnpause resumes the process execution within a container.

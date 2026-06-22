@@ -6,18 +6,21 @@ package peer
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -140,15 +143,19 @@ func (*ChaincodeMessage) Descriptor() ([]byte, []int) {
 func (m *ChaincodeMessage) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeMessage.Unmarshal(m, b)
 }
+
 func (m *ChaincodeMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeMessage.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeMessage) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeMessage.Merge(m, src)
 }
+
 func (m *ChaincodeMessage) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeMessage.Size(m)
 }
+
 func (m *ChaincodeMessage) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeMessage.DiscardUnknown(m)
 }
@@ -225,15 +232,19 @@ func (*GetState) Descriptor() ([]byte, []int) {
 func (m *GetState) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetState.Unmarshal(m, b)
 }
+
 func (m *GetState) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetState.Marshal(b, m, deterministic)
 }
+
 func (m *GetState) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetState.Merge(m, src)
 }
+
 func (m *GetState) XXX_Size() int {
 	return xxx_messageInfo_GetState.Size(m)
 }
+
 func (m *GetState) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetState.DiscardUnknown(m)
 }
@@ -272,15 +283,19 @@ func (*GetStateMetadata) Descriptor() ([]byte, []int) {
 func (m *GetStateMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetStateMetadata.Unmarshal(m, b)
 }
+
 func (m *GetStateMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetStateMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *GetStateMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetStateMetadata.Merge(m, src)
 }
+
 func (m *GetStateMetadata) XXX_Size() int {
 	return xxx_messageInfo_GetStateMetadata.Size(m)
 }
+
 func (m *GetStateMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetStateMetadata.DiscardUnknown(m)
 }
@@ -324,15 +339,19 @@ func (*PutState) Descriptor() ([]byte, []int) {
 func (m *PutState) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PutState.Unmarshal(m, b)
 }
+
 func (m *PutState) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PutState.Marshal(b, m, deterministic)
 }
+
 func (m *PutState) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PutState.Merge(m, src)
 }
+
 func (m *PutState) XXX_Size() int {
 	return xxx_messageInfo_PutState.Size(m)
 }
+
 func (m *PutState) XXX_DiscardUnknown() {
 	xxx_messageInfo_PutState.DiscardUnknown(m)
 }
@@ -379,15 +398,19 @@ func (*PutStateMetadata) Descriptor() ([]byte, []int) {
 func (m *PutStateMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PutStateMetadata.Unmarshal(m, b)
 }
+
 func (m *PutStateMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PutStateMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *PutStateMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PutStateMetadata.Merge(m, src)
 }
+
 func (m *PutStateMetadata) XXX_Size() int {
 	return xxx_messageInfo_PutStateMetadata.Size(m)
 }
+
 func (m *PutStateMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_PutStateMetadata.DiscardUnknown(m)
 }
@@ -437,15 +460,19 @@ func (*DelState) Descriptor() ([]byte, []int) {
 func (m *DelState) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DelState.Unmarshal(m, b)
 }
+
 func (m *DelState) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DelState.Marshal(b, m, deterministic)
 }
+
 func (m *DelState) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DelState.Merge(m, src)
 }
+
 func (m *DelState) XXX_Size() int {
 	return xxx_messageInfo_DelState.Size(m)
 }
+
 func (m *DelState) XXX_DiscardUnknown() {
 	xxx_messageInfo_DelState.DiscardUnknown(m)
 }
@@ -484,15 +511,19 @@ func (*PurgePrivateState) Descriptor() ([]byte, []int) {
 func (m *PurgePrivateState) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PurgePrivateState.Unmarshal(m, b)
 }
+
 func (m *PurgePrivateState) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PurgePrivateState.Marshal(b, m, deterministic)
 }
+
 func (m *PurgePrivateState) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PurgePrivateState.Merge(m, src)
 }
+
 func (m *PurgePrivateState) XXX_Size() int {
 	return xxx_messageInfo_PurgePrivateState.Size(m)
 }
+
 func (m *PurgePrivateState) XXX_DiscardUnknown() {
 	xxx_messageInfo_PurgePrivateState.DiscardUnknown(m)
 }
@@ -537,15 +568,19 @@ func (*GetStateByRange) Descriptor() ([]byte, []int) {
 func (m *GetStateByRange) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetStateByRange.Unmarshal(m, b)
 }
+
 func (m *GetStateByRange) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetStateByRange.Marshal(b, m, deterministic)
 }
+
 func (m *GetStateByRange) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetStateByRange.Merge(m, src)
 }
+
 func (m *GetStateByRange) XXX_Size() int {
 	return xxx_messageInfo_GetStateByRange.Size(m)
 }
+
 func (m *GetStateByRange) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetStateByRange.DiscardUnknown(m)
 }
@@ -603,15 +638,19 @@ func (*GetQueryResult) Descriptor() ([]byte, []int) {
 func (m *GetQueryResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetQueryResult.Unmarshal(m, b)
 }
+
 func (m *GetQueryResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetQueryResult.Marshal(b, m, deterministic)
 }
+
 func (m *GetQueryResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetQueryResult.Merge(m, src)
 }
+
 func (m *GetQueryResult) XXX_Size() int {
 	return xxx_messageInfo_GetQueryResult.Size(m)
 }
+
 func (m *GetQueryResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetQueryResult.DiscardUnknown(m)
 }
@@ -660,15 +699,19 @@ func (*QueryMetadata) Descriptor() ([]byte, []int) {
 func (m *QueryMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryMetadata.Unmarshal(m, b)
 }
+
 func (m *QueryMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *QueryMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryMetadata.Merge(m, src)
 }
+
 func (m *QueryMetadata) XXX_Size() int {
 	return xxx_messageInfo_QueryMetadata.Size(m)
 }
+
 func (m *QueryMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryMetadata.DiscardUnknown(m)
 }
@@ -708,15 +751,19 @@ func (*GetHistoryForKey) Descriptor() ([]byte, []int) {
 func (m *GetHistoryForKey) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetHistoryForKey.Unmarshal(m, b)
 }
+
 func (m *GetHistoryForKey) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetHistoryForKey.Marshal(b, m, deterministic)
 }
+
 func (m *GetHistoryForKey) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetHistoryForKey.Merge(m, src)
 }
+
 func (m *GetHistoryForKey) XXX_Size() int {
 	return xxx_messageInfo_GetHistoryForKey.Size(m)
 }
+
 func (m *GetHistoryForKey) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetHistoryForKey.DiscardUnknown(m)
 }
@@ -747,15 +794,19 @@ func (*QueryStateNext) Descriptor() ([]byte, []int) {
 func (m *QueryStateNext) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryStateNext.Unmarshal(m, b)
 }
+
 func (m *QueryStateNext) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryStateNext.Marshal(b, m, deterministic)
 }
+
 func (m *QueryStateNext) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryStateNext.Merge(m, src)
 }
+
 func (m *QueryStateNext) XXX_Size() int {
 	return xxx_messageInfo_QueryStateNext.Size(m)
 }
+
 func (m *QueryStateNext) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryStateNext.DiscardUnknown(m)
 }
@@ -786,15 +837,19 @@ func (*QueryStateClose) Descriptor() ([]byte, []int) {
 func (m *QueryStateClose) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryStateClose.Unmarshal(m, b)
 }
+
 func (m *QueryStateClose) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryStateClose.Marshal(b, m, deterministic)
 }
+
 func (m *QueryStateClose) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryStateClose.Merge(m, src)
 }
+
 func (m *QueryStateClose) XXX_Size() int {
 	return xxx_messageInfo_QueryStateClose.Size(m)
 }
+
 func (m *QueryStateClose) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryStateClose.DiscardUnknown(m)
 }
@@ -826,15 +881,19 @@ func (*QueryResultBytes) Descriptor() ([]byte, []int) {
 func (m *QueryResultBytes) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryResultBytes.Unmarshal(m, b)
 }
+
 func (m *QueryResultBytes) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryResultBytes.Marshal(b, m, deterministic)
 }
+
 func (m *QueryResultBytes) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryResultBytes.Merge(m, src)
 }
+
 func (m *QueryResultBytes) XXX_Size() int {
 	return xxx_messageInfo_QueryResultBytes.Size(m)
 }
+
 func (m *QueryResultBytes) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryResultBytes.DiscardUnknown(m)
 }
@@ -873,15 +932,19 @@ func (*QueryResponse) Descriptor() ([]byte, []int) {
 func (m *QueryResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryResponse.Unmarshal(m, b)
 }
+
 func (m *QueryResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryResponse.Marshal(b, m, deterministic)
 }
+
 func (m *QueryResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryResponse.Merge(m, src)
 }
+
 func (m *QueryResponse) XXX_Size() int {
 	return xxx_messageInfo_QueryResponse.Size(m)
 }
+
 func (m *QueryResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryResponse.DiscardUnknown(m)
 }
@@ -936,15 +999,19 @@ func (*QueryResponseMetadata) Descriptor() ([]byte, []int) {
 func (m *QueryResponseMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryResponseMetadata.Unmarshal(m, b)
 }
+
 func (m *QueryResponseMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryResponseMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *QueryResponseMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryResponseMetadata.Merge(m, src)
 }
+
 func (m *QueryResponseMetadata) XXX_Size() int {
 	return xxx_messageInfo_QueryResponseMetadata.Size(m)
 }
+
 func (m *QueryResponseMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryResponseMetadata.DiscardUnknown(m)
 }
@@ -983,15 +1050,19 @@ func (*StateMetadata) Descriptor() ([]byte, []int) {
 func (m *StateMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_StateMetadata.Unmarshal(m, b)
 }
+
 func (m *StateMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_StateMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *StateMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_StateMetadata.Merge(m, src)
 }
+
 func (m *StateMetadata) XXX_Size() int {
 	return xxx_messageInfo_StateMetadata.Size(m)
 }
+
 func (m *StateMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_StateMetadata.DiscardUnknown(m)
 }
@@ -1029,15 +1100,19 @@ func (*StateMetadataResult) Descriptor() ([]byte, []int) {
 func (m *StateMetadataResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_StateMetadataResult.Unmarshal(m, b)
 }
+
 func (m *StateMetadataResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_StateMetadataResult.Marshal(b, m, deterministic)
 }
+
 func (m *StateMetadataResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_StateMetadataResult.Merge(m, src)
 }
+
 func (m *StateMetadataResult) XXX_Size() int {
 	return xxx_messageInfo_StateMetadataResult.Size(m)
 }
+
 func (m *StateMetadataResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_StateMetadataResult.DiscardUnknown(m)
 }
@@ -1147,8 +1222,10 @@ var fileDescriptor_e5819fec16c96da2 = []byte{
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -1206,8 +1283,7 @@ type ChaincodeSupportServer interface {
 }
 
 // UnimplementedChaincodeSupportServer can be embedded to have forward compatible implementations.
-type UnimplementedChaincodeSupportServer struct {
-}
+type UnimplementedChaincodeSupportServer struct{}
 
 func (*UnimplementedChaincodeSupportServer) Register(srv ChaincodeSupport_RegisterServer) error {
 	return status.Errorf(codes.Unimplemented, "method Register not implemented")
@@ -1310,8 +1386,7 @@ type ChaincodeServer interface {
 }
 
 // UnimplementedChaincodeServer can be embedded to have forward compatible implementations.
-type UnimplementedChaincodeServer struct {
-}
+type UnimplementedChaincodeServer struct{}
 
 func (*UnimplementedChaincodeServer) Connect(srv Chaincode_ConnectServer) error {
 	return status.Errorf(codes.Unimplemented, "method Connect not implemented")

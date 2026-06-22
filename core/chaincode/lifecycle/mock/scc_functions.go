@@ -131,9 +131,8 @@ type SCCFunctions struct {
 	}
 	QueryInstalledChaincodesStub        func() []*chaincode.InstalledChaincode
 	queryInstalledChaincodesMutex       sync.RWMutex
-	queryInstalledChaincodesArgsForCall []struct {
-	}
-	queryInstalledChaincodesReturns struct {
+	queryInstalledChaincodesArgsForCall []struct{}
+	queryInstalledChaincodesReturns     struct {
 		result1 []*chaincode.InstalledChaincode
 	}
 	queryInstalledChaincodesReturnsOnCall map[int]struct {
@@ -708,8 +707,7 @@ func (fake *SCCFunctions) QueryInstalledChaincodeReturnsOnCall(i int, result1 *c
 func (fake *SCCFunctions) QueryInstalledChaincodes() []*chaincode.InstalledChaincode {
 	fake.queryInstalledChaincodesMutex.Lock()
 	ret, specificReturn := fake.queryInstalledChaincodesReturnsOnCall[len(fake.queryInstalledChaincodesArgsForCall)]
-	fake.queryInstalledChaincodesArgsForCall = append(fake.queryInstalledChaincodesArgsForCall, struct {
-	}{})
+	fake.queryInstalledChaincodesArgsForCall = append(fake.queryInstalledChaincodesArgsForCall, struct{}{})
 	fake.recordInvocation("QueryInstalledChaincodes", []interface{}{})
 	fake.queryInstalledChaincodesMutex.Unlock()
 	if fake.QueryInstalledChaincodesStub != nil {

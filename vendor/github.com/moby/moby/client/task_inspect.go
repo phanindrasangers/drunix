@@ -8,8 +8,7 @@ import (
 )
 
 // TaskInspectOptions contains options for inspecting a task.
-type TaskInspectOptions struct {
-	// Currently no options are defined.
+type TaskInspectOptions struct { // Currently no options are defined.
 }
 
 // TaskInspectResult contains the result of a task inspection.

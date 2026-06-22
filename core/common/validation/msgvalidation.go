@@ -426,7 +426,6 @@ func ValidateLtxTransaction(e *common.Envelope, cryptoProvider bccsp.BCCSP) pb.T
 }
 
 func validateLtxCommonHeader(env *common.Envelope) (*common.ChannelHeader, *common.SignatureHeader, error) {
-
 	var chdr *common.ChannelHeader
 	var shdr *common.SignatureHeader
 	var err error

@@ -11,8 +11,7 @@ type PluginDisableOptions struct {
 }
 
 // PluginDisableResult represents the result of a plugin disable operation.
-type PluginDisableResult struct {
-	// Currently empty; can be extended in the future if needed.
+type PluginDisableResult struct { // Currently empty; can be extended in the future if needed.
 }
 
 // PluginDisable disables a plugin

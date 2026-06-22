@@ -835,7 +835,6 @@ to your powershell profile.
 				return cmd.Root().GenPowerShellCompletion(out)
 			}
 			return cmd.Root().GenPowerShellCompletionWithDesc(out)
-
 		},
 	}
 	if haveNoDescFlag {

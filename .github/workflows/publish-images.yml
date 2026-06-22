@@ -1,0 +1,120 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# Builds every Drunix component image for linux/amd64 + linux/arm64 and
+# publishes a multi-arch manifest per component to GitHub Container Registry.
+#
+# Multi-arch requires Buildx (build-push-action) rather than the Makefile's
+# plain `docker build`, so the build context and build-args below mirror the
+# Makefile targets:
+#   - baseos / ccenv : self-contained, context = images/<component>
+#   - peer/orderer/tools/vscc : built from repo root, need GO_TAGS
+# TARGETOS / TARGETARCH are injected automatically by Buildx per platform; the
+# builder stages download the matching Go toolchain and compile under emulation.
+#
+# Published packages (one multi-arch manifest each):
+#   ghcr.io/<owner>/drunix-{baseos,ccenv,orderer,peer,tools,vscc}
+
+name: Publish Images
+
+on:
+  push:
+    branches:
+      - main
+      - "release-*"
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    name: ${{ matrix.component }}
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - component: baseos
+            context: images/baseos
+          - component: ccenv
+            context: images/ccenv
+          - component: orderer
+            context: .
+          - component: peer
+            context: .
+          - component: tools
+            context: .
+          - component: vscc
+            context: .
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve build variables
+        id: vars
+        run: |
+          owner="${GITHUB_REPOSITORY_OWNER,,}"   # GHCR requires lowercase
+          echo "registry=ghcr.io/${owner}" >> "$GITHUB_OUTPUT"
+
+          # Go version is the single source of truth in go.mod.
+          go_ver="$(grep '^go ' go.mod | awk '{print $2}')"
+          echo "go_ver=${go_ver}" >> "$GITHUB_OUTPUT"
+
+          # Ubuntu base version matches the Makefile default.
+          echo "ubuntu_ver=22.04" >> "$GITHUB_OUTPUT"
+
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            echo "drunix_ver=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+          else
+            echo "drunix_ver=1.0.0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate image tags and labels
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ steps.vars.outputs.registry }}/drunix-${{ matrix.component }}
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha,format=short
+            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+
+      - name: Build and push multi-arch image
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          file: images/${{ matrix.component }}/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          provenance: false
+          build-args: |
+            GO_VER=${{ steps.vars.outputs.go_ver }}
+            UBUNTU_VER=${{ steps.vars.outputs.ubuntu_ver }}
+            DRUNIX_VER=${{ steps.vars.outputs.drunix_ver }}
+            GO_TAGS=
+          cache-from: type=gha,scope=${{ matrix.component }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.component }}

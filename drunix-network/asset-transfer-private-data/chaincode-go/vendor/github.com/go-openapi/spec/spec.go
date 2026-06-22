@@ -64,7 +64,6 @@ func MustLoadSwagger20Schema() *Schema {
 
 // Swagger20Schema loads the swagger 2.0 schema from the embedded assets
 func Swagger20Schema() (*Schema, error) {
-
 	b, err := v2SchemaJSONBytes()
 	if err != nil {
 		return nil, err

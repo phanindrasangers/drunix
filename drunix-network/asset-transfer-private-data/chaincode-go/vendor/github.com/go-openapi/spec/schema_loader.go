@@ -303,7 +303,6 @@ func defaultSchemaLoader(
 	expandOptions *ExpandOptions,
 	cache ResolutionCache,
 	context *resolverContext) *schemaLoader {
-
 	if expandOptions == nil {
 		expandOptions = &ExpandOptions{}
 	}

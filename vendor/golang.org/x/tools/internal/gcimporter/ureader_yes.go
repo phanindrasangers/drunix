@@ -494,7 +494,6 @@ func (r *reader) obj() (types.Object, []types.Type) {
 }
 
 func (pr *pkgReader) objIdx(idx pkgbits.Index) (*types.Package, string) {
-
 	var objPkg *types.Package
 	var objName string
 	var tag pkgbits.CodeObj
@@ -631,7 +630,6 @@ func (pr *pkgReader) objIdx(idx pkgbits.Index) (*types.Package, string) {
 }
 
 func (pr *pkgReader) objDictIdx(idx pkgbits.Index) *readerDict {
-
 	var dict readerDict
 
 	{

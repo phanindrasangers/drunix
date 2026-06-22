@@ -5,14 +5,17 @@ package stateleveldb
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -39,15 +42,19 @@ func (*DBValue) Descriptor() ([]byte, []int) {
 func (m *DBValue) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DBValue.Unmarshal(m, b)
 }
+
 func (m *DBValue) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DBValue.Marshal(b, m, deterministic)
 }
+
 func (m *DBValue) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DBValue.Merge(m, src)
 }
+
 func (m *DBValue) XXX_Size() int {
 	return xxx_messageInfo_DBValue.Size(m)
 }
+
 func (m *DBValue) XXX_DiscardUnknown() {
 	xxx_messageInfo_DBValue.DiscardUnknown(m)
 }
@@ -95,15 +102,19 @@ func (*DBMVCC) Descriptor() ([]byte, []int) {
 func (m *DBMVCC) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DBMVCC.Unmarshal(m, b)
 }
+
 func (m *DBMVCC) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DBMVCC.Marshal(b, m, deterministic)
 }
+
 func (m *DBMVCC) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DBMVCC.Merge(m, src)
 }
+
 func (m *DBMVCC) XXX_Size() int {
 	return xxx_messageInfo_DBMVCC.Size(m)
 }
+
 func (m *DBMVCC) XXX_DiscardUnknown() {
 	xxx_messageInfo_DBMVCC.DiscardUnknown(m)
 }

@@ -35,7 +35,7 @@ type Config struct {
 
 var (
 	timeZoneMatcher         = regexp.MustCompile("(time_zone|TimeZone|timezone)=(.*?)($|&| )")
-	defaultIdentifierLength = 63 //maximum identifier length for postgres
+	defaultIdentifierLength = 63 // maximum identifier length for postgres
 )
 
 func Open(dsn string) gorm.Dialector {

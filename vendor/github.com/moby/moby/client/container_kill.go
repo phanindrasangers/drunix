@@ -14,8 +14,7 @@ type ContainerKillOptions struct {
 }
 
 // ContainerKillResult holds the result of [Client.ContainerKill],
-type ContainerKillResult struct {
-	// Add future fields here.
+type ContainerKillResult struct { // Add future fields here.
 }
 
 // ContainerKill terminates the container process but does not remove the container from the docker host.

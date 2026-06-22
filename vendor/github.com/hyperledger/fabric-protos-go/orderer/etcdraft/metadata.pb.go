@@ -5,14 +5,17 @@ package etcdraft
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -47,15 +50,19 @@ func (*BlockMetadata) Descriptor() ([]byte, []int) {
 func (m *BlockMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BlockMetadata.Unmarshal(m, b)
 }
+
 func (m *BlockMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BlockMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *BlockMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BlockMetadata.Merge(m, src)
 }
+
 func (m *BlockMetadata) XXX_Size() int {
 	return xxx_messageInfo_BlockMetadata.Size(m)
 }
+
 func (m *BlockMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_BlockMetadata.DiscardUnknown(m)
 }
@@ -102,15 +109,19 @@ func (*ClusterMetadata) Descriptor() ([]byte, []int) {
 func (m *ClusterMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ClusterMetadata.Unmarshal(m, b)
 }
+
 func (m *ClusterMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ClusterMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *ClusterMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ClusterMetadata.Merge(m, src)
 }
+
 func (m *ClusterMetadata) XXX_Size() int {
 	return xxx_messageInfo_ClusterMetadata.Size(m)
 }
+
 func (m *ClusterMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_ClusterMetadata.DiscardUnknown(m)
 }

@@ -16,7 +16,7 @@ import (
 )
 
 func BuildLabelsCommand() command.Command {
-	var cliConfig = types.NewDefaultCLIConfig()
+	cliConfig := types.NewDefaultCLIConfig()
 
 	flags, err := types.BuildLabelsCommandFlagSet(&cliConfig)
 	if err != nil {

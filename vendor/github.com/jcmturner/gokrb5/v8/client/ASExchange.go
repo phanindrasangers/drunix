@@ -145,7 +145,7 @@ func setPAData(cl *Client, krberr *messages.KRBError, ASReq *messages.ASReq) err
 
 // preAuthEType establishes what encryption type to use for pre-authentication from the KRBError returned from the KDC.
 func preAuthEType(krberr *messages.KRBError) (etype etype.EType, err error) {
-	//RFC 4120 5.2.7.5 covers the preference order of ETYPE-INFO2 and ETYPE-INFO.
+	// RFC 4120 5.2.7.5 covers the preference order of ETYPE-INFO2 and ETYPE-INFO.
 	var etypeID int32
 	var pas types.PADataSequence
 	e := pas.Unmarshal(krberr.EData)

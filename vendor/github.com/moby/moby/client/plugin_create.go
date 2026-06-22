@@ -13,8 +13,7 @@ type PluginCreateOptions struct {
 }
 
 // PluginCreateResult represents the result of a plugin create operation.
-type PluginCreateResult struct {
-	// Currently empty; can be extended in the future if needed.
+type PluginCreateResult struct { // Currently empty; can be extended in the future if needed.
 }
 
 // PluginCreate creates a plugin

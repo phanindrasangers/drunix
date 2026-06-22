@@ -80,11 +80,13 @@ type TransactionMetadata struct {
 	Name       string              `json:"name"`
 }
 
-type tmAlias TransactionMetadata
-type jsonTransactionMetadata struct {
-	*tmAlias
-	ReturnsSchema *spec.Schema `json:"returns,omitempty"`
-}
+type (
+	tmAlias                 TransactionMetadata
+	jsonTransactionMetadata struct {
+		*tmAlias
+		ReturnsSchema *spec.Schema `json:"returns,omitempty"`
+	}
+)
 
 // UnmarshalJSON handles converting JSON to TransactionMetadata since returns is flattened
 // in swagger
@@ -92,7 +94,6 @@ func (tm *TransactionMetadata) UnmarshalJSON(data []byte) error {
 	jtm := jsonTransactionMetadata{tmAlias: (*tmAlias)(tm)}
 
 	err := json.Unmarshal(data, &jtm)
-
 	if err != nil {
 		return err
 	}
@@ -205,7 +206,6 @@ func (ccm *ContractChaincodeMetadata) CompileSchemas() error {
 		for txIdx, tx := range contract.Transactions {
 			for paramIdx, param := range tx.Parameters {
 				gjsSchema, err := compileSchema(param.Name, param.Schema, ccm.Components)
-
 				if err != nil {
 					return fmt.Errorf("error compiling schema for %s [%s]. %s schema invalid. %s", contractName, tx.Name, param.Name, err.Error())
 				}
@@ -216,7 +216,6 @@ func (ccm *ContractChaincodeMetadata) CompileSchemas() error {
 
 			if tx.Returns.Schema != nil {
 				gjsSchema, err := compileSchema("return", tx.Returns.Schema, ccm.Components)
-
 				if err != nil {
 					return fmt.Errorf("error compiling schema for %s [%s]. Return schema invalid. %s", contractName, tx.Name, err.Error())
 				}
@@ -234,7 +233,6 @@ func (ccm *ContractChaincodeMetadata) CompileSchemas() error {
 
 // ReadMetadataFile return the contents of metadata file as ContractChaincodeMetadata
 func ReadMetadataFile() (ContractChaincodeMetadata, error) {
-
 	fileMetadata := ContractChaincodeMetadata{}
 
 	ex, execErr := osAbs.Executable()
@@ -257,7 +255,6 @@ func ReadMetadataFile() (ContractChaincodeMetadata, error) {
 	fileMetadata.Contracts = make(map[string]ContractMetadata)
 
 	metadataBytes, err := ioutilAbs.ReadFile(metadataPath)
-
 	if err != nil {
 		return ContractChaincodeMetadata{}, fmt.Errorf("failed to read metadata from file. Could not read file %s. %s", metadataPath, err)
 	}

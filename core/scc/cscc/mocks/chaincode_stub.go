@@ -49,9 +49,8 @@ type ChaincodeStub struct {
 	}
 	GetArgsStub        func() [][]byte
 	getArgsMutex       sync.RWMutex
-	getArgsArgsForCall []struct {
-	}
-	getArgsReturns struct {
+	getArgsArgsForCall []struct{}
+	getArgsReturns     struct {
 		result1 [][]byte
 	}
 	getArgsReturnsOnCall map[int]struct {
@@ -59,9 +58,8 @@ type ChaincodeStub struct {
 	}
 	GetArgsSliceStub        func() ([]byte, error)
 	getArgsSliceMutex       sync.RWMutex
-	getArgsSliceArgsForCall []struct {
-	}
-	getArgsSliceReturns struct {
+	getArgsSliceArgsForCall []struct{}
+	getArgsSliceReturns     struct {
 		result1 []byte
 		result2 error
 	}
@@ -71,9 +69,8 @@ type ChaincodeStub struct {
 	}
 	GetBindingStub        func() ([]byte, error)
 	getBindingMutex       sync.RWMutex
-	getBindingArgsForCall []struct {
-	}
-	getBindingReturns struct {
+	getBindingArgsForCall []struct{}
+	getBindingReturns     struct {
 		result1 []byte
 		result2 error
 	}
@@ -83,9 +80,8 @@ type ChaincodeStub struct {
 	}
 	GetChannelIDStub        func() string
 	getChannelIDMutex       sync.RWMutex
-	getChannelIDArgsForCall []struct {
-	}
-	getChannelIDReturns struct {
+	getChannelIDArgsForCall []struct{}
+	getChannelIDReturns     struct {
 		result1 string
 	}
 	getChannelIDReturnsOnCall map[int]struct {
@@ -93,9 +89,8 @@ type ChaincodeStub struct {
 	}
 	GetCreatorStub        func() ([]byte, error)
 	getCreatorMutex       sync.RWMutex
-	getCreatorArgsForCall []struct {
-	}
-	getCreatorReturns struct {
+	getCreatorArgsForCall []struct{}
+	getCreatorReturns     struct {
 		result1 []byte
 		result2 error
 	}
@@ -105,9 +100,8 @@ type ChaincodeStub struct {
 	}
 	GetDecorationsStub        func() map[string][]byte
 	getDecorationsMutex       sync.RWMutex
-	getDecorationsArgsForCall []struct {
-	}
-	getDecorationsReturns struct {
+	getDecorationsArgsForCall []struct{}
+	getDecorationsReturns     struct {
 		result1 map[string][]byte
 	}
 	getDecorationsReturnsOnCall map[int]struct {
@@ -115,9 +109,8 @@ type ChaincodeStub struct {
 	}
 	GetFunctionAndParametersStub        func() (string, []string)
 	getFunctionAndParametersMutex       sync.RWMutex
-	getFunctionAndParametersArgsForCall []struct {
-	}
-	getFunctionAndParametersReturns struct {
+	getFunctionAndParametersArgsForCall []struct{}
+	getFunctionAndParametersReturns     struct {
 		result1 string
 		result2 []string
 	}
@@ -256,9 +249,8 @@ type ChaincodeStub struct {
 	}
 	GetSignedProposalStub        func() (*peer.SignedProposal, error)
 	getSignedProposalMutex       sync.RWMutex
-	getSignedProposalArgsForCall []struct {
-	}
-	getSignedProposalReturns struct {
+	getSignedProposalArgsForCall []struct{}
+	getSignedProposalReturns     struct {
 		result1 *peer.SignedProposal
 		result2 error
 	}
@@ -358,9 +350,8 @@ type ChaincodeStub struct {
 	}
 	GetStringArgsStub        func() []string
 	getStringArgsMutex       sync.RWMutex
-	getStringArgsArgsForCall []struct {
-	}
-	getStringArgsReturns struct {
+	getStringArgsArgsForCall []struct{}
+	getStringArgsReturns     struct {
 		result1 []string
 	}
 	getStringArgsReturnsOnCall map[int]struct {
@@ -368,9 +359,8 @@ type ChaincodeStub struct {
 	}
 	GetTransientStub        func() (map[string][]byte, error)
 	getTransientMutex       sync.RWMutex
-	getTransientArgsForCall []struct {
-	}
-	getTransientReturns struct {
+	getTransientArgsForCall []struct{}
+	getTransientReturns     struct {
 		result1 map[string][]byte
 		result2 error
 	}
@@ -380,9 +370,8 @@ type ChaincodeStub struct {
 	}
 	GetTxIDStub        func() string
 	getTxIDMutex       sync.RWMutex
-	getTxIDArgsForCall []struct {
-	}
-	getTxIDReturns struct {
+	getTxIDArgsForCall []struct{}
+	getTxIDReturns     struct {
 		result1 string
 	}
 	getTxIDReturnsOnCall map[int]struct {
@@ -390,9 +379,8 @@ type ChaincodeStub struct {
 	}
 	GetTxTimestampStub        func() (*timestamppb.Timestamp, error)
 	getTxTimestampMutex       sync.RWMutex
-	getTxTimestampArgsForCall []struct {
-	}
-	getTxTimestampReturns struct {
+	getTxTimestampArgsForCall []struct{}
+	getTxTimestampReturns     struct {
 		result1 *timestamppb.Timestamp
 		result2 error
 	}
@@ -702,8 +690,7 @@ func (fake *ChaincodeStub) DelStateReturnsOnCall(i int, result1 error) {
 func (fake *ChaincodeStub) GetArgs() [][]byte {
 	fake.getArgsMutex.Lock()
 	ret, specificReturn := fake.getArgsReturnsOnCall[len(fake.getArgsArgsForCall)]
-	fake.getArgsArgsForCall = append(fake.getArgsArgsForCall, struct {
-	}{})
+	fake.getArgsArgsForCall = append(fake.getArgsArgsForCall, struct{}{})
 	stub := fake.GetArgsStub
 	fakeReturns := fake.getArgsReturns
 	fake.recordInvocation("GetArgs", []interface{}{})
@@ -755,8 +742,7 @@ func (fake *ChaincodeStub) GetArgsReturnsOnCall(i int, result1 [][]byte) {
 func (fake *ChaincodeStub) GetArgsSlice() ([]byte, error) {
 	fake.getArgsSliceMutex.Lock()
 	ret, specificReturn := fake.getArgsSliceReturnsOnCall[len(fake.getArgsSliceArgsForCall)]
-	fake.getArgsSliceArgsForCall = append(fake.getArgsSliceArgsForCall, struct {
-	}{})
+	fake.getArgsSliceArgsForCall = append(fake.getArgsSliceArgsForCall, struct{}{})
 	stub := fake.GetArgsSliceStub
 	fakeReturns := fake.getArgsSliceReturns
 	fake.recordInvocation("GetArgsSlice", []interface{}{})
@@ -811,8 +797,7 @@ func (fake *ChaincodeStub) GetArgsSliceReturnsOnCall(i int, result1 []byte, resu
 func (fake *ChaincodeStub) GetBinding() ([]byte, error) {
 	fake.getBindingMutex.Lock()
 	ret, specificReturn := fake.getBindingReturnsOnCall[len(fake.getBindingArgsForCall)]
-	fake.getBindingArgsForCall = append(fake.getBindingArgsForCall, struct {
-	}{})
+	fake.getBindingArgsForCall = append(fake.getBindingArgsForCall, struct{}{})
 	stub := fake.GetBindingStub
 	fakeReturns := fake.getBindingReturns
 	fake.recordInvocation("GetBinding", []interface{}{})
@@ -867,8 +852,7 @@ func (fake *ChaincodeStub) GetBindingReturnsOnCall(i int, result1 []byte, result
 func (fake *ChaincodeStub) GetChannelID() string {
 	fake.getChannelIDMutex.Lock()
 	ret, specificReturn := fake.getChannelIDReturnsOnCall[len(fake.getChannelIDArgsForCall)]
-	fake.getChannelIDArgsForCall = append(fake.getChannelIDArgsForCall, struct {
-	}{})
+	fake.getChannelIDArgsForCall = append(fake.getChannelIDArgsForCall, struct{}{})
 	stub := fake.GetChannelIDStub
 	fakeReturns := fake.getChannelIDReturns
 	fake.recordInvocation("GetChannelID", []interface{}{})
@@ -920,8 +904,7 @@ func (fake *ChaincodeStub) GetChannelIDReturnsOnCall(i int, result1 string) {
 func (fake *ChaincodeStub) GetCreator() ([]byte, error) {
 	fake.getCreatorMutex.Lock()
 	ret, specificReturn := fake.getCreatorReturnsOnCall[len(fake.getCreatorArgsForCall)]
-	fake.getCreatorArgsForCall = append(fake.getCreatorArgsForCall, struct {
-	}{})
+	fake.getCreatorArgsForCall = append(fake.getCreatorArgsForCall, struct{}{})
 	stub := fake.GetCreatorStub
 	fakeReturns := fake.getCreatorReturns
 	fake.recordInvocation("GetCreator", []interface{}{})
@@ -976,8 +959,7 @@ func (fake *ChaincodeStub) GetCreatorReturnsOnCall(i int, result1 []byte, result
 func (fake *ChaincodeStub) GetDecorations() map[string][]byte {
 	fake.getDecorationsMutex.Lock()
 	ret, specificReturn := fake.getDecorationsReturnsOnCall[len(fake.getDecorationsArgsForCall)]
-	fake.getDecorationsArgsForCall = append(fake.getDecorationsArgsForCall, struct {
-	}{})
+	fake.getDecorationsArgsForCall = append(fake.getDecorationsArgsForCall, struct{}{})
 	stub := fake.GetDecorationsStub
 	fakeReturns := fake.getDecorationsReturns
 	fake.recordInvocation("GetDecorations", []interface{}{})
@@ -1029,8 +1011,7 @@ func (fake *ChaincodeStub) GetDecorationsReturnsOnCall(i int, result1 map[string
 func (fake *ChaincodeStub) GetFunctionAndParameters() (string, []string) {
 	fake.getFunctionAndParametersMutex.Lock()
 	ret, specificReturn := fake.getFunctionAndParametersReturnsOnCall[len(fake.getFunctionAndParametersArgsForCall)]
-	fake.getFunctionAndParametersArgsForCall = append(fake.getFunctionAndParametersArgsForCall, struct {
-	}{})
+	fake.getFunctionAndParametersArgsForCall = append(fake.getFunctionAndParametersArgsForCall, struct{}{})
 	stub := fake.GetFunctionAndParametersStub
 	fakeReturns := fake.getFunctionAndParametersReturns
 	fake.recordInvocation("GetFunctionAndParameters", []interface{}{})
@@ -1679,8 +1660,7 @@ func (fake *ChaincodeStub) GetQueryResultWithPaginationReturnsOnCall(i int, resu
 func (fake *ChaincodeStub) GetSignedProposal() (*peer.SignedProposal, error) {
 	fake.getSignedProposalMutex.Lock()
 	ret, specificReturn := fake.getSignedProposalReturnsOnCall[len(fake.getSignedProposalArgsForCall)]
-	fake.getSignedProposalArgsForCall = append(fake.getSignedProposalArgsForCall, struct {
-	}{})
+	fake.getSignedProposalArgsForCall = append(fake.getSignedProposalArgsForCall, struct{}{})
 	stub := fake.GetSignedProposalStub
 	fakeReturns := fake.getSignedProposalReturns
 	fake.recordInvocation("GetSignedProposal", []interface{}{})
@@ -2143,8 +2123,7 @@ func (fake *ChaincodeStub) GetStateValidationParameterReturnsOnCall(i int, resul
 func (fake *ChaincodeStub) GetStringArgs() []string {
 	fake.getStringArgsMutex.Lock()
 	ret, specificReturn := fake.getStringArgsReturnsOnCall[len(fake.getStringArgsArgsForCall)]
-	fake.getStringArgsArgsForCall = append(fake.getStringArgsArgsForCall, struct {
-	}{})
+	fake.getStringArgsArgsForCall = append(fake.getStringArgsArgsForCall, struct{}{})
 	stub := fake.GetStringArgsStub
 	fakeReturns := fake.getStringArgsReturns
 	fake.recordInvocation("GetStringArgs", []interface{}{})
@@ -2196,8 +2175,7 @@ func (fake *ChaincodeStub) GetStringArgsReturnsOnCall(i int, result1 []string) {
 func (fake *ChaincodeStub) GetTransient() (map[string][]byte, error) {
 	fake.getTransientMutex.Lock()
 	ret, specificReturn := fake.getTransientReturnsOnCall[len(fake.getTransientArgsForCall)]
-	fake.getTransientArgsForCall = append(fake.getTransientArgsForCall, struct {
-	}{})
+	fake.getTransientArgsForCall = append(fake.getTransientArgsForCall, struct{}{})
 	stub := fake.GetTransientStub
 	fakeReturns := fake.getTransientReturns
 	fake.recordInvocation("GetTransient", []interface{}{})
@@ -2252,8 +2230,7 @@ func (fake *ChaincodeStub) GetTransientReturnsOnCall(i int, result1 map[string][
 func (fake *ChaincodeStub) GetTxID() string {
 	fake.getTxIDMutex.Lock()
 	ret, specificReturn := fake.getTxIDReturnsOnCall[len(fake.getTxIDArgsForCall)]
-	fake.getTxIDArgsForCall = append(fake.getTxIDArgsForCall, struct {
-	}{})
+	fake.getTxIDArgsForCall = append(fake.getTxIDArgsForCall, struct{}{})
 	stub := fake.GetTxIDStub
 	fakeReturns := fake.getTxIDReturns
 	fake.recordInvocation("GetTxID", []interface{}{})
@@ -2305,8 +2282,7 @@ func (fake *ChaincodeStub) GetTxIDReturnsOnCall(i int, result1 string) {
 func (fake *ChaincodeStub) GetTxTimestamp() (*timestamppb.Timestamp, error) {
 	fake.getTxTimestampMutex.Lock()
 	ret, specificReturn := fake.getTxTimestampReturnsOnCall[len(fake.getTxTimestampArgsForCall)]
-	fake.getTxTimestampArgsForCall = append(fake.getTxTimestampArgsForCall, struct {
-	}{})
+	fake.getTxTimestampArgsForCall = append(fake.getTxTimestampArgsForCall, struct{}{})
 	stub := fake.GetTxTimestampStub
 	fakeReturns := fake.getTxTimestampReturns
 	fake.recordInvocation("GetTxTimestamp", []interface{}{})

@@ -23,18 +23,16 @@ type VersionedDB struct {
 	}
 	BytesKeySupportedStub        func() bool
 	bytesKeySupportedMutex       sync.RWMutex
-	bytesKeySupportedArgsForCall []struct {
-	}
-	bytesKeySupportedReturns struct {
+	bytesKeySupportedArgsForCall []struct{}
+	bytesKeySupportedReturns     struct {
 		result1 bool
 	}
 	bytesKeySupportedReturnsOnCall map[int]struct {
 		result1 bool
 	}
-	CloseStub        func()
-	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
+	CloseStub               func()
+	closeMutex              sync.RWMutex
+	closeArgsForCall        []struct{}
 	ExecuteQueryStub        func(string, string) (statedb.ResultsIterator, error)
 	executeQueryMutex       sync.RWMutex
 	executeQueryArgsForCall []struct {
@@ -80,9 +78,8 @@ type VersionedDB struct {
 	}
 	GetLatestSavePointStub        func() (*version.Height, error)
 	getLatestSavePointMutex       sync.RWMutex
-	getLatestSavePointArgsForCall []struct {
-	}
-	getLatestSavePointReturns struct {
+	getLatestSavePointArgsForCall []struct{}
+	getLatestSavePointReturns     struct {
 		result1 *version.Height
 		result2 error
 	}
@@ -165,9 +162,8 @@ type VersionedDB struct {
 	}
 	OpenStub        func() error
 	openMutex       sync.RWMutex
-	openArgsForCall []struct {
-	}
-	openReturns struct {
+	openArgsForCall []struct{}
+	openReturns     struct {
 		result1 error
 	}
 	openReturnsOnCall map[int]struct {
@@ -253,8 +249,7 @@ func (fake *VersionedDB) ApplyUpdatesReturnsOnCall(i int, result1 error) {
 func (fake *VersionedDB) BytesKeySupported() bool {
 	fake.bytesKeySupportedMutex.Lock()
 	ret, specificReturn := fake.bytesKeySupportedReturnsOnCall[len(fake.bytesKeySupportedArgsForCall)]
-	fake.bytesKeySupportedArgsForCall = append(fake.bytesKeySupportedArgsForCall, struct {
-	}{})
+	fake.bytesKeySupportedArgsForCall = append(fake.bytesKeySupportedArgsForCall, struct{}{})
 	fake.recordInvocation("BytesKeySupported", []interface{}{})
 	fake.bytesKeySupportedMutex.Unlock()
 	if fake.BytesKeySupportedStub != nil {
@@ -304,8 +299,7 @@ func (fake *VersionedDB) BytesKeySupportedReturnsOnCall(i int, result1 bool) {
 
 func (fake *VersionedDB) Close() {
 	fake.closeMutex.Lock()
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	fake.recordInvocation("Close", []interface{}{})
 	fake.closeMutex.Unlock()
 	if fake.CloseStub != nil {
@@ -521,8 +515,7 @@ func (fake *VersionedDB) GetFullScanIteratorReturnsOnCall(i int, result1 statedb
 func (fake *VersionedDB) GetLatestSavePoint() (*version.Height, error) {
 	fake.getLatestSavePointMutex.Lock()
 	ret, specificReturn := fake.getLatestSavePointReturnsOnCall[len(fake.getLatestSavePointArgsForCall)]
-	fake.getLatestSavePointArgsForCall = append(fake.getLatestSavePointArgsForCall, struct {
-	}{})
+	fake.getLatestSavePointArgsForCall = append(fake.getLatestSavePointArgsForCall, struct{}{})
 	fake.recordInvocation("GetLatestSavePoint", []interface{}{})
 	fake.getLatestSavePointMutex.Unlock()
 	if fake.GetLatestSavePointStub != nil {
@@ -904,8 +897,7 @@ func (fake *VersionedDB) GetVersionReturnsOnCall(i int, result1 *version.Height,
 func (fake *VersionedDB) Open() error {
 	fake.openMutex.Lock()
 	ret, specificReturn := fake.openReturnsOnCall[len(fake.openArgsForCall)]
-	fake.openArgsForCall = append(fake.openArgsForCall, struct {
-	}{})
+	fake.openArgsForCall = append(fake.openArgsForCall, struct{}{})
 	fake.recordInvocation("Open", []interface{}{})
 	fake.openMutex.Unlock()
 	if fake.OpenStub != nil {

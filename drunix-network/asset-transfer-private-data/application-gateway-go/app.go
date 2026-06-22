@@ -34,9 +34,11 @@ const (
 )
 
 // Use a unique key so that we can run multiple times.
-var now = time.Now()
-var assetID1 = fmt.Sprintf("asset%d", now.Unix())
-var assetID2 = fmt.Sprintf("asset%d", now.Unix()+1)
+var (
+	now      = time.Now()
+	assetID1 = fmt.Sprintf("asset%d", now.Unix())
+	assetID2 = fmt.Sprintf("asset%d", now.Unix()+1)
+)
 
 func main() {
 	clientOrg1 := newGrpcConnection(

@@ -5,14 +5,17 @@ package peer
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -66,15 +69,19 @@ func (*SignedProposal) Descriptor() ([]byte, []int) {
 func (m *SignedProposal) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SignedProposal.Unmarshal(m, b)
 }
+
 func (m *SignedProposal) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SignedProposal.Marshal(b, m, deterministic)
 }
+
 func (m *SignedProposal) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SignedProposal.Merge(m, src)
 }
+
 func (m *SignedProposal) XXX_Size() int {
 	return xxx_messageInfo_SignedProposal.Size(m)
 }
+
 func (m *SignedProposal) XXX_DiscardUnknown() {
 	xxx_messageInfo_SignedProposal.DiscardUnknown(m)
 }
@@ -139,15 +146,19 @@ func (*Proposal) Descriptor() ([]byte, []int) {
 func (m *Proposal) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Proposal.Unmarshal(m, b)
 }
+
 func (m *Proposal) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Proposal.Marshal(b, m, deterministic)
 }
+
 func (m *Proposal) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Proposal.Merge(m, src)
 }
+
 func (m *Proposal) XXX_Size() int {
 	return xxx_messageInfo_Proposal.Size(m)
 }
+
 func (m *Proposal) XXX_DiscardUnknown() {
 	xxx_messageInfo_Proposal.DiscardUnknown(m)
 }
@@ -196,15 +207,19 @@ func (*ChaincodeHeaderExtension) Descriptor() ([]byte, []int) {
 func (m *ChaincodeHeaderExtension) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeHeaderExtension.Unmarshal(m, b)
 }
+
 func (m *ChaincodeHeaderExtension) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeHeaderExtension.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeHeaderExtension) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeHeaderExtension.Merge(m, src)
 }
+
 func (m *ChaincodeHeaderExtension) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeHeaderExtension.Size(m)
 }
+
 func (m *ChaincodeHeaderExtension) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeHeaderExtension.DiscardUnknown(m)
 }
@@ -246,15 +261,19 @@ func (*ChaincodeProposalPayload) Descriptor() ([]byte, []int) {
 func (m *ChaincodeProposalPayload) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeProposalPayload.Unmarshal(m, b)
 }
+
 func (m *ChaincodeProposalPayload) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeProposalPayload.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeProposalPayload) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeProposalPayload.Merge(m, src)
 }
+
 func (m *ChaincodeProposalPayload) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeProposalPayload.Size(m)
 }
+
 func (m *ChaincodeProposalPayload) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeProposalPayload.DiscardUnknown(m)
 }
@@ -306,15 +325,19 @@ func (*ChaincodeAction) Descriptor() ([]byte, []int) {
 func (m *ChaincodeAction) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeAction.Unmarshal(m, b)
 }
+
 func (m *ChaincodeAction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeAction.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeAction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeAction.Merge(m, src)
 }
+
 func (m *ChaincodeAction) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeAction.Size(m)
 }
+
 func (m *ChaincodeAction) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeAction.DiscardUnknown(m)
 }

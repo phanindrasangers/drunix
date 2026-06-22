@@ -5,15 +5,18 @@ package common
 
 import (
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	msp "github.com/hyperledger/fabric-protos-go/msp"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -100,15 +103,19 @@ func (*Policy) Descriptor() ([]byte, []int) {
 func (m *Policy) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Policy.Unmarshal(m, b)
 }
+
 func (m *Policy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Policy.Marshal(b, m, deterministic)
 }
+
 func (m *Policy) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Policy.Merge(m, src)
 }
+
 func (m *Policy) XXX_Size() int {
 	return xxx_messageInfo_Policy.Size(m)
 }
+
 func (m *Policy) XXX_DiscardUnknown() {
 	xxx_messageInfo_Policy.DiscardUnknown(m)
 }
@@ -149,15 +156,19 @@ func (*SignaturePolicyEnvelope) Descriptor() ([]byte, []int) {
 func (m *SignaturePolicyEnvelope) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SignaturePolicyEnvelope.Unmarshal(m, b)
 }
+
 func (m *SignaturePolicyEnvelope) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SignaturePolicyEnvelope.Marshal(b, m, deterministic)
 }
+
 func (m *SignaturePolicyEnvelope) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SignaturePolicyEnvelope.Merge(m, src)
 }
+
 func (m *SignaturePolicyEnvelope) XXX_Size() int {
 	return xxx_messageInfo_SignaturePolicyEnvelope.Size(m)
 }
+
 func (m *SignaturePolicyEnvelope) XXX_DiscardUnknown() {
 	xxx_messageInfo_SignaturePolicyEnvelope.DiscardUnknown(m)
 }
@@ -212,15 +223,19 @@ func (*SignaturePolicy) Descriptor() ([]byte, []int) {
 func (m *SignaturePolicy) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SignaturePolicy.Unmarshal(m, b)
 }
+
 func (m *SignaturePolicy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SignaturePolicy.Marshal(b, m, deterministic)
 }
+
 func (m *SignaturePolicy) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SignaturePolicy.Merge(m, src)
 }
+
 func (m *SignaturePolicy) XXX_Size() int {
 	return xxx_messageInfo_SignaturePolicy.Size(m)
 }
+
 func (m *SignaturePolicy) XXX_DiscardUnknown() {
 	xxx_messageInfo_SignaturePolicy.DiscardUnknown(m)
 }
@@ -290,15 +305,19 @@ func (*SignaturePolicy_NOutOf) Descriptor() ([]byte, []int) {
 func (m *SignaturePolicy_NOutOf) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SignaturePolicy_NOutOf.Unmarshal(m, b)
 }
+
 func (m *SignaturePolicy_NOutOf) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SignaturePolicy_NOutOf.Marshal(b, m, deterministic)
 }
+
 func (m *SignaturePolicy_NOutOf) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SignaturePolicy_NOutOf.Merge(m, src)
 }
+
 func (m *SignaturePolicy_NOutOf) XXX_Size() int {
 	return xxx_messageInfo_SignaturePolicy_NOutOf.Size(m)
 }
+
 func (m *SignaturePolicy_NOutOf) XXX_DiscardUnknown() {
 	xxx_messageInfo_SignaturePolicy_NOutOf.DiscardUnknown(m)
 }
@@ -345,15 +364,19 @@ func (*ImplicitMetaPolicy) Descriptor() ([]byte, []int) {
 func (m *ImplicitMetaPolicy) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ImplicitMetaPolicy.Unmarshal(m, b)
 }
+
 func (m *ImplicitMetaPolicy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ImplicitMetaPolicy.Marshal(b, m, deterministic)
 }
+
 func (m *ImplicitMetaPolicy) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ImplicitMetaPolicy.Merge(m, src)
 }
+
 func (m *ImplicitMetaPolicy) XXX_Size() int {
 	return xxx_messageInfo_ImplicitMetaPolicy.Size(m)
 }
+
 func (m *ImplicitMetaPolicy) XXX_DiscardUnknown() {
 	xxx_messageInfo_ImplicitMetaPolicy.DiscardUnknown(m)
 }
@@ -399,15 +422,19 @@ func (*ApplicationPolicy) Descriptor() ([]byte, []int) {
 func (m *ApplicationPolicy) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ApplicationPolicy.Unmarshal(m, b)
 }
+
 func (m *ApplicationPolicy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ApplicationPolicy.Marshal(b, m, deterministic)
 }
+
 func (m *ApplicationPolicy) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ApplicationPolicy.Merge(m, src)
 }
+
 func (m *ApplicationPolicy) XXX_Size() int {
 	return xxx_messageInfo_ApplicationPolicy.Size(m)
 }
+
 func (m *ApplicationPolicy) XXX_DiscardUnknown() {
 	xxx_messageInfo_ApplicationPolicy.DiscardUnknown(m)
 }

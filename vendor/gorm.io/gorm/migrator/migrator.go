@@ -127,7 +127,6 @@ func (m Migrator) AutoMigrate(values ...interface{}) error {
 			}
 		} else {
 			if err := m.RunWithValue(value, func(stmt *gorm.Statement) error {
-
 				if stmt.Schema == nil {
 					return errors.New("failed to get schema")
 				}
@@ -216,7 +215,6 @@ func (m Migrator) CreateTable(values ...interface{}) error {
 	for _, value := range m.ReorderModels(values, false) {
 		tx := m.DB.Session(&gorm.Session{})
 		if err := m.RunWithValue(value, func(stmt *gorm.Statement) (err error) {
-
 			if stmt.Schema == nil {
 				return errors.New("failed to get schema")
 			}

@@ -18,9 +18,11 @@ import (
 	"google.golang.org/protobuf/types/gofeaturespb"
 )
 
-var defaults = &descriptorpb.FeatureSetDefaults{}
-var defaultsCacheMu sync.Mutex
-var defaultsCache = make(map[filedesc.Edition]*descriptorpb.FeatureSet)
+var (
+	defaults        = &descriptorpb.FeatureSetDefaults{}
+	defaultsCacheMu sync.Mutex
+	defaultsCache   = make(map[filedesc.Edition]*descriptorpb.FeatureSet)
+)
 
 func init() {
 	err := proto.Unmarshal(editiondefaults.Defaults, defaults)

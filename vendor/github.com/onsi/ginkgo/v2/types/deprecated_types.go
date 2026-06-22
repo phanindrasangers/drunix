@@ -9,12 +9,14 @@ import (
 	A set of deprecations to make the transition from v1 to v2 easier for users who have written custom reporters.
 */
 
-type SuiteSummary = DeprecatedSuiteSummary
-type SetupSummary = DeprecatedSetupSummary
-type SpecSummary = DeprecatedSpecSummary
-type SpecMeasurement = DeprecatedSpecMeasurement
-type SpecComponentType = NodeType
-type SpecFailure = DeprecatedSpecFailure
+type (
+	SuiteSummary      = DeprecatedSuiteSummary
+	SetupSummary      = DeprecatedSetupSummary
+	SpecSummary       = DeprecatedSpecSummary
+	SpecMeasurement   = DeprecatedSpecMeasurement
+	SpecComponentType = NodeType
+	SpecFailure       = DeprecatedSpecFailure
+)
 
 var (
 	SpecComponentTypeInvalid                 = NodeTypeInvalid

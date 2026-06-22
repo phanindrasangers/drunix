@@ -5,15 +5,18 @@ package queryresult
 
 import (
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -41,15 +44,19 @@ func (*KV) Descriptor() ([]byte, []int) {
 func (m *KV) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KV.Unmarshal(m, b)
 }
+
 func (m *KV) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KV.Marshal(b, m, deterministic)
 }
+
 func (m *KV) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KV.Merge(m, src)
 }
+
 func (m *KV) XXX_Size() int {
 	return xxx_messageInfo_KV.Size(m)
 }
+
 func (m *KV) XXX_DiscardUnknown() {
 	xxx_messageInfo_KV.DiscardUnknown(m)
 }
@@ -99,15 +106,19 @@ func (*KeyModification) Descriptor() ([]byte, []int) {
 func (m *KeyModification) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KeyModification.Unmarshal(m, b)
 }
+
 func (m *KeyModification) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KeyModification.Marshal(b, m, deterministic)
 }
+
 func (m *KeyModification) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KeyModification.Merge(m, src)
 }
+
 func (m *KeyModification) XXX_Size() int {
 	return xxx_messageInfo_KeyModification.Size(m)
 }
+
 func (m *KeyModification) XXX_DiscardUnknown() {
 	xxx_messageInfo_KeyModification.DiscardUnknown(m)
 }

@@ -64,9 +64,11 @@ type value struct {
 func valueOfString(v string) Value {
 	return Value{typ: stringType, ptr: unsafe.Pointer(unsafe.StringData(v)), num: uint64(len(v))}
 }
+
 func valueOfBytes(v []byte) Value {
 	return Value{typ: bytesType, ptr: unsafe.Pointer(unsafe.SliceData(v)), num: uint64(len(v))}
 }
+
 func valueOfIface(v any) Value {
 	p := (*ifaceHeader)(unsafe.Pointer(&v))
 	return Value{typ: p.Type, ptr: p.Data}
@@ -75,9 +77,11 @@ func valueOfIface(v any) Value {
 func (v Value) getString() string {
 	return unsafe.String((*byte)(v.ptr), v.num)
 }
+
 func (v Value) getBytes() []byte {
 	return unsafe.Slice((*byte)(v.ptr), v.num)
 }
+
 func (v Value) getIface() (x any) {
 	*(*ifaceHeader)(unsafe.Pointer(&x)) = ifaceHeader{Type: v.typ, Data: v.ptr}
 	return x

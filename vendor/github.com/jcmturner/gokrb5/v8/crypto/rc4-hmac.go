@@ -15,8 +15,7 @@ import (
 )
 
 // RC4HMAC implements Kerberos encryption type rc4-hmac
-type RC4HMAC struct {
-}
+type RC4HMAC struct{}
 
 // GetETypeID returns the EType ID number.
 func (e RC4HMAC) GetETypeID() int32 {

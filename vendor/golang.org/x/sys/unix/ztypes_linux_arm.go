@@ -682,6 +682,7 @@ type SysvIpcPerm struct {
 	_    uint32
 	_    uint32
 }
+
 type SysvShmDesc struct {
 	Perm       SysvIpcPerm
 	Segsz      uint32

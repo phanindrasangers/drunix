@@ -38,8 +38,9 @@ type BalanceStrategy interface {
 
 // BalanceStrategyRange is the default and assigns partitions as ranges to consumer group members.
 // Example with one topic T with six partitions (0..5) and two members (M1, M2):
-//   M1: {T: [0, 1, 2]}
-//   M2: {T: [3, 4, 5]}
+//
+//	M1: {T: [0, 1, 2]}
+//	M2: {T: [3, 4, 5]}
 var BalanceStrategyRange = &balanceStrategy{
 	name: "range",
 	coreFn: func(plan BalanceStrategyPlan, memberIDs []string, topic string, partitions []int32) {
@@ -56,8 +57,9 @@ var BalanceStrategyRange = &balanceStrategy{
 
 // BalanceStrategyRoundRobin assigns partitions to members in alternating order.
 // Example with topic T with six partitions (0..5) and two members (M1, M2):
-//   M1: {T: [0, 2, 4]}
-//   M2: {T: [1, 3, 5]}
+//
+//	M1: {T: [0, 2, 4]}
+//	M2: {T: [1, 3, 5]}
 var BalanceStrategyRoundRobin = &balanceStrategy{
 	name: "roundrobin",
 	coreFn: func(plan BalanceStrategyPlan, memberIDs []string, topic string, partitions []int32) {
@@ -113,6 +115,7 @@ func (p balanceStrategySortable) Len() int { return len(p.memberIDs) }
 func (p balanceStrategySortable) Swap(i, j int) {
 	p.memberIDs[i], p.memberIDs[j] = p.memberIDs[j], p.memberIDs[i]
 }
+
 func (p balanceStrategySortable) Less(i, j int) bool {
 	return balanceStrategyHashValue(p.topic, p.memberIDs[i]) < balanceStrategyHashValue(p.topic, p.memberIDs[j])
 }

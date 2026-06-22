@@ -9,7 +9,7 @@ import (
 // ReportEntryValue wraps a report entry's value ensuring it can be encoded and decoded safely into reports
 // and across the network connection when running in parallel
 type ReportEntryValue struct {
-	raw            any //unexported to prevent gob from freaking out about unregistered structs
+	raw            any // unexported to prevent gob from freaking out about unregistered structs
 	AsJSON         string
 	Representation string
 }
@@ -42,8 +42,8 @@ func (rev ReportEntryValue) String() string {
 }
 
 func (rev ReportEntryValue) MarshalJSON() ([]byte, error) {
-	//All this to capture the representation at encoding-time, not creating time
-	//This way users can Report on pointers and get their final values at reporting-time
+	// All this to capture the representation at encoding-time, not creating time
+	// This way users can Report on pointers and get their final values at reporting-time
 	out := struct {
 		AsJSON         string
 		Representation string
@@ -88,7 +88,7 @@ type ReportEntry struct {
 	// Location captures the location of the AddReportEntry call
 	Location CodeLocation
 
-	Time             time.Time //need this for backwards compatibility
+	Time             time.Time // need this for backwards compatibility
 	TimelineLocation TimelineLocation
 
 	// Name captures the name of this report
@@ -170,11 +170,13 @@ var revEnumSupport = NewEnumSupport(map[uint]string{
 func (rev ReportEntryVisibility) String() string {
 	return revEnumSupport.String(uint(rev))
 }
+
 func (rev *ReportEntryVisibility) UnmarshalJSON(b []byte) error {
 	out, err := revEnumSupport.UnmarshJSON(b)
 	*rev = ReportEntryVisibility(out)
 	return err
 }
+
 func (rev ReportEntryVisibility) MarshalJSON() ([]byte, error) {
 	return revEnumSupport.MarshJSON(uint(rev))
 }

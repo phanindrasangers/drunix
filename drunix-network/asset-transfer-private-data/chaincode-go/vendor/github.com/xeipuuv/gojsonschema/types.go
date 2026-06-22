@@ -50,7 +50,8 @@ func init() {
 		TYPE_NUMBER,
 		TYPE_NULL,
 		TYPE_OBJECT,
-		TYPE_STRING}
+		TYPE_STRING,
+	}
 
 	SCHEMA_TYPES = []string{
 		TYPE_ARRAY,
@@ -58,5 +59,6 @@ func init() {
 		TYPE_INTEGER,
 		TYPE_NUMBER,
 		TYPE_OBJECT,
-		TYPE_STRING}
+		TYPE_STRING,
+	}
 }

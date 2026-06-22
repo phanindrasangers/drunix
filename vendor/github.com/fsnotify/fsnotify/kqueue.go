@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build freebsd || openbsd || netbsd || dragonfly || darwin
 // +build freebsd openbsd netbsd dragonfly darwin
 
 package fsnotify
@@ -73,7 +74,7 @@ func (w *Watcher) Close() error {
 	w.isClosed = true
 
 	// copy paths to remove while locked
-	var pathsToRemove = make([]string, 0, len(w.watches))
+	pathsToRemove := make([]string, 0, len(w.watches))
 	for name := range w.watches {
 		pathsToRemove = append(pathsToRemove, name)
 	}
@@ -428,7 +429,6 @@ func (w *Watcher) sendDirectoryChangeEvents(dirPath string) {
 	for _, fileInfo := range files {
 		filePath := filepath.Join(dirPath, fileInfo.Name())
 		err := w.sendFileCreatedEventIfNew(filePath, fileInfo)
-
 		if err != nil {
 			return
 		}

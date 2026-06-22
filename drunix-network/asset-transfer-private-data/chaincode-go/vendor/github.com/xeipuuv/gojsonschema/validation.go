@@ -69,7 +69,6 @@ func (v *subSchema) subValidateWithContext(document interface{}, context *JsonCo
 
 // Walker function to validate the json recursively against the subSchema
 func (v *subSchema) validateRecursive(currentSubSchema *subSchema, currentNode interface{}, result *Result, context *JsonContext) {
-
 	if internalLogEnabled {
 		internalLog("validateRecursive %s", context.String())
 		internalLog(" %v", currentNode)
@@ -260,7 +259,6 @@ func (v *subSchema) validateRecursive(currentSubSchema *subSchema, currentNode i
 			}
 
 		}
-
 	}
 
 	result.incrementScore()
@@ -268,7 +266,6 @@ func (v *subSchema) validateRecursive(currentSubSchema *subSchema, currentNode i
 
 // Different kinds of validation there, subSchema / common / array / object / string...
 func (v *subSchema) validateSchema(currentSubSchema *subSchema, currentNode interface{}, result *Result, context *JsonContext) {
-
 	if internalLogEnabled {
 		internalLog("validateSchema %s", context.String())
 		internalLog(" %v", currentNode)
@@ -399,7 +396,6 @@ func (v *subSchema) validateSchema(currentSubSchema *subSchema, currentNode inte
 }
 
 func (v *subSchema) validateCommon(currentSubSchema *subSchema, value interface{}, result *Result, context *JsonContext) {
-
 	if internalLogEnabled {
 		internalLog("validateCommon %s", context.String())
 		internalLog(" %v", value)
@@ -444,7 +440,6 @@ func (v *subSchema) validateCommon(currentSubSchema *subSchema, value interface{
 }
 
 func (v *subSchema) validateArray(currentSubSchema *subSchema, value []interface{}, result *Result, context *JsonContext) {
-
 	if internalLogEnabled {
 		internalLog("validateArray %s", context.String())
 		internalLog(" %v", value)
@@ -516,7 +511,7 @@ func (v *subSchema) validateArray(currentSubSchema *subSchema, value []interface
 
 	// uniqueItems:
 	if currentSubSchema.uniqueItems {
-		var stringifiedItems = make(map[string]int)
+		stringifiedItems := make(map[string]int)
 		for j, v := range value {
 			vString, err := marshalWithoutNumber(v)
 			if err != nil {
@@ -570,7 +565,6 @@ func (v *subSchema) validateArray(currentSubSchema *subSchema, value []interface
 }
 
 func (v *subSchema) validateObject(currentSubSchema *subSchema, value map[string]interface{}, result *Result, context *JsonContext) {
-
 	if internalLogEnabled {
 		internalLog("validateObject %s", context.String())
 		internalLog(" %v", value)
@@ -639,7 +633,6 @@ func (v *subSchema) validateObject(currentSubSchema *subSchema, value map[string
 						value[pk],
 						ErrorDetails{"property": pk},
 					)
-
 				}
 			case *subSchema:
 				validationResult := ap.subValidateWithContext(value[pk], NewJsonContext(pk, context))
@@ -667,7 +660,6 @@ func (v *subSchema) validateObject(currentSubSchema *subSchema, value map[string
 }
 
 func (v *subSchema) validatePatternProperty(currentSubSchema *subSchema, key string, value interface{}, result *Result, context *JsonContext) bool {
-
 	if internalLogEnabled {
 		internalLog("validatePatternProperty %s", context.String())
 		internalLog(" %s %v", key, value)
@@ -693,7 +685,6 @@ func (v *subSchema) validatePatternProperty(currentSubSchema *subSchema, key str
 }
 
 func (v *subSchema) validateString(currentSubSchema *subSchema, value interface{}, result *Result, context *JsonContext) {
-
 	// Ignore JSON numbers
 	if isJSONNumber(value) {
 		return
@@ -742,7 +733,6 @@ func (v *subSchema) validateString(currentSubSchema *subSchema, value interface{
 				value,
 				ErrorDetails{"pattern": currentSubSchema.pattern},
 			)
-
 		}
 	}
 
@@ -762,7 +752,6 @@ func (v *subSchema) validateString(currentSubSchema *subSchema, value interface{
 }
 
 func (v *subSchema) validateNumber(currentSubSchema *subSchema, value interface{}, result *Result, context *JsonContext) {
-
 	// Ignore non numbers
 	if !isJSONNumber(value) {
 		return
@@ -790,7 +779,7 @@ func (v *subSchema) validateNumber(currentSubSchema *subSchema, value interface{
 		}
 	}
 
-	//maximum & exclusiveMaximum:
+	// maximum & exclusiveMaximum:
 	if currentSubSchema.maximum != nil {
 		if float64Value.Cmp(currentSubSchema.maximum) == 1 {
 			result.addInternalError(
@@ -816,7 +805,7 @@ func (v *subSchema) validateNumber(currentSubSchema *subSchema, value interface{
 		}
 	}
 
-	//minimum & exclusiveMinimum:
+	// minimum & exclusiveMinimum:
 	if currentSubSchema.minimum != nil {
 		if float64Value.Cmp(currentSubSchema.minimum) == -1 {
 			result.addInternalError(

@@ -10,8 +10,8 @@ import (
 	"io"
 	"net"
 
-	"github.com/npci/drunix/core/container/dockercontroller"
 	dcli "github.com/moby/moby/client"
+	"github.com/npci/drunix/core/container/dockercontroller"
 )
 
 //go:generate counterfeiter -o mock/platform_builder.go --fake-name PlatformBuilder . platformBuilder

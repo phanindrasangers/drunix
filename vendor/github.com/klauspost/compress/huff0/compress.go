@@ -48,7 +48,7 @@ func compress(in []byte, s *Scratch, compressor func(src []byte) ([]byte, error)
 
 	// Create histogram, if none was provided.
 	maxCount := s.maxCount
-	var canReuse = false
+	canReuse := false
 	if maxCount == 0 {
 		maxCount, canReuse = s.countSimple(in)
 	} else {
@@ -172,7 +172,7 @@ func EstimateSizes(in []byte, s *Scratch) (tableSz, dataSz, reuseSz int, err err
 	// Create histogram, if none was provided.
 	tableSz, dataSz, reuseSz = -1, -1, -1
 	maxCount := s.maxCount
-	var canReuse = false
+	canReuse := false
 	if maxCount == 0 {
 		maxCount, canReuse = s.countSimple(in)
 	} else {
@@ -231,7 +231,7 @@ func (s *Scratch) compress1X(src []byte) ([]byte, error) {
 }
 
 func (s *Scratch) compress1xDo(dst, src []byte) []byte {
-	var bw = bitWriter{out: dst}
+	bw := bitWriter{out: dst}
 
 	// N is length divisible by 4.
 	n := len(src)
@@ -276,7 +276,7 @@ func (s *Scratch) compress4X(src []byte) ([]byte, error) {
 	offsetIdx := len(s.Out)
 	s.Out = append(s.Out, sixZeros[:]...)
 
-	for i := 0; i < 4; i++ {
+	for i := range 4 {
 		toDo := src
 		if len(toDo) > segmentSize {
 			toDo = toDo[:segmentSize]
@@ -312,7 +312,7 @@ func (s *Scratch) compress4Xp(src []byte) ([]byte, error) {
 	segmentSize := (len(src) + 3) / 4
 	var wg sync.WaitGroup
 	wg.Add(4)
-	for i := 0; i < 4; i++ {
+	for i := range 4 {
 		toDo := src
 		if len(toDo) > segmentSize {
 			toDo = toDo[:segmentSize]
@@ -326,7 +326,7 @@ func (s *Scratch) compress4Xp(src []byte) ([]byte, error) {
 		}(i)
 	}
 	wg.Wait()
-	for i := 0; i < 4; i++ {
+	for i := range 4 {
 		o := s.tmpOut[i]
 		if len(o) > math.MaxUint16 {
 			// We cannot store the size in the jump table
@@ -466,7 +466,7 @@ func (s *Scratch) buildCTable() error {
 		}
 	}
 
-	var startNode = int16(s.symbolLen)
+	startNode := int16(s.symbolLen)
 	nonNullRank := s.symbolLen - 1
 
 	nodeNb := startNode
@@ -609,7 +609,7 @@ func (s *Scratch) huffSort() {
 func (s *Scratch) setMaxHeight(lastNonNull int) uint8 {
 	maxNbBits := s.actualTableLog
 	huffNode := s.nodes[1 : huffNodesLen+1]
-	//huffNode = huffNode[: huffNodesLen]
+	// huffNode = huffNode[: huffNodesLen]
 
 	largestBits := huffNode[lastNonNull].nbBits()
 

@@ -60,7 +60,6 @@ Producer related metrics:
 	| compression-ratio                         | histogram  | Distribution of the compression ratio times 100 of record batches for all topics     |
 	| compression-ratio-for-topic-<topic>       | histogram  | Distribution of the compression ratio times 100 of record batches for a given topic  |
 	+-------------------------------------------+------------+--------------------------------------------------------------------------------------+
-
 */
 package sarama
 

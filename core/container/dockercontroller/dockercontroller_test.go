@@ -21,6 +21,8 @@ import (
 	"time"
 
 	pb "github.com/hyperledger/fabric-protos-go/peer"
+	dcontainer "github.com/moby/moby/api/types/container"
+	dcli "github.com/moby/moby/client"
 	"github.com/npci/drunix/common/flogging/floggingtest"
 	"github.com/npci/drunix/common/metrics/disabled"
 	"github.com/npci/drunix/common/metrics/metricsfakes"
@@ -28,8 +30,6 @@ import (
 	"github.com/npci/drunix/core/chaincode/persistence"
 	"github.com/npci/drunix/core/container/ccintf"
 	"github.com/npci/drunix/core/container/dockercontroller/mock"
-	dcontainer "github.com/moby/moby/api/types/container"
-	dcli "github.com/moby/moby/client"
 	. "github.com/onsi/gomega"
 	"github.com/onsi/gomega/gbytes"
 	"github.com/stretchr/testify/require"

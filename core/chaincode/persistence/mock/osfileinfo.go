@@ -10,9 +10,8 @@ import (
 type OSFileInfo struct {
 	IsDirStub        func() bool
 	isDirMutex       sync.RWMutex
-	isDirArgsForCall []struct {
-	}
-	isDirReturns struct {
+	isDirArgsForCall []struct{}
+	isDirReturns     struct {
 		result1 bool
 	}
 	isDirReturnsOnCall map[int]struct {
@@ -20,9 +19,8 @@ type OSFileInfo struct {
 	}
 	ModTimeStub        func() time.Time
 	modTimeMutex       sync.RWMutex
-	modTimeArgsForCall []struct {
-	}
-	modTimeReturns struct {
+	modTimeArgsForCall []struct{}
+	modTimeReturns     struct {
 		result1 time.Time
 	}
 	modTimeReturnsOnCall map[int]struct {
@@ -30,9 +28,8 @@ type OSFileInfo struct {
 	}
 	ModeStub        func() os.FileMode
 	modeMutex       sync.RWMutex
-	modeArgsForCall []struct {
-	}
-	modeReturns struct {
+	modeArgsForCall []struct{}
+	modeReturns     struct {
 		result1 os.FileMode
 	}
 	modeReturnsOnCall map[int]struct {
@@ -40,9 +37,8 @@ type OSFileInfo struct {
 	}
 	NameStub        func() string
 	nameMutex       sync.RWMutex
-	nameArgsForCall []struct {
-	}
-	nameReturns struct {
+	nameArgsForCall []struct{}
+	nameReturns     struct {
 		result1 string
 	}
 	nameReturnsOnCall map[int]struct {
@@ -50,9 +46,8 @@ type OSFileInfo struct {
 	}
 	SizeStub        func() int64
 	sizeMutex       sync.RWMutex
-	sizeArgsForCall []struct {
-	}
-	sizeReturns struct {
+	sizeArgsForCall []struct{}
+	sizeReturns     struct {
 		result1 int64
 	}
 	sizeReturnsOnCall map[int]struct {
@@ -60,9 +55,8 @@ type OSFileInfo struct {
 	}
 	SysStub        func() interface{}
 	sysMutex       sync.RWMutex
-	sysArgsForCall []struct {
-	}
-	sysReturns struct {
+	sysArgsForCall []struct{}
+	sysReturns     struct {
 		result1 interface{}
 	}
 	sysReturnsOnCall map[int]struct {
@@ -75,8 +69,7 @@ type OSFileInfo struct {
 func (fake *OSFileInfo) IsDir() bool {
 	fake.isDirMutex.Lock()
 	ret, specificReturn := fake.isDirReturnsOnCall[len(fake.isDirArgsForCall)]
-	fake.isDirArgsForCall = append(fake.isDirArgsForCall, struct {
-	}{})
+	fake.isDirArgsForCall = append(fake.isDirArgsForCall, struct{}{})
 	fake.recordInvocation("IsDir", []interface{}{})
 	fake.isDirMutex.Unlock()
 	if fake.IsDirStub != nil {
@@ -127,8 +120,7 @@ func (fake *OSFileInfo) IsDirReturnsOnCall(i int, result1 bool) {
 func (fake *OSFileInfo) ModTime() time.Time {
 	fake.modTimeMutex.Lock()
 	ret, specificReturn := fake.modTimeReturnsOnCall[len(fake.modTimeArgsForCall)]
-	fake.modTimeArgsForCall = append(fake.modTimeArgsForCall, struct {
-	}{})
+	fake.modTimeArgsForCall = append(fake.modTimeArgsForCall, struct{}{})
 	fake.recordInvocation("ModTime", []interface{}{})
 	fake.modTimeMutex.Unlock()
 	if fake.ModTimeStub != nil {
@@ -179,8 +171,7 @@ func (fake *OSFileInfo) ModTimeReturnsOnCall(i int, result1 time.Time) {
 func (fake *OSFileInfo) Mode() os.FileMode {
 	fake.modeMutex.Lock()
 	ret, specificReturn := fake.modeReturnsOnCall[len(fake.modeArgsForCall)]
-	fake.modeArgsForCall = append(fake.modeArgsForCall, struct {
-	}{})
+	fake.modeArgsForCall = append(fake.modeArgsForCall, struct{}{})
 	fake.recordInvocation("Mode", []interface{}{})
 	fake.modeMutex.Unlock()
 	if fake.ModeStub != nil {
@@ -231,8 +222,7 @@ func (fake *OSFileInfo) ModeReturnsOnCall(i int, result1 os.FileMode) {
 func (fake *OSFileInfo) Name() string {
 	fake.nameMutex.Lock()
 	ret, specificReturn := fake.nameReturnsOnCall[len(fake.nameArgsForCall)]
-	fake.nameArgsForCall = append(fake.nameArgsForCall, struct {
-	}{})
+	fake.nameArgsForCall = append(fake.nameArgsForCall, struct{}{})
 	fake.recordInvocation("Name", []interface{}{})
 	fake.nameMutex.Unlock()
 	if fake.NameStub != nil {
@@ -283,8 +273,7 @@ func (fake *OSFileInfo) NameReturnsOnCall(i int, result1 string) {
 func (fake *OSFileInfo) Size() int64 {
 	fake.sizeMutex.Lock()
 	ret, specificReturn := fake.sizeReturnsOnCall[len(fake.sizeArgsForCall)]
-	fake.sizeArgsForCall = append(fake.sizeArgsForCall, struct {
-	}{})
+	fake.sizeArgsForCall = append(fake.sizeArgsForCall, struct{}{})
 	fake.recordInvocation("Size", []interface{}{})
 	fake.sizeMutex.Unlock()
 	if fake.SizeStub != nil {
@@ -335,8 +324,7 @@ func (fake *OSFileInfo) SizeReturnsOnCall(i int, result1 int64) {
 func (fake *OSFileInfo) Sys() interface{} {
 	fake.sysMutex.Lock()
 	ret, specificReturn := fake.sysReturnsOnCall[len(fake.sysArgsForCall)]
-	fake.sysArgsForCall = append(fake.sysArgsForCall, struct {
-	}{})
+	fake.sysArgsForCall = append(fake.sysArgsForCall, struct{}{})
 	fake.recordInvocation("Sys", []interface{}{})
 	fake.sysMutex.Unlock()
 	if fake.SysStub != nil {

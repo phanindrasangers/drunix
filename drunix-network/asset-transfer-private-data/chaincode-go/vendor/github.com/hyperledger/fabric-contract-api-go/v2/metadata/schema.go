@@ -62,7 +62,6 @@ func buildArraySchema(array reflect.Value, components *ComponentMetadata, nested
 	}
 
 	lowerSchema, err := getSchema(array.Index(0).Type(), components, nested)
-
 	if err != nil {
 		return nil, err
 	}
@@ -76,7 +75,6 @@ func buildSliceSchema(slice reflect.Value, components *ComponentMetadata, nested
 	}
 
 	lowerSchema, err := getSchema(slice.Index(0).Type(), components, nested)
-
 	if err != nil {
 		return nil, err
 	}
@@ -86,7 +84,6 @@ func buildSliceSchema(slice reflect.Value, components *ComponentMetadata, nested
 
 func buildMapSchema(rmap reflect.Value, components *ComponentMetadata, nested bool) (*spec.Schema, error) {
 	lowerSchema, err := getSchema(rmap.Type().Elem(), components, nested)
-
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +114,6 @@ func addComponentIfNotExists(obj reflect.Type, components *ComponentMetadata) er
 
 	for i := 0; i < obj.NumField(); i++ {
 		err := getField(obj.Field(i), &schema, components)
-
 		if err != nil {
 			delete(components.Schemas, obj.Name())
 			return err
@@ -134,7 +130,6 @@ func getField(field reflect.StructField, schema *ObjectMetadata, components *Com
 		if field.Type.Kind() == reflect.Struct {
 			for i := 0; i < field.Type.NumField(); i++ {
 				err := getField(field.Type.Field(i), schema, components)
-
 				if err != nil {
 					return err
 				}
@@ -178,7 +173,6 @@ func getField(field reflect.StructField, schema *ObjectMetadata, components *Com
 	var err error
 
 	propSchema, err := getSchema(field.Type, components, true)
-
 	if err != nil {
 		return err
 	}
@@ -198,7 +192,6 @@ func buildStructSchema(obj reflect.Type, components *ComponentMetadata, nested b
 	}
 
 	err := addComponentIfNotExists(obj, components)
-
 	if err != nil {
 		return nil, err
 	}

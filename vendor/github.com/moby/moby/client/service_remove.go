@@ -3,13 +3,11 @@ package client
 import "context"
 
 // ServiceRemoveOptions contains options for removing a service.
-type ServiceRemoveOptions struct {
-	// No options currently; placeholder for future use
+type ServiceRemoveOptions struct { // No options currently; placeholder for future use
 }
 
 // ServiceRemoveResult contains the result of removing a service.
-type ServiceRemoveResult struct {
-	// No fields currently; placeholder for future use
+type ServiceRemoveResult struct { // No fields currently; placeholder for future use
 }
 
 // ServiceRemove kills and removes a service.

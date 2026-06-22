@@ -144,7 +144,6 @@ func Exponential(d time.Duration) time.Duration {
 		d = time.Minute
 	}
 	return d
-
 }
 
 // ErrConnectionUnavailable is returned by the Manager's Write method when the

@@ -8,13 +8,9 @@ import (
 	"strings"
 )
 
-var (
-	ErrCommandNotSpecified = fmt.Errorf("command not specified")
-)
+var ErrCommandNotSpecified = fmt.Errorf("command not specified")
 
-var (
-	envarTransformRegexp = regexp.MustCompile(`[^a-zA-Z0-9_]+`)
-)
+var envarTransformRegexp = regexp.MustCompile(`[^a-zA-Z0-9_]+`)
 
 type ApplicationValidator func(*Application) error
 
@@ -181,7 +177,6 @@ func (a *Application) parseContext(ignoreDefault bool, args []string) (*ParseCon
 // This will populate all flag and argument values, call all callbacks, and so
 // on.
 func (a *Application) Parse(args []string) (command string, err error) {
-
 	context, parseErr := a.ParseContext(args)
 	selected := []string{}
 	var setValuesErr error

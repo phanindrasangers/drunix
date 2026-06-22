@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 /*
@@ -63,7 +63,7 @@ func deriveHashedDataNs(namespace, collection string) string {
 
 type KVDBProvider struct {
 	versionedDBProvider *stateleveldb.VersionedDBProvider
-	status              string //TODO: Implement Singleton Pattern
+	status              string // TODO: Implement Singleton Pattern
 }
 
 // NewKVDBProvider creates and returns an KVDBProvider based on the provided dbPath
@@ -279,7 +279,6 @@ func (od *OrdererDBHandler) ApplyWriteHashSet(fatTxnDetailsMVCCMap map[string]*s
 
 // Updates are batched on the basis of one fat block
 func (od *OrdererDBHandler) ApplyBatch(fatTxnDetailsMVCCMap map[string]*statedb.VersionMVCC) (bool, error) {
-
 	// To be batched **************
 	err := od.kvHandler.ApplyOrdererUpdates(fatTxnDetailsMVCCMap)
 	if err != nil {

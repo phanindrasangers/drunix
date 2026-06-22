@@ -2,7 +2,6 @@ package watch
 
 import (
 	"fmt"
-
 	"regexp"
 
 	"github.com/onsi/ginkgo/v2/ginkgo/internal"

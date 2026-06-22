@@ -12,9 +12,7 @@ import "github.com/npci/drunix/common/metrics"
 
 // This should be ignored by doc generation because of the directive above.
 
-var (
-	Ignored = metrics.CounterOpts{
-		Namespace: "ignored",
-		Name:      "ignored",
-	}
-)
+var Ignored = metrics.CounterOpts{
+	Namespace: "ignored",
+	Name:      "ignored",
+}

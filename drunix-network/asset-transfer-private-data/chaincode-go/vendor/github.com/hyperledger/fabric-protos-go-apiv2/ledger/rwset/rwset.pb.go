@@ -11,10 +11,11 @@
 package rwset
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -504,17 +505,20 @@ func file_ledger_rwset_rwset_proto_rawDescGZIP() []byte {
 	return file_ledger_rwset_rwset_proto_rawDescData
 }
 
-var file_ledger_rwset_rwset_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ledger_rwset_rwset_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_ledger_rwset_rwset_proto_goTypes = []any{
-	(TxReadWriteSet_DataModel)(0),        // 0: rwset.TxReadWriteSet.DataModel
-	(*TxReadWriteSet)(nil),               // 1: rwset.TxReadWriteSet
-	(*NsReadWriteSet)(nil),               // 2: rwset.NsReadWriteSet
-	(*CollectionHashedReadWriteSet)(nil), // 3: rwset.CollectionHashedReadWriteSet
-	(*TxPvtReadWriteSet)(nil),            // 4: rwset.TxPvtReadWriteSet
-	(*NsPvtReadWriteSet)(nil),            // 5: rwset.NsPvtReadWriteSet
-	(*CollectionPvtReadWriteSet)(nil),    // 6: rwset.CollectionPvtReadWriteSet
-}
+var (
+	file_ledger_rwset_rwset_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+	file_ledger_rwset_rwset_proto_msgTypes  = make([]protoimpl.MessageInfo, 6)
+	file_ledger_rwset_rwset_proto_goTypes   = []any{
+		(TxReadWriteSet_DataModel)(0),        // 0: rwset.TxReadWriteSet.DataModel
+		(*TxReadWriteSet)(nil),               // 1: rwset.TxReadWriteSet
+		(*NsReadWriteSet)(nil),               // 2: rwset.NsReadWriteSet
+		(*CollectionHashedReadWriteSet)(nil), // 3: rwset.CollectionHashedReadWriteSet
+		(*TxPvtReadWriteSet)(nil),            // 4: rwset.TxPvtReadWriteSet
+		(*NsPvtReadWriteSet)(nil),            // 5: rwset.NsPvtReadWriteSet
+		(*CollectionPvtReadWriteSet)(nil),    // 6: rwset.CollectionPvtReadWriteSet
+	}
+)
+
 var file_ledger_rwset_rwset_proto_depIdxs = []int32{
 	0, // 0: rwset.TxReadWriteSet.data_model:type_name -> rwset.TxReadWriteSet.DataModel
 	2, // 1: rwset.TxReadWriteSet.ns_rwset:type_name -> rwset.NsReadWriteSet

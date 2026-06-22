@@ -106,6 +106,7 @@ type CouchDBConfig struct {
 	// the peer would round the size to the next multiple of 32 MB.
 	UserCacheSizeMBs int
 }
+
 type SqlDbConfig struct {
 	Host            string
 	Port            string

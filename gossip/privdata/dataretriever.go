@@ -43,7 +43,6 @@ type dataRetriever struct {
 // NewDataRetriever constructing function for implementation of the
 // StorageDataRetriever interface
 func NewDataRetriever(channelID string, store *transientstore.Store, committer committer.Committer, litePeerEnabled bool) StorageDataRetriever {
-
 	return &dataRetriever{
 		logger:          logger.With("channel", channelID),
 		store:           store,
@@ -55,7 +54,6 @@ func NewDataRetriever(channelID string, store *transientstore.Store, committer c
 // CollectionRWSet retrieves for give digest relevant private data if
 // available otherwise returns nil, bool which is true if data fetched from ledger and false if was fetched from transient store, and an error
 func (dr *dataRetriever) CollectionRWSet(digests []*protosgossip.PvtDataDigest, blockNum uint64) (Dig2PvtRWSetWithConfig, bool, error) {
-
 	// DRUNIX: If KVStore is enabled as transient store
 	if dr.store.KVStore != nil {
 		if !dr.litePeerEnabled {

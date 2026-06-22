@@ -11,12 +11,13 @@
 package peer
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	common "github.com/hyperledger/fabric-protos-go-apiv2/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -331,15 +332,18 @@ func file_peer_snapshot_proto_rawDescGZIP() []byte {
 	return file_peer_snapshot_proto_rawDescData
 }
 
-var file_peer_snapshot_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_peer_snapshot_proto_goTypes = []any{
-	(*SnapshotRequest)(nil),               // 0: protos.SnapshotRequest
-	(*SnapshotQuery)(nil),                 // 1: protos.SnapshotQuery
-	(*SignedSnapshotRequest)(nil),         // 2: protos.SignedSnapshotRequest
-	(*QueryPendingSnapshotsResponse)(nil), // 3: protos.QueryPendingSnapshotsResponse
-	(*common.SignatureHeader)(nil),        // 4: common.SignatureHeader
-	(*emptypb.Empty)(nil),                 // 5: google.protobuf.Empty
-}
+var (
+	file_peer_snapshot_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+	file_peer_snapshot_proto_goTypes  = []any{
+		(*SnapshotRequest)(nil),               // 0: protos.SnapshotRequest
+		(*SnapshotQuery)(nil),                 // 1: protos.SnapshotQuery
+		(*SignedSnapshotRequest)(nil),         // 2: protos.SignedSnapshotRequest
+		(*QueryPendingSnapshotsResponse)(nil), // 3: protos.QueryPendingSnapshotsResponse
+		(*common.SignatureHeader)(nil),        // 4: common.SignatureHeader
+		(*emptypb.Empty)(nil),                 // 5: google.protobuf.Empty
+	}
+)
+
 var file_peer_snapshot_proto_depIdxs = []int32{
 	4, // 0: protos.SnapshotRequest.signature_header:type_name -> common.SignatureHeader
 	4, // 1: protos.SnapshotQuery.signature_header:type_name -> common.SignatureHeader

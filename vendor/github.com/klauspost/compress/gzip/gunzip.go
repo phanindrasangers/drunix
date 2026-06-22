@@ -299,6 +299,7 @@ type crcer interface {
 	Sum32() uint32
 	Reset()
 }
+
 type crcUpdater struct {
 	z *Reader
 }

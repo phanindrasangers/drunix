@@ -12,8 +12,7 @@ type PluginEnableOptions struct {
 }
 
 // PluginEnableResult represents the result of a plugin enable operation.
-type PluginEnableResult struct {
-	// Currently empty; can be extended in the future if needed.
+type PluginEnableResult struct { // Currently empty; can be extended in the future if needed.
 }
 
 // PluginEnable enables a plugin

@@ -13,8 +13,10 @@ import (
 	"google.golang.org/protobuf/reflect/protoreflect"
 )
 
-var defaultsCache = make(map[Edition]EditionFeatures)
-var defaultsKeys = []Edition{}
+var (
+	defaultsCache = make(map[Edition]EditionFeatures)
+	defaultsKeys  = []Edition{}
+)
 
 func init() {
 	unmarshalEditionDefaults(editiondefaults.Defaults)

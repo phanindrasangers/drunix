@@ -11,10 +11,11 @@
 package peer
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -400,14 +401,17 @@ func file_peer_query_proto_rawDescGZIP() []byte {
 	return file_peer_query_proto_rawDescData
 }
 
-var file_peer_query_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_peer_query_proto_goTypes = []any{
-	(*ChaincodeQueryResponse)(nil), // 0: protos.ChaincodeQueryResponse
-	(*ChaincodeInfo)(nil),          // 1: protos.ChaincodeInfo
-	(*ChannelQueryResponse)(nil),   // 2: protos.ChannelQueryResponse
-	(*ChannelInfo)(nil),            // 3: protos.ChannelInfo
-	(*JoinBySnapshotStatus)(nil),   // 4: protos.JoinBySnapshotStatus
-}
+var (
+	file_peer_query_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+	file_peer_query_proto_goTypes  = []any{
+		(*ChaincodeQueryResponse)(nil), // 0: protos.ChaincodeQueryResponse
+		(*ChaincodeInfo)(nil),          // 1: protos.ChaincodeInfo
+		(*ChannelQueryResponse)(nil),   // 2: protos.ChannelQueryResponse
+		(*ChannelInfo)(nil),            // 3: protos.ChannelInfo
+		(*JoinBySnapshotStatus)(nil),   // 4: protos.JoinBySnapshotStatus
+	}
+)
+
 var file_peer_query_proto_depIdxs = []int32{
 	1, // 0: protos.ChaincodeQueryResponse.chaincodes:type_name -> protos.ChaincodeInfo
 	3, // 1: protos.ChannelQueryResponse.channels:type_name -> protos.ChannelInfo

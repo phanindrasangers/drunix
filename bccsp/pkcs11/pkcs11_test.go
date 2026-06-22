@@ -21,10 +21,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/miekg/pkcs11"
 	"github.com/npci/drunix/bccsp"
 	"github.com/npci/drunix/bccsp/sw"
 	"github.com/npci/drunix/bccsp/utils"
-	"github.com/miekg/pkcs11"
 	"github.com/stretchr/testify/require"
 )
 

@@ -755,7 +755,7 @@ func (mc *mysqlConn) readColumns(count int) ([]mysqlField, error) {
 
 		// Decimals [uint8]
 		columns[i].decimals = data[pos]
-		//pos++
+		// pos++
 
 		// Default value [len coded binary]
 		//if pos < len(data) {
@@ -1166,7 +1166,7 @@ func (stmt *mysqlStmt) writeExecutePacket(args []driver.Value) error {
 				paramTypes[i+i+1] = 0x00
 
 				var a [64]byte
-				var b = a[:0]
+				b := a[:0]
 
 				if v.IsZero() {
 					b = append(b, "0000-00-00"...)

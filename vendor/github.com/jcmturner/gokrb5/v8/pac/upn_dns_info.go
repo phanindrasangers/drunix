@@ -23,7 +23,7 @@ const (
 
 // Unmarshal bytes into the UPN_DNSInfo struct
 func (k *UPNDNSInfo) Unmarshal(b []byte) (err error) {
-	//The UPN_DNS_INFO structure is a simple structure that is not NDR-encoded.
+	// The UPN_DNS_INFO structure is a simple structure that is not NDR-encoded.
 	r := mstypes.NewReader(bytes.NewReader(b))
 	k.UPNLength, err = r.Uint16()
 	if err != nil {

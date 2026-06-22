@@ -11,12 +11,13 @@
 package peer
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	common "github.com/hyperledger/fabric-protos-go-apiv2/common"
 	rwset "github.com/hyperledger/fabric-protos-go-apiv2/ledger/rwset"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -567,23 +568,26 @@ func file_peer_events_proto_rawDescGZIP() []byte {
 	return file_peer_events_proto_rawDescData
 }
 
-var file_peer_events_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
-var file_peer_events_proto_goTypes = []any{
-	(*FilteredBlock)(nil),              // 0: protos.FilteredBlock
-	(*FilteredTransaction)(nil),        // 1: protos.FilteredTransaction
-	(*FilteredTransactionActions)(nil), // 2: protos.FilteredTransactionActions
-	(*FilteredChaincodeAction)(nil),    // 3: protos.FilteredChaincodeAction
-	(*BlockAndPrivateData)(nil),        // 4: protos.BlockAndPrivateData
-	(*DeliverResponse)(nil),            // 5: protos.DeliverResponse
-	nil,                                // 6: protos.BlockAndPrivateData.PrivateDataMapEntry
-	(common.HeaderType)(0),             // 7: common.HeaderType
-	(TxValidationCode)(0),              // 8: protos.TxValidationCode
-	(*ChaincodeEvent)(nil),             // 9: protos.ChaincodeEvent
-	(*common.Block)(nil),               // 10: common.Block
-	(common.Status)(0),                 // 11: common.Status
-	(*rwset.TxPvtReadWriteSet)(nil),    // 12: rwset.TxPvtReadWriteSet
-	(*common.Envelope)(nil),            // 13: common.Envelope
-}
+var (
+	file_peer_events_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+	file_peer_events_proto_goTypes  = []any{
+		(*FilteredBlock)(nil),              // 0: protos.FilteredBlock
+		(*FilteredTransaction)(nil),        // 1: protos.FilteredTransaction
+		(*FilteredTransactionActions)(nil), // 2: protos.FilteredTransactionActions
+		(*FilteredChaincodeAction)(nil),    // 3: protos.FilteredChaincodeAction
+		(*BlockAndPrivateData)(nil),        // 4: protos.BlockAndPrivateData
+		(*DeliverResponse)(nil),            // 5: protos.DeliverResponse
+		nil,                                // 6: protos.BlockAndPrivateData.PrivateDataMapEntry
+		(common.HeaderType)(0),             // 7: common.HeaderType
+		(TxValidationCode)(0),              // 8: protos.TxValidationCode
+		(*ChaincodeEvent)(nil),             // 9: protos.ChaincodeEvent
+		(*common.Block)(nil),               // 10: common.Block
+		(common.Status)(0),                 // 11: common.Status
+		(*rwset.TxPvtReadWriteSet)(nil),    // 12: rwset.TxPvtReadWriteSet
+		(*common.Envelope)(nil),            // 13: common.Envelope
+	}
+)
+
 var file_peer_events_proto_depIdxs = []int32{
 	1,  // 0: protos.FilteredBlock.filtered_transactions:type_name -> protos.FilteredTransaction
 	7,  // 1: protos.FilteredTransaction.type:type_name -> common.HeaderType

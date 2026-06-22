@@ -19,7 +19,6 @@ type baseEvaluatorAdapter struct {
 }
 
 func (p *baseEvaluatorAdapter) checkSBAndCCEP(cc, coll, key string, blockNum, txNum uint64, signatureSet []*protoutil.SignedData) commonerrors.TxValidationError {
-
 	vp := make([]byte, 0)
 	var err error
 

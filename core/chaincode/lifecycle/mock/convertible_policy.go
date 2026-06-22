@@ -12,9 +12,8 @@ import (
 type ConvertiblePolicy struct {
 	ConvertStub        func() (*common.SignaturePolicyEnvelope, error)
 	convertMutex       sync.RWMutex
-	convertArgsForCall []struct {
-	}
-	convertReturns struct {
+	convertArgsForCall []struct{}
+	convertReturns     struct {
 		result1 *common.SignaturePolicyEnvelope
 		result2 error
 	}
@@ -51,8 +50,7 @@ type ConvertiblePolicy struct {
 func (fake *ConvertiblePolicy) Convert() (*common.SignaturePolicyEnvelope, error) {
 	fake.convertMutex.Lock()
 	ret, specificReturn := fake.convertReturnsOnCall[len(fake.convertArgsForCall)]
-	fake.convertArgsForCall = append(fake.convertArgsForCall, struct {
-	}{})
+	fake.convertArgsForCall = append(fake.convertArgsForCall, struct{}{})
 	fake.recordInvocation("Convert", []interface{}{})
 	fake.convertMutex.Unlock()
 	if fake.ConvertStub != nil {

@@ -8,10 +8,9 @@ import (
 )
 
 type BlockListener struct {
-	CloseStub        func()
-	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
+	CloseStub               func()
+	closeMutex              sync.RWMutex
+	closeArgsForCall        []struct{}
 	ReceiveBlockStub        func(*ledger.CommitNotification)
 	receiveBlockMutex       sync.RWMutex
 	receiveBlockArgsForCall []struct {
@@ -23,8 +22,7 @@ type BlockListener struct {
 
 func (fake *BlockListener) Close() {
 	fake.closeMutex.Lock()
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	stub := fake.CloseStub
 	fake.recordInvocation("Close", []interface{}{})
 	fake.closeMutex.Unlock()

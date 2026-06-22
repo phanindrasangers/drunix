@@ -18,7 +18,9 @@ import (
 // A forkableWriter is an in-memory buffer that can be
 // 'forked' to create new forkableWriters that bracket the
 // original. After
-//    pre, post := w.fork()
+//
+//	pre, post := w.fork()
+//
 // the overall sequence of bytes represented is logically w+pre+post.
 type forkableWriter struct {
 	*bytes.Buffer
@@ -482,7 +484,7 @@ func marshalBody(out *forkableWriter, value reflect.Value, params fieldParameter
 		}
 
 		// jtasn1 Pass on the tags to the members but need to unset explicit switch and implicit value
-		//var fp fieldParameters
+		// var fp fieldParameters
 		params.explicit = false
 		params.tag = nil
 		for i := 0; i < v.Len(); i++ {

@@ -30,7 +30,7 @@ type JunitReportConfig struct {
 	// Enable OmitFailureMessageAttr to prevent failure messages appearing in the "message" attribute of the Failure and Error tags
 	OmitFailureMessageAttr bool
 
-	//Enable OmitCapturedStdOutErr to prevent captured stdout/stderr appearing in system-out
+	// Enable OmitCapturedStdOutErr to prevent captured stdout/stderr appearing in system-out
 	OmitCapturedStdOutErr bool
 
 	// Enable OmitSpecLabels to prevent labels from appearing in the spec name
@@ -56,7 +56,7 @@ type JUnitTestSuites struct {
 	// Time is the time in seconds to execute all test suites
 	Time float64 `xml:"time,attr"`
 
-	//The set of all test suites
+	// The set of all test suites
 	TestSuites []JUnitTestSuite `xml:"testsuite"`
 }
 
@@ -80,10 +80,10 @@ type JUnitTestSuite struct {
 	// Timestamp is the ISO 8601 formatted start-time of the suite - maps onto Report.StartTime
 	Timestamp string `xml:"timestamp,attr"`
 
-	//Properties captures the information stored in the rest of the Report type (including SuiteConfig) as key-value pairs
+	// Properties captures the information stored in the rest of the Report type (including SuiteConfig) as key-value pairs
 	Properties JUnitProperties `xml:"properties"`
 
-	//TestCases capture the individual specs
+	// TestCases capture the individual specs
 	TestCases []JUnitTestCase `xml:"testcase"`
 }
 
@@ -118,15 +118,15 @@ type JUnitTestCase struct {
 	Time float64 `xml:"time,attr"`
 	// Owner is the owner the spec - is set if a label matching Label("owner:X") is provided.  The last matching label is used as the owner, thereby allowing specs to override owners specified in container nodes.
 	Owner string `xml:"owner,attr,omitempty"`
-	//Skipped is populated with a message if the test was skipped or pending
+	// Skipped is populated with a message if the test was skipped or pending
 	Skipped *JUnitSkipped `xml:"skipped,omitempty"`
-	//Error is populated if the test panicked or was interrupted
+	// Error is populated if the test panicked or was interrupted
 	Error *JUnitError `xml:"error,omitempty"`
-	//Failure is populated if the test failed
+	// Failure is populated if the test failed
 	Failure *JUnitFailure `xml:"failure,omitempty"`
-	//SystemOut maps onto any captured stdout/stderr output - maps onto SpecReport.CapturedStdOutErr
+	// SystemOut maps onto any captured stdout/stderr output - maps onto SpecReport.CapturedStdOutErr
 	SystemOut string `xml:"system-out,omitempty"`
-	//SystemOut maps onto any captured GinkgoWriter output - maps onto SpecReport.CapturedGinkgoWriterOutput
+	// SystemOut maps onto any captured GinkgoWriter output - maps onto SpecReport.CapturedGinkgoWriterOutput
 	SystemErr string `xml:"system-err,omitempty"`
 }
 
@@ -136,20 +136,20 @@ type JUnitSkipped struct {
 }
 
 type JUnitError struct {
-	//Message maps onto the panic/exception thrown - equivalent to SpecReport.Failure.ForwardedPanic - or to "interrupted"
+	// Message maps onto the panic/exception thrown - equivalent to SpecReport.Failure.ForwardedPanic - or to "interrupted"
 	Message string `xml:"message,attr"`
-	//Type is one of "panicked" or "interrupted"
+	// Type is one of "panicked" or "interrupted"
 	Type string `xml:"type,attr"`
-	//Description maps onto the captured stack trace for a panic, or the failure message for an interrupt which will include the dump of running goroutines
+	// Description maps onto the captured stack trace for a panic, or the failure message for an interrupt which will include the dump of running goroutines
 	Description string `xml:",chardata"`
 }
 
 type JUnitFailure struct {
-	//Message maps onto the failure message - equivalent to SpecReport.Failure.Message
+	// Message maps onto the failure message - equivalent to SpecReport.Failure.Message
 	Message string `xml:"message,attr"`
-	//Type is "failed"
+	// Type is "failed"
 	Type string `xml:"type,attr"`
-	//Description maps onto the location and stack trace of the failure
+	// Description maps onto the location and stack trace of the failure
 	Description string `xml:",chardata"`
 }
 

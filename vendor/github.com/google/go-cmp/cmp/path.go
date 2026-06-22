@@ -178,6 +178,7 @@ func (ps pathStep) String() string {
 // StructField is a [PathStep] that represents a struct field access
 // on a field called [StructField.Name].
 type StructField struct{ *structField }
+
 type structField struct {
 	pathStep
 	name string
@@ -218,6 +219,7 @@ func (sf StructField) Index() int { return sf.idx }
 // SliceIndex is a [PathStep] that represents an index operation on
 // a slice or array at some index [SliceIndex.Key].
 type SliceIndex struct{ *sliceIndex }
+
 type sliceIndex struct {
 	pathStep
 	xkey, ykey int
@@ -263,6 +265,7 @@ func (si SliceIndex) SplitKeys() (ix, iy int) { return si.xkey, si.ykey }
 
 // MapIndex is a [PathStep] that represents an index operation on a map at some index Key.
 type MapIndex struct{ *mapIndex }
+
 type mapIndex struct {
 	pathStep
 	key reflect.Value
@@ -277,6 +280,7 @@ func (mi MapIndex) Key() reflect.Value { return mi.key }
 
 // Indirect is a [PathStep] that represents pointer indirection on the parent type.
 type Indirect struct{ *indirect }
+
 type indirect struct {
 	pathStep
 }
@@ -287,6 +291,7 @@ func (in Indirect) String() string                 { return "*" }
 
 // TypeAssertion is a [PathStep] that represents a type assertion on an interface.
 type TypeAssertion struct{ *typeAssertion }
+
 type typeAssertion struct {
 	pathStep
 }
@@ -298,6 +303,7 @@ func (ta TypeAssertion) String() string                 { return fmt.Sprintf(".(
 // Transform is a [PathStep] that represents a transformation
 // from the parent type to the current type.
 type Transform struct{ *transform }
+
 type transform struct {
 	pathStep
 	trans *transformer

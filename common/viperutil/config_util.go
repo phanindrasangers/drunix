@@ -21,9 +21,9 @@ import (
 
 	"github.com/Shopify/sarama"
 	version "github.com/hashicorp/go-version"
+	"github.com/mitchellh/mapstructure"
 	"github.com/npci/drunix/bccsp/factory"
 	"github.com/npci/drunix/common/flogging"
-	"github.com/mitchellh/mapstructure"
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v2"
 )

@@ -49,15 +49,21 @@ func FormDataParam(name string) *Parameter {
 
 // FileParam creates a body parameter
 func FileParam(name string) *Parameter {
-	return &Parameter{ParamProps: ParamProps{Name: name, In: "formData"},
-		SimpleSchema: SimpleSchema{Type: "file"}}
+	return &Parameter{
+		ParamProps:   ParamProps{Name: name, In: "formData"},
+		SimpleSchema: SimpleSchema{Type: "file"},
+	}
 }
 
 // SimpleArrayParam creates a param for a simple array (string, int, date etc)
 func SimpleArrayParam(name, tpe, fmt string) *Parameter {
-	return &Parameter{ParamProps: ParamProps{Name: name},
-		SimpleSchema: SimpleSchema{Type: jsonArray, CollectionFormat: "csv",
-			Items: &Items{SimpleSchema: SimpleSchema{Type: tpe, Format: fmt}}}}
+	return &Parameter{
+		ParamProps: ParamProps{Name: name},
+		SimpleSchema: SimpleSchema{
+			Type: jsonArray, CollectionFormat: "csv",
+			Items: &Items{SimpleSchema: SimpleSchema{Type: tpe, Format: fmt}},
+		},
+	}
 }
 
 // ParamRef creates a parameter that's a json reference

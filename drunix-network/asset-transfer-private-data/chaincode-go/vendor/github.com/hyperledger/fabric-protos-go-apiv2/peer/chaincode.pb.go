@@ -11,11 +11,12 @@
 package peer
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	common "github.com/hyperledger/fabric-protos-go-apiv2/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -731,21 +732,24 @@ func file_peer_chaincode_proto_rawDescGZIP() []byte {
 	return file_peer_chaincode_proto_rawDescData
 }
 
-var file_peer_chaincode_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_peer_chaincode_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
-var file_peer_chaincode_proto_goTypes = []any{
-	(ChaincodeSpec_Type)(0),                // 0: protos.ChaincodeSpec.Type
-	(*ChaincodeID)(nil),                    // 1: protos.ChaincodeID
-	(*ChaincodeInput)(nil),                 // 2: protos.ChaincodeInput
-	(*ChaincodeSpec)(nil),                  // 3: protos.ChaincodeSpec
-	(*ChaincodeDeploymentSpec)(nil),        // 4: protos.ChaincodeDeploymentSpec
-	(*ChaincodeInvocationSpec)(nil),        // 5: protos.ChaincodeInvocationSpec
-	(*LifecycleEvent)(nil),                 // 6: protos.LifecycleEvent
-	(*CDSData)(nil),                        // 7: protos.CDSData
-	(*ChaincodeData)(nil),                  // 8: protos.ChaincodeData
-	nil,                                    // 9: protos.ChaincodeInput.DecorationsEntry
-	(*common.SignaturePolicyEnvelope)(nil), // 10: common.SignaturePolicyEnvelope
-}
+var (
+	file_peer_chaincode_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+	file_peer_chaincode_proto_msgTypes  = make([]protoimpl.MessageInfo, 9)
+	file_peer_chaincode_proto_goTypes   = []any{
+		(ChaincodeSpec_Type)(0),                // 0: protos.ChaincodeSpec.Type
+		(*ChaincodeID)(nil),                    // 1: protos.ChaincodeID
+		(*ChaincodeInput)(nil),                 // 2: protos.ChaincodeInput
+		(*ChaincodeSpec)(nil),                  // 3: protos.ChaincodeSpec
+		(*ChaincodeDeploymentSpec)(nil),        // 4: protos.ChaincodeDeploymentSpec
+		(*ChaincodeInvocationSpec)(nil),        // 5: protos.ChaincodeInvocationSpec
+		(*LifecycleEvent)(nil),                 // 6: protos.LifecycleEvent
+		(*CDSData)(nil),                        // 7: protos.CDSData
+		(*ChaincodeData)(nil),                  // 8: protos.ChaincodeData
+		nil,                                    // 9: protos.ChaincodeInput.DecorationsEntry
+		(*common.SignaturePolicyEnvelope)(nil), // 10: common.SignaturePolicyEnvelope
+	}
+)
+
 var file_peer_chaincode_proto_depIdxs = []int32{
 	9,  // 0: protos.ChaincodeInput.decorations:type_name -> protos.ChaincodeInput.DecorationsEntry
 	0,  // 1: protos.ChaincodeSpec.type:type_name -> protos.ChaincodeSpec.Type

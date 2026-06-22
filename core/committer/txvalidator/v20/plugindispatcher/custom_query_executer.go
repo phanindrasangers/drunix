@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package plugindispatcher
@@ -16,7 +16,6 @@ type CustomQueryExecuterCreator struct {
 }
 
 func NewCustomQueryExecuterCreator(queryExecuter statedb.VersionedDB) QueryExecutorCreator {
-
 	return &CustomQueryExecuterCreator{queryExecuter: queryExecuter}
 }
 
@@ -93,7 +92,6 @@ func (q QueryExecuter) GetStateMetadata(namespace string, key string) (map[strin
 
 // GetStateMultipleKeys implements ledger.QueryExecutor.
 func (q QueryExecuter) GetStateMultipleKeys(namespace string, keys []string) ([][]byte, error) {
-
 	versionedValues, err := q.queryExecuter.GetStateMultipleKeys(namespace, keys)
 	if err != nil {
 		return nil, err

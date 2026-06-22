@@ -114,6 +114,7 @@ func (p presence) toRaceDetectData() *RaceDetectHookData {
 func atomicLoadShadowPresence(p **[]byte) *[]byte {
 	return (*[]byte)(atomic.LoadPointer((*unsafe.Pointer)(unsafe.Pointer(p))))
 }
+
 func atomicStoreShadowPresence(p **[]byte, v *[]byte) {
 	atomic.CompareAndSwapPointer((*unsafe.Pointer)(unsafe.Pointer(p)), nil, unsafe.Pointer(v))
 }

@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -65,7 +65,7 @@ func getIntEnvDefault(key string, defaultVal int) int {
 		return defaultVal
 	}
 
-	var intVal, err = strconv.Atoi(val)
+	intVal, err := strconv.Atoi(val)
 	if err != nil {
 		fmt.Println("Convert env string val to int error")
 		return defaultVal
@@ -79,7 +79,7 @@ func getBoolEnvDefault(key string, defaultVal bool) bool {
 		return defaultVal
 	}
 
-	var boolVal, err = strconv.ParseBool(val)
+	boolVal, err := strconv.ParseBool(val)
 	if err != nil {
 		fmt.Println("Convert env string val to bool error")
 		return defaultVal

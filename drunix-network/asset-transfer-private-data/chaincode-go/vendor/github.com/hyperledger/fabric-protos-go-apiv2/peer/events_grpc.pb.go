@@ -12,6 +12,7 @@ package peer
 
 import (
 	context "context"
+
 	common "github.com/hyperledger/fabric-protos-go-apiv2/common"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -122,9 +123,11 @@ type UnimplementedDeliverServer struct{}
 func (UnimplementedDeliverServer) Deliver(grpc.BidiStreamingServer[common.Envelope, DeliverResponse]) error {
 	return status.Errorf(codes.Unimplemented, "method Deliver not implemented")
 }
+
 func (UnimplementedDeliverServer) DeliverFiltered(grpc.BidiStreamingServer[common.Envelope, DeliverResponse]) error {
 	return status.Errorf(codes.Unimplemented, "method DeliverFiltered not implemented")
 }
+
 func (UnimplementedDeliverServer) DeliverWithPrivateData(grpc.BidiStreamingServer[common.Envelope, DeliverResponse]) error {
 	return status.Errorf(codes.Unimplemented, "method DeliverWithPrivateData not implemented")
 }

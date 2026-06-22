@@ -4,6 +4,7 @@ package zstd
 #include "zstd.h"
 */
 import "C"
+
 import (
 	"errors"
 	"runtime"

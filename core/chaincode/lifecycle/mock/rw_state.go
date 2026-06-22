@@ -8,9 +8,8 @@ import (
 type ReadWritableState struct {
 	CollectionNameStub        func() string
 	collectionNameMutex       sync.RWMutex
-	collectionNameArgsForCall []struct {
-	}
-	collectionNameReturns struct {
+	collectionNameArgsForCall []struct{}
+	collectionNameReturns     struct {
 		result1 string
 	}
 	collectionNameReturnsOnCall map[int]struct {
@@ -85,8 +84,7 @@ type ReadWritableState struct {
 func (fake *ReadWritableState) CollectionName() string {
 	fake.collectionNameMutex.Lock()
 	ret, specificReturn := fake.collectionNameReturnsOnCall[len(fake.collectionNameArgsForCall)]
-	fake.collectionNameArgsForCall = append(fake.collectionNameArgsForCall, struct {
-	}{})
+	fake.collectionNameArgsForCall = append(fake.collectionNameArgsForCall, struct{}{})
 	fake.recordInvocation("CollectionName", []interface{}{})
 	fake.collectionNameMutex.Unlock()
 	if fake.CollectionNameStub != nil {

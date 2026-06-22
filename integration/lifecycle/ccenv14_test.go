@@ -13,8 +13,8 @@ import (
 	"runtime"
 	"syscall"
 
-	"github.com/npci/drunix/integration/nwo"
 	dcli "github.com/moby/moby/client"
+	"github.com/npci/drunix/integration/nwo"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	"github.com/tedsuo/ifrit"

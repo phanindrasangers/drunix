@@ -11,8 +11,10 @@ import (
 	"github.com/onsi/ginkgo/v2/types"
 )
 
-var _global_node_id_counter = uint(0)
-var _global_id_mutex = &sync.Mutex{}
+var (
+	_global_node_id_counter = uint(0)
+	_global_id_mutex        = &sync.Mutex{}
+)
 
 func UniqueNodeID() uint {
 	// There's a reace in the internal integration tests if we don't make
@@ -65,32 +67,38 @@ type Node struct {
 }
 
 // Decoration Types
-type focusType bool
-type pendingType bool
-type serialType bool
-type orderedType bool
-type continueOnFailureType bool
-type honorsOrderedType bool
-type suppressProgressReporting bool
+type (
+	focusType                 bool
+	pendingType               bool
+	serialType                bool
+	orderedType               bool
+	continueOnFailureType     bool
+	honorsOrderedType         bool
+	suppressProgressReporting bool
+)
 
-const Focus = focusType(true)
-const Pending = pendingType(true)
-const Serial = serialType(true)
-const Ordered = orderedType(true)
-const ContinueOnFailure = continueOnFailureType(true)
-const OncePerOrdered = honorsOrderedType(true)
-const SuppressProgressReporting = suppressProgressReporting(true)
+const (
+	Focus                     = focusType(true)
+	Pending                   = pendingType(true)
+	Serial                    = serialType(true)
+	Ordered                   = orderedType(true)
+	ContinueOnFailure         = continueOnFailureType(true)
+	OncePerOrdered            = honorsOrderedType(true)
+	SuppressProgressReporting = suppressProgressReporting(true)
+)
 
-type FlakeAttempts uint
-type MustPassRepeatedly uint
-type Offset uint
-type Done chan<- any // Deprecated Done Channel for asynchronous testing
-type Labels []string
-type PollProgressInterval time.Duration
-type PollProgressAfter time.Duration
-type NodeTimeout time.Duration
-type SpecTimeout time.Duration
-type GracePeriod time.Duration
+type (
+	FlakeAttempts        uint
+	MustPassRepeatedly   uint
+	Offset               uint
+	Done                 chan<- any // Deprecated Done Channel for asynchronous testing
+	Labels               []string
+	PollProgressInterval time.Duration
+	PollProgressAfter    time.Duration
+	NodeTimeout          time.Duration
+	SpecTimeout          time.Duration
+	GracePeriod          time.Duration
+)
 
 func (l Labels) MatchesLabelFilter(query string) bool {
 	return types.MustParseLabelFilter(query)(l)
@@ -181,8 +189,10 @@ func isSliceOfDecorations(slice any) bool {
 	return true
 }
 
-var contextType = reflect.TypeOf(new(context.Context)).Elem()
-var specContextType = reflect.TypeOf(new(SpecContext)).Elem()
+var (
+	contextType     = reflect.TypeOf(new(context.Context)).Elem()
+	specContextType = reflect.TypeOf(new(SpecContext)).Elem()
+)
 
 func NewNode(deprecationTracker *types.DeprecationTracker, nodeType types.NodeType, text string, args ...any) (Node, []error) {
 	baseOffset := 2

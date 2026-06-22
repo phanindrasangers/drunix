@@ -5,14 +5,17 @@ package statecouchdb
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -38,15 +41,19 @@ func (*VersionAndMetadata) Descriptor() ([]byte, []int) {
 func (m *VersionAndMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_VersionAndMetadata.Unmarshal(m, b)
 }
+
 func (m *VersionAndMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_VersionAndMetadata.Marshal(b, m, deterministic)
 }
+
 func (m *VersionAndMetadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_VersionAndMetadata.Merge(m, src)
 }
+
 func (m *VersionAndMetadata) XXX_Size() int {
 	return xxx_messageInfo_VersionAndMetadata.Size(m)
 }
+
 func (m *VersionAndMetadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_VersionAndMetadata.DiscardUnknown(m)
 }

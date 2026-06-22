@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -13,19 +13,19 @@ import (
 	"encoding/binary"
 	"fmt"
 
+	"github.com/VictoriaMetrics/fastcache"
+	proto "github.com/golang/protobuf/proto"
+	cb "github.com/hyperledger/fabric-protos-go/common"
+	ab "github.com/hyperledger/fabric-protos-go/orderer"
 	"github.com/npci/drunix/common/deliver"
 	"github.com/npci/drunix/common/ledger/blockledger"
 	"github.com/npci/drunix/common/policies"
 	"github.com/npci/drunix/orderer/common/multichannel"
 	"github.com/npci/drunix/protoutil"
-	"github.com/VictoriaMetrics/fastcache"
-	proto "github.com/golang/protobuf/proto"
-	cb "github.com/hyperledger/fabric-protos-go/common"
-	ab "github.com/hyperledger/fabric-protos-go/orderer"
 )
 
-type OrgChain struct { //individual org specific chain within a channel
-	oCStore      *OrgChainStore //where the org blocks of a specific org are stored
+type OrgChain struct { // individual org specific chain within a channel
+	oCStore      *OrgChainStore // where the org blocks of a specific org are stored
 	chainSupport deliver.Chain
 	mspID        string
 }
@@ -50,7 +50,6 @@ type orgCacheIterator struct {
 // Iterator returns an iterator and starting block number based on the
 // seek position (Oldest, Newest, Specified, NextCommit)
 func (ocStore *OrgChainStore) Iterator(seekPosition *ab.SeekPosition) (blockledger.Iterator, uint64) {
-
 	var startingBlockNumber uint64
 	switch start := seekPosition.Type.(type) {
 	case *ab.SeekPosition_Oldest:
@@ -117,7 +116,6 @@ func (ocStore *OrgChainStore) RetrieveBlockByNumber(blockNumber uint64) (*cb.Blo
 }
 
 func (ocStore *OrgChainStore) Get(key []byte) ([]byte, bool) {
-
 	/*
 		DRUNIX
 		If cache is evicted due to memory limit, still key and nil value persists on fast cache.
@@ -165,7 +163,6 @@ func (oci *orgCacheIterator) waitForBlock(blockNum uint64) uint64 {
 
 // Next implements blockledger.Iterator.
 func (oci *orgCacheIterator) Next() (*cb.Block, cb.Status) {
-
 	blockNumberbytes := make([]byte, 8)
 	binary.BigEndian.PutUint64(blockNumberbytes, oci.blockNumber)
 	if oci.maxAvailableBlockNum < oci.blockNumber {
@@ -191,7 +188,6 @@ func (oci *orgCacheIterator) Next() (*cb.Block, cb.Status) {
 }
 
 func searchAndRetreiveFatBlockMerkleInfo(orgblockNumber uint64, orgId, channelId string, sparseMetadataReadWriter blockledger.SparseMetadataReadWriter) (FatBlockMerkleInfoProto, uint64, error) {
-
 	fatBlockNumberBytes, err := sparseMetadataReadWriter.GetOrgMetaValue([]byte(fmt.Sprintf("%v.%v.%v", channelId, orgId, orgblockNumber)))
 	if err != nil || fatBlockNumberBytes == nil {
 		return FatBlockMerkleInfoProto{}, 0, err
@@ -264,7 +260,7 @@ func (oc *OrgChain) PolicyManager() policies.Manager {
 	return oc.chainSupport.PolicyManager()
 }
 
-func (oc *OrgChain) Errored() <-chan struct{} { //this needs to be handled with clarity
+func (oc *OrgChain) Errored() <-chan struct{} { // this needs to be handled with clarity
 	return oc.chainSupport.Errored()
 }
 

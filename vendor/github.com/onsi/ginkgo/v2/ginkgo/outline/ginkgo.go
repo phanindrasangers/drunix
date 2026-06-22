@@ -101,7 +101,6 @@ func (n *ginkgoNode) BackpropagateUnfocus() {
 			thisNode.Focused = false
 		}
 	})
-
 }
 
 func packageAndIdentNamesFromCallExpr(ce *ast.CallExpr) (string, string, bool) {
@@ -229,7 +228,6 @@ func textFromCallExpr(ce *ast.CallExpr) (string, bool) {
 }
 
 func labelFromCallExpr(ce *ast.CallExpr) []string {
-
 	labels := []string{}
 	if len(ce.Args) < 2 {
 		return labels
@@ -274,7 +272,6 @@ func extractLabels(expr *ast.CallExpr) []string {
 }
 
 func pendingFromCallExpr(ce *ast.CallExpr) bool {
-
 	pending := false
 	if len(ce.Args) < 2 {
 		return pending

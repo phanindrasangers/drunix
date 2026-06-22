@@ -10,9 +10,7 @@ import (
 	"github.com/alecthomas/template"
 )
 
-var (
-	preIndent = "  "
-)
+var preIndent = "  "
 
 func formatTwoColumns(w io.Writer, indent, padding, width int, rows [][2]string) {
 	// Find size of first column.

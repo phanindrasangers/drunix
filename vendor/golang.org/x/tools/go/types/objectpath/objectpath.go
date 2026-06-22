@@ -293,7 +293,6 @@ func (enc *Encoder) For(obj types.Object) (Path, error) {
 			if r := find(obj, T, path); r != nil {
 				return Path(r), nil
 			}
-
 		} else if named, ok := T.(*types.Named); ok {
 			// defined (named) type
 			if r := findTypeParam(obj, named.TypeParams(), path, opTypeParam); r != nil {

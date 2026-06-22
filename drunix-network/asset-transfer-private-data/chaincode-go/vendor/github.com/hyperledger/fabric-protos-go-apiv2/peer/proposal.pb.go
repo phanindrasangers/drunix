@@ -11,10 +11,11 @@
 package peer
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -469,17 +470,20 @@ func file_peer_proposal_proto_rawDescGZIP() []byte {
 	return file_peer_proposal_proto_rawDescData
 }
 
-var file_peer_proposal_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_peer_proposal_proto_goTypes = []any{
-	(*SignedProposal)(nil),           // 0: protos.SignedProposal
-	(*Proposal)(nil),                 // 1: protos.Proposal
-	(*ChaincodeHeaderExtension)(nil), // 2: protos.ChaincodeHeaderExtension
-	(*ChaincodeProposalPayload)(nil), // 3: protos.ChaincodeProposalPayload
-	(*ChaincodeAction)(nil),          // 4: protos.ChaincodeAction
-	nil,                              // 5: protos.ChaincodeProposalPayload.TransientMapEntry
-	(*ChaincodeID)(nil),              // 6: protos.ChaincodeID
-	(*Response)(nil),                 // 7: protos.Response
-}
+var (
+	file_peer_proposal_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+	file_peer_proposal_proto_goTypes  = []any{
+		(*SignedProposal)(nil),           // 0: protos.SignedProposal
+		(*Proposal)(nil),                 // 1: protos.Proposal
+		(*ChaincodeHeaderExtension)(nil), // 2: protos.ChaincodeHeaderExtension
+		(*ChaincodeProposalPayload)(nil), // 3: protos.ChaincodeProposalPayload
+		(*ChaincodeAction)(nil),          // 4: protos.ChaincodeAction
+		nil,                              // 5: protos.ChaincodeProposalPayload.TransientMapEntry
+		(*ChaincodeID)(nil),              // 6: protos.ChaincodeID
+		(*Response)(nil),                 // 7: protos.Response
+	}
+)
+
 var file_peer_proposal_proto_depIdxs = []int32{
 	6, // 0: protos.ChaincodeHeaderExtension.chaincode_id:type_name -> protos.ChaincodeID
 	5, // 1: protos.ChaincodeProposalPayload.TransientMap:type_name -> protos.ChaincodeProposalPayload.TransientMapEntry

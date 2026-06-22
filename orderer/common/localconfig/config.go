@@ -53,7 +53,7 @@ type General struct {
 	Authentication    Authentication
 	MaxRecvMsgSize    int32
 	MaxSendMsgSize    int32
-	Drunix             Drunix
+	Drunix            Drunix
 }
 
 type Drunix struct {

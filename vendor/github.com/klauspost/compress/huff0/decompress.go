@@ -553,7 +553,7 @@ func (d *Decoder) decompress1X8BitExactly(dst, src []byte) ([]byte, error) {
 
 	const shift = 56
 
-	//fmt.Printf("mask: %b, tl:%d\n", mask, d.actualTableLog)
+	// fmt.Printf("mask: %b, tl:%d\n", mask, d.actualTableLog)
 	for br.off >= 4 {
 		br.fillFast()
 		v := dt[uint8(br.value>>shift)]
@@ -626,7 +626,7 @@ func (d *Decoder) decompress4X8bit(dst, src []byte) ([]byte, error) {
 
 	var br [4]bitReaderBytes
 	start := 6
-	for i := 0; i < 3; i++ {
+	for i := range 3 {
 		length := int(src[i*2]) | (int(src[i*2+1]) << 8)
 		if start+length >= len(src) {
 			return nil, errors.New("truncated input (or invalid offset)")
@@ -768,9 +768,9 @@ func (d *Decoder) decompress4X8bit(dst, src []byte) ([]byte, error) {
 				d.bufs.Put(buf)
 				return nil, errors.New("corruption detected: stream overrun 2")
 			}
-			//copy(out, buf[0][:])
-			//copy(out[dstEvery:], buf[1][:])
-			//copy(out[dstEvery*2:], buf[2][:])
+			// copy(out, buf[0][:])
+			// copy(out[dstEvery:], buf[1][:])
+			// copy(out[dstEvery*2:], buf[2][:])
 			*(*[bufoff]byte)(out) = buf[0]
 			*(*[bufoff]byte)(out[dstEvery:]) = buf[1]
 			*(*[bufoff]byte)(out[dstEvery*2:]) = buf[2]
@@ -798,10 +798,7 @@ func (d *Decoder) decompress4X8bit(dst, src []byte) ([]byte, error) {
 	remainBytes := dstEvery - (decoded / 4)
 	for i := range br {
 		offset := dstEvery * i
-		endsAt := offset + remainBytes
-		if endsAt > len(out) {
-			endsAt = len(out)
-		}
+		endsAt := min(offset+remainBytes, len(out))
 		br := &br[i]
 		bitsLeft := br.remaining()
 		for bitsLeft > 0 {
@@ -864,7 +861,7 @@ func (d *Decoder) decompress4X8bit(dst, src []byte) ([]byte, error) {
 func (d *Decoder) decompress4X8bitExactly(dst, src []byte) ([]byte, error) {
 	var br [4]bitReaderBytes
 	start := 6
-	for i := 0; i < 3; i++ {
+	for i := range 3 {
 		length := int(src[i*2]) | (int(src[i*2+1]) << 8)
 		if start+length >= len(src) {
 			return nil, errors.New("truncated input (or invalid offset)")
@@ -1006,9 +1003,9 @@ func (d *Decoder) decompress4X8bitExactly(dst, src []byte) ([]byte, error) {
 				return nil, errors.New("corruption detected: stream overrun 2")
 			}
 
-			//copy(out, buf[0][:])
-			//copy(out[dstEvery:], buf[1][:])
-			//copy(out[dstEvery*2:], buf[2][:])
+			// copy(out, buf[0][:])
+			// copy(out[dstEvery:], buf[1][:])
+			// copy(out[dstEvery*2:], buf[2][:])
 			// copy(out[dstEvery*3:], buf[3][:])
 			*(*[bufoff]byte)(out) = buf[0]
 			*(*[bufoff]byte)(out[dstEvery:]) = buf[1]
@@ -1035,10 +1032,7 @@ func (d *Decoder) decompress4X8bitExactly(dst, src []byte) ([]byte, error) {
 	remainBytes := dstEvery - (decoded / 4)
 	for i := range br {
 		offset := dstEvery * i
-		endsAt := offset + remainBytes
-		if endsAt > len(out) {
-			endsAt = len(out)
-		}
+		endsAt := min(offset+remainBytes, len(out))
 		br := &br[i]
 		bitsLeft := br.remaining()
 		for bitsLeft > 0 {

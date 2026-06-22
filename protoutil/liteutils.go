@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package protoutil
@@ -47,7 +47,6 @@ func GetEndorsementsForLightTxn(endorsements []*peer.Endorsement) []*common.Endo
 }
 
 func GetCommonVersion(kVersion *kvrwset.Version) *common.Version {
-
 	if kVersion == nil {
 		return nil
 	} else {
@@ -59,7 +58,6 @@ func GetCommonVersion(kVersion *kvrwset.Version) *common.Version {
 }
 
 func GetHRWSet(hrwset *kvrwset.HashedRWSet) *common.HashedRWSet {
-
 	cNs := &common.HashedRWSet{
 		HashedReads:    []*common.KVReadHash{},
 		HashedWrites:   []*common.KVWriteHash{},
@@ -83,11 +81,9 @@ func GetHRWSet(hrwset *kvrwset.HashedRWSet) *common.HashedRWSet {
 	}
 
 	return cNs
-
 }
 
 func GetCollHRWSet(hrwset *rwsetutil.CollHashedRwSet) *common.CollectionHashedReadWriteSet {
-
 	cNs := &common.CollectionHashedReadWriteSet{
 		CollectionName: hrwset.CollectionName,
 		HashedRwset:    GetHRWSet(hrwset.HashedRwSet),
@@ -95,11 +91,9 @@ func GetCollHRWSet(hrwset *rwsetutil.CollHashedRwSet) *common.CollectionHashedRe
 	}
 
 	return cNs
-
 }
 
 func GettxRWSetForLightTxn(txRWSet *rwsetutil.TxRwSet) *common.TxReadWriteSet {
-
 	cTxRWSet := &common.TxReadWriteSet{
 		NsRwset: []*common.NsReadWriteSet{},
 	}
@@ -112,7 +106,6 @@ func GettxRWSetForLightTxn(txRWSet *rwsetutil.TxRwSet) *common.TxReadWriteSet {
 }
 
 func GetChaincodeEndorsedAction(endorsements []*peer.Endorsement, prpBytes []byte) (*common.ChaincodeEndorsedAction, error) {
-
 	pRespPayload, err := UnmarshalProposalResponsePayload(prpBytes)
 	if err != nil {
 		return nil, err
@@ -132,11 +125,9 @@ func GetChaincodeEndorsedAction(endorsements []*peer.Endorsement, prpBytes []byt
 		XXX_unrecognized:        []byte{},
 		XXX_sizecache:           0,
 	}, nil
-
 }
 
 func GetLightEnvFromCommonEnv(txnEnv *common.Envelope) (*common.LEnvelope, error) {
-
 	var txnHdr *common.LightHeader
 	var payload *common.Payload
 	var err error
@@ -213,7 +204,6 @@ DRUNIX:
 	Sign the lite format proposal response payload
 */
 func GetPeerEndorsement(prp *common.ProposalResponsePayload, signer Signer) (*peer.Endorsement, error) {
-
 	signerIDDetails, err := signer.Serialize()
 	if err != nil {
 		return nil, fmt.Errorf("Failed to get Signing Identity details from Signer : %+v", err)
@@ -252,7 +242,6 @@ DRUNIX:
 	Nothing fancy happening. Unmarshal, de-reference the vanilla RWSET, events and assign them to lite format chaincode action
 */
 func GetChaincodeActionForLightTxn(ca *peer.ChaincodeAction) (*common.ChaincodeAction, error) {
-
 	txRWSet := &rwsetutil.TxRwSet{}
 	if err := txRWSet.FromProtoBytes(ca.Results); err != nil {
 		return nil, fmt.Errorf("The transaction is rejected as the respPayload couldnt be unmarshalled : %v\n", ca)
@@ -284,7 +273,6 @@ func GetChaincodeActionForLightTxn(ca *peer.ChaincodeAction) (*common.ChaincodeA
 	}
 
 	return commonCCAction, nil
-
 }
 
 /*
@@ -299,12 +287,11 @@ DRUNIX:
 	These methods does nothing fancy. It just de-references the vanilla RWSet and assign the data to the lite RWSet
 */
 func gettxRWSetForLightTxn(txRWSet *rwsetutil.TxRwSet) (*common.TxReadWriteSet, error) {
-
 	cTxRWSet := &common.TxReadWriteSet{
 		NsRwset: []*common.NsReadWriteSet{},
 	}
 
-	//TODO: needs to be handled for CC upgrade
+	// TODO: needs to be handled for CC upgrade
 	// if txRWSet.NsRwSets[1].NameSpace == "lscc" {
 	// 	fmt.Println("lscc came!!! 173--------")
 	// 	return nil, errors.New("config transaction")
@@ -318,7 +305,6 @@ func gettxRWSetForLightTxn(txRWSet *rwsetutil.TxRwSet) (*common.TxReadWriteSet, 
 }
 
 func GetNSForLT(ns *rwsetutil.NsRwSet) *common.NsReadWriteSet {
-
 	cNs := common.NsReadWriteSet{
 		Namespace:             ns.NameSpace,
 		Rwset:                 GetKVRWSet(ns.KvRwSet),
@@ -330,7 +316,6 @@ func GetNSForLT(ns *rwsetutil.NsRwSet) *common.NsReadWriteSet {
 	}
 
 	return &cNs
-
 }
 
 func getCollHRWSet(hrwset *rwsetutil.CollHashedRwSet) *common.CollectionHashedReadWriteSet {
@@ -341,11 +326,9 @@ func getCollHRWSet(hrwset *rwsetutil.CollHashedRwSet) *common.CollectionHashedRe
 	}
 
 	return cNs
-
 }
 
 func GetKVRWSet(rwset *kvrwset.KVRWSet) *common.KVRWSet {
-
 	cNs := &common.KVRWSet{
 		Reads:            []*common.KVRead{},
 		RangeQueriesInfo: []*common.RangeQueryInfo{},
@@ -376,11 +359,9 @@ func GetKVRWSet(rwset *kvrwset.KVRWSet) *common.KVRWSet {
 	}
 
 	return cNs
-
 }
 
 func getHRWSet(hrwset *kvrwset.HashedRWSet) *common.HashedRWSet {
-
 	cNs := &common.HashedRWSet{
 		HashedReads:    []*common.KVReadHash{},
 		HashedWrites:   []*common.KVWriteHash{},
@@ -395,7 +376,6 @@ func getHRWSet(hrwset *kvrwset.HashedRWSet) *common.HashedRWSet {
 				BlockNum: rd.Version.BlockNum,
 				TxNum:    rd.Version.TxNum,
 			}
-
 		}
 		cNs.HashedReads = append(cNs.HashedReads, &common.KVReadHash{
 			KeyHash: rd.KeyHash,
@@ -412,7 +392,6 @@ func getHRWSet(hrwset *kvrwset.HashedRWSet) *common.HashedRWSet {
 	}
 
 	return cNs
-
 }
 
 /*
@@ -480,7 +459,6 @@ func UnmarshalCommonSerializedIdentity(bytes []byte) (*common.SerializedIdentity
 
 // DRUNIX: nothing fancy. Unmarshall and assign the data to lite header
 func GetLiteHeader(hdr *common.Header) (*common.LightHeader, error) {
-
 	shdr, err := UnmarshalSignatureHeader(hdr.SignatureHeader)
 	if err != nil {
 		return nil, err
@@ -495,11 +473,9 @@ func GetLiteHeader(hdr *common.Header) (*common.LightHeader, error) {
 		ChannelHeader:   chdr,
 		SignatureHeader: shdr,
 	}, nil
-
 }
 
 func GetLightHeader(hdr *common.Header) (*common.LightHeader, error) {
-
 	shdr, err := UnmarshalSignatureHeader(hdr.SignatureHeader)
 	if err != nil {
 		return nil, err
@@ -514,11 +490,9 @@ func GetLightHeader(hdr *common.Header) (*common.LightHeader, error) {
 		ChannelHeader:   chdr,
 		SignatureHeader: shdr,
 	}, nil
-
 }
 
 func GetNSForLT1(ns *rwsetutil.NsRwSet) *common.NsReadWriteSet {
-
 	cNs := common.NsReadWriteSet{
 		Namespace:             ns.NameSpace,
 		Rwset:                 GetKVRWSet(ns.KvRwSet),
@@ -531,11 +505,9 @@ func GetNSForLT1(ns *rwsetutil.NsRwSet) *common.NsReadWriteSet {
 	}
 
 	return &cNs
-
 }
 
 func EndorsementAsSignedDataForLightEnv(endorsement *common.Endorsement, prpBytes []byte) ([]*SignedData, error) {
-
 	var err error
 	inEndBytes, err := proto.Marshal(endorsement.Endorser)
 	if err != nil {
@@ -550,7 +522,6 @@ func EndorsementAsSignedDataForLightEnv(endorsement *common.Endorsement, prpByte
 }
 
 func GetChannelAndSignatureHeader(env *common.Envelope) (proto.Message, *common.ChannelHeader, *common.SignatureHeader, error) {
-
 	if env.Type == common.HeaderType_ENDORSER_TRANSACTION {
 		return env.LeanEnv, nil, nil, nil
 	} else {

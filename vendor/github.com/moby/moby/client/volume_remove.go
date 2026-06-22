@@ -12,8 +12,7 @@ type VolumeRemoveOptions struct {
 }
 
 // VolumeRemoveResult holds the result of [Client.VolumeRemove],
-type VolumeRemoveResult struct {
-	// Add future fields here.
+type VolumeRemoveResult struct { // Add future fields here.
 }
 
 // VolumeRemove removes a volume from the docker host.

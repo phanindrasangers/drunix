@@ -33,9 +33,8 @@ type StateListener struct {
 	}
 	InterestedInNamespacesStub        func() []string
 	interestedInNamespacesMutex       sync.RWMutex
-	interestedInNamespacesArgsForCall []struct {
-	}
-	interestedInNamespacesReturns struct {
+	interestedInNamespacesArgsForCall []struct{}
+	interestedInNamespacesReturns     struct {
 		result1 []string
 	}
 	interestedInNamespacesReturnsOnCall map[int]struct {
@@ -43,9 +42,8 @@ type StateListener struct {
 	}
 	NameStub        func() string
 	nameMutex       sync.RWMutex
-	nameArgsForCall []struct {
-	}
-	nameReturns struct {
+	nameArgsForCall []struct{}
+	nameReturns     struct {
 		result1 string
 	}
 	nameReturnsOnCall map[int]struct {
@@ -184,8 +182,7 @@ func (fake *StateListener) InitializeReturnsOnCall(i int, result1 error) {
 func (fake *StateListener) InterestedInNamespaces() []string {
 	fake.interestedInNamespacesMutex.Lock()
 	ret, specificReturn := fake.interestedInNamespacesReturnsOnCall[len(fake.interestedInNamespacesArgsForCall)]
-	fake.interestedInNamespacesArgsForCall = append(fake.interestedInNamespacesArgsForCall, struct {
-	}{})
+	fake.interestedInNamespacesArgsForCall = append(fake.interestedInNamespacesArgsForCall, struct{}{})
 	fake.recordInvocation("InterestedInNamespaces", []interface{}{})
 	fake.interestedInNamespacesMutex.Unlock()
 	if fake.InterestedInNamespacesStub != nil {
@@ -236,8 +233,7 @@ func (fake *StateListener) InterestedInNamespacesReturnsOnCall(i int, result1 []
 func (fake *StateListener) Name() string {
 	fake.nameMutex.Lock()
 	ret, specificReturn := fake.nameReturnsOnCall[len(fake.nameArgsForCall)]
-	fake.nameArgsForCall = append(fake.nameArgsForCall, struct {
-	}{})
+	fake.nameArgsForCall = append(fake.nameArgsForCall, struct{}{})
 	fake.recordInvocation("Name", []interface{}{})
 	fake.nameMutex.Unlock()
 	if fake.NameStub != nil {

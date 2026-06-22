@@ -117,7 +117,8 @@ func firstError(err error) error {
 			}
 			return nil
 		case interface{ Is(error) bool }:
-			for _, target := range []error{ErrUnknown,
+			for _, target := range []error{
+				ErrUnknown,
 				ErrInvalidArgument,
 				ErrNotFound,
 				ErrAlreadyExists,
@@ -134,7 +135,8 @@ func firstError(err error) error {
 				ErrDataLoss,
 				ErrUnauthenticated,
 				context.DeadlineExceeded,
-				context.Canceled} {
+				context.Canceled,
+			} {
 				if e.Is(target) {
 					return target
 				}

@@ -26,8 +26,10 @@ import (
 	"google.golang.org/grpc/resolver"
 )
 
-const unixScheme = "unix"
-const unixAbstractScheme = "unix-abstract"
+const (
+	unixScheme         = "unix"
+	unixAbstractScheme = "unix-abstract"
+)
 
 type builder struct {
 	scheme string
@@ -65,8 +67,7 @@ func (b *builder) OverrideAuthority(resolver.Target) string {
 	return "localhost"
 }
 
-type nopResolver struct {
-}
+type nopResolver struct{}
 
 func (*nopResolver) ResolveNow(resolver.ResolveNowOptions) {}
 

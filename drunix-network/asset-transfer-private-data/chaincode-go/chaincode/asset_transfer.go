@@ -17,8 +17,10 @@ import (
 	"github.com/hyperledger/fabric-contract-api-go/v2/contractapi"
 )
 
-const assetCollection = "assetCollection"
-const transferAgreementObjectType = "transferAgreement"
+const (
+	assetCollection             = "assetCollection"
+	transferAgreementObjectType = "transferAgreement"
+)
 
 // SmartContract of this fabric sample
 type SmartContract struct {
@@ -27,7 +29,7 @@ type SmartContract struct {
 
 // Asset describes main asset details that are visible to all organizations
 type Asset struct {
-	Type  string `json:"objectType"` //Type is used to distinguish the various types of objects in state database
+	Type  string `json:"objectType"` // Type is used to distinguish the various types of objects in state database
 	ID    string `json:"assetID"`
 	Color string `json:"color"`
 	Size  int    `json:"size"`
@@ -49,7 +51,6 @@ type TransferAgreement struct {
 // CreateAsset creates a new asset by placing the main asset details in the assetCollection
 // that can be read by both organizations. The appraisal value is stored in the owners org specific collection.
 func (s *SmartContract) CreateAsset(ctx contractapi.TransactionContextInterface) error {
-
 	// Get new asset from transient map
 	transientMap, err := ctx.GetStub().GetTransient()
 	if err != nil {
@@ -64,7 +65,7 @@ func (s *SmartContract) CreateAsset(ctx contractapi.TransactionContextInterface)
 	}
 
 	type assetTransientInput struct {
-		Type           string `json:"objectType"` //Type is used to distinguish the various types of objects in state database
+		Type           string `json:"objectType"` // Type is used to distinguish the various types of objects in state database
 		ID             string `json:"assetID"`
 		Color          string `json:"color"`
 		Size           int    `json:"size"`
@@ -170,7 +171,6 @@ func (s *SmartContract) CreateAsset(ctx contractapi.TransactionContextInterface)
 // org specifc collection, while the buyer client ID is stored in the asset collection
 // using a composite key
 func (s *SmartContract) AgreeToTransfer(ctx contractapi.TransactionContextInterface) error {
-
 	// Get ID of submitting client identity
 	clientID, err := submittingClientIdentity(ctx)
 	if err != nil {
@@ -250,7 +250,6 @@ func (s *SmartContract) AgreeToTransfer(ctx contractapi.TransactionContextInterf
 
 // TransferAsset transfers the asset to the new owner by setting a new owner ID
 func (s *SmartContract) TransferAsset(ctx contractapi.TransactionContextInterface) error {
-
 	transientMap, err := ctx.GetStub().GetTransient()
 	if err != nil {
 		return fmt.Errorf("error getting transient %v", err)
@@ -317,7 +316,7 @@ func (s *SmartContract) TransferAsset(ctx contractapi.TransactionContextInterfac
 	}
 
 	log.Printf("TransferAsset Put: collection %v, ID %v", assetCollection, assetTransferInput.ID)
-	err = ctx.GetStub().PutPrivateData(assetCollection, assetTransferInput.ID, assetJSONasBytes) //rewrite the asset
+	err = ctx.GetStub().PutPrivateData(assetCollection, assetTransferInput.ID, assetJSONasBytes) // rewrite the asset
 	if err != nil {
 		return err
 	}
@@ -346,14 +345,12 @@ func (s *SmartContract) TransferAsset(ctx contractapi.TransactionContextInterfac
 	}
 
 	return nil
-
 }
 
 // verifyAgreement is an internal helper function used by TransferAsset to verify
 // that the transfer is being initiated by the owner and that the buyer has agreed
 // to the same appraisal value as the owner
 func (s *SmartContract) verifyAgreement(ctx contractapi.TransactionContextInterface, assetID string, owner string, buyerMSP string) error {
-
 	// Check 1: verify that the transfer is being initiatied by the owner
 
 	// Get ID of submitting client identity
@@ -404,7 +401,6 @@ func (s *SmartContract) verifyAgreement(ctx contractapi.TransactionContextInterf
 
 // DeleteAsset can be used by the owner of the asset to delete the asset
 func (s *SmartContract) DeleteAsset(ctx contractapi.TransactionContextInterface) error {
-
 	transientMap, err := ctx.GetStub().GetTransient()
 	if err != nil {
 		return fmt.Errorf("Error getting transient: %v", err)
@@ -437,7 +433,7 @@ func (s *SmartContract) DeleteAsset(ctx contractapi.TransactionContextInterface)
 	}
 
 	log.Printf("Deleting Asset: %v", assetDeleteInput.ID)
-	valAsbytes, err := ctx.GetStub().GetPrivateData(assetCollection, assetDeleteInput.ID) //get the asset from chaincode state
+	valAsbytes, err := ctx.GetStub().GetPrivateData(assetCollection, assetDeleteInput.ID) // get the asset from chaincode state
 	if err != nil {
 		return fmt.Errorf("failed to read asset: %v", err)
 	}
@@ -472,13 +468,11 @@ func (s *SmartContract) DeleteAsset(ctx contractapi.TransactionContextInterface)
 	}
 
 	return nil
-
 }
 
 // PurgeAsset can be used by the owner of the asset to delete the asset
 // Trigger removal of the asset
 func (s *SmartContract) PurgeAsset(ctx contractapi.TransactionContextInterface) error {
-
 	transientMap, err := ctx.GetStub().GetTransient()
 	if err != nil {
 		return fmt.Errorf("Error getting transient: %v", err)
@@ -534,13 +528,11 @@ func (s *SmartContract) PurgeAsset(ctx contractapi.TransactionContextInterface) 
 	}
 
 	return nil
-
 }
 
 // DeleteTranferAgreement can be used by the buyer to withdraw a proposal from
 // the asset collection and from his own collection.
 func (s *SmartContract) DeleteTranferAgreement(ctx contractapi.TransactionContextInterface) error {
-
 	transientMap, err := ctx.GetStub().GetTransient()
 	if err != nil {
 		return fmt.Errorf("error getting transient: %v", err)
@@ -582,7 +574,7 @@ func (s *SmartContract) DeleteTranferAgreement(ctx contractapi.TransactionContex
 		return fmt.Errorf("failed to create composite key: %v", err)
 	}
 
-	valAsbytes, err := ctx.GetStub().GetPrivateData(assetCollection, tranferAgreeKey) //get the transfer_agreement
+	valAsbytes, err := ctx.GetStub().GetPrivateData(assetCollection, tranferAgreeKey) // get the transfer_agreement
 	if err != nil {
 		return fmt.Errorf("failed to read transfer_agreement: %v", err)
 	}
@@ -603,12 +595,10 @@ func (s *SmartContract) DeleteTranferAgreement(ctx contractapi.TransactionContex
 	}
 
 	return nil
-
 }
 
 // getCollectionName is an internal helper function to get collection of submitting client identity.
 func getCollectionName(ctx contractapi.TransactionContextInterface) (string, error) {
-
 	// Get the MSP ID of submitting client identity
 	clientMSPID, err := ctx.GetClientIdentity().GetMSPID()
 	if err != nil {

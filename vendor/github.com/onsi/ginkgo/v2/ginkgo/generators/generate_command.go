@@ -20,26 +20,37 @@ func BuildGenerateCommand() command.Command {
 	conf := GeneratorsConfig{}
 	flags, err := types.NewGinkgoFlagSet(
 		types.GinkgoFlags{
-			{Name: "agouti", KeyPath: "Agouti",
-				Usage: "If set, generate will create a test file for writing Agouti tests"},
-			{Name: "nodot", KeyPath: "NoDot",
-				Usage: "If set, generate will create a test file that does not dot-import ginkgo and gomega"},
-			{Name: "internal", KeyPath: "Internal",
-				Usage: "If set, generate will create a test file that uses the regular package name (i.e. `package X`, not `package X_test`)"},
-			{Name: "template", KeyPath: "CustomTemplate",
+			{
+				Name: "agouti", KeyPath: "Agouti",
+				Usage: "If set, generate will create a test file for writing Agouti tests",
+			},
+			{
+				Name: "nodot", KeyPath: "NoDot",
+				Usage: "If set, generate will create a test file that does not dot-import ginkgo and gomega",
+			},
+			{
+				Name: "internal", KeyPath: "Internal",
+				Usage: "If set, generate will create a test file that uses the regular package name (i.e. `package X`, not `package X_test`)",
+			},
+			{
+				Name: "template", KeyPath: "CustomTemplate",
 				UsageArgument: "template-file",
-				Usage:         "If specified, generate will use the contents of the file passed as the test file template"},
-			{Name: "template-data", KeyPath: "CustomTemplateData",
+				Usage:         "If specified, generate will use the contents of the file passed as the test file template",
+			},
+			{
+				Name: "template-data", KeyPath: "CustomTemplateData",
 				UsageArgument: "template-data-file",
-				Usage:         "If specified, generate will use the contents of the file passed as data to be rendered in the test file template"},
-			{Name: "tags", KeyPath: "Tags",
+				Usage:         "If specified, generate will use the contents of the file passed as data to be rendered in the test file template",
+			},
+			{
+				Name: "tags", KeyPath: "Tags",
 				UsageArgument: "build-tags",
-				Usage:         "If specified, generate will create a test file that uses the given build tags (i.e. `--tags e2e,!unit` will add `//go:build e2e,!unit`)"},
+				Usage:         "If specified, generate will create a test file that uses the given build tags (i.e. `--tags e2e,!unit` will add `//go:build e2e,!unit`)",
+			},
 		},
 		&conf,
 		types.GinkgoFlagSections{},
 	)
-
 	if err != nil {
 		panic(err)
 	}
@@ -139,7 +150,7 @@ func generateTestFileForSubject(subject string, conf GeneratorsConfig) {
 			if !json.Valid([]byte(tplCustomData)) {
 				command.AbortWith("Invalid JSON object in custom data file.")
 			}
-			//create map from the custom template data
+			// create map from the custom template data
 			json.Unmarshal(tplCustomData, &tplCustomDataMap)
 			data.CustomData = tplCustomDataMap
 		}
@@ -149,12 +160,12 @@ func generateTestFileForSubject(subject string, conf GeneratorsConfig) {
 		templateText = specText
 	}
 
-	//Setting the option to explicitly fail if template is rendered trying to access missing key
+	// Setting the option to explicitly fail if template is rendered trying to access missing key
 	specTemplate, err := template.New("spec").Funcs(sprig.TxtFuncMap()).Option("missingkey=error").Parse(templateText)
 	command.AbortIfError("Failed to read parse test template:", err)
 
-	//Being explicit about failing sooner during template rendering
-	//when accessing custom data rather than during the go fmt command
+	// Being explicit about failing sooner during template rendering
+	// when accessing custom data rather than during the go fmt command
 	err = specTemplate.Execute(f, data)
 	command.AbortIfError("Failed to render bootstrap template:", err)
 	internal.GoFmt(targetFile)

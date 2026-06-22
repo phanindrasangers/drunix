@@ -8,8 +8,7 @@ import (
 	"github.com/onsi/gomega/format"
 )
 
-type HaveOccurredMatcher struct {
-}
+type HaveOccurredMatcher struct{}
 
 func (matcher *HaveOccurredMatcher) Match(actual any) (success bool, err error) {
 	// is purely nil?

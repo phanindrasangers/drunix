@@ -86,7 +86,6 @@ func (r *registryAdapter) evaluateModeAndLoad(c *HandlerConfig, handlerType Hand
 }
 
 func (r *registryAdapter) loadCompiled(handlerFactory string, handlerType HandlerType, extraArgs ...string) {
-
 	registryMD := reflect.ValueOf(&HandlerLibrary{})
 
 	o := registryMD.MethodByName(handlerFactory)

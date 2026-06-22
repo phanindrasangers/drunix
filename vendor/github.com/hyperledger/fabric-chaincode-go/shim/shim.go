@@ -19,8 +19,8 @@ import (
 )
 
 const (
-	minUnicodeRuneValue   = 0            //U+0000
-	maxUnicodeRuneValue   = utf8.MaxRune //U+10FFFF - maximum (and unallocated) code point
+	minUnicodeRuneValue   = 0            // U+0000
+	maxUnicodeRuneValue   = utf8.MaxRune // U+10FFFF - maximum (and unallocated) code point
 	compositeKeyNamespace = "\x00"
 	emptyKeySubstitute    = "\x01"
 )
@@ -28,14 +28,14 @@ const (
 // peer as server
 var peerAddress = flag.String("peer.address", "", "peer address")
 
-//this separates the chaincode stream interface establishment
-//so we can replace it with a mock peer stream
+// this separates the chaincode stream interface establishment
+// so we can replace it with a mock peer stream
 type peerStreamGetter func(name string) (ClientStream, error)
 
-//UTs to setup mock peer stream getter
+// UTs to setup mock peer stream getter
 var streamGetter peerStreamGetter
 
-//the non-mock user CC stream establishment func
+// the non-mock user CC stream establishment func
 func userChaincodeStreamGetter(name string) (ClientStream, error) {
 	if *peerAddress == "" {
 		return nil, errors.New("flag 'peer.address' must be set")
@@ -62,7 +62,7 @@ func Start(cc Chaincode) error {
 		return errors.New("'CORE_CHAINCODE_ID_NAME' must be set")
 	}
 
-	//mock stream not set up ... get real stream
+	// mock stream not set up ... get real stream
 	if streamGetter == nil {
 		streamGetter = userChaincodeStreamGetter
 	}
@@ -104,7 +104,6 @@ func chatWithPeer(chaincodename string, stream PeerChaincodeStream, cc Chaincode
 	// Register on the stream
 	if err = handler.serialSend(&peerpb.ChaincodeMessage{Type: peerpb.ChaincodeMessage_REGISTER, Payload: payload}); err != nil {
 		return fmt.Errorf("error sending chaincode REGISTER: %s", err)
-
 	}
 
 	// holds return values from gRPC Recv below

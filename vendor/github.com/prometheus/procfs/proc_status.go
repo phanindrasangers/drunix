@@ -219,7 +219,6 @@ func calcCpusAllowedList(cpuString string) []uint64 {
 			cpu, _ := strconv.ParseUint(l[0], 10, 64)
 			g = append(g, cpu)
 		}
-
 	}
 
 	sort.Slice(g, func(i, j int) bool { return g[i] < g[j] })

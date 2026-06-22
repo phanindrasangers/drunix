@@ -22,10 +22,9 @@ type PeerLedger struct {
 	cancelSnapshotRequestReturnsOnCall map[int]struct {
 		result1 error
 	}
-	CloseStub        func()
-	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
+	CloseStub               func()
+	closeMutex              sync.RWMutex
+	closeArgsForCall        []struct{}
 	CommitLegacyStub        func(*ledger.BlockAndPvtData, *ledger.CommitOptions) error
 	commitLegacyMutex       sync.RWMutex
 	commitLegacyArgsForCall []struct {
@@ -119,9 +118,8 @@ type PeerLedger struct {
 	}
 	GetBlockchainInfoStub        func() (*common.BlockchainInfo, error)
 	getBlockchainInfoMutex       sync.RWMutex
-	getBlockchainInfoArgsForCall []struct {
-	}
-	getBlockchainInfoReturns struct {
+	getBlockchainInfoArgsForCall []struct{}
+	getBlockchainInfoReturns     struct {
 		result1 *common.BlockchainInfo
 		result2 error
 	}
@@ -144,9 +142,8 @@ type PeerLedger struct {
 	}
 	GetConfigHistoryRetrieverStub        func() (ledger.ConfigHistoryRetriever, error)
 	getConfigHistoryRetrieverMutex       sync.RWMutex
-	getConfigHistoryRetrieverArgsForCall []struct {
-	}
-	getConfigHistoryRetrieverReturns struct {
+	getConfigHistoryRetrieverArgsForCall []struct{}
+	getConfigHistoryRetrieverReturns     struct {
 		result1 ledger.ConfigHistoryRetriever
 		result2 error
 	}
@@ -156,9 +153,8 @@ type PeerLedger struct {
 	}
 	GetMissingPvtDataTrackerStub        func() (ledger.MissingPvtDataTracker, error)
 	getMissingPvtDataTrackerMutex       sync.RWMutex
-	getMissingPvtDataTrackerArgsForCall []struct {
-	}
-	getMissingPvtDataTrackerReturns struct {
+	getMissingPvtDataTrackerArgsForCall []struct{}
+	getMissingPvtDataTrackerReturns     struct {
 		result1 ledger.MissingPvtDataTracker
 		result2 error
 	}
@@ -224,9 +220,8 @@ type PeerLedger struct {
 	}
 	NewHistoryQueryExecutorStub        func() (ledger.HistoryQueryExecutor, error)
 	newHistoryQueryExecutorMutex       sync.RWMutex
-	newHistoryQueryExecutorArgsForCall []struct {
-	}
-	newHistoryQueryExecutorReturns struct {
+	newHistoryQueryExecutorArgsForCall []struct{}
+	newHistoryQueryExecutorReturns     struct {
 		result1 ledger.HistoryQueryExecutor
 		result2 error
 	}
@@ -236,9 +231,8 @@ type PeerLedger struct {
 	}
 	NewQueryExecutorStub        func() (ledger.QueryExecutor, error)
 	newQueryExecutorMutex       sync.RWMutex
-	newQueryExecutorArgsForCall []struct {
-	}
-	newQueryExecutorReturns struct {
+	newQueryExecutorArgsForCall []struct{}
+	newQueryExecutorReturns     struct {
 		result1 ledger.QueryExecutor
 		result2 error
 	}
@@ -261,9 +255,8 @@ type PeerLedger struct {
 	}
 	PendingSnapshotRequestsStub        func() ([]uint64, error)
 	pendingSnapshotRequestsMutex       sync.RWMutex
-	pendingSnapshotRequestsArgsForCall []struct {
-	}
-	pendingSnapshotRequestsReturns struct {
+	pendingSnapshotRequestsArgsForCall []struct{}
+	pendingSnapshotRequestsReturns     struct {
 		result1 []uint64
 		result2 error
 	}
@@ -361,8 +354,7 @@ func (fake *PeerLedger) CancelSnapshotRequestReturnsOnCall(i int, result1 error)
 
 func (fake *PeerLedger) Close() {
 	fake.closeMutex.Lock()
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	fake.recordInvocation("Close", []interface{}{})
 	fake.closeMutex.Unlock()
 	if fake.CloseStub != nil {
@@ -835,8 +827,7 @@ func (fake *PeerLedger) GetBlockByTxIDReturnsOnCall(i int, result1 *common.Block
 func (fake *PeerLedger) GetBlockchainInfo() (*common.BlockchainInfo, error) {
 	fake.getBlockchainInfoMutex.Lock()
 	ret, specificReturn := fake.getBlockchainInfoReturnsOnCall[len(fake.getBlockchainInfoArgsForCall)]
-	fake.getBlockchainInfoArgsForCall = append(fake.getBlockchainInfoArgsForCall, struct {
-	}{})
+	fake.getBlockchainInfoArgsForCall = append(fake.getBlockchainInfoArgsForCall, struct{}{})
 	fake.recordInvocation("GetBlockchainInfo", []interface{}{})
 	fake.getBlockchainInfoMutex.Unlock()
 	if fake.GetBlockchainInfoStub != nil {
@@ -953,8 +944,7 @@ func (fake *PeerLedger) GetBlocksIteratorReturnsOnCall(i int, result1 ledgera.Re
 func (fake *PeerLedger) GetConfigHistoryRetriever() (ledger.ConfigHistoryRetriever, error) {
 	fake.getConfigHistoryRetrieverMutex.Lock()
 	ret, specificReturn := fake.getConfigHistoryRetrieverReturnsOnCall[len(fake.getConfigHistoryRetrieverArgsForCall)]
-	fake.getConfigHistoryRetrieverArgsForCall = append(fake.getConfigHistoryRetrieverArgsForCall, struct {
-	}{})
+	fake.getConfigHistoryRetrieverArgsForCall = append(fake.getConfigHistoryRetrieverArgsForCall, struct{}{})
 	fake.recordInvocation("GetConfigHistoryRetriever", []interface{}{})
 	fake.getConfigHistoryRetrieverMutex.Unlock()
 	if fake.GetConfigHistoryRetrieverStub != nil {
@@ -1008,8 +998,7 @@ func (fake *PeerLedger) GetConfigHistoryRetrieverReturnsOnCall(i int, result1 le
 func (fake *PeerLedger) GetMissingPvtDataTracker() (ledger.MissingPvtDataTracker, error) {
 	fake.getMissingPvtDataTrackerMutex.Lock()
 	ret, specificReturn := fake.getMissingPvtDataTrackerReturnsOnCall[len(fake.getMissingPvtDataTrackerArgsForCall)]
-	fake.getMissingPvtDataTrackerArgsForCall = append(fake.getMissingPvtDataTrackerArgsForCall, struct {
-	}{})
+	fake.getMissingPvtDataTrackerArgsForCall = append(fake.getMissingPvtDataTrackerArgsForCall, struct{}{})
 	fake.recordInvocation("GetMissingPvtDataTracker", []interface{}{})
 	fake.getMissingPvtDataTrackerMutex.Unlock()
 	if fake.GetMissingPvtDataTrackerStub != nil {
@@ -1320,8 +1309,7 @@ func (fake *PeerLedger) GetTxValidationCodeByTxIDReturnsOnCall(i int, result1 pe
 func (fake *PeerLedger) NewHistoryQueryExecutor() (ledger.HistoryQueryExecutor, error) {
 	fake.newHistoryQueryExecutorMutex.Lock()
 	ret, specificReturn := fake.newHistoryQueryExecutorReturnsOnCall[len(fake.newHistoryQueryExecutorArgsForCall)]
-	fake.newHistoryQueryExecutorArgsForCall = append(fake.newHistoryQueryExecutorArgsForCall, struct {
-	}{})
+	fake.newHistoryQueryExecutorArgsForCall = append(fake.newHistoryQueryExecutorArgsForCall, struct{}{})
 	fake.recordInvocation("NewHistoryQueryExecutor", []interface{}{})
 	fake.newHistoryQueryExecutorMutex.Unlock()
 	if fake.NewHistoryQueryExecutorStub != nil {
@@ -1375,8 +1363,7 @@ func (fake *PeerLedger) NewHistoryQueryExecutorReturnsOnCall(i int, result1 ledg
 func (fake *PeerLedger) NewQueryExecutor() (ledger.QueryExecutor, error) {
 	fake.newQueryExecutorMutex.Lock()
 	ret, specificReturn := fake.newQueryExecutorReturnsOnCall[len(fake.newQueryExecutorArgsForCall)]
-	fake.newQueryExecutorArgsForCall = append(fake.newQueryExecutorArgsForCall, struct {
-	}{})
+	fake.newQueryExecutorArgsForCall = append(fake.newQueryExecutorArgsForCall, struct{}{})
 	fake.recordInvocation("NewQueryExecutor", []interface{}{})
 	fake.newQueryExecutorMutex.Unlock()
 	if fake.NewQueryExecutorStub != nil {
@@ -1493,8 +1480,7 @@ func (fake *PeerLedger) NewTxSimulatorReturnsOnCall(i int, result1 ledger.TxSimu
 func (fake *PeerLedger) PendingSnapshotRequests() ([]uint64, error) {
 	fake.pendingSnapshotRequestsMutex.Lock()
 	ret, specificReturn := fake.pendingSnapshotRequestsReturnsOnCall[len(fake.pendingSnapshotRequestsArgsForCall)]
-	fake.pendingSnapshotRequestsArgsForCall = append(fake.pendingSnapshotRequestsArgsForCall, struct {
-	}{})
+	fake.pendingSnapshotRequestsArgsForCall = append(fake.pendingSnapshotRequestsArgsForCall, struct{}{})
 	fake.recordInvocation("PendingSnapshotRequests", []interface{}{})
 	fake.pendingSnapshotRequestsMutex.Unlock()
 	if fake.PendingSnapshotRequestsStub != nil {

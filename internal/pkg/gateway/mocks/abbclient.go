@@ -13,9 +13,8 @@ import (
 type ABBClient struct {
 	CloseSendStub        func() error
 	closeSendMutex       sync.RWMutex
-	closeSendArgsForCall []struct {
-	}
-	closeSendReturns struct {
+	closeSendArgsForCall []struct{}
+	closeSendReturns     struct {
 		result1 error
 	}
 	closeSendReturnsOnCall map[int]struct {
@@ -23,9 +22,8 @@ type ABBClient struct {
 	}
 	ContextStub        func() context.Context
 	contextMutex       sync.RWMutex
-	contextArgsForCall []struct {
-	}
-	contextReturns struct {
+	contextArgsForCall []struct{}
+	contextReturns     struct {
 		result1 context.Context
 	}
 	contextReturnsOnCall map[int]struct {
@@ -33,9 +31,8 @@ type ABBClient struct {
 	}
 	HeaderStub        func() (metadata.MD, error)
 	headerMutex       sync.RWMutex
-	headerArgsForCall []struct {
-	}
-	headerReturns struct {
+	headerArgsForCall []struct{}
+	headerReturns     struct {
 		result1 metadata.MD
 		result2 error
 	}
@@ -45,9 +42,8 @@ type ABBClient struct {
 	}
 	RecvStub        func() (*orderer.BroadcastResponse, error)
 	recvMutex       sync.RWMutex
-	recvArgsForCall []struct {
-	}
-	recvReturns struct {
+	recvArgsForCall []struct{}
+	recvReturns     struct {
 		result1 *orderer.BroadcastResponse
 		result2 error
 	}
@@ -90,9 +86,8 @@ type ABBClient struct {
 	}
 	TrailerStub        func() metadata.MD
 	trailerMutex       sync.RWMutex
-	trailerArgsForCall []struct {
-	}
-	trailerReturns struct {
+	trailerArgsForCall []struct{}
+	trailerReturns     struct {
 		result1 metadata.MD
 	}
 	trailerReturnsOnCall map[int]struct {
@@ -105,8 +100,7 @@ type ABBClient struct {
 func (fake *ABBClient) CloseSend() error {
 	fake.closeSendMutex.Lock()
 	ret, specificReturn := fake.closeSendReturnsOnCall[len(fake.closeSendArgsForCall)]
-	fake.closeSendArgsForCall = append(fake.closeSendArgsForCall, struct {
-	}{})
+	fake.closeSendArgsForCall = append(fake.closeSendArgsForCall, struct{}{})
 	stub := fake.CloseSendStub
 	fakeReturns := fake.closeSendReturns
 	fake.recordInvocation("CloseSend", []interface{}{})
@@ -158,8 +152,7 @@ func (fake *ABBClient) CloseSendReturnsOnCall(i int, result1 error) {
 func (fake *ABBClient) Context() context.Context {
 	fake.contextMutex.Lock()
 	ret, specificReturn := fake.contextReturnsOnCall[len(fake.contextArgsForCall)]
-	fake.contextArgsForCall = append(fake.contextArgsForCall, struct {
-	}{})
+	fake.contextArgsForCall = append(fake.contextArgsForCall, struct{}{})
 	stub := fake.ContextStub
 	fakeReturns := fake.contextReturns
 	fake.recordInvocation("Context", []interface{}{})
@@ -211,8 +204,7 @@ func (fake *ABBClient) ContextReturnsOnCall(i int, result1 context.Context) {
 func (fake *ABBClient) Header() (metadata.MD, error) {
 	fake.headerMutex.Lock()
 	ret, specificReturn := fake.headerReturnsOnCall[len(fake.headerArgsForCall)]
-	fake.headerArgsForCall = append(fake.headerArgsForCall, struct {
-	}{})
+	fake.headerArgsForCall = append(fake.headerArgsForCall, struct{}{})
 	stub := fake.HeaderStub
 	fakeReturns := fake.headerReturns
 	fake.recordInvocation("Header", []interface{}{})
@@ -267,8 +259,7 @@ func (fake *ABBClient) HeaderReturnsOnCall(i int, result1 metadata.MD, result2 e
 func (fake *ABBClient) Recv() (*orderer.BroadcastResponse, error) {
 	fake.recvMutex.Lock()
 	ret, specificReturn := fake.recvReturnsOnCall[len(fake.recvArgsForCall)]
-	fake.recvArgsForCall = append(fake.recvArgsForCall, struct {
-	}{})
+	fake.recvArgsForCall = append(fake.recvArgsForCall, struct{}{})
 	stub := fake.RecvStub
 	fakeReturns := fake.recvReturns
 	fake.recordInvocation("Recv", []interface{}{})
@@ -506,8 +497,7 @@ func (fake *ABBClient) SendMsgReturnsOnCall(i int, result1 error) {
 func (fake *ABBClient) Trailer() metadata.MD {
 	fake.trailerMutex.Lock()
 	ret, specificReturn := fake.trailerReturnsOnCall[len(fake.trailerArgsForCall)]
-	fake.trailerArgsForCall = append(fake.trailerArgsForCall, struct {
-	}{})
+	fake.trailerArgsForCall = append(fake.trailerArgsForCall, struct{}{})
 	stub := fake.TrailerStub
 	fakeReturns := fake.trailerReturns
 	fake.recordInvocation("Trailer", []interface{}{})

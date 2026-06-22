@@ -16,7 +16,6 @@ limitations under the License.
 Modifications Copyright National Payments Corporation of India
 */
 
-
 package rwsetutil
 
 import (

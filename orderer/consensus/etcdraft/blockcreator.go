@@ -53,7 +53,6 @@ DRUNIX:
 createNextBlockWithBatch creates a new block with a batch of requests
 */
 func (bc *blockCreator) createNextBlockWithBatch(envs *orderer.Batch) *cb.Block {
-
 	data := &cb.BlockData{
 		Data: make([][]byte, len(envs.Reqs)),
 	}

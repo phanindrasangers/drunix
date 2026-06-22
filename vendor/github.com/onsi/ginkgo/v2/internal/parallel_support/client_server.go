@@ -19,9 +19,11 @@ type ParallelIndexCounter struct {
 	Index int
 }
 
-var ErrorGone = fmt.Errorf("gone")
-var ErrorFailed = fmt.Errorf("failed")
-var ErrorEarly = fmt.Errorf("early")
+var (
+	ErrorGone   = fmt.Errorf("gone")
+	ErrorFailed = fmt.Errorf("failed")
+	ErrorEarly  = fmt.Errorf("early")
+)
 
 var POLLING_INTERVAL = 50 * time.Millisecond
 

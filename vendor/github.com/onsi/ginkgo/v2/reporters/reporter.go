@@ -10,7 +10,7 @@ type Reporter interface {
 	DidRun(report types.SpecReport)
 	SuiteDidEnd(report types.Report)
 
-	//Timeline emission
+	// Timeline emission
 	EmitFailure(state types.SpecState, failure types.Failure)
 	EmitProgressReport(progressReport types.ProgressReport)
 	EmitReportEntry(entry types.ReportEntry)

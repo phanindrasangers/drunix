@@ -8,8 +8,7 @@ import (
 )
 
 // SwarmInspectOptions holds options for inspecting a swarm.
-type SwarmInspectOptions struct {
-	// Add future optional parameters here
+type SwarmInspectOptions struct { // Add future optional parameters here
 }
 
 // SwarmInspectResult represents the result of a SwarmInspect operation.

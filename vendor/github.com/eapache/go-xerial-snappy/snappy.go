@@ -93,7 +93,7 @@ func DecodeInto(dst, src []byte) ([]byte, error) {
 		return dst, err
 	}
 
-	var max = len(src)
+	max := len(src)
 	if max < len(xerialHeader) {
 		return nil, ErrMalformed
 	}

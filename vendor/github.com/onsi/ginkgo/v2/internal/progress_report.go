@@ -104,7 +104,7 @@ func NewProgressReport(isRunningInParallel bool, report types.SpecReport, curren
 	addPackageFor(currentNode.CodeLocation.FileName)
 	addPackageFor(currentStep.CodeLocation.FileName)
 
-	//First, we find the SpecGoroutine - this will be the goroutine that includes `runNode`
+	// First, we find the SpecGoroutine - this will be the goroutine that includes `runNode`
 	specGoRoutineIdx := -1
 	runNodeFunctionCallIdx := -1
 OUTER:
@@ -118,7 +118,7 @@ OUTER:
 		}
 	}
 
-	//Now, we find the first non-Ginkgo function call
+	// Now, we find the first non-Ginkgo function call
 	if specGoRoutineIdx > -1 {
 		for runNodeFunctionCallIdx >= 0 {
 			fn := goroutines[specGoRoutineIdx].Stack[runNodeFunctionCallIdx].Function
@@ -129,9 +129,8 @@ OUTER:
 				continue
 			}
 			if strings.Contains(goroutines[specGoRoutineIdx].Stack[runNodeFunctionCallIdx].Function, "ginkgo/table_dsl") {
-
 			}
-			//found it!  lets add its package of interest
+			// found it!  lets add its package of interest
 			addPackageFor(goroutines[specGoRoutineIdx].Stack[runNodeFunctionCallIdx].Filename)
 			break
 		}
@@ -194,12 +193,12 @@ func extractRunningGoroutines() ([]types.Goroutine, error) {
 
 		line = strings.TrimSuffix(line, "\n")
 
-		//skip blank lines
+		// skip blank lines
 		if line == "" {
 			continue
 		}
 
-		//parse headers for new goroutine frames
+		// parse headers for new goroutine frames
 		if strings.HasPrefix(line, "goroutine") {
 			out = append(out, types.Goroutine{})
 			idx = len(out) - 1
@@ -219,7 +218,7 @@ func extractRunningGoroutines() ([]types.Goroutine, error) {
 			continue
 		}
 
-		//if we are here we must be at a function call entry in the stack
+		// if we are here we must be at a function call entry in the stack
 		functionCall := types.FunctionCall{
 			Function: strings.TrimPrefix(line, "created by "), // no need to track 'created by'
 		}

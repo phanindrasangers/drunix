@@ -69,7 +69,7 @@ type SparseMetadataReadWriter interface {
 	GetOrgMetaValue(key []byte) ([]byte, error)
 	AppendSavePoint(key []byte, num []byte) error
 	GetSavePoint(key []byte) ([]byte, error)
-	GetSparseChannel() (chan *cb.Block, error) //spbc
+	GetSparseChannel() (chan *cb.Block, error) // spbc
 }
 
 type SparseEnabledReadWriter interface {

@@ -6,19 +6,22 @@ package peer
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	common "github.com/hyperledger/fabric-protos-go/common"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -49,15 +52,19 @@ func (*SnapshotRequest) Descriptor() ([]byte, []int) {
 func (m *SnapshotRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SnapshotRequest.Unmarshal(m, b)
 }
+
 func (m *SnapshotRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SnapshotRequest.Marshal(b, m, deterministic)
 }
+
 func (m *SnapshotRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SnapshotRequest.Merge(m, src)
 }
+
 func (m *SnapshotRequest) XXX_Size() int {
 	return xxx_messageInfo_SnapshotRequest.Size(m)
 }
+
 func (m *SnapshotRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_SnapshotRequest.DiscardUnknown(m)
 }
@@ -106,15 +113,19 @@ func (*SnapshotQuery) Descriptor() ([]byte, []int) {
 func (m *SnapshotQuery) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SnapshotQuery.Unmarshal(m, b)
 }
+
 func (m *SnapshotQuery) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SnapshotQuery.Marshal(b, m, deterministic)
 }
+
 func (m *SnapshotQuery) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SnapshotQuery.Merge(m, src)
 }
+
 func (m *SnapshotQuery) XXX_Size() int {
 	return xxx_messageInfo_SnapshotQuery.Size(m)
 }
+
 func (m *SnapshotQuery) XXX_DiscardUnknown() {
 	xxx_messageInfo_SnapshotQuery.DiscardUnknown(m)
 }
@@ -156,15 +167,19 @@ func (*SignedSnapshotRequest) Descriptor() ([]byte, []int) {
 func (m *SignedSnapshotRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SignedSnapshotRequest.Unmarshal(m, b)
 }
+
 func (m *SignedSnapshotRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SignedSnapshotRequest.Marshal(b, m, deterministic)
 }
+
 func (m *SignedSnapshotRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SignedSnapshotRequest.Merge(m, src)
 }
+
 func (m *SignedSnapshotRequest) XXX_Size() int {
 	return xxx_messageInfo_SignedSnapshotRequest.Size(m)
 }
+
 func (m *SignedSnapshotRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_SignedSnapshotRequest.DiscardUnknown(m)
 }
@@ -203,15 +218,19 @@ func (*QueryPendingSnapshotsResponse) Descriptor() ([]byte, []int) {
 func (m *QueryPendingSnapshotsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryPendingSnapshotsResponse.Unmarshal(m, b)
 }
+
 func (m *QueryPendingSnapshotsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryPendingSnapshotsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *QueryPendingSnapshotsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryPendingSnapshotsResponse.Merge(m, src)
 }
+
 func (m *QueryPendingSnapshotsResponse) XXX_Size() int {
 	return xxx_messageInfo_QueryPendingSnapshotsResponse.Size(m)
 }
+
 func (m *QueryPendingSnapshotsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryPendingSnapshotsResponse.DiscardUnknown(m)
 }
@@ -264,8 +283,10 @@ var fileDescriptor_d05a247df97d1516 = []byte{
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -329,15 +350,16 @@ type SnapshotServer interface {
 }
 
 // UnimplementedSnapshotServer can be embedded to have forward compatible implementations.
-type UnimplementedSnapshotServer struct {
-}
+type UnimplementedSnapshotServer struct{}
 
 func (*UnimplementedSnapshotServer) Generate(ctx context.Context, req *SignedSnapshotRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Generate not implemented")
 }
+
 func (*UnimplementedSnapshotServer) Cancel(ctx context.Context, req *SignedSnapshotRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Cancel not implemented")
 }
+
 func (*UnimplementedSnapshotServer) QueryPendings(ctx context.Context, req *SignedSnapshotRequest) (*QueryPendingSnapshotsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method QueryPendings not implemented")
 }

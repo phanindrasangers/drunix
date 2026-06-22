@@ -26,6 +26,7 @@ import (
 	"github.com/hyperledger/fabric-protos-go/common"
 	plgr "github.com/hyperledger/fabric-protos-go/ledger/queryresult"
 	pb "github.com/hyperledger/fabric-protos-go/peer"
+	dcli "github.com/moby/moby/client"
 	"github.com/npci/drunix/bccsp/factory"
 	"github.com/npci/drunix/bccsp/sw"
 	"github.com/npci/drunix/common/crypto/tlsgen"
@@ -58,7 +59,6 @@ import (
 	mspmgmt "github.com/npci/drunix/msp/mgmt"
 	msptesttools "github.com/npci/drunix/msp/mgmt/testtools"
 	"github.com/npci/drunix/protoutil"
-	dcli "github.com/moby/moby/client"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/require"
 )

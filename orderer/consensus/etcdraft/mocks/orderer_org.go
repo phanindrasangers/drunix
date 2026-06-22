@@ -10,9 +10,8 @@ import (
 type OrdererOrg struct {
 	EndpointsStub        func() []string
 	endpointsMutex       sync.RWMutex
-	endpointsArgsForCall []struct {
-	}
-	endpointsReturns struct {
+	endpointsArgsForCall []struct{}
+	endpointsReturns     struct {
 		result1 []string
 	}
 	endpointsReturnsOnCall map[int]struct {
@@ -20,9 +19,8 @@ type OrdererOrg struct {
 	}
 	MSPStub        func() msp.MSP
 	mSPMutex       sync.RWMutex
-	mSPArgsForCall []struct {
-	}
-	mSPReturns struct {
+	mSPArgsForCall []struct{}
+	mSPReturns     struct {
 		result1 msp.MSP
 	}
 	mSPReturnsOnCall map[int]struct {
@@ -30,9 +28,8 @@ type OrdererOrg struct {
 	}
 	MSPIDStub        func() string
 	mSPIDMutex       sync.RWMutex
-	mSPIDArgsForCall []struct {
-	}
-	mSPIDReturns struct {
+	mSPIDArgsForCall []struct{}
+	mSPIDReturns     struct {
 		result1 string
 	}
 	mSPIDReturnsOnCall map[int]struct {
@@ -40,9 +37,8 @@ type OrdererOrg struct {
 	}
 	NameStub        func() string
 	nameMutex       sync.RWMutex
-	nameArgsForCall []struct {
-	}
-	nameReturns struct {
+	nameArgsForCall []struct{}
+	nameReturns     struct {
 		result1 string
 	}
 	nameReturnsOnCall map[int]struct {
@@ -55,8 +51,7 @@ type OrdererOrg struct {
 func (fake *OrdererOrg) Endpoints() []string {
 	fake.endpointsMutex.Lock()
 	ret, specificReturn := fake.endpointsReturnsOnCall[len(fake.endpointsArgsForCall)]
-	fake.endpointsArgsForCall = append(fake.endpointsArgsForCall, struct {
-	}{})
+	fake.endpointsArgsForCall = append(fake.endpointsArgsForCall, struct{}{})
 	fake.recordInvocation("Endpoints", []interface{}{})
 	fake.endpointsMutex.Unlock()
 	if fake.EndpointsStub != nil {
@@ -107,8 +102,7 @@ func (fake *OrdererOrg) EndpointsReturnsOnCall(i int, result1 []string) {
 func (fake *OrdererOrg) MSP() msp.MSP {
 	fake.mSPMutex.Lock()
 	ret, specificReturn := fake.mSPReturnsOnCall[len(fake.mSPArgsForCall)]
-	fake.mSPArgsForCall = append(fake.mSPArgsForCall, struct {
-	}{})
+	fake.mSPArgsForCall = append(fake.mSPArgsForCall, struct{}{})
 	fake.recordInvocation("MSP", []interface{}{})
 	fake.mSPMutex.Unlock()
 	if fake.MSPStub != nil {
@@ -159,8 +153,7 @@ func (fake *OrdererOrg) MSPReturnsOnCall(i int, result1 msp.MSP) {
 func (fake *OrdererOrg) MSPID() string {
 	fake.mSPIDMutex.Lock()
 	ret, specificReturn := fake.mSPIDReturnsOnCall[len(fake.mSPIDArgsForCall)]
-	fake.mSPIDArgsForCall = append(fake.mSPIDArgsForCall, struct {
-	}{})
+	fake.mSPIDArgsForCall = append(fake.mSPIDArgsForCall, struct{}{})
 	fake.recordInvocation("MSPID", []interface{}{})
 	fake.mSPIDMutex.Unlock()
 	if fake.MSPIDStub != nil {
@@ -211,8 +204,7 @@ func (fake *OrdererOrg) MSPIDReturnsOnCall(i int, result1 string) {
 func (fake *OrdererOrg) Name() string {
 	fake.nameMutex.Lock()
 	ret, specificReturn := fake.nameReturnsOnCall[len(fake.nameArgsForCall)]
-	fake.nameArgsForCall = append(fake.nameArgsForCall, struct {
-	}{})
+	fake.nameArgsForCall = append(fake.nameArgsForCall, struct{}{})
 	fake.recordInvocation("Name", []interface{}{})
 	fake.nameMutex.Unlock()
 	if fake.NameStub != nil {

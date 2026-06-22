@@ -36,9 +36,8 @@ type ClientIdentity struct {
 	}
 	GetIDStub        func() (string, error)
 	getIDMutex       sync.RWMutex
-	getIDArgsForCall []struct {
-	}
-	getIDReturns struct {
+	getIDArgsForCall []struct{}
+	getIDReturns     struct {
 		result1 string
 		result2 error
 	}
@@ -48,9 +47,8 @@ type ClientIdentity struct {
 	}
 	GetMSPIDStub        func() (string, error)
 	getMSPIDMutex       sync.RWMutex
-	getMSPIDArgsForCall []struct {
-	}
-	getMSPIDReturns struct {
+	getMSPIDArgsForCall []struct{}
+	getMSPIDReturns     struct {
 		result1 string
 		result2 error
 	}
@@ -60,9 +58,8 @@ type ClientIdentity struct {
 	}
 	GetX509CertificateStub        func() (*x509.Certificate, error)
 	getX509CertificateMutex       sync.RWMutex
-	getX509CertificateArgsForCall []struct {
-	}
-	getX509CertificateReturns struct {
+	getX509CertificateArgsForCall []struct{}
+	getX509CertificateReturns     struct {
 		result1 *x509.Certificate
 		result2 error
 	}
@@ -206,8 +203,7 @@ func (fake *ClientIdentity) GetAttributeValueReturnsOnCall(i int, result1 string
 func (fake *ClientIdentity) GetID() (string, error) {
 	fake.getIDMutex.Lock()
 	ret, specificReturn := fake.getIDReturnsOnCall[len(fake.getIDArgsForCall)]
-	fake.getIDArgsForCall = append(fake.getIDArgsForCall, struct {
-	}{})
+	fake.getIDArgsForCall = append(fake.getIDArgsForCall, struct{}{})
 	stub := fake.GetIDStub
 	fakeReturns := fake.getIDReturns
 	fake.recordInvocation("GetID", []interface{}{})
@@ -262,8 +258,7 @@ func (fake *ClientIdentity) GetIDReturnsOnCall(i int, result1 string, result2 er
 func (fake *ClientIdentity) GetMSPID() (string, error) {
 	fake.getMSPIDMutex.Lock()
 	ret, specificReturn := fake.getMSPIDReturnsOnCall[len(fake.getMSPIDArgsForCall)]
-	fake.getMSPIDArgsForCall = append(fake.getMSPIDArgsForCall, struct {
-	}{})
+	fake.getMSPIDArgsForCall = append(fake.getMSPIDArgsForCall, struct{}{})
 	stub := fake.GetMSPIDStub
 	fakeReturns := fake.getMSPIDReturns
 	fake.recordInvocation("GetMSPID", []interface{}{})
@@ -318,8 +313,7 @@ func (fake *ClientIdentity) GetMSPIDReturnsOnCall(i int, result1 string, result2
 func (fake *ClientIdentity) GetX509Certificate() (*x509.Certificate, error) {
 	fake.getX509CertificateMutex.Lock()
 	ret, specificReturn := fake.getX509CertificateReturnsOnCall[len(fake.getX509CertificateArgsForCall)]
-	fake.getX509CertificateArgsForCall = append(fake.getX509CertificateArgsForCall, struct {
-	}{})
+	fake.getX509CertificateArgsForCall = append(fake.getX509CertificateArgsForCall, struct{}{})
 	stub := fake.GetX509CertificateStub
 	fakeReturns := fake.getX509CertificateReturns
 	fake.recordInvocation("GetX509Certificate", []interface{}{})

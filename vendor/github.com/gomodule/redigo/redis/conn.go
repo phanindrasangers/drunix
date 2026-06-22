@@ -30,9 +30,7 @@ import (
 	"time"
 )
 
-var (
-	_ ConnWithTimeout = (*conn)(nil)
-)
+var _ ConnWithTimeout = (*conn)(nil)
 
 // conn is the low-level implementation of Conn
 type conn struct {

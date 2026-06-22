@@ -1,0 +1,150 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# CI pipeline for Drunix (Hyperledger Fabric fork).
+# Mirrors the Makefile phases: basic-checks, unit-test, integration-test,
+# plus a native build and Docker image build.
+
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - "release-*"
+  pull_request:
+    branches:
+      - main
+      - "release-*"
+  workflow_dispatch:
+
+# Cancel superseded runs on the same ref to save runner minutes.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+# Note: no global GOFLAGS. The main module auto-uses the vendor directory,
+# while gotools are installed from the separate tools/ module in normal
+# module mode. Forcing -mod=vendor globally breaks the gotool installs
+# because tool dependencies are intentionally not vendored.
+
+jobs:
+  basic-checks:
+    name: Basic Checks
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Verify Go version
+        run: make check-go-version
+
+      - name: License / spelling / references / trailing-spaces / filenames / docs
+        run: make basic-checks
+
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-22.04
+    needs: basic-checks
+    env:
+      # CouchDB-backed tests start a container via docker-thirdparty-couchdb.
+      JOB_TYPE: VERIFY
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Set up SoftHSM (PKCS11 tests)
+        run: ./ci/scripts/setup_hsm.sh
+
+      - name: Run unit tests
+        run: make unit-test
+
+  build:
+    name: Native Build
+    runs-on: ubuntu-22.04
+    needs: basic-checks
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Build binaries
+        run: make native
+
+      - name: Build distribution archive
+        run: make dist
+
+      - name: Upload release archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: drunix-dist
+          path: release/**
+          if-no-files-found: ignore
+          retention-days: 7
+
+  integration-tests:
+    name: Integration Tests
+    runs-on: ubuntu-22.04
+    needs: [unit-tests, build]
+    strategy:
+      fail-fast: false
+      # The suite is sharded across agents by run-integration-tests.sh using
+      # SYSTEM_TOTALJOBSINPHASE (total) and SYSTEM_JOBPOSITIONINPHASE (1-based).
+      matrix:
+        agent: [1, 2, 3, 4, 5, 6, 7, 8]
+    env:
+      SYSTEM_TOTALJOBSINPHASE: 8
+      SYSTEM_JOBPOSITIONINPHASE: ${{ matrix.agent }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Set up SoftHSM
+        run: ./ci/scripts/setup_hsm.sh
+
+      - name: Build prerequisite Docker images
+        run: make integration-test-prereqs
+
+      - name: Run integration tests (shard ${{ matrix.agent }}/8)
+        run: ./scripts/run-integration-tests.sh
+
+  docker-images:
+    name: Docker Images
+    runs-on: ubuntu-22.04
+    needs: [unit-tests, build]
+    # Build-only validation on PRs. Pushes and tags are built and published
+    # to GHCR by the publish-images workflow.
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build images
+        run: make docker
+
+      - name: List built images
+        run: make docker-list

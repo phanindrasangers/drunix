@@ -59,10 +59,9 @@ type TxSimulator struct {
 	deleteStateMetadataReturnsOnCall map[int]struct {
 		result1 error
 	}
-	DoneStub        func()
-	doneMutex       sync.RWMutex
-	doneArgsForCall []struct {
-	}
+	DoneStub                func()
+	doneMutex               sync.RWMutex
+	doneArgsForCall         []struct{}
 	ExecuteQueryStub        func(string, string) (ledgera.ResultsIterator, error)
 	executeQueryMutex       sync.RWMutex
 	executeQueryArgsForCall []struct {
@@ -285,9 +284,8 @@ type TxSimulator struct {
 	}
 	GetTxSimulationResultsStub        func() (*ledger.TxSimulationResults, error)
 	getTxSimulationResultsMutex       sync.RWMutex
-	getTxSimulationResultsArgsForCall []struct {
-	}
-	getTxSimulationResultsReturns struct {
+	getTxSimulationResultsArgsForCall []struct{}
+	getTxSimulationResultsReturns     struct {
 		result1 *ledger.TxSimulationResults
 		result2 error
 	}
@@ -639,8 +637,7 @@ func (fake *TxSimulator) DeleteStateMetadataReturnsOnCall(i int, result1 error) 
 
 func (fake *TxSimulator) Done() {
 	fake.doneMutex.Lock()
-	fake.doneArgsForCall = append(fake.doneArgsForCall, struct {
-	}{})
+	fake.doneArgsForCall = append(fake.doneArgsForCall, struct{}{})
 	fake.recordInvocation("Done", []interface{}{})
 	fake.doneMutex.Unlock()
 	if fake.DoneStub != nil {
@@ -1647,8 +1644,7 @@ func (fake *TxSimulator) GetStateRangeScanIteratorWithPaginationReturnsOnCall(i 
 func (fake *TxSimulator) GetTxSimulationResults() (*ledger.TxSimulationResults, error) {
 	fake.getTxSimulationResultsMutex.Lock()
 	ret, specificReturn := fake.getTxSimulationResultsReturnsOnCall[len(fake.getTxSimulationResultsArgsForCall)]
-	fake.getTxSimulationResultsArgsForCall = append(fake.getTxSimulationResultsArgsForCall, struct {
-	}{})
+	fake.getTxSimulationResultsArgsForCall = append(fake.getTxSimulationResultsArgsForCall, struct{}{})
 	fake.recordInvocation("GetTxSimulationResults", []interface{}{})
 	fake.getTxSimulationResultsMutex.Unlock()
 	if fake.GetTxSimulationResultsStub != nil {
