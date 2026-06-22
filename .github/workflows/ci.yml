@@ -26,9 +26,10 @@ concurrency:
 permissions:
   contents: read
 
-env:
-  # Go version is resolved from go.mod by setup-go (go-version-file).
-  GOFLAGS: "-mod=vendor"
+# Note: no global GOFLAGS. The main module auto-uses the vendor directory,
+# while gotools are installed from the separate tools/ module in normal
+# module mode. Forcing -mod=vendor globally breaks the gotool installs
+# because tool dependencies are intentionally not vendored.
 
 jobs:
   basic-checks:
