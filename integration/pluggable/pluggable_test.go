@@ -15,10 +15,10 @@ import (
 	"syscall"
 	"time"
 
+	dcli "github.com/moby/moby/client"
 	"github.com/npci/drunix/integration/nwo"
 	"github.com/npci/drunix/integration/nwo/commands"
 	"github.com/npci/drunix/integration/nwo/fabricconfig"
-	dcli "github.com/moby/moby/client"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	"github.com/onsi/gomega/gbytes"

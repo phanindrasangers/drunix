@@ -19,8 +19,8 @@ import (
 )
 
 const (
-	minUnicodeRuneValue   = 0            //U+0000
-	maxUnicodeRuneValue   = utf8.MaxRune //U+10FFFF - maximum (and unallocated) code point
+	minUnicodeRuneValue   = 0            // U+0000
+	maxUnicodeRuneValue   = utf8.MaxRune // U+10FFFF - maximum (and unallocated) code point
 	compositeKeyNamespace = "\x00"
 	emptyKeySubstitute    = "\x01"
 )
@@ -62,7 +62,7 @@ func Start(cc Chaincode) error {
 		return errors.New("'CORE_CHAINCODE_ID_NAME' must be set")
 	}
 
-	//mock stream not set up ... get real stream
+	// mock stream not set up ... get real stream
 	if streamGetter == nil {
 		streamGetter = userChaincodeStreamGetter
 	}
@@ -104,7 +104,6 @@ func chatWithPeer(chaincodename string, stream PeerChaincodeStream, cc Chaincode
 	// Register on the stream
 	if err = handler.serialSend(&peer.ChaincodeMessage{Type: peer.ChaincodeMessage_REGISTER, Payload: payload}); err != nil {
 		return fmt.Errorf("error sending chaincode REGISTER: %s", err)
-
 	}
 
 	// holds return values from gRPC Recv below

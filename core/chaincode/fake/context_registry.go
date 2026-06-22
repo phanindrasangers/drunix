@@ -9,10 +9,9 @@ import (
 )
 
 type ContextRegistry struct {
-	CloseStub        func()
-	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
+	CloseStub         func()
+	closeMutex        sync.RWMutex
+	closeArgsForCall  []struct{}
 	CreateStub        func(*ccprovider.TransactionParams) (*chaincode.TransactionContext, error)
 	createMutex       sync.RWMutex
 	createArgsForCall []struct {
@@ -50,8 +49,7 @@ type ContextRegistry struct {
 
 func (fake *ContextRegistry) Close() {
 	fake.closeMutex.Lock()
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	fake.recordInvocation("Close", []interface{}{})
 	fake.closeMutex.Unlock()
 	if fake.CloseStub != nil {

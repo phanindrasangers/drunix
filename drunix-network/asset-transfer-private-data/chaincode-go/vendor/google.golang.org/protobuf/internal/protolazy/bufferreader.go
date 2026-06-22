@@ -25,8 +25,10 @@ func NewBufferReader(buf []byte) BufferReader {
 	return BufferReader{Buf: buf, Pos: 0}
 }
 
-var errOutOfBounds = errors.New("protobuf decoding: out of bounds")
-var errOverflow = errors.New("proto: integer overflow")
+var (
+	errOutOfBounds = errors.New("protobuf decoding: out of bounds")
+	errOverflow    = errors.New("proto: integer overflow")
+)
 
 func (b *BufferReader) DecodeVarintSlow() (x uint64, err error) {
 	i := b.Pos

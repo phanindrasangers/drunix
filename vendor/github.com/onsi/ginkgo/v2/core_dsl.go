@@ -34,13 +34,15 @@ import (
 
 const GINKGO_VERSION = types.VERSION
 
-var flagSet types.GinkgoFlagSet
-var deprecationTracker = types.NewDeprecationTracker()
-var suiteConfig = types.NewDefaultSuiteConfig()
-var reporterConfig = types.NewDefaultReporterConfig()
-var suiteDidRun = false
-var outputInterceptor internal.OutputInterceptor
-var client parallel_support.Client
+var (
+	flagSet            types.GinkgoFlagSet
+	deprecationTracker = types.NewDeprecationTracker()
+	suiteConfig        = types.NewDefaultSuiteConfig()
+	reporterConfig     = types.NewDefaultReporterConfig()
+	suiteDidRun        = false
+	outputInterceptor  internal.OutputInterceptor
+	client             parallel_support.Client
+)
 
 func init() {
 	var err error

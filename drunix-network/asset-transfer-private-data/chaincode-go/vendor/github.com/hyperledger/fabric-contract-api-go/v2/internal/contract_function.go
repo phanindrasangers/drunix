@@ -51,7 +51,6 @@ func (cf ContractFunction) Call(ctx reflect.Value, supplementaryMetadata *metada
 	}
 
 	values, err := cf.formatArgs(ctx, parameterMetadata, components, params, serializer)
-
 	if err != nil {
 		return "", nil, err
 	}
@@ -251,7 +250,6 @@ func NewContractFunctionFromFunc(fn interface{}, callType CallType, contextHandl
 	myMethod.Type = fnType
 
 	paramDetails, returnDetails, err := parseMethod(myMethod, contextHandlerType)
-
 	if err != nil {
 		return nil, err
 	}
@@ -262,7 +260,6 @@ func NewContractFunctionFromFunc(fn interface{}, callType CallType, contextHandl
 // NewContractFunctionFromReflect creates a new contract function from a reflected method
 func NewContractFunctionFromReflect(typeMethod reflect.Method, valueMethod reflect.Value, callType CallType, contextHandlerType reflect.Type) (*ContractFunction, error) {
 	paramDetails, returnDetails, err := parseMethod(typeMethod, contextHandlerType)
-
 	if err != nil {
 		return nil, err
 	}
@@ -274,13 +271,11 @@ func NewContractFunctionFromReflect(typeMethod reflect.Method, valueMethod refle
 
 func parseMethod(typeMethod reflect.Method, contextHandlerType reflect.Type) (contractFunctionParams, contractFunctionReturns, error) {
 	myContractFnParams, err := methodToContractFunctionParams(typeMethod, contextHandlerType)
-
 	if err != nil {
 		return contractFunctionParams{}, contractFunctionReturns{}, err
 	}
 
 	myContractFnReturns, err := methodToContractFunctionReturns(typeMethod)
-
 	if err != nil {
 		return contractFunctionParams{}, contractFunctionReturns{}, err
 	}
@@ -314,7 +309,6 @@ func methodToContractFunctionParams(typeMethod reflect.Method, contextHandlerTyp
 			invalidInterfaceTypeErr := fmt.Sprintf("%s contains invalid transaction context interface type. Set transaction context for contract does not meet interface used in method.", methodName)
 
 			err := typeMatchesInterface(contextHandlerType, inType)
-
 			if err != nil {
 				return contractFunctionParams{}, fmt.Errorf("%s %s", invalidInterfaceTypeErr, err.Error())
 			}

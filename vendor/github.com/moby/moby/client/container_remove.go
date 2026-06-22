@@ -13,8 +13,7 @@ type ContainerRemoveOptions struct {
 }
 
 // ContainerRemoveResult holds the result of [Client.ContainerRemove],
-type ContainerRemoveResult struct {
-	// Add future fields here.
+type ContainerRemoveResult struct { // Add future fields here.
 }
 
 // ContainerRemove kills and removes a container from the docker host.

@@ -43,8 +43,8 @@ func (impl *dupSyscallOutputInterceptorImpl) CreateStdoutStderrClones() (*os.Fil
 	stdoutClone := os.NewFile(uintptr(stdoutCloneFD), "stdout-clone")
 	stderrClone := os.NewFile(uintptr(stderrCloneFD), "stderr-clone")
 
-	//these clones remain alive throughout the lifecycle of the suite and don't need to be recreated
-	//this speeds things up a bit, actually.
+	// these clones remain alive throughout the lifecycle of the suite and don't need to be recreated
+	// this speeds things up a bit, actually.
 	return stdoutClone, stderrClone
 }
 

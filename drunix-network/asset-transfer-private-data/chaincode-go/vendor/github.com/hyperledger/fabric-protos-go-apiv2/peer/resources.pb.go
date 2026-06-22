@@ -11,11 +11,12 @@
 package peer
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	common "github.com/hyperledger/fabric-protos-go-apiv2/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -355,15 +356,18 @@ func file_peer_resources_proto_rawDescGZIP() []byte {
 	return file_peer_resources_proto_rawDescData
 }
 
-var file_peer_resources_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_peer_resources_proto_goTypes = []any{
-	(*ChaincodeIdentifier)(nil),  // 0: protos.ChaincodeIdentifier
-	(*ChaincodeValidation)(nil),  // 1: protos.ChaincodeValidation
-	(*VSCCArgs)(nil),             // 2: protos.VSCCArgs
-	(*ChaincodeEndorsement)(nil), // 3: protos.ChaincodeEndorsement
-	(*ConfigTree)(nil),           // 4: protos.ConfigTree
-	(*common.Config)(nil),        // 5: common.Config
-}
+var (
+	file_peer_resources_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+	file_peer_resources_proto_goTypes  = []any{
+		(*ChaincodeIdentifier)(nil),  // 0: protos.ChaincodeIdentifier
+		(*ChaincodeValidation)(nil),  // 1: protos.ChaincodeValidation
+		(*VSCCArgs)(nil),             // 2: protos.VSCCArgs
+		(*ChaincodeEndorsement)(nil), // 3: protos.ChaincodeEndorsement
+		(*ConfigTree)(nil),           // 4: protos.ConfigTree
+		(*common.Config)(nil),        // 5: common.Config
+	}
+)
+
 var file_peer_resources_proto_depIdxs = []int32{
 	5, // 0: protos.ConfigTree.channel_config:type_name -> common.Config
 	5, // 1: protos.ConfigTree.resources_config:type_name -> common.Config

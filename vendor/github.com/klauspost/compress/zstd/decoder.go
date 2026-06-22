@@ -433,7 +433,7 @@ func (d *Decoder) nextBlock(blocking bool) (ok bool) {
 		return ok
 	}
 
-	//ASYNC:
+	// ASYNC:
 	d.stashDecoder()
 	if blocking {
 		d.current.decodeOutput, ok = <-d.current.output
@@ -656,8 +656,8 @@ func (d *Decoder) startStreamDecoder(ctx context.Context, r io.Reader, output ch
 	defer d.streamWg.Done()
 	br := readerWrapper{r: r}
 
-	var seqDecode = make(chan *blockDec, d.o.concurrent)
-	var seqExecute = make(chan *blockDec, d.o.concurrent)
+	seqDecode := make(chan *blockDec, d.o.concurrent)
+	seqExecute := make(chan *blockDec, d.o.concurrent)
 
 	// Async 1: Decode sequences...
 	go func() {
@@ -910,7 +910,6 @@ decodeStream:
 				if len(crc) < 4 {
 					if err == nil {
 						err = io.ErrUnexpectedEOF
-
 					}
 					println("CRC missing?", err)
 					dec.err = err

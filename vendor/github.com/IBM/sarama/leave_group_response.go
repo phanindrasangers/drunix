@@ -7,6 +7,7 @@ type MemberResponse struct {
 	GroupInstanceId *string
 	Err             KError
 }
+
 type LeaveGroupResponse struct {
 	Version      int16
 	ThrottleTime int32

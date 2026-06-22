@@ -36,8 +36,8 @@ func NewSpecContext(suite *Suite) *specContext {
 		suite:                   suite,
 		ProgressReporterManager: NewProgressReporterManager(),
 	}
-	ctx = context.WithValue(ctx, "GINKGO_SPEC_CONTEXT", sc) //yes, yes, the go docs say don't use a string for a key... but we'd rather avoid a circular dependency between Gomega and Ginkgo
-	sc.Context = ctx                                        //thank goodness for garbage collectors that can handle circular dependencies
+	ctx = context.WithValue(ctx, "GINKGO_SPEC_CONTEXT", sc) // yes, yes, the go docs say don't use a string for a key... but we'd rather avoid a circular dependency between Gomega and Ginkgo
+	sc.Context = ctx                                        // thank goodness for garbage collectors that can handle circular dependencies
 
 	return sc
 }

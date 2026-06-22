@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package txvalidator
@@ -56,8 +56,7 @@ func NewTxValidatorPeerAdapter(
 }
 
 func (v *TxValidatorPeerAdapter) Validate(block *common.Block) error {
-
-	//DRUNIX : based on channel capabilities decide whether to redirect the validation to vanilla txn formart or to the ltx format validator
+	// DRUNIX : based on channel capabilities decide whether to redirect the validation to vanilla txn formart or to the ltx format validator
 	if v.ChannelResources.Capabilities().LeanFormatEnabled() {
 		return v.validateLtx(block)
 	}
@@ -207,7 +206,6 @@ func (v *TxValidatorPeerAdapter) Validate(block *common.Block) error {
 }
 
 func (v *TxValidatorPeerAdapter) validateTxVsccService(blockNum uint64, endorsersTxns []*common.VsccTransaction, results chan<- *blockValidationResult) {
-
 	batches := [][]*common.VsccTransaction{}
 	dataLen := len(endorsersTxns)
 
@@ -226,7 +224,6 @@ func (v *TxValidatorPeerAdapter) validateTxVsccService(blockNum uint64, endorser
 	for _, batch := range batches {
 		go func(batch []*common.VsccTransaction) {
 			err := util.ExponentialBackoffRetry(func() error {
-
 				ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 				defer cancel()
 
@@ -250,7 +247,6 @@ func (v *TxValidatorPeerAdapter) validateTxVsccService(blockNum uint64, endorser
 				}
 				return nil
 			}, 5, 1*time.Second)
-
 			if err != nil {
 				for _, txn := range batch {
 					results <- &blockValidationResult{

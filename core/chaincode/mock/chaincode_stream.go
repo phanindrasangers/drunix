@@ -10,9 +10,8 @@ import (
 type ChaincodeStream struct {
 	RecvStub        func() (*peer.ChaincodeMessage, error)
 	recvMutex       sync.RWMutex
-	recvArgsForCall []struct {
-	}
-	recvReturns struct {
+	recvArgsForCall []struct{}
+	recvReturns     struct {
 		result1 *peer.ChaincodeMessage
 		result2 error
 	}
@@ -38,8 +37,7 @@ type ChaincodeStream struct {
 func (fake *ChaincodeStream) Recv() (*peer.ChaincodeMessage, error) {
 	fake.recvMutex.Lock()
 	ret, specificReturn := fake.recvReturnsOnCall[len(fake.recvArgsForCall)]
-	fake.recvArgsForCall = append(fake.recvArgsForCall, struct {
-	}{})
+	fake.recvArgsForCall = append(fake.recvArgsForCall, struct{}{})
 	fake.recordInvocation("Recv", []interface{}{})
 	fake.recvMutex.Unlock()
 	if fake.RecvStub != nil {

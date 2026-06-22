@@ -23,9 +23,7 @@ import (
 	"sync"
 )
 
-var (
-	scannerType = reflect.TypeOf((*Scanner)(nil)).Elem()
-)
+var scannerType = reflect.TypeOf((*Scanner)(nil)).Elem()
 
 func ensureLen(d reflect.Value, n int) {
 	if n > d.Cap() {
@@ -477,7 +475,7 @@ var errScanStructValue = errors.New("redigo.ScanStruct: value must be non-nil po
 // ScanStruct uses exported field names to match values in the response. Use
 // 'redis' field tag to override the name:
 //
-//      Field int `redis:"myName"`
+//	Field int `redis:"myName"`
 //
 // Fields with the tag redis:"-" are ignored.
 //
@@ -530,9 +528,7 @@ func ScanStruct(src []interface{}, dest interface{}) error {
 	return nil
 }
 
-var (
-	errScanSliceValue = errors.New("redigo.ScanSlice: dest must be non-nil pointer to a struct")
-)
+var errScanSliceValue = errors.New("redigo.ScanSlice: dest must be non-nil pointer to a struct")
 
 // ScanSlice scans src to the slice pointed to by dest.
 //
@@ -683,7 +679,7 @@ func flattenStruct(args Args, v reflect.Value) Args {
 			continue
 		}
 		if fs.omitEmpty {
-			var empty = false
+			empty := false
 			switch fv.Kind() {
 			case reflect.Array, reflect.Map, reflect.Slice, reflect.String:
 				empty = fv.Len() == 0

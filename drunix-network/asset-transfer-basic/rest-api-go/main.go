@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	//Initialize setup for Org1
+	// Initialize setup for Org1
 	cryptoPath := "../../test-network/organizations/peerOrganizations/org1.example.com"
 	orgConfig := web.OrgSetup{
 		OrgName:      "Org1",

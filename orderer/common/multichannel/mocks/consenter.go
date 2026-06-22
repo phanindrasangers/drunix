@@ -38,10 +38,9 @@ type Consenter struct {
 	}
 	RemoveInactiveChainRegistryStub        func()
 	removeInactiveChainRegistryMutex       sync.RWMutex
-	removeInactiveChainRegistryArgsForCall []struct {
-	}
-	invocations      map[string][][]interface{}
-	invocationsMutex sync.RWMutex
+	removeInactiveChainRegistryArgsForCall []struct{}
+	invocations                            map[string][][]interface{}
+	invocationsMutex                       sync.RWMutex
 }
 
 func (fake *Consenter) HandleChain(arg1 consensus.ConsenterSupport, arg2 *common.Metadata) (consensus.Chain, error) {
@@ -173,8 +172,7 @@ func (fake *Consenter) IsChannelMemberReturnsOnCall(i int, result1 bool, result2
 
 func (fake *Consenter) RemoveInactiveChainRegistry() {
 	fake.removeInactiveChainRegistryMutex.Lock()
-	fake.removeInactiveChainRegistryArgsForCall = append(fake.removeInactiveChainRegistryArgsForCall, struct {
-	}{})
+	fake.removeInactiveChainRegistryArgsForCall = append(fake.removeInactiveChainRegistryArgsForCall, struct{}{})
 	fake.recordInvocation("RemoveInactiveChainRegistry", []interface{}{})
 	fake.removeInactiveChainRegistryMutex.Unlock()
 	if fake.RemoveInactiveChainRegistryStub != nil {

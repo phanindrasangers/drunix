@@ -16,8 +16,10 @@ import (
 	"google.golang.org/protobuf/runtime/protoiface"
 )
 
-var errDecode = errors.New("cannot parse invalid wire-format data")
-var errRecursionDepth = errors.New("exceeded maximum recursion depth")
+var (
+	errDecode         = errors.New("cannot parse invalid wire-format data")
+	errRecursionDepth = errors.New("exceeded maximum recursion depth")
+)
 
 type unmarshalOptions struct {
 	flags    protoiface.UnmarshalInputFlags
@@ -122,7 +124,6 @@ func (mi *MessageInfo) unmarshalPointer(b []byte, p pointer, groupTag protowire.
 // unmarshalPointerEager is the message unmarshalling function for all messages that are not lazy.
 // The corresponding function for Lazy is in google_lazy.go.
 func (mi *MessageInfo) unmarshalPointerEager(b []byte, p pointer, groupTag protowire.Number, opts unmarshalOptions) (out unmarshalOutput, err error) {
-
 	initialized := true
 	var requiredMask uint64
 	var exts *map[int32]ExtensionField

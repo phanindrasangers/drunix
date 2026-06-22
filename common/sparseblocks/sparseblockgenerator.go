@@ -50,9 +50,8 @@ type OrgBlockTxnIndex struct {
 // processFatBlocks retrieves the FatBlock (mainBlock) from sparseChannel,
 // processes it to generate orgBlocks, and stores the blockData.
 func processFatBlocks(cOChain *ChannelOrgChains, orgBlockCacheSize uint64, mvccApplicable bool) {
-
 	chain := cOChain.chainSupport
-	sparseMetadataRWriter := getSparseMetadataReadWriter(chain) //levelDBhelper
+	sparseMetadataRWriter := getSparseMetadataReadWriter(chain) // levelDBhelper
 	var nextTobeProcessed uint64
 	isSparseChainStart := false
 
@@ -136,7 +135,6 @@ func processFatBlocks(cOChain *ChannelOrgChains, orgBlockCacheSize uint64, mvccA
 // syncOrderer - creates orgBlock and stores data for the lagged blockNum.
 func syncOrderer(cOChain *ChannelOrgChains, latestFatBlockNumber uint64, nextBlockToBeProcessed uint64,
 	sparseMetadataRWriter blockledger.SparseMetadataReadWriter, chHeader *ChannelHeadInfoProto, orgBlockCacheSize uint64, mvccApplicable bool) error {
-
 	var i uint64
 	newFatIterator, _ := getFatIterator(cOChain.chainSupport, nextBlockToBeProcessed)
 	defer newFatIterator.Close()
@@ -337,9 +335,9 @@ func createOrgBlocks(blk *cb.Block, chHeader ChannelHeadInfoProto, chainSupport 
 
 	fatTxnDetailsMVCCMap := make(map[string]*statedb.VersionMVCC, 0)
 	sparseTxnFilterMap := make(map[string]*SparseTxnFilterProto, 0)
-	var orgTxnEnvelopeMap = make(map[string][]ordererstatedb.TxnDetails)
-	var localOrgBlocks = make(map[string]*cb.Block)
-	var fatBlockMerkleInfo = FatBlockMerkleInfoProto{
+	orgTxnEnvelopeMap := make(map[string][]ordererstatedb.TxnDetails)
+	localOrgBlocks := make(map[string]*cb.Block)
+	fatBlockMerkleInfo := FatBlockMerkleInfoProto{
 		MerkleRoot: []byte{},
 		OrgHashMap: make(map[string]*OrgBlockDetailsProto),
 	}
@@ -405,7 +403,6 @@ func createOrgBlocks(blk *cb.Block, chHeader ChannelHeadInfoProto, chainSupport 
 func aggregateOrgEnvelope(blk *cb.Block, orgsFromConfig []string, mvccApplicable bool, versionDB ordererstatedb.OrdererDBHandler,
 	fatTxnDetailsMVCCMap map[string]*statedb.VersionMVCC, sparseTxnFilterMap map[string]*SparseTxnFilterProto,
 	orgTxnEnvelopeMap map[string][]ordererstatedb.TxnDetails) {
-
 	configOrgList := make([]string, len(orgsFromConfig))
 	copy(configOrgList, orgsFromConfig)
 	configOrgList = append(configOrgList, channelconfig.LitePeerChainId)
@@ -443,7 +440,7 @@ func aggregateOrgEnvelope(blk *cb.Block, orgsFromConfig []string, mvccApplicable
 			}
 		}
 
-		var txnDetails = ordererstatedb.TxnDetails{
+		txnDetails := ordererstatedb.TxnDetails{
 			Indx: uint64(txnIndex),
 			// Env:         txnEnv,
 			TxnEnvBytes: transactionEnvelopeBytes,
@@ -656,7 +653,6 @@ func retrieveTxnListForOrgBlock(blk *cb.Block, txnIdxList []uint64) [][]byte {
 // and return the block by restructuring it again
 func assembleOrgBlock(fatblockMerkleInfo FatBlockMerkleInfoProto, orgId string, fatBlockNum uint64,
 	fatBlockChainReader blockledger.Reader) *cb.Block {
-
 	logger.Warn("since the block is out of cache we need to assemble it")
 	orgBlockDetails := fatblockMerkleInfo.OrgHashMap[orgId]
 	fatBlock, err := fatBlockChainReader.RetrieveBlockByNumber(fatBlockNum)
@@ -686,7 +682,6 @@ func assembleOrgBlock(fatblockMerkleInfo FatBlockMerkleInfoProto, orgId string, 
 
 // createNextBlock creates next orgBlock from txnsList and previous hash by calculating the data and dataHash
 func createNextBlock(txnDetailsList []ordererstatedb.TxnDetails, previousHash []byte, orgBlockNumber uint64) (*cb.Block, []uint64) {
-
 	data := &cb.BlockData{
 		Data: make([][]byte, len(txnDetailsList)),
 	}
@@ -733,7 +728,6 @@ func addMetadataFields(fatblockMerkleInfo FatBlockMerkleInfoProto, orgBlock *cb.
 		logger.Panicf("Got error while fetching block metadata: %v", err)
 	}
 	addOrgBlockSignature(orgBlock, fatBlockConsenterMetadata.Value, fatblockMerkleInfo.OrgHashMap[orgID], chainSupport)
-
 }
 
 // addOrgLastConfig updates the lastConfig for orgBlock
@@ -746,7 +740,6 @@ func addOrgLastConfig(orgBlock *cb.Block, orgBlockDetails *OrgBlockDetailsProto)
 }
 
 func addOrgBlockSignature(orgBlock *cb.Block, consenterMetadata []byte, orgBlockDetails *OrgBlockDetailsProto, chainSupport *multichannel.ChainSupport) {
-
 	blockSignature := &cb.MetadataSignature{
 		SignatureHeader: protoutil.MarshalOrPanic(protoutil.NewSignatureHeaderOrPanic(chainSupport)),
 	}
@@ -765,7 +758,6 @@ func addOrgBlockSignature(orgBlock *cb.Block, consenterMetadata []byte, orgBlock
 		},
 	})
 	orgBlockDetails.MetadataSignature = orgBlock.Metadata.Metadata[cb.BlockMetadataIndex_SIGNATURES]
-
 }
 
 func validateNameSpaceReadSet(fatTxnDetailsMVCCMap map[string]*statedb.VersionMVCC, nsRwSet *cb.NsReadWriteSet, ordererDBHandler ordererstatedb.OrdererDBHandler, txnDetails *ordererstatedb.TxnDetails) bool {
@@ -784,7 +776,6 @@ func validateNameSpaceReadSet(fatTxnDetailsMVCCMap map[string]*statedb.VersionMV
 
 func applyNameSpaceWriteSet(fatTxnDetailsMVCCMap map[string]*statedb.VersionMVCC, ordererDBHandler ordererstatedb.OrdererDBHandler,
 	fatBlockNum uint64, txnIdx uint64, nsRwSet *cb.NsReadWriteSet) bool {
-
 	logger.Debugf("Apply for namespace: %v", nsRwSet.Namespace)
 	version := rwsetutil.NewKeyVersion(fatBlockNum, txnIdx)
 	isApplied, err := ordererDBHandler.ApplyWriteSet(fatTxnDetailsMVCCMap, nsRwSet.Namespace, nsRwSet.Rwset.Writes, version)

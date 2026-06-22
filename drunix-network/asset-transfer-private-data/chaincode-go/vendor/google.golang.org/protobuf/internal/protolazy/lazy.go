@@ -95,7 +95,7 @@ func buildIndex(buf []byte) ([]IndexEntry, error) {
 	for !r.Done() {
 		var tag uint32
 		var err error
-		var curPos = r.Pos
+		curPos := r.Pos
 		// INLINED: tag, err = r.DecodeVarint32()
 		{
 			i := r.Pos
@@ -245,9 +245,11 @@ func buildIndex(buf []byte) ([]IndexEntry, error) {
 			return nil, err
 		}
 		if fieldNum != lastProtoFieldNum {
-			index = append(index, IndexEntry{FieldNum: fieldNum,
-				Start: uint32(curPos),
-				End:   uint32(r.Pos)},
+			index = append(index, IndexEntry{
+				FieldNum: fieldNum,
+				Start:    uint32(curPos),
+				End:      uint32(r.Pos),
+			},
 			)
 		} else {
 			index[len(index)-1].End = uint32(r.Pos)

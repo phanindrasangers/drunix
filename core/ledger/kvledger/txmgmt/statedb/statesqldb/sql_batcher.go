@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -42,7 +42,6 @@ var (
 
 // DRUNIX: initialize sql batcher with the pre-defined buffer size and start the batch listener in a go routine
 func NewSqlBatcher(sqlSchema *sqlSchema) SqlBatcher {
-
 	logger.Info("NewSqlBatcher Initialised")
 
 	sb := &sqlBatcher{
@@ -59,7 +58,6 @@ func NewSqlBatcher(sqlSchema *sqlSchema) SqlBatcher {
 // DRUNIX: whenever a value for a key needs to be fetched from sql the key and the respnse channel is sent to batch channel.
 // the response channel returns the value or error
 func (sb *sqlBatcher) Get(key string) (DBValue, error) {
-
 	// defer TimeIt("SqlBatcher Get")()
 
 	responseChan := make(chan ResponseChan, 1)
@@ -76,7 +74,6 @@ func (sb *sqlBatcher) Get(key string) (DBValue, error) {
 
 // DRUNIX: listen infintely on the batch channel and store then keys and the relevant response channel in a map. After the specified time interval the data in the batch map is dumped to a flush map and process that flush map
 func (sb *sqlBatcher) startBatchListener() {
-
 	ticker := time.NewTicker(batchInterval)
 
 	defer ticker.Stop()
@@ -99,12 +96,10 @@ func (sb *sqlBatcher) startBatchListener() {
 			}
 		}
 	}
-
 }
 
 // DRUNIX: get the keys from the flush map and get the relevant table. Scan the keys and retrieve values and send them in the response channel
 func (sb *sqlBatcher) flushBatchToSql(batchToFlush map[string]chan ResponseChan) {
-
 	// defer TimeIt("Sql flushBatchToSql")()
 
 	errKeys := map[string]error{}

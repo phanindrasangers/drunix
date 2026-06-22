@@ -16,9 +16,7 @@ import (
 	"github.com/syndtr/goleveldb/leveldb/storage"
 )
 
-var (
-	errHasFrozenMem = errors.New("has frozen mem")
-)
+var errHasFrozenMem = errors.New("has frozen mem")
 
 type memDB struct {
 	db *DB

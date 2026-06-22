@@ -14,8 +14,7 @@ type ContainerRenameOptions struct {
 }
 
 // ContainerRenameResult represents the result of a container rename operation.
-type ContainerRenameResult struct {
-	// This struct can be expanded in the future if needed
+type ContainerRenameResult struct { // This struct can be expanded in the future if needed
 }
 
 // ContainerRename changes the name of a given container.

@@ -1,7 +1,6 @@
-
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package kafka
@@ -73,7 +72,6 @@ func NewKafkaPublisher(kafkaconfig publisher.Config) (*KafkaPublisher, error) {
 		flushFreqEnv, err := strconv.Atoi(os.Getenv("FLUSH_FREQUENCY"))
 		if err != nil {
 			logger.Errorf("Failed reading Kafka FLUSH_FREQUENCY. err:%+v", err)
-
 		} else {
 			flushFreq = time.Duration(flushFreqEnv) * time.Millisecond
 		}
@@ -218,7 +216,6 @@ func (input *KafkaPublisher) Publish(channel string, events *gateway.ChaincodeEv
 		wg.Add(1)
 
 		go func(event *peer.ChaincodeEvent, totalEvenets int) {
-
 			defer wg.Done()
 
 			ccEvent := &ChaincodeEvent{
@@ -266,7 +263,6 @@ func (input *KafkaPublisher) Publish(channel string, events *gateway.ChaincodeEv
 			// } else {
 			// 	logger.Debugf("ignoring event: [%v] for orgType: %v", event.EventName, input.config.OrgType)
 			// }
-
 		}(event, totalEvenets)
 
 	}

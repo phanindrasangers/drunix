@@ -10,8 +10,7 @@ import (
 )
 
 // InfoOptions holds options for [Client.Info].
-type InfoOptions struct {
-	// No options currently; placeholder for future use
+type InfoOptions struct { // No options currently; placeholder for future use
 }
 
 // SystemInfoResult holds the result of [Client.Info].

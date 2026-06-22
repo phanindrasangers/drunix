@@ -6,6 +6,8 @@ package gateway
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	common "github.com/hyperledger/fabric-protos-go/common"
 	orderer "github.com/hyperledger/fabric-protos-go/orderer"
@@ -13,13 +15,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -54,15 +57,19 @@ func (*EndorseRequest) Descriptor() ([]byte, []int) {
 func (m *EndorseRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EndorseRequest.Unmarshal(m, b)
 }
+
 func (m *EndorseRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EndorseRequest.Marshal(b, m, deterministic)
 }
+
 func (m *EndorseRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_EndorseRequest.Merge(m, src)
 }
+
 func (m *EndorseRequest) XXX_Size() int {
 	return xxx_messageInfo_EndorseRequest.Size(m)
 }
+
 func (m *EndorseRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_EndorseRequest.DiscardUnknown(m)
 }
@@ -117,15 +124,19 @@ func (*EndorseResponse) Descriptor() ([]byte, []int) {
 func (m *EndorseResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EndorseResponse.Unmarshal(m, b)
 }
+
 func (m *EndorseResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EndorseResponse.Marshal(b, m, deterministic)
 }
+
 func (m *EndorseResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_EndorseResponse.Merge(m, src)
 }
+
 func (m *EndorseResponse) XXX_Size() int {
 	return xxx_messageInfo_EndorseResponse.Size(m)
 }
+
 func (m *EndorseResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_EndorseResponse.DiscardUnknown(m)
 }
@@ -162,15 +173,19 @@ func (*SubmitRequest) Descriptor() ([]byte, []int) {
 func (m *SubmitRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubmitRequest.Unmarshal(m, b)
 }
+
 func (m *SubmitRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SubmitRequest.Marshal(b, m, deterministic)
 }
+
 func (m *SubmitRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SubmitRequest.Merge(m, src)
 }
+
 func (m *SubmitRequest) XXX_Size() int {
 	return xxx_messageInfo_SubmitRequest.Size(m)
 }
+
 func (m *SubmitRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_SubmitRequest.DiscardUnknown(m)
 }
@@ -215,15 +230,19 @@ func (*SubmitResponse) Descriptor() ([]byte, []int) {
 func (m *SubmitResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubmitResponse.Unmarshal(m, b)
 }
+
 func (m *SubmitResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SubmitResponse.Marshal(b, m, deterministic)
 }
+
 func (m *SubmitResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SubmitResponse.Merge(m, src)
 }
+
 func (m *SubmitResponse) XXX_Size() int {
 	return xxx_messageInfo_SubmitResponse.Size(m)
 }
+
 func (m *SubmitResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_SubmitResponse.DiscardUnknown(m)
 }
@@ -252,15 +271,19 @@ func (*SignedCommitStatusRequest) Descriptor() ([]byte, []int) {
 func (m *SignedCommitStatusRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SignedCommitStatusRequest.Unmarshal(m, b)
 }
+
 func (m *SignedCommitStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SignedCommitStatusRequest.Marshal(b, m, deterministic)
 }
+
 func (m *SignedCommitStatusRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SignedCommitStatusRequest.Merge(m, src)
 }
+
 func (m *SignedCommitStatusRequest) XXX_Size() int {
 	return xxx_messageInfo_SignedCommitStatusRequest.Size(m)
 }
+
 func (m *SignedCommitStatusRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_SignedCommitStatusRequest.DiscardUnknown(m)
 }
@@ -305,15 +328,19 @@ func (*CommitStatusRequest) Descriptor() ([]byte, []int) {
 func (m *CommitStatusRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CommitStatusRequest.Unmarshal(m, b)
 }
+
 func (m *CommitStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CommitStatusRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CommitStatusRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CommitStatusRequest.Merge(m, src)
 }
+
 func (m *CommitStatusRequest) XXX_Size() int {
 	return xxx_messageInfo_CommitStatusRequest.Size(m)
 }
+
 func (m *CommitStatusRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CommitStatusRequest.DiscardUnknown(m)
 }
@@ -362,15 +389,19 @@ func (*CommitStatusResponse) Descriptor() ([]byte, []int) {
 func (m *CommitStatusResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CommitStatusResponse.Unmarshal(m, b)
 }
+
 func (m *CommitStatusResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CommitStatusResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CommitStatusResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CommitStatusResponse.Merge(m, src)
 }
+
 func (m *CommitStatusResponse) XXX_Size() int {
 	return xxx_messageInfo_CommitStatusResponse.Size(m)
 }
+
 func (m *CommitStatusResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CommitStatusResponse.DiscardUnknown(m)
 }
@@ -417,15 +448,19 @@ func (*EvaluateRequest) Descriptor() ([]byte, []int) {
 func (m *EvaluateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EvaluateRequest.Unmarshal(m, b)
 }
+
 func (m *EvaluateRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EvaluateRequest.Marshal(b, m, deterministic)
 }
+
 func (m *EvaluateRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_EvaluateRequest.Merge(m, src)
 }
+
 func (m *EvaluateRequest) XXX_Size() int {
 	return xxx_messageInfo_EvaluateRequest.Size(m)
 }
+
 func (m *EvaluateRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_EvaluateRequest.DiscardUnknown(m)
 }
@@ -480,15 +515,19 @@ func (*EvaluateResponse) Descriptor() ([]byte, []int) {
 func (m *EvaluateResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EvaluateResponse.Unmarshal(m, b)
 }
+
 func (m *EvaluateResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EvaluateResponse.Marshal(b, m, deterministic)
 }
+
 func (m *EvaluateResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_EvaluateResponse.Merge(m, src)
 }
+
 func (m *EvaluateResponse) XXX_Size() int {
 	return xxx_messageInfo_EvaluateResponse.Size(m)
 }
+
 func (m *EvaluateResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_EvaluateResponse.DiscardUnknown(m)
 }
@@ -524,15 +563,19 @@ func (*SignedChaincodeEventsRequest) Descriptor() ([]byte, []int) {
 func (m *SignedChaincodeEventsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SignedChaincodeEventsRequest.Unmarshal(m, b)
 }
+
 func (m *SignedChaincodeEventsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SignedChaincodeEventsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *SignedChaincodeEventsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SignedChaincodeEventsRequest.Merge(m, src)
 }
+
 func (m *SignedChaincodeEventsRequest) XXX_Size() int {
 	return xxx_messageInfo_SignedChaincodeEventsRequest.Size(m)
 }
+
 func (m *SignedChaincodeEventsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_SignedChaincodeEventsRequest.DiscardUnknown(m)
 }
@@ -582,15 +625,19 @@ func (*ChaincodeEventsRequest) Descriptor() ([]byte, []int) {
 func (m *ChaincodeEventsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeEventsRequest.Unmarshal(m, b)
 }
+
 func (m *ChaincodeEventsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeEventsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeEventsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeEventsRequest.Merge(m, src)
 }
+
 func (m *ChaincodeEventsRequest) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeEventsRequest.Size(m)
 }
+
 func (m *ChaincodeEventsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeEventsRequest.DiscardUnknown(m)
 }
@@ -654,15 +701,19 @@ func (*ChaincodeEventsResponse) Descriptor() ([]byte, []int) {
 func (m *ChaincodeEventsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeEventsResponse.Unmarshal(m, b)
 }
+
 func (m *ChaincodeEventsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeEventsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeEventsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeEventsResponse.Merge(m, src)
 }
+
 func (m *ChaincodeEventsResponse) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeEventsResponse.Size(m)
 }
+
 func (m *ChaincodeEventsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeEventsResponse.DiscardUnknown(m)
 }
@@ -711,15 +762,19 @@ func (*ErrorDetail) Descriptor() ([]byte, []int) {
 func (m *ErrorDetail) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ErrorDetail.Unmarshal(m, b)
 }
+
 func (m *ErrorDetail) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ErrorDetail.Marshal(b, m, deterministic)
 }
+
 func (m *ErrorDetail) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ErrorDetail.Merge(m, src)
 }
+
 func (m *ErrorDetail) XXX_Size() int {
 	return xxx_messageInfo_ErrorDetail.Size(m)
 }
+
 func (m *ErrorDetail) XXX_DiscardUnknown() {
 	xxx_messageInfo_ErrorDetail.DiscardUnknown(m)
 }
@@ -771,15 +826,19 @@ func (*ProposedTransaction) Descriptor() ([]byte, []int) {
 func (m *ProposedTransaction) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ProposedTransaction.Unmarshal(m, b)
 }
+
 func (m *ProposedTransaction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ProposedTransaction.Marshal(b, m, deterministic)
 }
+
 func (m *ProposedTransaction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ProposedTransaction.Merge(m, src)
 }
+
 func (m *ProposedTransaction) XXX_Size() int {
 	return xxx_messageInfo_ProposedTransaction.Size(m)
 }
+
 func (m *ProposedTransaction) XXX_DiscardUnknown() {
 	xxx_messageInfo_ProposedTransaction.DiscardUnknown(m)
 }
@@ -828,15 +887,19 @@ func (*PreparedTransaction) Descriptor() ([]byte, []int) {
 func (m *PreparedTransaction) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PreparedTransaction.Unmarshal(m, b)
 }
+
 func (m *PreparedTransaction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PreparedTransaction.Marshal(b, m, deterministic)
 }
+
 func (m *PreparedTransaction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PreparedTransaction.Merge(m, src)
 }
+
 func (m *PreparedTransaction) XXX_Size() int {
 	return xxx_messageInfo_PreparedTransaction.Size(m)
 }
+
 func (m *PreparedTransaction) XXX_DiscardUnknown() {
 	xxx_messageInfo_PreparedTransaction.DiscardUnknown(m)
 }
@@ -878,15 +941,19 @@ func (*ConfigEventsRequest) Descriptor() ([]byte, []int) {
 func (m *ConfigEventsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfigEventsRequest.Unmarshal(m, b)
 }
+
 func (m *ConfigEventsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConfigEventsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *ConfigEventsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConfigEventsRequest.Merge(m, src)
 }
+
 func (m *ConfigEventsRequest) XXX_Size() int {
 	return xxx_messageInfo_ConfigEventsRequest.Size(m)
 }
+
 func (m *ConfigEventsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConfigEventsRequest.DiscardUnknown(m)
 }
@@ -926,15 +993,19 @@ func (*ConfigEventsResponse) Descriptor() ([]byte, []int) {
 func (m *ConfigEventsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfigEventsResponse.Unmarshal(m, b)
 }
+
 func (m *ConfigEventsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConfigEventsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *ConfigEventsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConfigEventsResponse.Merge(m, src)
 }
+
 func (m *ConfigEventsResponse) XXX_Size() int {
 	return xxx_messageInfo_ConfigEventsResponse.Size(m)
 }
+
 func (m *ConfigEventsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConfigEventsResponse.DiscardUnknown(m)
 }
@@ -1033,8 +1104,10 @@ var fileDescriptor_285396c8df15061f = []byte{
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -1217,24 +1290,28 @@ type GatewayServer interface {
 }
 
 // UnimplementedGatewayServer can be embedded to have forward compatible implementations.
-type UnimplementedGatewayServer struct {
-}
+type UnimplementedGatewayServer struct{}
 
 func (*UnimplementedGatewayServer) Endorse(ctx context.Context, req *EndorseRequest) (*EndorseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Endorse not implemented")
 }
+
 func (*UnimplementedGatewayServer) Submit(ctx context.Context, req *SubmitRequest) (*SubmitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Submit not implemented")
 }
+
 func (*UnimplementedGatewayServer) CommitStatus(ctx context.Context, req *SignedCommitStatusRequest) (*CommitStatusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CommitStatus not implemented")
 }
+
 func (*UnimplementedGatewayServer) Evaluate(ctx context.Context, req *EvaluateRequest) (*EvaluateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Evaluate not implemented")
 }
+
 func (*UnimplementedGatewayServer) ChaincodeEvents(req *SignedChaincodeEventsRequest, srv Gateway_ChaincodeEventsServer) error {
 	return status.Errorf(codes.Unimplemented, "method ChaincodeEvents not implemented")
 }
+
 func (*UnimplementedGatewayServer) ConfigEvents(req *ConfigEventsRequest, srv Gateway_ConfigEventsServer) error {
 	return status.Errorf(codes.Unimplemented, "method ConfigEvents not implemented")
 }

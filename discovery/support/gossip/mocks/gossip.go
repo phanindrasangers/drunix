@@ -14,9 +14,8 @@ import (
 type Gossip struct {
 	IdentityInfoStub        func() api.PeerIdentitySet
 	identityInfoMutex       sync.RWMutex
-	identityInfoArgsForCall []struct {
-	}
-	identityInfoReturns struct {
+	identityInfoArgsForCall []struct{}
+	identityInfoReturns     struct {
 		result1 api.PeerIdentitySet
 	}
 	identityInfoReturnsOnCall map[int]struct {
@@ -24,9 +23,8 @@ type Gossip struct {
 	}
 	PeersStub        func() []discovery.NetworkMember
 	peersMutex       sync.RWMutex
-	peersArgsForCall []struct {
-	}
-	peersReturns struct {
+	peersArgsForCall []struct{}
+	peersReturns     struct {
 		result1 []discovery.NetworkMember
 	}
 	peersReturnsOnCall map[int]struct {
@@ -56,9 +54,8 @@ type Gossip struct {
 	}
 	SelfMembershipInfoStub        func() discovery.NetworkMember
 	selfMembershipInfoMutex       sync.RWMutex
-	selfMembershipInfoArgsForCall []struct {
-	}
-	selfMembershipInfoReturns struct {
+	selfMembershipInfoArgsForCall []struct{}
+	selfMembershipInfoReturns     struct {
 		result1 discovery.NetworkMember
 	}
 	selfMembershipInfoReturnsOnCall map[int]struct {
@@ -71,8 +68,7 @@ type Gossip struct {
 func (fake *Gossip) IdentityInfo() api.PeerIdentitySet {
 	fake.identityInfoMutex.Lock()
 	ret, specificReturn := fake.identityInfoReturnsOnCall[len(fake.identityInfoArgsForCall)]
-	fake.identityInfoArgsForCall = append(fake.identityInfoArgsForCall, struct {
-	}{})
+	fake.identityInfoArgsForCall = append(fake.identityInfoArgsForCall, struct{}{})
 	fake.recordInvocation("IdentityInfo", []interface{}{})
 	fake.identityInfoMutex.Unlock()
 	if fake.IdentityInfoStub != nil {
@@ -123,8 +119,7 @@ func (fake *Gossip) IdentityInfoReturnsOnCall(i int, result1 api.PeerIdentitySet
 func (fake *Gossip) Peers() []discovery.NetworkMember {
 	fake.peersMutex.Lock()
 	ret, specificReturn := fake.peersReturnsOnCall[len(fake.peersArgsForCall)]
-	fake.peersArgsForCall = append(fake.peersArgsForCall, struct {
-	}{})
+	fake.peersArgsForCall = append(fake.peersArgsForCall, struct{}{})
 	fake.recordInvocation("Peers", []interface{}{})
 	fake.peersMutex.Unlock()
 	if fake.PeersStub != nil {
@@ -295,8 +290,7 @@ func (fake *Gossip) SelfChannelInfoReturnsOnCall(i int, result1 *protoext.Signed
 func (fake *Gossip) SelfMembershipInfo() discovery.NetworkMember {
 	fake.selfMembershipInfoMutex.Lock()
 	ret, specificReturn := fake.selfMembershipInfoReturnsOnCall[len(fake.selfMembershipInfoArgsForCall)]
-	fake.selfMembershipInfoArgsForCall = append(fake.selfMembershipInfoArgsForCall, struct {
-	}{})
+	fake.selfMembershipInfoArgsForCall = append(fake.selfMembershipInfoArgsForCall, struct{}{})
 	fake.recordInvocation("SelfMembershipInfo", []interface{}{})
 	fake.selfMembershipInfoMutex.Unlock()
 	if fake.SelfMembershipInfoStub != nil {

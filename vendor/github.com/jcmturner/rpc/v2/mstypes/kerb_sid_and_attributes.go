@@ -8,7 +8,7 @@ const (
 	SEGroupEnabled          = 29
 	SEGroupOwner            = 28
 	SEGroupResource         = 2
-	//All other bits MUST be set to zero and MUST be  ignored on receipt.
+	// All other bits MUST be set to zero and MUST be  ignored on receipt.
 )
 
 // KerbSidAndAttributes implements https://msdn.microsoft.com/en-us/library/cc237947.aspx

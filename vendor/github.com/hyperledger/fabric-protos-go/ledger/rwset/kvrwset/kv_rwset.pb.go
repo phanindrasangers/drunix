@@ -5,14 +5,17 @@ package kvrwset
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -42,15 +45,19 @@ func (*KVRWSet) Descriptor() ([]byte, []int) {
 func (m *KVRWSet) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KVRWSet.Unmarshal(m, b)
 }
+
 func (m *KVRWSet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KVRWSet.Marshal(b, m, deterministic)
 }
+
 func (m *KVRWSet) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KVRWSet.Merge(m, src)
 }
+
 func (m *KVRWSet) XXX_Size() int {
 	return xxx_messageInfo_KVRWSet.Size(m)
 }
+
 func (m *KVRWSet) XXX_DiscardUnknown() {
 	xxx_messageInfo_KVRWSet.DiscardUnknown(m)
 }
@@ -105,15 +112,19 @@ func (*HashedRWSet) Descriptor() ([]byte, []int) {
 func (m *HashedRWSet) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_HashedRWSet.Unmarshal(m, b)
 }
+
 func (m *HashedRWSet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_HashedRWSet.Marshal(b, m, deterministic)
 }
+
 func (m *HashedRWSet) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_HashedRWSet.Merge(m, src)
 }
+
 func (m *HashedRWSet) XXX_Size() int {
 	return xxx_messageInfo_HashedRWSet.Size(m)
 }
+
 func (m *HashedRWSet) XXX_DiscardUnknown() {
 	xxx_messageInfo_HashedRWSet.DiscardUnknown(m)
 }
@@ -161,15 +172,19 @@ func (*KVRead) Descriptor() ([]byte, []int) {
 func (m *KVRead) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KVRead.Unmarshal(m, b)
 }
+
 func (m *KVRead) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KVRead.Marshal(b, m, deterministic)
 }
+
 func (m *KVRead) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KVRead.Merge(m, src)
 }
+
 func (m *KVRead) XXX_Size() int {
 	return xxx_messageInfo_KVRead.Size(m)
 }
+
 func (m *KVRead) XXX_DiscardUnknown() {
 	xxx_messageInfo_KVRead.DiscardUnknown(m)
 }
@@ -210,15 +225,19 @@ func (*KVWrite) Descriptor() ([]byte, []int) {
 func (m *KVWrite) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KVWrite.Unmarshal(m, b)
 }
+
 func (m *KVWrite) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KVWrite.Marshal(b, m, deterministic)
 }
+
 func (m *KVWrite) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KVWrite.Merge(m, src)
 }
+
 func (m *KVWrite) XXX_Size() int {
 	return xxx_messageInfo_KVWrite.Size(m)
 }
+
 func (m *KVWrite) XXX_DiscardUnknown() {
 	xxx_messageInfo_KVWrite.DiscardUnknown(m)
 }
@@ -265,15 +284,19 @@ func (*KVMetadataWrite) Descriptor() ([]byte, []int) {
 func (m *KVMetadataWrite) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KVMetadataWrite.Unmarshal(m, b)
 }
+
 func (m *KVMetadataWrite) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KVMetadataWrite.Marshal(b, m, deterministic)
 }
+
 func (m *KVMetadataWrite) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KVMetadataWrite.Merge(m, src)
 }
+
 func (m *KVMetadataWrite) XXX_Size() int {
 	return xxx_messageInfo_KVMetadataWrite.Size(m)
 }
+
 func (m *KVMetadataWrite) XXX_DiscardUnknown() {
 	xxx_messageInfo_KVMetadataWrite.DiscardUnknown(m)
 }
@@ -315,15 +338,19 @@ func (*KVReadHash) Descriptor() ([]byte, []int) {
 func (m *KVReadHash) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KVReadHash.Unmarshal(m, b)
 }
+
 func (m *KVReadHash) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KVReadHash.Marshal(b, m, deterministic)
 }
+
 func (m *KVReadHash) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KVReadHash.Merge(m, src)
 }
+
 func (m *KVReadHash) XXX_Size() int {
 	return xxx_messageInfo_KVReadHash.Size(m)
 }
+
 func (m *KVReadHash) XXX_DiscardUnknown() {
 	xxx_messageInfo_KVReadHash.DiscardUnknown(m)
 }
@@ -365,15 +392,19 @@ func (*KVWriteHash) Descriptor() ([]byte, []int) {
 func (m *KVWriteHash) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KVWriteHash.Unmarshal(m, b)
 }
+
 func (m *KVWriteHash) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KVWriteHash.Marshal(b, m, deterministic)
 }
+
 func (m *KVWriteHash) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KVWriteHash.Merge(m, src)
 }
+
 func (m *KVWriteHash) XXX_Size() int {
 	return xxx_messageInfo_KVWriteHash.Size(m)
 }
+
 func (m *KVWriteHash) XXX_DiscardUnknown() {
 	xxx_messageInfo_KVWriteHash.DiscardUnknown(m)
 }
@@ -427,15 +458,19 @@ func (*KVMetadataWriteHash) Descriptor() ([]byte, []int) {
 func (m *KVMetadataWriteHash) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KVMetadataWriteHash.Unmarshal(m, b)
 }
+
 func (m *KVMetadataWriteHash) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KVMetadataWriteHash.Marshal(b, m, deterministic)
 }
+
 func (m *KVMetadataWriteHash) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KVMetadataWriteHash.Merge(m, src)
 }
+
 func (m *KVMetadataWriteHash) XXX_Size() int {
 	return xxx_messageInfo_KVMetadataWriteHash.Size(m)
 }
+
 func (m *KVMetadataWriteHash) XXX_DiscardUnknown() {
 	xxx_messageInfo_KVMetadataWriteHash.DiscardUnknown(m)
 }
@@ -475,15 +510,19 @@ func (*KVMetadataEntry) Descriptor() ([]byte, []int) {
 func (m *KVMetadataEntry) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KVMetadataEntry.Unmarshal(m, b)
 }
+
 func (m *KVMetadataEntry) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KVMetadataEntry.Marshal(b, m, deterministic)
 }
+
 func (m *KVMetadataEntry) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KVMetadataEntry.Merge(m, src)
 }
+
 func (m *KVMetadataEntry) XXX_Size() int {
 	return xxx_messageInfo_KVMetadataEntry.Size(m)
 }
+
 func (m *KVMetadataEntry) XXX_DiscardUnknown() {
 	xxx_messageInfo_KVMetadataEntry.DiscardUnknown(m)
 }
@@ -526,15 +565,19 @@ func (*Version) Descriptor() ([]byte, []int) {
 func (m *Version) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Version.Unmarshal(m, b)
 }
+
 func (m *Version) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Version.Marshal(b, m, deterministic)
 }
+
 func (m *Version) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Version.Merge(m, src)
 }
+
 func (m *Version) XXX_Size() int {
 	return xxx_messageInfo_Version.Size(m)
 }
+
 func (m *Version) XXX_DiscardUnknown() {
 	xxx_messageInfo_Version.DiscardUnknown(m)
 }
@@ -585,15 +628,19 @@ func (*RangeQueryInfo) Descriptor() ([]byte, []int) {
 func (m *RangeQueryInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RangeQueryInfo.Unmarshal(m, b)
 }
+
 func (m *RangeQueryInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RangeQueryInfo.Marshal(b, m, deterministic)
 }
+
 func (m *RangeQueryInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_RangeQueryInfo.Merge(m, src)
 }
+
 func (m *RangeQueryInfo) XXX_Size() int {
 	return xxx_messageInfo_RangeQueryInfo.Size(m)
 }
+
 func (m *RangeQueryInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_RangeQueryInfo.DiscardUnknown(m)
 }
@@ -684,15 +731,19 @@ func (*QueryReads) Descriptor() ([]byte, []int) {
 func (m *QueryReads) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryReads.Unmarshal(m, b)
 }
+
 func (m *QueryReads) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryReads.Marshal(b, m, deterministic)
 }
+
 func (m *QueryReads) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryReads.Merge(m, src)
 }
+
 func (m *QueryReads) XXX_Size() int {
 	return xxx_messageInfo_QueryReads.Size(m)
 }
+
 func (m *QueryReads) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryReads.DiscardUnknown(m)
 }
@@ -730,15 +781,19 @@ func (*QueryReadsMerkleSummary) Descriptor() ([]byte, []int) {
 func (m *QueryReadsMerkleSummary) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryReadsMerkleSummary.Unmarshal(m, b)
 }
+
 func (m *QueryReadsMerkleSummary) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryReadsMerkleSummary.Marshal(b, m, deterministic)
 }
+
 func (m *QueryReadsMerkleSummary) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryReadsMerkleSummary.Merge(m, src)
 }
+
 func (m *QueryReadsMerkleSummary) XXX_Size() int {
 	return xxx_messageInfo_QueryReadsMerkleSummary.Size(m)
 }
+
 func (m *QueryReadsMerkleSummary) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryReadsMerkleSummary.DiscardUnknown(m)
 }

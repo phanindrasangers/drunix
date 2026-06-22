@@ -70,6 +70,7 @@ func (dc draftConfigs) GetMetaSchema(url string) string {
 	}
 	return ""
 }
+
 func (dc draftConfigs) GetDraftVersion(url string) *Draft {
 	for _, config := range dc {
 		if config.MetaSchemaURL == url {
@@ -78,6 +79,7 @@ func (dc draftConfigs) GetDraftVersion(url string) *Draft {
 	}
 	return nil
 }
+
 func (dc draftConfigs) GetSchemaURL(draft Draft) string {
 	for _, config := range dc {
 		if config.Version == draft {
@@ -88,7 +90,6 @@ func (dc draftConfigs) GetSchemaURL(draft Draft) string {
 }
 
 func parseSchemaURL(documentNode interface{}) (string, *Draft, error) {
-
 	if isKind(documentNode, reflect.Bool) {
 		return "", nil, nil
 	}
@@ -111,7 +112,6 @@ func parseSchemaURL(documentNode interface{}) (string, *Draft, error) {
 		}
 
 		schemaReference, err := gojsonreference.NewJsonReference(m[KEY_SCHEMA].(string))
-
 		if err != nil {
 			return "", nil, err
 		}

@@ -286,7 +286,6 @@ func (p *Peer) createChannel(
 	legacyLifecycleValidation plugindispatcher.LifecycleResources,
 	newLifecycleValidation plugindispatcher.CollectionAndLifecycleResources,
 ) error {
-
 	chanConf, err := RetrievePersistedChannelConfig(l)
 	if err != nil {
 		return err

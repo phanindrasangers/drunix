@@ -71,7 +71,6 @@ func indexStringInSlice(s []string, what string) int {
 }
 
 func marshalToJSONString(value interface{}) (*string, error) {
-
 	mBytes, err := json.Marshal(value)
 	if err != nil {
 		return nil, err
@@ -82,7 +81,6 @@ func marshalToJSONString(value interface{}) (*string, error) {
 }
 
 func marshalWithoutNumber(value interface{}) (*string, error) {
-
 	// The JSON is decoded using https://golang.org/pkg/encoding/json/#Decoder.UseNumber
 	// This means the numbers are internally still represented as strings and therefore 1.00 is unequal to 1
 	// One way to eliminate these differences is to decode and encode the JSON one more time without Decoder.UseNumber
@@ -104,9 +102,7 @@ func marshalWithoutNumber(value interface{}) (*string, error) {
 }
 
 func isJSONNumber(what interface{}) bool {
-
 	switch what.(type) {
-
 	case json.Number:
 		return true
 	}
@@ -115,13 +111,11 @@ func isJSONNumber(what interface{}) bool {
 }
 
 func checkJSONInteger(what interface{}) (isInt bool) {
-
 	jsonNumber := what.(json.Number)
 
 	bigFloat, isValidNumber := new(big.Rat).SetString(string(jsonNumber))
 
 	return isValidNumber && bigFloat.IsInt()
-
 }
 
 // same as ECMA Number.MAX_SAFE_INTEGER and Number.MIN_SAFE_INTEGER
@@ -131,7 +125,6 @@ const (
 )
 
 func mustBeInteger(what interface{}) *int {
-
 	if isJSONNumber(what) {
 
 		number := what.(json.Number)
@@ -155,7 +148,6 @@ func mustBeInteger(what interface{}) *int {
 }
 
 func mustBeNumber(what interface{}) *big.Rat {
-
 	if isJSONNumber(what) {
 		number := what.(json.Number)
 		float64Value, success := new(big.Rat).SetString(string(number))
@@ -165,11 +157,9 @@ func mustBeNumber(what interface{}) *big.Rat {
 	}
 
 	return nil
-
 }
 
 func convertDocumentNode(val interface{}) interface{} {
-
 	if lval, ok := val.([]interface{}); ok {
 
 		res := []interface{}{}

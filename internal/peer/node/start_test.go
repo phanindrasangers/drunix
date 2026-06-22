@@ -15,11 +15,11 @@ import (
 	"time"
 
 	"github.com/hyperledger/fabric-protos-go/common"
+	"github.com/mitchellh/mapstructure"
 	"github.com/npci/drunix/core/handlers/library"
 	"github.com/npci/drunix/core/testutil"
 	"github.com/npci/drunix/internal/peer/node/mock"
 	msptesttools "github.com/npci/drunix/msp/mgmt/testtools"
-	"github.com/mitchellh/mapstructure"
 	. "github.com/onsi/gomega"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/require"

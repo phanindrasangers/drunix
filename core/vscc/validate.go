@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -51,11 +51,11 @@ type VsccValidateServer struct {
 	validatorPoolSize           int
 	// keyValueDBConn              *keyvaluedatabase.KeyValueDBConnection
 
-	//required for InitOnConfigBlock
+	// required for InitOnConfigBlock
 	channelValidators     map[string]*channelValidator
 	channelValidatorsLock sync.RWMutex
 
-	//required for InitOnBlock
+	// required for InitOnBlock
 	// lock              *sync.Mutex
 	// txValidator       map[string]*txvalidator.TxValidatorVSCCAdapter
 	// validatedBlockNum sync.Map
@@ -69,7 +69,6 @@ type channelValidator struct {
 }
 
 func NewVsccValidateServer(ledgerConfig *ledger.Config, validationPluginsByName map[string]validation.PluginFactoryAdapter, policyMgr policies.PolicyManagerGetterFunc, peerEndpoint string, cryptoProvider bccsp.BCCSP, lifecycleValidatorCommitter plugindispatcher.CollectionAndLifecycleResources, peerInstance *peer.Peer, legacyLifecycleValidation plugindispatcher.LifecycleResources, metricsProvider metrics.Provider, validatorPoolSize int) (*VsccValidateServer, error) {
-
 	var err error
 	var vdbProvider statedb.VersionedDBProvider
 
@@ -118,7 +117,6 @@ func NewVsccValidateServer(ledgerConfig *ledger.Config, validationPluginsByName 
 }
 
 func (v *VsccValidateServer) ProcessVscc(ctx context.Context, req *pb.VsccRequest) (*pb.VsccResponse, error) {
-
 	if len(req.Transactions) == 0 {
 		return nil, status.Errorf(codes.InvalidArgument, "no transactions found")
 	}
@@ -137,7 +135,6 @@ func (v *VsccValidateServer) ProcessVscc(ctx context.Context, req *pb.VsccReques
 }
 
 func (v *VsccValidateServer) InitializeTxValidator(channelName string, blockNumber uint64) (*channelValidator, error) {
-
 	v.logger.Infof("InitializeTxValidator: %v\n", channelName)
 
 	versionDb, err := v.versiondbProvider.GetDBHandle(channelName, nil)
@@ -169,7 +166,6 @@ func (v *VsccValidateServer) InitializeTxValidator(channelName string, blockNumb
 		},
 		v.metricsProvider,
 	)
-
 	if err != nil {
 		return nil, err
 	}
@@ -264,7 +260,6 @@ func (c *CalcTps) increment(txnCount int) {
 }
 
 func init() {
-
 	calcTps = CalcTps{
 		txnCounter:      atomic.Uint64{},
 		startTime:       time.Time{},
@@ -337,7 +332,6 @@ func init() {
 // }
 
 func (v *VsccValidateServer) getValidator(req *pb.VsccRequest) (*txvalidator.TxValidatorVSCCAdapter, error) {
-
 	v.channelValidatorsLock.Lock()
 	if channelValidator, exists := v.channelValidators[req.ChannelId]; !exists {
 
@@ -350,7 +344,6 @@ func (v *VsccValidateServer) getValidator(req *pb.VsccRequest) (*txvalidator.TxV
 		v.channelValidators[req.ChannelId].lastValidatedBlockNumber = uint64(req.BlockNum)
 
 	} else {
-
 		if channelValidator.lastValidatedBlockNumber != uint64(req.BlockNum) {
 
 			versionedValue, err := channelValidator.versionDb.GetState("", "LAST_LIFECYCLE_BLOCK_NUMBER")

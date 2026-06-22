@@ -293,7 +293,7 @@ func (g *GossipService) DistributePrivateData(channelID string, txID string, pri
 	if !exists {
 		return errors.Errorf("No private data handler for %s", channelID)
 	}
-	//DRUNIX: if `PEER_PRIVATEDATA_DESSIMINATION_ENABLED` env is enable pvt data dissimination happens. Default value is true.
+	// DRUNIX: if `PEER_PRIVATEDATA_DESSIMINATION_ENABLED` env is enable pvt data dissimination happens. Default value is true.
 	if g.privdataConfig.PrivateDataDissemination {
 		if err := handler.distributor.Distribute(txID, privData, blkHt); err != nil {
 			err := errors.WithMessagef(err, "failed to distribute private collection, txID %s, channel %s", txID, channelID)

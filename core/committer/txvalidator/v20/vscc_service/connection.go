@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package vscc_service
@@ -29,7 +29,6 @@ type Config struct {
 }
 
 func LoadConfig() *Config {
-
 	batchSize := viper.GetInt("peer.vsccservice.batchsize")
 	if batchSize == 0 {
 		batchSize = 10
@@ -52,11 +51,10 @@ type VsccServiceClient struct {
 }
 
 func NewVsccServiceClient(vsccConfig *Config) (*VsccServiceClient, error) {
-
 	logger.Infof("vsccConfig: %+v\n", vsccConfig)
 
 	var err error
-	var creds = insecure.NewCredentials()
+	creds := insecure.NewCredentials()
 	if vsccConfig.tlsEnabled {
 		creds, err = credentials.NewClientTLSFromFile(vsccConfig.tlsCertFile, vsccConfig.ingressEndpoint)
 		if err != nil {
@@ -70,7 +68,6 @@ func NewVsccServiceClient(vsccConfig *Config) (*VsccServiceClient, error) {
 	}
 
 	conn, err := grpc.Dial(vsccConfig.endpoint, grpc.WithTransportCredentials(creds), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"`+lbpolicy+`"}`))
-
 	if err != nil {
 		return nil, err
 	}

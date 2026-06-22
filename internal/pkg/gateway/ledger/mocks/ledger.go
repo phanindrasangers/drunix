@@ -40,9 +40,8 @@ type Ledger struct {
 	}
 	GetBlockchainInfoStub        func() (*common.BlockchainInfo, error)
 	getBlockchainInfoMutex       sync.RWMutex
-	getBlockchainInfoArgsForCall []struct {
-	}
-	getBlockchainInfoReturns struct {
+	getBlockchainInfoArgsForCall []struct{}
+	getBlockchainInfoReturns     struct {
 		result1 *common.BlockchainInfo
 		result2 error
 	}
@@ -213,8 +212,7 @@ func (fake *Ledger) GetBlockByTxIDReturnsOnCall(i int, result1 *common.Block, re
 func (fake *Ledger) GetBlockchainInfo() (*common.BlockchainInfo, error) {
 	fake.getBlockchainInfoMutex.Lock()
 	ret, specificReturn := fake.getBlockchainInfoReturnsOnCall[len(fake.getBlockchainInfoArgsForCall)]
-	fake.getBlockchainInfoArgsForCall = append(fake.getBlockchainInfoArgsForCall, struct {
-	}{})
+	fake.getBlockchainInfoArgsForCall = append(fake.getBlockchainInfoArgsForCall, struct{}{})
 	stub := fake.GetBlockchainInfoStub
 	fakeReturns := fake.getBlockchainInfoReturns
 	fake.recordInvocation("GetBlockchainInfo", []interface{}{})

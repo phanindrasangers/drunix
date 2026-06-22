@@ -190,9 +190,11 @@ type byInitialism []string
 func (s byInitialism) Len() int {
 	return len(s)
 }
+
 func (s byInitialism) Swap(i, j int) {
 	s[i], s[j] = s[j], s[i]
 }
+
 func (s byInitialism) Less(i, j int) bool {
 	if len(s[i]) != len(s[j]) {
 		return len(s[i]) < len(s[j])

@@ -22,7 +22,6 @@ ConfigEvents establishes a server stream with requesting lite peers
 to deliver configuration updates and chaincode approve/commit notifications.
 */
 func (gs *Server) ConfigEvents(request *gp.ConfigEventsRequest, stream gp.Gateway_ConfigEventsServer) error {
-
 	logger.Infof("Receieved config event request : %+v", request)
 	if request.GetChannelId() == "" {
 		return status.Error(codes.InvalidArgument, "channel id is required")

@@ -54,6 +54,7 @@ type TableCache interface {
 	CreateIfNotExists(key string) error
 	Clear()
 }
+
 type tableCache struct {
 	channel string
 	client  *gorm.DB
@@ -62,7 +63,6 @@ type tableCache struct {
 }
 
 func newTableCache(channel string, client *gorm.DB) (TableCache, error) {
-
 	var tables []string
 	err := client.Raw(`SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname = ?;`, channel).Scan(&tables).Error
 	if err != nil {
@@ -83,7 +83,6 @@ func newTableCache(channel string, client *gorm.DB) (TableCache, error) {
 }
 
 func (c *tableCache) CreateIfNotExists(key string) error {
-
 	if c.exists(key) {
 		return nil
 	}

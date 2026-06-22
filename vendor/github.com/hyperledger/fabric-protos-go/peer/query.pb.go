@@ -5,14 +5,17 @@ package peer
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -41,15 +44,19 @@ func (*ChaincodeQueryResponse) Descriptor() ([]byte, []int) {
 func (m *ChaincodeQueryResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeQueryResponse.Unmarshal(m, b)
 }
+
 func (m *ChaincodeQueryResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeQueryResponse.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeQueryResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeQueryResponse.Merge(m, src)
 }
+
 func (m *ChaincodeQueryResponse) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeQueryResponse.Size(m)
 }
+
 func (m *ChaincodeQueryResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeQueryResponse.DiscardUnknown(m)
 }
@@ -101,15 +108,19 @@ func (*ChaincodeInfo) Descriptor() ([]byte, []int) {
 func (m *ChaincodeInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeInfo.Unmarshal(m, b)
 }
+
 func (m *ChaincodeInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeInfo.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeInfo.Merge(m, src)
 }
+
 func (m *ChaincodeInfo) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeInfo.Size(m)
 }
+
 func (m *ChaincodeInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeInfo.DiscardUnknown(m)
 }
@@ -185,15 +196,19 @@ func (*ChannelQueryResponse) Descriptor() ([]byte, []int) {
 func (m *ChannelQueryResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChannelQueryResponse.Unmarshal(m, b)
 }
+
 func (m *ChannelQueryResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChannelQueryResponse.Marshal(b, m, deterministic)
 }
+
 func (m *ChannelQueryResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChannelQueryResponse.Merge(m, src)
 }
+
 func (m *ChannelQueryResponse) XXX_Size() int {
 	return xxx_messageInfo_ChannelQueryResponse.Size(m)
 }
+
 func (m *ChannelQueryResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChannelQueryResponse.DiscardUnknown(m)
 }
@@ -225,15 +240,19 @@ func (*ChannelInfo) Descriptor() ([]byte, []int) {
 func (m *ChannelInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChannelInfo.Unmarshal(m, b)
 }
+
 func (m *ChannelInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChannelInfo.Marshal(b, m, deterministic)
 }
+
 func (m *ChannelInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChannelInfo.Merge(m, src)
 }
+
 func (m *ChannelInfo) XXX_Size() int {
 	return xxx_messageInfo_ChannelInfo.Size(m)
 }
+
 func (m *ChannelInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChannelInfo.DiscardUnknown(m)
 }
@@ -267,15 +286,19 @@ func (*JoinBySnapshotStatus) Descriptor() ([]byte, []int) {
 func (m *JoinBySnapshotStatus) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_JoinBySnapshotStatus.Unmarshal(m, b)
 }
+
 func (m *JoinBySnapshotStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_JoinBySnapshotStatus.Marshal(b, m, deterministic)
 }
+
 func (m *JoinBySnapshotStatus) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_JoinBySnapshotStatus.Merge(m, src)
 }
+
 func (m *JoinBySnapshotStatus) XXX_Size() int {
 	return xxx_messageInfo_JoinBySnapshotStatus.Size(m)
 }
+
 func (m *JoinBySnapshotStatus) XXX_DiscardUnknown() {
 	xxx_messageInfo_JoinBySnapshotStatus.DiscardUnknown(m)
 }

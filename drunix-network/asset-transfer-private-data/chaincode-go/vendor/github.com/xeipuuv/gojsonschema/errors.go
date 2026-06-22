@@ -330,7 +330,6 @@ func newError(err ResultError, context *JsonContext, value interface{}, locale l
 // format and converts it to a string with replacements. The fields come
 // from the ErrorDetails struct and vary for each type of error.
 func formatErrorDescription(s string, details ErrorDetails) string {
-
 	var tpl *template.Template
 	var descrAsBuffer bytes.Buffer
 	var err error

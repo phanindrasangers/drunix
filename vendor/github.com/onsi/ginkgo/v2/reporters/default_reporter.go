@@ -128,7 +128,7 @@ func (r *DefaultReporter) SuiteDidEnd(report types.Report) {
 		}
 	}
 
-	//summarize the suite
+	// summarize the suite
 	if r.conf.Verbosity().Is(types.VerbosityLevelSuccinct) && report.SuiteSucceeded {
 		r.emit(r.f(" {{green}}SUCCESS!{{/}} %s ", report.RunTime))
 		return
@@ -140,7 +140,7 @@ func (r *DefaultReporter) SuiteDidEnd(report types.Report) {
 		color, status = "{{red}}{{bold}}", "FAIL!"
 	}
 
-	specs := report.SpecReports.WithLeafNodeType(types.NodeTypeIt) //exclude any suite setup nodes
+	specs := report.SpecReports.WithLeafNodeType(types.NodeTypeIt) // exclude any suite setup nodes
 	r.emitBlock(r.f(color+"Ran %d of %d Specs in %.3f seconds{{/}}",
 		specs.CountWithState(types.SpecStatePassed)+specs.CountWithState(types.SpecStateFailureStates),
 		report.PreRunStats.TotalSpecs,
@@ -195,14 +195,13 @@ func (r *DefaultReporter) wrapTextBlock(sectionName string, fn func()) {
 	} else {
 		r.emitBlock(r.fi(1, "{{gray}}<< %s{{/}}", sectionName))
 	}
-
 }
 
 func (r *DefaultReporter) DidRun(report types.SpecReport) {
 	v := r.conf.Verbosity()
 	inParallel := report.RunningInParallel
 
-	//should we completely omit this spec?
+	// should we completely omit this spec?
 	if report.State.Is(types.SpecStateSkipped) && r.conf.SilenceSkips {
 		return
 	}
@@ -232,7 +231,7 @@ func (r *DefaultReporter) DidRun(report types.SpecReport) {
 			showTimeline = false
 		}
 		if v.LT(types.VerbosityLevelVeryVerbose) && report.CapturedGinkgoWriterOutput == "" && len(timeline) > 0 {
-			//if we aren't -vv and the timeline only has a single failure, don't show it as it will appear at the end of the report
+			// if we aren't -vv and the timeline only has a single failure, don't show it as it will appear at the end of the report
 			failure, isFailure := timeline[0].(types.Failure)
 			if isFailure && (len(timeline) == 1 || (len(timeline) == 2 && failure.AdditionalFailure != nil)) {
 				showTimeline = false
@@ -305,7 +304,7 @@ func (r *DefaultReporter) DidRun(report types.SpecReport) {
 		r.emitBlock(r.codeLocationBlock(report, highlightColor, v.Is(types.VerbosityLevelVeryVerbose), false))
 	}
 
-	//Emit Stdout/Stderr Output
+	// Emit Stdout/Stderr Output
 	if showSeparateStdSection {
 		r.wrapTextBlock("Captured StdOut/StdErr Output", func() {
 			r.emitBlock(r.fi(1, "%s", report.CapturedStdOutErr))
@@ -732,7 +731,7 @@ func (r *DefaultReporter) codeLocationBlock(report types.SpecReport, highlightCo
 		locations[i] = failureLocation
 		highlightIndex = i
 	default:
-		//there is no failure, so we highlight the leaf ndoe
+		// there is no failure, so we highlight the leaf ndoe
 		highlightIndex = len(texts) - 1
 	}
 

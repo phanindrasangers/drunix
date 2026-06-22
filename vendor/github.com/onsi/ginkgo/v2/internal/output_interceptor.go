@@ -7,8 +7,9 @@ import (
 	"time"
 )
 
-const BAILOUT_TIME = 1 * time.Second
-const BAILOUT_MESSAGE = `Ginkgo detected an issue while intercepting output.
+const (
+	BAILOUT_TIME    = 1 * time.Second
+	BAILOUT_MESSAGE = `Ginkgo detected an issue while intercepting output.
 
 When running in parallel, Ginkgo captures stdout and stderr output
 and attaches it to the running spec.  It looks like that process is getting
@@ -39,6 +40,7 @@ race detector.
 
 More details on issue #851 - https://github.com/onsi/ginkgo/issues/851
 `
+)
 
 /*
 The OutputInterceptor is used by to
@@ -71,7 +73,7 @@ type pipePair struct {
 
 func startPipeFactory(pipeChannel chan pipePair, shutdown chan any) {
 	for {
-		//make the next pipe...
+		// make the next pipe...
 		pair := pipePair{}
 		pair.reader, pair.writer, _ = os.Pipe()
 		select {
@@ -149,7 +151,7 @@ func (interceptor *genericOutputInterceptor) ResumeIntercepting() {
 
 	interceptor.emergencyBailout = make(chan any)
 
-	//Spin up a goroutine to copy data from the pipe into a buffer, this is how we capture any output the user is emitting
+	// Spin up a goroutine to copy data from the pipe into a buffer, this is how we capture any output the user is emitting
 	go func() {
 		buffer := &bytes.Buffer{}
 		destination := io.MultiWriter(buffer, interceptor.forwardTo)
@@ -246,5 +248,5 @@ func (impl *osGlobalReassigningOutputInterceptorImpl) RestoreStdoutStderrFromClo
 }
 
 func (impl *osGlobalReassigningOutputInterceptorImpl) ShutdownClones(_ *os.File, _ *os.File) {
-	//noop
+	// noop
 }

@@ -205,8 +205,8 @@ func (_m *ApplicationCapabilities) V2_0Validation() bool {
 	return r0
 }
 
-//DRUNIX : LeanFormatEnabled provides a mock function with given fields:
-func (_m *ApplicationCapabilities)LeanFormatEnabled() bool {
+// DRUNIX : LeanFormatEnabled provides a mock function with given fields:
+func (_m *ApplicationCapabilities) LeanFormatEnabled() bool {
 	ret := _m.Called()
 
 	var r0 bool

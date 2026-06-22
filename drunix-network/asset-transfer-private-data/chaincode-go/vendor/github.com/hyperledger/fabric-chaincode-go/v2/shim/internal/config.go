@@ -128,11 +128,12 @@ func LoadTLSConfig(isserver bool, key, cert, root []byte) (*tls.Config, error) {
 		Certificates: []tls.Certificate{cccert},
 	}
 
-	//follow Peer's server default config properties
+	// follow Peer's server default config properties
 	if isserver {
 		tlscfg.ClientCAs = rootCertPool
 		tlscfg.SessionTicketsDisabled = true
-		tlscfg.CipherSuites = []uint16{tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+		tlscfg.CipherSuites = []uint16{
+			tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
 			tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
 			tls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
 			tls.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,

@@ -81,7 +81,7 @@ func NewClusterAdmin(addrs []string, conf *Config) (ClusterAdmin, error) {
 		return nil, err
 	}
 
-	//make sure we can retrieve the controller
+	// make sure we can retrieve the controller
 	_, err = client.Controller()
 	if err != nil {
 		return nil, err
@@ -103,7 +103,6 @@ func (ca *clusterAdmin) Controller() (*Broker, error) {
 }
 
 func (ca *clusterAdmin) CreateTopic(topic string, detail *TopicDetail, validateOnly bool) error {
-
 	if topic == "" {
 		return ErrInvalidTopic
 	}
@@ -151,7 +150,6 @@ func (ca *clusterAdmin) CreateTopic(topic string, detail *TopicDetail, validateO
 }
 
 func (ca *clusterAdmin) DeleteTopic(topic string) error {
-
 	if topic == "" {
 		return ErrInvalidTopic
 	}
@@ -222,7 +220,6 @@ func (ca *clusterAdmin) CreatePartitions(topic string, count int32, assignment [
 }
 
 func (ca *clusterAdmin) DeleteRecords(topic string, partitionOffsets map[int32]int64) error {
-
 	if topic == "" {
 		return ErrInvalidTopic
 	}
@@ -249,13 +246,12 @@ func (ca *clusterAdmin) DeleteRecords(topic string, partitionOffsets map[int32]i
 		return ErrIncompleteResponse
 	}
 
-	//todo since we are dealing with couple of partitions it would be good if we return slice of errors
-	//for each partition instead of one error
+	// todo since we are dealing with couple of partitions it would be good if we return slice of errors
+	// for each partition instead of one error
 	return nil
 }
 
 func (ca *clusterAdmin) DescribeConfig(resource ConfigResource) ([]ConfigEntry, error) {
-
 	var entries []ConfigEntry
 	var resources []*ConfigResource
 	resources = append(resources, &resource)
@@ -288,7 +284,6 @@ func (ca *clusterAdmin) DescribeConfig(resource ConfigResource) ([]ConfigEntry, 
 }
 
 func (ca *clusterAdmin) AlterConfig(resourceType ConfigResourceType, name string, entries map[string]*string, validateOnly bool) error {
-
 	var resources []*AlterConfigsResource
 	resources = append(resources, &AlterConfigsResource{
 		Type:          resourceType,
@@ -336,7 +331,6 @@ func (ca *clusterAdmin) CreateACL(resource Resource, acl Acl) error {
 }
 
 func (ca *clusterAdmin) ListAcls(filter AclFilter) ([]ResourceAcls, error) {
-
 	request := &DescribeAclsRequest{AclFilter: filter}
 
 	b, err := ca.Controller()
@@ -376,7 +370,6 @@ func (ca *clusterAdmin) DeleteACL(filter AclFilter, validateOnly bool) ([]Matchi
 		for _, mACL := range fr.MatchingAcls {
 			mAcls = append(mAcls, *mACL)
 		}
-
 	}
 	return mAcls, nil
 }

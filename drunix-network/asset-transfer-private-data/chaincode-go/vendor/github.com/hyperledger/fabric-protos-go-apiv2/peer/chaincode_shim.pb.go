@@ -11,11 +11,12 @@
 package peer
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -1392,32 +1393,35 @@ func file_peer_chaincode_shim_proto_rawDescGZIP() []byte {
 	return file_peer_chaincode_shim_proto_rawDescData
 }
 
-var file_peer_chaincode_shim_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_peer_chaincode_shim_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
-var file_peer_chaincode_shim_proto_goTypes = []any{
-	(ChaincodeMessage_Type)(0),    // 0: protos.ChaincodeMessage.Type
-	(*ChaincodeMessage)(nil),      // 1: protos.ChaincodeMessage
-	(*GetState)(nil),              // 2: protos.GetState
-	(*GetStateMetadata)(nil),      // 3: protos.GetStateMetadata
-	(*PutState)(nil),              // 4: protos.PutState
-	(*PutStateMetadata)(nil),      // 5: protos.PutStateMetadata
-	(*DelState)(nil),              // 6: protos.DelState
-	(*PurgePrivateState)(nil),     // 7: protos.PurgePrivateState
-	(*GetStateByRange)(nil),       // 8: protos.GetStateByRange
-	(*GetQueryResult)(nil),        // 9: protos.GetQueryResult
-	(*QueryMetadata)(nil),         // 10: protos.QueryMetadata
-	(*GetHistoryForKey)(nil),      // 11: protos.GetHistoryForKey
-	(*QueryStateNext)(nil),        // 12: protos.QueryStateNext
-	(*QueryStateClose)(nil),       // 13: protos.QueryStateClose
-	(*QueryResultBytes)(nil),      // 14: protos.QueryResultBytes
-	(*QueryResponse)(nil),         // 15: protos.QueryResponse
-	(*QueryResponseMetadata)(nil), // 16: protos.QueryResponseMetadata
-	(*StateMetadata)(nil),         // 17: protos.StateMetadata
-	(*StateMetadataResult)(nil),   // 18: protos.StateMetadataResult
-	(*timestamppb.Timestamp)(nil), // 19: google.protobuf.Timestamp
-	(*SignedProposal)(nil),        // 20: protos.SignedProposal
-	(*ChaincodeEvent)(nil),        // 21: protos.ChaincodeEvent
-}
+var (
+	file_peer_chaincode_shim_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+	file_peer_chaincode_shim_proto_msgTypes  = make([]protoimpl.MessageInfo, 18)
+	file_peer_chaincode_shim_proto_goTypes   = []any{
+		(ChaincodeMessage_Type)(0),    // 0: protos.ChaincodeMessage.Type
+		(*ChaincodeMessage)(nil),      // 1: protos.ChaincodeMessage
+		(*GetState)(nil),              // 2: protos.GetState
+		(*GetStateMetadata)(nil),      // 3: protos.GetStateMetadata
+		(*PutState)(nil),              // 4: protos.PutState
+		(*PutStateMetadata)(nil),      // 5: protos.PutStateMetadata
+		(*DelState)(nil),              // 6: protos.DelState
+		(*PurgePrivateState)(nil),     // 7: protos.PurgePrivateState
+		(*GetStateByRange)(nil),       // 8: protos.GetStateByRange
+		(*GetQueryResult)(nil),        // 9: protos.GetQueryResult
+		(*QueryMetadata)(nil),         // 10: protos.QueryMetadata
+		(*GetHistoryForKey)(nil),      // 11: protos.GetHistoryForKey
+		(*QueryStateNext)(nil),        // 12: protos.QueryStateNext
+		(*QueryStateClose)(nil),       // 13: protos.QueryStateClose
+		(*QueryResultBytes)(nil),      // 14: protos.QueryResultBytes
+		(*QueryResponse)(nil),         // 15: protos.QueryResponse
+		(*QueryResponseMetadata)(nil), // 16: protos.QueryResponseMetadata
+		(*StateMetadata)(nil),         // 17: protos.StateMetadata
+		(*StateMetadataResult)(nil),   // 18: protos.StateMetadataResult
+		(*timestamppb.Timestamp)(nil), // 19: google.protobuf.Timestamp
+		(*SignedProposal)(nil),        // 20: protos.SignedProposal
+		(*ChaincodeEvent)(nil),        // 21: protos.ChaincodeEvent
+	}
+)
+
 var file_peer_chaincode_shim_proto_depIdxs = []int32{
 	0,  // 0: protos.ChaincodeMessage.type:type_name -> protos.ChaincodeMessage.Type
 	19, // 1: protos.ChaincodeMessage.timestamp:type_name -> google.protobuf.Timestamp

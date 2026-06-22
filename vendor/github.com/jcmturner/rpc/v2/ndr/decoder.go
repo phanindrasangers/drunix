@@ -53,7 +53,7 @@ func (dec *Decoder) Decode(s interface{}) error {
 	if err != nil {
 		return err
 	}
-	_, err = dec.r.Discard(4) //The next 4 bytes are an RPC unique pointer referent. We just skip these.
+	_, err = dec.r.Discard(4) // The next 4 bytes are an RPC unique pointer referent. We just skip these.
 	if err != nil {
 		return Errorf("unable to process byte stream: %v", err)
 	}
@@ -181,15 +181,15 @@ func (dec *Decoder) fill(s interface{}, tag reflect.StructTag, localDef *[]defer
 	// Populate the value from the byte stream
 	switch v.Kind() {
 	case reflect.Struct:
-		dec.current = append(dec.current, v.Type().Name()) //Track the current field being filled
+		dec.current = append(dec.current, v.Type().Name()) // Track the current field being filled
 		// in case struct is a union, track this and the selected union field for efficiency
 		var unionTag reflect.Value
 		var unionField string // field to fill if struct is a union
 		// Go through each field in the struct and recursively fill
 		for i := 0; i < v.NumField(); i++ {
 			fieldName := v.Type().Field(i).Name
-			dec.current = append(dec.current, fieldName) //Track the current field being filled
-			//fmt.Fprintf(os.Stderr, "DEBUG Decoding: %s\n", strings.Join(dec.current, "/"))
+			dec.current = append(dec.current, fieldName) // Track the current field being filled
+			// fmt.Fprintf(os.Stderr, "DEBUG Decoding: %s\n", strings.Join(dec.current, "/"))
 			structTag := v.Type().Field(i).Tag
 			ndrTag := parseTags(structTag)
 
@@ -208,7 +208,7 @@ func (dec *Decoder) fill(s interface{}, tag reflect.StructTag, localDef *[]defer
 				}
 				if ndrTag.HasValue(TagUnionField) && fieldName != unionField {
 					// is a union and this field has not been selected so will skip it.
-					dec.current = dec.current[:len(dec.current)-1] //This field has been skipped so remove it from the current field tracker
+					dec.current = dec.current[:len(dec.current)-1] // This field has been skipped so remove it from the current field tracker
 					continue
 				}
 			}
@@ -216,7 +216,7 @@ func (dec *Decoder) fill(s interface{}, tag reflect.StructTag, localDef *[]defer
 			// Check if field is a pointer
 			if v.Field(i).Type().Implements(reflect.TypeOf(new(RawBytes)).Elem()) &&
 				v.Field(i).Type().Kind() == reflect.Slice && v.Field(i).Type().Elem().Kind() == reflect.Uint8 {
-				//field is for rawbytes
+				// field is for rawbytes
 				structTag, err = addSizeToTag(v, v.Field(i), structTag)
 				if err != nil {
 					return fmt.Errorf("could not get rawbytes field(%s) size: %v", strings.Join(dec.current, "/"), err)
@@ -237,9 +237,9 @@ func (dec *Decoder) fill(s interface{}, tag reflect.StructTag, localDef *[]defer
 					return fmt.Errorf("could not fill struct field(%s): %v", strings.Join(dec.current, "/"), err)
 				}
 			}
-			dec.current = dec.current[:len(dec.current)-1] //This field has been filled so remove it from the current field tracker
+			dec.current = dec.current[:len(dec.current)-1] // This field has been filled so remove it from the current field tracker
 		}
-		dec.current = dec.current[:len(dec.current)-1] //This field has been filled so remove it from the current field tracker
+		dec.current = dec.current[:len(dec.current)-1] // This field has been filled so remove it from the current field tracker
 	case reflect.Bool:
 		i, err := dec.readBool()
 		if err != nil {
@@ -331,7 +331,7 @@ func (dec *Decoder) fill(s interface{}, tag reflect.StructTag, localDef *[]defer
 		}
 	case reflect.Slice:
 		if v.Type().Implements(reflect.TypeOf(new(RawBytes)).Elem()) && v.Type().Elem().Kind() == reflect.Uint8 {
-			//field is for rawbytes
+			// field is for rawbytes
 			err := dec.readRawBytes(v, tag)
 			if err != nil {
 				return fmt.Errorf("could not fill raw bytes struct field(%s): %v", strings.Join(dec.current, "/"), err)
@@ -369,7 +369,7 @@ func (dec *Decoder) fill(s interface{}, tag reflect.StructTag, localDef *[]defer
 				return err
 			}
 		} else {
-			//default to conformant and not varying
+			// default to conformant and not varying
 			err := dec.fillConformantArray(v, tag, localDef)
 			if err != nil {
 				return err
@@ -383,7 +383,7 @@ func (dec *Decoder) fill(s interface{}, tag reflect.StructTag, localDef *[]defer
 
 // readBytes returns a number of bytes from the NDR byte stream.
 func (dec *Decoder) readBytes(n int) ([]byte, error) {
-	//TODO make this take an int64 as input to allow for larger values on all systems?
+	// TODO make this take an int64 as input to allow for larger values on all systems?
 	b := make([]byte, n, n)
 	m, err := dec.r.Read(b)
 	if err != nil || m != n {

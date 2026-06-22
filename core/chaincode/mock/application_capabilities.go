@@ -8,9 +8,8 @@ import (
 type ApplicationCapabilities struct {
 	ACLsStub        func() bool
 	aCLsMutex       sync.RWMutex
-	aCLsArgsForCall []struct {
-	}
-	aCLsReturns struct {
+	aCLsArgsForCall []struct{}
+	aCLsReturns     struct {
 		result1 bool
 	}
 	aCLsReturnsOnCall map[int]struct {
@@ -18,9 +17,8 @@ type ApplicationCapabilities struct {
 	}
 	CollectionUpgradeStub        func() bool
 	collectionUpgradeMutex       sync.RWMutex
-	collectionUpgradeArgsForCall []struct {
-	}
-	collectionUpgradeReturns struct {
+	collectionUpgradeArgsForCall []struct{}
+	collectionUpgradeReturns     struct {
 		result1 bool
 	}
 	collectionUpgradeReturnsOnCall map[int]struct {
@@ -28,9 +26,8 @@ type ApplicationCapabilities struct {
 	}
 	ForbidDuplicateTXIdInBlockStub        func() bool
 	forbidDuplicateTXIdInBlockMutex       sync.RWMutex
-	forbidDuplicateTXIdInBlockArgsForCall []struct {
-	}
-	forbidDuplicateTXIdInBlockReturns struct {
+	forbidDuplicateTXIdInBlockArgsForCall []struct{}
+	forbidDuplicateTXIdInBlockReturns     struct {
 		result1 bool
 	}
 	forbidDuplicateTXIdInBlockReturnsOnCall map[int]struct {
@@ -38,9 +35,8 @@ type ApplicationCapabilities struct {
 	}
 	KeyLevelEndorsementStub        func() bool
 	keyLevelEndorsementMutex       sync.RWMutex
-	keyLevelEndorsementArgsForCall []struct {
-	}
-	keyLevelEndorsementReturns struct {
+	keyLevelEndorsementArgsForCall []struct{}
+	keyLevelEndorsementReturns     struct {
 		result1 bool
 	}
 	keyLevelEndorsementReturnsOnCall map[int]struct {
@@ -48,9 +44,8 @@ type ApplicationCapabilities struct {
 	}
 	LifecycleV20Stub        func() bool
 	lifecycleV20Mutex       sync.RWMutex
-	lifecycleV20ArgsForCall []struct {
-	}
-	lifecycleV20Returns struct {
+	lifecycleV20ArgsForCall []struct{}
+	lifecycleV20Returns     struct {
 		result1 bool
 	}
 	lifecycleV20ReturnsOnCall map[int]struct {
@@ -58,9 +53,8 @@ type ApplicationCapabilities struct {
 	}
 	MetadataLifecycleStub        func() bool
 	metadataLifecycleMutex       sync.RWMutex
-	metadataLifecycleArgsForCall []struct {
-	}
-	metadataLifecycleReturns struct {
+	metadataLifecycleArgsForCall []struct{}
+	metadataLifecycleReturns     struct {
 		result1 bool
 	}
 	metadataLifecycleReturnsOnCall map[int]struct {
@@ -68,9 +62,8 @@ type ApplicationCapabilities struct {
 	}
 	PrivateChannelDataStub        func() bool
 	privateChannelDataMutex       sync.RWMutex
-	privateChannelDataArgsForCall []struct {
-	}
-	privateChannelDataReturns struct {
+	privateChannelDataArgsForCall []struct{}
+	privateChannelDataReturns     struct {
 		result1 bool
 	}
 	privateChannelDataReturnsOnCall map[int]struct {
@@ -78,9 +71,8 @@ type ApplicationCapabilities struct {
 	}
 	PurgePvtDataStub        func() bool
 	purgePvtDataMutex       sync.RWMutex
-	purgePvtDataArgsForCall []struct {
-	}
-	purgePvtDataReturns struct {
+	purgePvtDataArgsForCall []struct{}
+	purgePvtDataReturns     struct {
 		result1 bool
 	}
 	purgePvtDataReturnsOnCall map[int]struct {
@@ -88,9 +80,8 @@ type ApplicationCapabilities struct {
 	}
 	StorePvtDataOfInvalidTxStub        func() bool
 	storePvtDataOfInvalidTxMutex       sync.RWMutex
-	storePvtDataOfInvalidTxArgsForCall []struct {
-	}
-	storePvtDataOfInvalidTxReturns struct {
+	storePvtDataOfInvalidTxArgsForCall []struct{}
+	storePvtDataOfInvalidTxReturns     struct {
 		result1 bool
 	}
 	storePvtDataOfInvalidTxReturnsOnCall map[int]struct {
@@ -98,9 +89,8 @@ type ApplicationCapabilities struct {
 	}
 	SupportedStub        func() error
 	supportedMutex       sync.RWMutex
-	supportedArgsForCall []struct {
-	}
-	supportedReturns struct {
+	supportedArgsForCall []struct{}
+	supportedReturns     struct {
 		result1 error
 	}
 	supportedReturnsOnCall map[int]struct {
@@ -108,9 +98,8 @@ type ApplicationCapabilities struct {
 	}
 	V1_1ValidationStub        func() bool
 	v1_1ValidationMutex       sync.RWMutex
-	v1_1ValidationArgsForCall []struct {
-	}
-	v1_1ValidationReturns struct {
+	v1_1ValidationArgsForCall []struct{}
+	v1_1ValidationReturns     struct {
 		result1 bool
 	}
 	v1_1ValidationReturnsOnCall map[int]struct {
@@ -118,9 +107,8 @@ type ApplicationCapabilities struct {
 	}
 	V1_2ValidationStub        func() bool
 	v1_2ValidationMutex       sync.RWMutex
-	v1_2ValidationArgsForCall []struct {
-	}
-	v1_2ValidationReturns struct {
+	v1_2ValidationArgsForCall []struct{}
+	v1_2ValidationReturns     struct {
 		result1 bool
 	}
 	v1_2ValidationReturnsOnCall map[int]struct {
@@ -128,9 +116,8 @@ type ApplicationCapabilities struct {
 	}
 	V1_3ValidationStub        func() bool
 	v1_3ValidationMutex       sync.RWMutex
-	v1_3ValidationArgsForCall []struct {
-	}
-	v1_3ValidationReturns struct {
+	v1_3ValidationArgsForCall []struct{}
+	v1_3ValidationReturns     struct {
 		result1 bool
 	}
 	v1_3ValidationReturnsOnCall map[int]struct {
@@ -138,9 +125,8 @@ type ApplicationCapabilities struct {
 	}
 	V2_0ValidationStub        func() bool
 	v2_0ValidationMutex       sync.RWMutex
-	v2_0ValidationArgsForCall []struct {
-	}
-	v2_0ValidationReturns struct {
+	v2_0ValidationArgsForCall []struct{}
+	v2_0ValidationReturns     struct {
 		result1 bool
 	}
 	v2_0ValidationReturnsOnCall map[int]struct {
@@ -150,9 +136,8 @@ type ApplicationCapabilities struct {
 	invocationsMutex             sync.RWMutex
 	LeanFormatEnabledStub        func() bool
 	leanFormatEnabledMutex       sync.RWMutex
-	leanFormatEnabledArgsForCall []struct {
-	}
-	leanFormatEnabledReturns struct {
+	leanFormatEnabledArgsForCall []struct{}
+	leanFormatEnabledReturns     struct {
 		result1 bool
 	}
 	leanFormatEnabledReturnsOnCall map[int]struct {
@@ -163,8 +148,7 @@ type ApplicationCapabilities struct {
 func (fake *ApplicationCapabilities) ACLs() bool {
 	fake.aCLsMutex.Lock()
 	ret, specificReturn := fake.aCLsReturnsOnCall[len(fake.aCLsArgsForCall)]
-	fake.aCLsArgsForCall = append(fake.aCLsArgsForCall, struct {
-	}{})
+	fake.aCLsArgsForCall = append(fake.aCLsArgsForCall, struct{}{})
 	stub := fake.ACLsStub
 	fakeReturns := fake.aCLsReturns
 	fake.recordInvocation("ACLs", []interface{}{})
@@ -216,8 +200,7 @@ func (fake *ApplicationCapabilities) ACLsReturnsOnCall(i int, result1 bool) {
 func (fake *ApplicationCapabilities) CollectionUpgrade() bool {
 	fake.collectionUpgradeMutex.Lock()
 	ret, specificReturn := fake.collectionUpgradeReturnsOnCall[len(fake.collectionUpgradeArgsForCall)]
-	fake.collectionUpgradeArgsForCall = append(fake.collectionUpgradeArgsForCall, struct {
-	}{})
+	fake.collectionUpgradeArgsForCall = append(fake.collectionUpgradeArgsForCall, struct{}{})
 	stub := fake.CollectionUpgradeStub
 	fakeReturns := fake.collectionUpgradeReturns
 	fake.recordInvocation("CollectionUpgrade", []interface{}{})
@@ -269,8 +252,7 @@ func (fake *ApplicationCapabilities) CollectionUpgradeReturnsOnCall(i int, resul
 func (fake *ApplicationCapabilities) ForbidDuplicateTXIdInBlock() bool {
 	fake.forbidDuplicateTXIdInBlockMutex.Lock()
 	ret, specificReturn := fake.forbidDuplicateTXIdInBlockReturnsOnCall[len(fake.forbidDuplicateTXIdInBlockArgsForCall)]
-	fake.forbidDuplicateTXIdInBlockArgsForCall = append(fake.forbidDuplicateTXIdInBlockArgsForCall, struct {
-	}{})
+	fake.forbidDuplicateTXIdInBlockArgsForCall = append(fake.forbidDuplicateTXIdInBlockArgsForCall, struct{}{})
 	stub := fake.ForbidDuplicateTXIdInBlockStub
 	fakeReturns := fake.forbidDuplicateTXIdInBlockReturns
 	fake.recordInvocation("ForbidDuplicateTXIdInBlock", []interface{}{})
@@ -322,8 +304,7 @@ func (fake *ApplicationCapabilities) ForbidDuplicateTXIdInBlockReturnsOnCall(i i
 func (fake *ApplicationCapabilities) KeyLevelEndorsement() bool {
 	fake.keyLevelEndorsementMutex.Lock()
 	ret, specificReturn := fake.keyLevelEndorsementReturnsOnCall[len(fake.keyLevelEndorsementArgsForCall)]
-	fake.keyLevelEndorsementArgsForCall = append(fake.keyLevelEndorsementArgsForCall, struct {
-	}{})
+	fake.keyLevelEndorsementArgsForCall = append(fake.keyLevelEndorsementArgsForCall, struct{}{})
 	stub := fake.KeyLevelEndorsementStub
 	fakeReturns := fake.keyLevelEndorsementReturns
 	fake.recordInvocation("KeyLevelEndorsement", []interface{}{})
@@ -375,8 +356,7 @@ func (fake *ApplicationCapabilities) KeyLevelEndorsementReturnsOnCall(i int, res
 func (fake *ApplicationCapabilities) LifecycleV20() bool {
 	fake.lifecycleV20Mutex.Lock()
 	ret, specificReturn := fake.lifecycleV20ReturnsOnCall[len(fake.lifecycleV20ArgsForCall)]
-	fake.lifecycleV20ArgsForCall = append(fake.lifecycleV20ArgsForCall, struct {
-	}{})
+	fake.lifecycleV20ArgsForCall = append(fake.lifecycleV20ArgsForCall, struct{}{})
 	stub := fake.LifecycleV20Stub
 	fakeReturns := fake.lifecycleV20Returns
 	fake.recordInvocation("LifecycleV20", []interface{}{})
@@ -428,8 +408,7 @@ func (fake *ApplicationCapabilities) LifecycleV20ReturnsOnCall(i int, result1 bo
 func (fake *ApplicationCapabilities) MetadataLifecycle() bool {
 	fake.metadataLifecycleMutex.Lock()
 	ret, specificReturn := fake.metadataLifecycleReturnsOnCall[len(fake.metadataLifecycleArgsForCall)]
-	fake.metadataLifecycleArgsForCall = append(fake.metadataLifecycleArgsForCall, struct {
-	}{})
+	fake.metadataLifecycleArgsForCall = append(fake.metadataLifecycleArgsForCall, struct{}{})
 	stub := fake.MetadataLifecycleStub
 	fakeReturns := fake.metadataLifecycleReturns
 	fake.recordInvocation("MetadataLifecycle", []interface{}{})
@@ -481,8 +460,7 @@ func (fake *ApplicationCapabilities) MetadataLifecycleReturnsOnCall(i int, resul
 func (fake *ApplicationCapabilities) PrivateChannelData() bool {
 	fake.privateChannelDataMutex.Lock()
 	ret, specificReturn := fake.privateChannelDataReturnsOnCall[len(fake.privateChannelDataArgsForCall)]
-	fake.privateChannelDataArgsForCall = append(fake.privateChannelDataArgsForCall, struct {
-	}{})
+	fake.privateChannelDataArgsForCall = append(fake.privateChannelDataArgsForCall, struct{}{})
 	stub := fake.PrivateChannelDataStub
 	fakeReturns := fake.privateChannelDataReturns
 	fake.recordInvocation("PrivateChannelData", []interface{}{})
@@ -534,8 +512,7 @@ func (fake *ApplicationCapabilities) PrivateChannelDataReturnsOnCall(i int, resu
 func (fake *ApplicationCapabilities) PurgePvtData() bool {
 	fake.purgePvtDataMutex.Lock()
 	ret, specificReturn := fake.purgePvtDataReturnsOnCall[len(fake.purgePvtDataArgsForCall)]
-	fake.purgePvtDataArgsForCall = append(fake.purgePvtDataArgsForCall, struct {
-	}{})
+	fake.purgePvtDataArgsForCall = append(fake.purgePvtDataArgsForCall, struct{}{})
 	stub := fake.PurgePvtDataStub
 	fakeReturns := fake.purgePvtDataReturns
 	fake.recordInvocation("PurgePvtData", []interface{}{})
@@ -587,8 +564,7 @@ func (fake *ApplicationCapabilities) PurgePvtDataReturnsOnCall(i int, result1 bo
 func (fake *ApplicationCapabilities) StorePvtDataOfInvalidTx() bool {
 	fake.storePvtDataOfInvalidTxMutex.Lock()
 	ret, specificReturn := fake.storePvtDataOfInvalidTxReturnsOnCall[len(fake.storePvtDataOfInvalidTxArgsForCall)]
-	fake.storePvtDataOfInvalidTxArgsForCall = append(fake.storePvtDataOfInvalidTxArgsForCall, struct {
-	}{})
+	fake.storePvtDataOfInvalidTxArgsForCall = append(fake.storePvtDataOfInvalidTxArgsForCall, struct{}{})
 	stub := fake.StorePvtDataOfInvalidTxStub
 	fakeReturns := fake.storePvtDataOfInvalidTxReturns
 	fake.recordInvocation("StorePvtDataOfInvalidTx", []interface{}{})
@@ -640,8 +616,7 @@ func (fake *ApplicationCapabilities) StorePvtDataOfInvalidTxReturnsOnCall(i int,
 func (fake *ApplicationCapabilities) Supported() error {
 	fake.supportedMutex.Lock()
 	ret, specificReturn := fake.supportedReturnsOnCall[len(fake.supportedArgsForCall)]
-	fake.supportedArgsForCall = append(fake.supportedArgsForCall, struct {
-	}{})
+	fake.supportedArgsForCall = append(fake.supportedArgsForCall, struct{}{})
 	stub := fake.SupportedStub
 	fakeReturns := fake.supportedReturns
 	fake.recordInvocation("Supported", []interface{}{})
@@ -693,8 +668,7 @@ func (fake *ApplicationCapabilities) SupportedReturnsOnCall(i int, result1 error
 func (fake *ApplicationCapabilities) V1_1Validation() bool {
 	fake.v1_1ValidationMutex.Lock()
 	ret, specificReturn := fake.v1_1ValidationReturnsOnCall[len(fake.v1_1ValidationArgsForCall)]
-	fake.v1_1ValidationArgsForCall = append(fake.v1_1ValidationArgsForCall, struct {
-	}{})
+	fake.v1_1ValidationArgsForCall = append(fake.v1_1ValidationArgsForCall, struct{}{})
 	stub := fake.V1_1ValidationStub
 	fakeReturns := fake.v1_1ValidationReturns
 	fake.recordInvocation("V1_1Validation", []interface{}{})
@@ -746,8 +720,7 @@ func (fake *ApplicationCapabilities) V1_1ValidationReturnsOnCall(i int, result1 
 func (fake *ApplicationCapabilities) V1_2Validation() bool {
 	fake.v1_2ValidationMutex.Lock()
 	ret, specificReturn := fake.v1_2ValidationReturnsOnCall[len(fake.v1_2ValidationArgsForCall)]
-	fake.v1_2ValidationArgsForCall = append(fake.v1_2ValidationArgsForCall, struct {
-	}{})
+	fake.v1_2ValidationArgsForCall = append(fake.v1_2ValidationArgsForCall, struct{}{})
 	stub := fake.V1_2ValidationStub
 	fakeReturns := fake.v1_2ValidationReturns
 	fake.recordInvocation("V1_2Validation", []interface{}{})
@@ -799,8 +772,7 @@ func (fake *ApplicationCapabilities) V1_2ValidationReturnsOnCall(i int, result1 
 func (fake *ApplicationCapabilities) V1_3Validation() bool {
 	fake.v1_3ValidationMutex.Lock()
 	ret, specificReturn := fake.v1_3ValidationReturnsOnCall[len(fake.v1_3ValidationArgsForCall)]
-	fake.v1_3ValidationArgsForCall = append(fake.v1_3ValidationArgsForCall, struct {
-	}{})
+	fake.v1_3ValidationArgsForCall = append(fake.v1_3ValidationArgsForCall, struct{}{})
 	stub := fake.V1_3ValidationStub
 	fakeReturns := fake.v1_3ValidationReturns
 	fake.recordInvocation("V1_3Validation", []interface{}{})
@@ -852,8 +824,7 @@ func (fake *ApplicationCapabilities) V1_3ValidationReturnsOnCall(i int, result1 
 func (fake *ApplicationCapabilities) V2_0Validation() bool {
 	fake.v2_0ValidationMutex.Lock()
 	ret, specificReturn := fake.v2_0ValidationReturnsOnCall[len(fake.v2_0ValidationArgsForCall)]
-	fake.v2_0ValidationArgsForCall = append(fake.v2_0ValidationArgsForCall, struct {
-	}{})
+	fake.v2_0ValidationArgsForCall = append(fake.v2_0ValidationArgsForCall, struct{}{})
 	stub := fake.V2_0ValidationStub
 	fakeReturns := fake.v2_0ValidationReturns
 	fake.recordInvocation("V2_0Validation", []interface{}{})
@@ -955,8 +926,7 @@ func (fake *ApplicationCapabilities) recordInvocation(key string, args []interfa
 func (fake *ApplicationCapabilities) LeanFormatEnabled() bool {
 	fake.leanFormatEnabledMutex.Lock()
 	ret, specificReturn := fake.leanFormatEnabledReturnsOnCall[len(fake.leanFormatEnabledArgsForCall)]
-	fake.leanFormatEnabledArgsForCall = append(fake.leanFormatEnabledArgsForCall, struct {
-	}{})
+	fake.leanFormatEnabledArgsForCall = append(fake.leanFormatEnabledArgsForCall, struct{}{})
 	stub := fake.LeanFormatEnabledStub
 	fakeReturns := fake.leanFormatEnabledReturns
 	fake.recordInvocation("LeanFormatEnabled", []interface{}{})

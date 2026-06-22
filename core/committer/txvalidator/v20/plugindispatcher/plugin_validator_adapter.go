@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package plugindispatcher
@@ -91,7 +91,6 @@ func (pv *PluginValidatorAdapter) ValidateWithPluginLtx(ctx *ContextAdapter) err
 }
 
 func (pv *PluginValidatorAdapter) getOrCreatePlugin(ctx *ContextAdapter) (validation.PluginAdapter, error) {
-
 	pluginFactory := pv.FactoryByName(txvalidatorplugin.Name(ctx.PluginName))
 	if pluginFactory == nil {
 		return nil, errors.Errorf("plugin with name %s wasn't found", ctx.PluginName)

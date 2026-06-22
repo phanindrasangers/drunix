@@ -81,17 +81,17 @@ type FullGinkgoTInterface interface {
 	AddReportEntryVisibilityFailureOrVerbose(name string, args ...any)
 	AddReportEntryVisibilityNever(name string, args ...any)
 
-	//Prints to the GinkgoWriter
+	// Prints to the GinkgoWriter
 	Print(a ...any)
 	Printf(format string, a ...any)
 	Println(a ...any)
 
-	//Provides access to Ginkgo's color formatting, correctly configured to match the color settings specified in the invocation of ginkgo
+	// Provides access to Ginkgo's color formatting, correctly configured to match the color settings specified in the invocation of ginkgo
 	F(format string, args ...any) string
 	Fi(indentation uint, format string, args ...any) string
 	Fiw(indentation uint, maxWidth uint, format string, args ...any) string
 
-	//Generates a formatted string version of the current spec's timeline
+	// Generates a formatted string version of the current spec's timeline
 	RenderTimeline() string
 
 	GinkgoRecover()
@@ -130,60 +130,79 @@ type GinkgoTBWrapper struct {
 func (g *GinkgoTBWrapper) Cleanup(f func()) {
 	g.GinkgoT.Cleanup(f)
 }
+
 func (g *GinkgoTBWrapper) Chdir(dir string) {
 	g.GinkgoT.Chdir(dir)
 }
+
 func (g *GinkgoTBWrapper) Context() context.Context {
 	return g.GinkgoT.Context()
 }
+
 func (g *GinkgoTBWrapper) Error(args ...any) {
 	g.GinkgoT.Error(args...)
 }
+
 func (g *GinkgoTBWrapper) Errorf(format string, args ...any) {
 	g.GinkgoT.Errorf(format, args...)
 }
+
 func (g *GinkgoTBWrapper) Fail() {
 	g.GinkgoT.Fail()
 }
+
 func (g *GinkgoTBWrapper) FailNow() {
 	g.GinkgoT.FailNow()
 }
+
 func (g *GinkgoTBWrapper) Failed() bool {
 	return g.GinkgoT.Failed()
 }
+
 func (g *GinkgoTBWrapper) Fatal(args ...any) {
 	g.GinkgoT.Fatal(args...)
 }
+
 func (g *GinkgoTBWrapper) Fatalf(format string, args ...any) {
 	g.GinkgoT.Fatalf(format, args...)
 }
+
 func (g *GinkgoTBWrapper) Helper() {
 	types.MarkAsHelper(1)
 }
+
 func (g *GinkgoTBWrapper) Log(args ...any) {
 	g.GinkgoT.Log(args...)
 }
+
 func (g *GinkgoTBWrapper) Logf(format string, args ...any) {
 	g.GinkgoT.Logf(format, args...)
 }
+
 func (g *GinkgoTBWrapper) Name() string {
 	return g.GinkgoT.Name()
 }
+
 func (g *GinkgoTBWrapper) Setenv(key, value string) {
 	g.GinkgoT.Setenv(key, value)
 }
+
 func (g *GinkgoTBWrapper) Skip(args ...any) {
 	g.GinkgoT.Skip(args...)
 }
+
 func (g *GinkgoTBWrapper) SkipNow() {
 	g.GinkgoT.SkipNow()
 }
+
 func (g *GinkgoTBWrapper) Skipf(format string, args ...any) {
 	g.GinkgoT.Skipf(format, args...)
 }
+
 func (g *GinkgoTBWrapper) Skipped() bool {
 	return g.GinkgoT.Skipped()
 }
+
 func (g *GinkgoTBWrapper) TempDir() string {
 	return g.GinkgoT.TempDir()
 }

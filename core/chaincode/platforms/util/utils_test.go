@@ -19,10 +19,10 @@ import (
 	"strings"
 	"testing"
 
+	dcli "github.com/moby/moby/client"
 	"github.com/npci/drunix/common/metadata"
 	"github.com/npci/drunix/common/util"
 	"github.com/npci/drunix/core/config/configtest"
-	dcli "github.com/moby/moby/client"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/require"
 )
@@ -69,7 +69,7 @@ func TestDockerBuild(t *testing.T) {
 	})
 
 	io.Copy(io.Discard, res.Body)
-	
+
 	codepackage := bytes.NewBuffer(nil)
 	tw = tar.NewWriter(codepackage)
 	tw.Close()

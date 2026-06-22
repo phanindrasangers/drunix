@@ -548,7 +548,6 @@ type CommittingPeerConfig struct {
 }
 
 func GetCommittingPeerConfig() *CommittingPeerConfig {
-
 	initialRetryDelay := viper.GetDuration("peer.committingpeer.initialRetryDelay")
 	maxRetryDelay := viper.GetDuration("peer.committingpeer.maxRetryDelay")
 

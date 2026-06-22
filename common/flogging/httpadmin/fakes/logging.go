@@ -21,9 +21,8 @@ type Logging struct {
 	}
 	SpecStub        func() string
 	specMutex       sync.RWMutex
-	specArgsForCall []struct {
-	}
-	specReturns struct {
+	specArgsForCall []struct{}
+	specReturns     struct {
 		result1 string
 	}
 	specReturnsOnCall map[int]struct {
@@ -96,8 +95,7 @@ func (fake *Logging) ActivateSpecReturnsOnCall(i int, result1 error) {
 func (fake *Logging) Spec() string {
 	fake.specMutex.Lock()
 	ret, specificReturn := fake.specReturnsOnCall[len(fake.specArgsForCall)]
-	fake.specArgsForCall = append(fake.specArgsForCall, struct {
-	}{})
+	fake.specArgsForCall = append(fake.specArgsForCall, struct{}{})
 	fake.recordInvocation("Spec", []interface{}{})
 	fake.specMutex.Unlock()
 	if fake.SpecStub != nil {

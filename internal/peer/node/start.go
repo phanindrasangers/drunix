@@ -28,6 +28,8 @@ import (
 	discprotos "github.com/hyperledger/fabric-protos-go/discovery"
 	gatewayprotos "github.com/hyperledger/fabric-protos-go/gateway"
 	pb "github.com/hyperledger/fabric-protos-go/peer"
+	dcontainer "github.com/moby/moby/api/types/container"
+	dcli "github.com/moby/moby/client"
 	"github.com/npci/drunix/bccsp/factory"
 	"github.com/npci/drunix/common/cauthdsl"
 	ccdef "github.com/npci/drunix/common/chaincode"
@@ -101,8 +103,6 @@ import (
 	"github.com/npci/drunix/msp"
 	"github.com/npci/drunix/msp/mgmt"
 	"github.com/npci/drunix/protoutil"
-	dcontainer "github.com/moby/moby/api/types/container"
-	dcli "github.com/moby/moby/client"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -827,7 +827,7 @@ func serve(args []string) error {
 		gossipService.UpdateChaincodes(chaincodes.AsChaincodes(), gossipcommon.ChannelID(channel))
 	}))
 
-	//DRUNIX : changed vscc validation handler in config from DefaultValidation to DefaultValidationAdapter
+	// DRUNIX : changed vscc validation handler in config from DefaultValidation to DefaultValidationAdapter
 	libConf.Validators["vscc"].Name = "DefaultValidationAdapter"
 	reg = library.InitRegistryAdapter(libConf)
 	validationPluginsByNameAdapter := reg.Lookup(library.Validation).(map[string]validation.PluginFactoryAdapter)
@@ -1355,7 +1355,7 @@ func getDockerHostConfig() *dcontainer.HostConfig {
 
 	memorySwappiness := getInt64("MemorySwappiness")
 	oomKillDisable := viper.GetBool(dockerKey("OomKillDisable"))
-	
+
 	strDNS := viper.GetStringSlice(dockerKey("Dns"))
 	dns := make([]netip.Addr, 0, len(strDNS))
 	for _, s := range strDNS {

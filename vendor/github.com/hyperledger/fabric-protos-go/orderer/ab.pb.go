@@ -6,18 +6,21 @@ package orderer
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	common "github.com/hyperledger/fabric-protos-go/common"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -107,15 +110,19 @@ func (*BroadcastResponse) Descriptor() ([]byte, []int) {
 func (m *BroadcastResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BroadcastResponse.Unmarshal(m, b)
 }
+
 func (m *BroadcastResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BroadcastResponse.Marshal(b, m, deterministic)
 }
+
 func (m *BroadcastResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BroadcastResponse.Merge(m, src)
 }
+
 func (m *BroadcastResponse) XXX_Size() int {
 	return xxx_messageInfo_BroadcastResponse.Size(m)
 }
+
 func (m *BroadcastResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_BroadcastResponse.DiscardUnknown(m)
 }
@@ -152,15 +159,19 @@ func (*SeekNewest) Descriptor() ([]byte, []int) {
 func (m *SeekNewest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SeekNewest.Unmarshal(m, b)
 }
+
 func (m *SeekNewest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SeekNewest.Marshal(b, m, deterministic)
 }
+
 func (m *SeekNewest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SeekNewest.Merge(m, src)
 }
+
 func (m *SeekNewest) XXX_Size() int {
 	return xxx_messageInfo_SeekNewest.Size(m)
 }
+
 func (m *SeekNewest) XXX_DiscardUnknown() {
 	xxx_messageInfo_SeekNewest.DiscardUnknown(m)
 }
@@ -183,15 +194,19 @@ func (*SeekOldest) Descriptor() ([]byte, []int) {
 func (m *SeekOldest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SeekOldest.Unmarshal(m, b)
 }
+
 func (m *SeekOldest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SeekOldest.Marshal(b, m, deterministic)
 }
+
 func (m *SeekOldest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SeekOldest.Merge(m, src)
 }
+
 func (m *SeekOldest) XXX_Size() int {
 	return xxx_messageInfo_SeekOldest.Size(m)
 }
+
 func (m *SeekOldest) XXX_DiscardUnknown() {
 	xxx_messageInfo_SeekOldest.DiscardUnknown(m)
 }
@@ -215,15 +230,19 @@ func (*SeekSpecified) Descriptor() ([]byte, []int) {
 func (m *SeekSpecified) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SeekSpecified.Unmarshal(m, b)
 }
+
 func (m *SeekSpecified) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SeekSpecified.Marshal(b, m, deterministic)
 }
+
 func (m *SeekSpecified) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SeekSpecified.Merge(m, src)
 }
+
 func (m *SeekSpecified) XXX_Size() int {
 	return xxx_messageInfo_SeekSpecified.Size(m)
 }
+
 func (m *SeekSpecified) XXX_DiscardUnknown() {
 	xxx_messageInfo_SeekSpecified.DiscardUnknown(m)
 }
@@ -254,15 +273,19 @@ func (*SeekNextCommit) Descriptor() ([]byte, []int) {
 func (m *SeekNextCommit) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SeekNextCommit.Unmarshal(m, b)
 }
+
 func (m *SeekNextCommit) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SeekNextCommit.Marshal(b, m, deterministic)
 }
+
 func (m *SeekNextCommit) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SeekNextCommit.Merge(m, src)
 }
+
 func (m *SeekNextCommit) XXX_Size() int {
 	return xxx_messageInfo_SeekNextCommit.Size(m)
 }
+
 func (m *SeekNextCommit) XXX_DiscardUnknown() {
 	xxx_messageInfo_SeekNextCommit.DiscardUnknown(m)
 }
@@ -292,15 +315,19 @@ func (*SeekPosition) Descriptor() ([]byte, []int) {
 func (m *SeekPosition) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SeekPosition.Unmarshal(m, b)
 }
+
 func (m *SeekPosition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SeekPosition.Marshal(b, m, deterministic)
 }
+
 func (m *SeekPosition) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SeekPosition.Merge(m, src)
 }
+
 func (m *SeekPosition) XXX_Size() int {
 	return xxx_messageInfo_SeekPosition.Size(m)
 }
+
 func (m *SeekPosition) XXX_DiscardUnknown() {
 	xxx_messageInfo_SeekPosition.DiscardUnknown(m)
 }
@@ -404,15 +431,19 @@ func (*SeekInfo) Descriptor() ([]byte, []int) {
 func (m *SeekInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SeekInfo.Unmarshal(m, b)
 }
+
 func (m *SeekInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SeekInfo.Marshal(b, m, deterministic)
 }
+
 func (m *SeekInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SeekInfo.Merge(m, src)
 }
+
 func (m *SeekInfo) XXX_Size() int {
 	return xxx_messageInfo_SeekInfo.Size(m)
 }
+
 func (m *SeekInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_SeekInfo.DiscardUnknown(m)
 }
@@ -468,15 +499,19 @@ func (*DeliverResponse) Descriptor() ([]byte, []int) {
 func (m *DeliverResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeliverResponse.Unmarshal(m, b)
 }
+
 func (m *DeliverResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeliverResponse.Marshal(b, m, deterministic)
 }
+
 func (m *DeliverResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeliverResponse.Merge(m, src)
 }
+
 func (m *DeliverResponse) XXX_Size() int {
 	return xxx_messageInfo_DeliverResponse.Size(m)
 }
+
 func (m *DeliverResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeliverResponse.DiscardUnknown(m)
 }
@@ -586,8 +621,10 @@ var fileDescriptor_79fce58dd8d86d62 = []byte{
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -682,12 +719,12 @@ type AtomicBroadcastServer interface {
 }
 
 // UnimplementedAtomicBroadcastServer can be embedded to have forward compatible implementations.
-type UnimplementedAtomicBroadcastServer struct {
-}
+type UnimplementedAtomicBroadcastServer struct{}
 
 func (*UnimplementedAtomicBroadcastServer) Broadcast(srv AtomicBroadcast_BroadcastServer) error {
 	return status.Errorf(codes.Unimplemented, "method Broadcast not implemented")
 }
+
 func (*UnimplementedAtomicBroadcastServer) Deliver(srv AtomicBroadcast_DeliverServer) error {
 	return status.Errorf(codes.Unimplemented, "method Deliver not implemented")
 }

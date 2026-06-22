@@ -22,8 +22,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/npci/drunix/integration/channelparticipation"
 	dcli "github.com/moby/moby/client"
+	"github.com/npci/drunix/integration/channelparticipation"
 
 	"github.com/golang/protobuf/proto"
 	conftx "github.com/hyperledger/fabric-config/configtx"

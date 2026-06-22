@@ -6,15 +6,18 @@ package testpb
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	grpc "google.golang.org/grpc"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -38,15 +41,19 @@ func (*Empty) Descriptor() ([]byte, []int) {
 func (m *Empty) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Empty.Unmarshal(m, b)
 }
+
 func (m *Empty) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Empty.Marshal(b, m, deterministic)
 }
+
 func (m *Empty) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Empty.Merge(m, src)
 }
+
 func (m *Empty) XXX_Size() int {
 	return xxx_messageInfo_Empty.Size(m)
 }
+
 func (m *Empty) XXX_DiscardUnknown() {
 	xxx_messageInfo_Empty.DiscardUnknown(m)
 }
@@ -70,15 +77,19 @@ func (*Echo) Descriptor() ([]byte, []int) {
 func (m *Echo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Echo.Unmarshal(m, b)
 }
+
 func (m *Echo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Echo.Marshal(b, m, deterministic)
 }
+
 func (m *Echo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Echo.Merge(m, src)
 }
+
 func (m *Echo) XXX_Size() int {
 	return xxx_messageInfo_Echo.Size(m)
 }
+
 func (m *Echo) XXX_DiscardUnknown() {
 	xxx_messageInfo_Echo.DiscardUnknown(m)
 }
@@ -117,8 +128,10 @@ var fileDescriptor_c161fcfdc0c3ff1e = []byte{
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.

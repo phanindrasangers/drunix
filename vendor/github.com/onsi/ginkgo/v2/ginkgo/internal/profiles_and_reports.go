@@ -28,7 +28,7 @@ func AbsPathForGeneratedAsset(assetName string, suite TestSuite, cliConfig types
 
 func FinalizeProfilesAndReportsForSuites(suites TestSuites, cliConfig types.CLIConfig, suiteConfig types.SuiteConfig, reporterConfig types.ReporterConfig, goFlagsConfig types.GoFlagsConfig) ([]string, error) {
 	messages := []string{}
-	suitesWithProfiles := suites.WithState(TestSuiteStatePassed, TestSuiteStateFailed) //anything else won't have actually run and generated a profile
+	suitesWithProfiles := suites.WithState(TestSuiteStatePassed, TestSuiteStateFailed) // anything else won't have actually run and generated a profile
 
 	// merge cover profiles if need be
 	if goFlagsConfig.Cover && !cliConfig.KeepSeparateCoverprofiles {

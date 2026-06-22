@@ -485,7 +485,7 @@ func (l *kvLedger) recommitLostBlocks(firstBlockNum uint64, lastBlockNum uint64,
 		}
 		blk := blockAndPvtdata.Block
 
-		//if config block or vanilla endorse block goto vanilla flow else got lite flow
+		// if config block or vanilla endorse block goto vanilla flow else got lite flow
 		for _, r := range recoverables {
 			if protoutil.IsConfigBlock(blk) || !protoutil.IsLiteBlock(blk) {
 				if err := r.CommitLostBlock(blockAndPvtdata); err != nil {

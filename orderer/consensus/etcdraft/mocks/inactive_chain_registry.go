@@ -9,10 +9,9 @@ import (
 )
 
 type InactiveChainRegistry struct {
-	StopStub        func()
-	stopMutex       sync.RWMutex
-	stopArgsForCall []struct {
-	}
+	StopStub              func()
+	stopMutex             sync.RWMutex
+	stopArgsForCall       []struct{}
 	TrackChainStub        func(string, *common.Block, func())
 	trackChainMutex       sync.RWMutex
 	trackChainArgsForCall []struct {
@@ -26,8 +25,7 @@ type InactiveChainRegistry struct {
 
 func (fake *InactiveChainRegistry) Stop() {
 	fake.stopMutex.Lock()
-	fake.stopArgsForCall = append(fake.stopArgsForCall, struct {
-	}{})
+	fake.stopArgsForCall = append(fake.stopArgsForCall, struct{}{})
 	fake.recordInvocation("Stop", []interface{}{})
 	fake.stopMutex.Unlock()
 	if fake.StopStub != nil {

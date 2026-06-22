@@ -732,8 +732,7 @@ type streamReader interface {
 //
 // See https://golang.org/issues/8005#issuecomment-190753527
 // for details.
-type noCopy struct {
-}
+type noCopy struct{}
 
 func (*noCopy) Lock()   {}
 func (*noCopy) Unlock() {}
@@ -1086,8 +1085,10 @@ func Errorf(c codes.Code, format string, a ...any) error {
 	return status.Errorf(c, format, a...)
 }
 
-var errContextCanceled = status.Error(codes.Canceled, context.Canceled.Error())
-var errContextDeadline = status.Error(codes.DeadlineExceeded, context.DeadlineExceeded.Error())
+var (
+	errContextCanceled = status.Error(codes.Canceled, context.Canceled.Error())
+	errContextDeadline = status.Error(codes.DeadlineExceeded, context.DeadlineExceeded.Error())
+)
 
 // toRPCErr converts an error into an error from the status package.
 func toRPCErr(err error) error {

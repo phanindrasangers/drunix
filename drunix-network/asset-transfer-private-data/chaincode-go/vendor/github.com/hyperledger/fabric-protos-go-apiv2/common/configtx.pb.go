@@ -11,10 +11,11 @@
 package common
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -675,23 +676,26 @@ func file_common_configtx_proto_rawDescGZIP() []byte {
 	return file_common_configtx_proto_rawDescData
 }
 
-var file_common_configtx_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
-var file_common_configtx_proto_goTypes = []any{
-	(*ConfigEnvelope)(nil),       // 0: common.ConfigEnvelope
-	(*Config)(nil),               // 1: common.Config
-	(*ConfigUpdateEnvelope)(nil), // 2: common.ConfigUpdateEnvelope
-	(*ConfigUpdate)(nil),         // 3: common.ConfigUpdate
-	(*ConfigGroup)(nil),          // 4: common.ConfigGroup
-	(*ConfigValue)(nil),          // 5: common.ConfigValue
-	(*ConfigPolicy)(nil),         // 6: common.ConfigPolicy
-	(*ConfigSignature)(nil),      // 7: common.ConfigSignature
-	nil,                          // 8: common.ConfigUpdate.IsolatedDataEntry
-	nil,                          // 9: common.ConfigGroup.GroupsEntry
-	nil,                          // 10: common.ConfigGroup.ValuesEntry
-	nil,                          // 11: common.ConfigGroup.PoliciesEntry
-	(*Envelope)(nil),             // 12: common.Envelope
-	(*Policy)(nil),               // 13: common.Policy
-}
+var (
+	file_common_configtx_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+	file_common_configtx_proto_goTypes  = []any{
+		(*ConfigEnvelope)(nil),       // 0: common.ConfigEnvelope
+		(*Config)(nil),               // 1: common.Config
+		(*ConfigUpdateEnvelope)(nil), // 2: common.ConfigUpdateEnvelope
+		(*ConfigUpdate)(nil),         // 3: common.ConfigUpdate
+		(*ConfigGroup)(nil),          // 4: common.ConfigGroup
+		(*ConfigValue)(nil),          // 5: common.ConfigValue
+		(*ConfigPolicy)(nil),         // 6: common.ConfigPolicy
+		(*ConfigSignature)(nil),      // 7: common.ConfigSignature
+		nil,                          // 8: common.ConfigUpdate.IsolatedDataEntry
+		nil,                          // 9: common.ConfigGroup.GroupsEntry
+		nil,                          // 10: common.ConfigGroup.ValuesEntry
+		nil,                          // 11: common.ConfigGroup.PoliciesEntry
+		(*Envelope)(nil),             // 12: common.Envelope
+		(*Policy)(nil),               // 13: common.Policy
+	}
+)
+
 var file_common_configtx_proto_depIdxs = []int32{
 	1,  // 0: common.ConfigEnvelope.config:type_name -> common.Config
 	12, // 1: common.ConfigEnvelope.last_update:type_name -> common.Envelope

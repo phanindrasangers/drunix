@@ -64,7 +64,6 @@ func (f FileFilter) Matches(locations []CodeLocation) bool {
 			f.LineFilters.Matches(location.LineNumber) {
 			return true
 		}
-
 	}
 	return false
 }

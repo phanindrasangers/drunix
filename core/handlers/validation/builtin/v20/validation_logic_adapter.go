@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package v20
@@ -128,7 +128,6 @@ func (vscc *ValidatorAdapter) extractValidationArtifacts(
 	env *common.Envelope,
 	actionPosition int,
 ) (*validationArtifacts, error) {
-
 	// ...and the payload...
 	payl, err := protoutil.UnmarshalPayload(env.Payload)
 	if err != nil {
@@ -267,7 +266,6 @@ func (vscc *ValidatorAdapter) extractValidationArtifactsLtx(
 	}
 
 	if env.Type == common.HeaderType_ENDORSER_TRANSACTION {
-
 		// to-decide (response is ignored)
 		proposalResponsePayload = &common.ProposalResponsePayload{
 			ProposalHash: env.LeanEnv.Meta.ProposalHash,
@@ -362,5 +360,4 @@ func (vscc *ValidatorAdapter) extractValidationArtifactsLtx(
 		payl:         payl,
 		cap:          proposalResponsePayload.Extension,
 	}, nil
-
 }

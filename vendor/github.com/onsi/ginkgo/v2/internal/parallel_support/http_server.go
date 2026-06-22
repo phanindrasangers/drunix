@@ -44,14 +44,14 @@ func (server *httpServer) Start() {
 	mux := http.NewServeMux()
 	httpServer.Handler = mux
 
-	//streaming endpoints
+	// streaming endpoints
 	mux.HandleFunc("/suite-will-begin", server.specSuiteWillBegin)
 	mux.HandleFunc("/did-run", server.didRun)
 	mux.HandleFunc("/suite-did-end", server.specSuiteDidEnd)
 	mux.HandleFunc("/emit-output", server.emitOutput)
 	mux.HandleFunc("/progress-report", server.emitProgressReport)
 
-	//synchronization endpoints
+	// synchronization endpoints
 	mux.HandleFunc("/report-before-suite-completed", server.handleReportBeforeSuiteCompleted)
 	mux.HandleFunc("/report-before-suite-state", server.handleReportBeforeSuiteState)
 	mux.HandleFunc("/before-suite-completed", server.handleBeforeSuiteCompleted)

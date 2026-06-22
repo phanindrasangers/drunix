@@ -7,8 +7,7 @@ import (
 )
 
 // ContainerExportOptions specifies options for container export operations.
-type ContainerExportOptions struct {
-	// Currently no options are defined for ContainerExport
+type ContainerExportOptions struct { // Currently no options are defined for ContainerExport
 }
 
 // ContainerExportResult represents the result of a container export operation.

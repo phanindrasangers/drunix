@@ -5,14 +5,17 @@ package common
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -41,15 +44,19 @@ func (*HashingAlgorithm) Descriptor() ([]byte, []int) {
 func (m *HashingAlgorithm) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_HashingAlgorithm.Unmarshal(m, b)
 }
+
 func (m *HashingAlgorithm) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_HashingAlgorithm.Marshal(b, m, deterministic)
 }
+
 func (m *HashingAlgorithm) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_HashingAlgorithm.Merge(m, src)
 }
+
 func (m *HashingAlgorithm) XXX_Size() int {
 	return xxx_messageInfo_HashingAlgorithm.Size(m)
 }
+
 func (m *HashingAlgorithm) XXX_DiscardUnknown() {
 	xxx_messageInfo_HashingAlgorithm.DiscardUnknown(m)
 }
@@ -84,15 +91,19 @@ func (*BlockDataHashingStructure) Descriptor() ([]byte, []int) {
 func (m *BlockDataHashingStructure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BlockDataHashingStructure.Unmarshal(m, b)
 }
+
 func (m *BlockDataHashingStructure) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BlockDataHashingStructure.Marshal(b, m, deterministic)
 }
+
 func (m *BlockDataHashingStructure) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BlockDataHashingStructure.Merge(m, src)
 }
+
 func (m *BlockDataHashingStructure) XXX_Size() int {
 	return xxx_messageInfo_BlockDataHashingStructure.Size(m)
 }
+
 func (m *BlockDataHashingStructure) XXX_DiscardUnknown() {
 	xxx_messageInfo_BlockDataHashingStructure.DiscardUnknown(m)
 }
@@ -125,15 +136,19 @@ func (*OrdererAddresses) Descriptor() ([]byte, []int) {
 func (m *OrdererAddresses) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_OrdererAddresses.Unmarshal(m, b)
 }
+
 func (m *OrdererAddresses) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_OrdererAddresses.Marshal(b, m, deterministic)
 }
+
 func (m *OrdererAddresses) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_OrdererAddresses.Merge(m, src)
 }
+
 func (m *OrdererAddresses) XXX_Size() int {
 	return xxx_messageInfo_OrdererAddresses.Size(m)
 }
+
 func (m *OrdererAddresses) XXX_DiscardUnknown() {
 	xxx_messageInfo_OrdererAddresses.DiscardUnknown(m)
 }
@@ -165,15 +180,19 @@ func (*Consortium) Descriptor() ([]byte, []int) {
 func (m *Consortium) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Consortium.Unmarshal(m, b)
 }
+
 func (m *Consortium) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Consortium.Marshal(b, m, deterministic)
 }
+
 func (m *Consortium) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Consortium.Merge(m, src)
 }
+
 func (m *Consortium) XXX_Size() int {
 	return xxx_messageInfo_Consortium.Size(m)
 }
+
 func (m *Consortium) XXX_DiscardUnknown() {
 	xxx_messageInfo_Consortium.DiscardUnknown(m)
 }
@@ -234,15 +253,19 @@ func (*Capabilities) Descriptor() ([]byte, []int) {
 func (m *Capabilities) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Capabilities.Unmarshal(m, b)
 }
+
 func (m *Capabilities) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Capabilities.Marshal(b, m, deterministic)
 }
+
 func (m *Capabilities) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Capabilities.Merge(m, src)
 }
+
 func (m *Capabilities) XXX_Size() int {
 	return xxx_messageInfo_Capabilities.Size(m)
 }
+
 func (m *Capabilities) XXX_DiscardUnknown() {
 	xxx_messageInfo_Capabilities.DiscardUnknown(m)
 }
@@ -276,15 +299,19 @@ func (*Capability) Descriptor() ([]byte, []int) {
 func (m *Capability) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Capability.Unmarshal(m, b)
 }
+
 func (m *Capability) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Capability.Marshal(b, m, deterministic)
 }
+
 func (m *Capability) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Capability.Merge(m, src)
 }
+
 func (m *Capability) XXX_Size() int {
 	return xxx_messageInfo_Capability.Size(m)
 }
+
 func (m *Capability) XXX_DiscardUnknown() {
 	xxx_messageInfo_Capability.DiscardUnknown(m)
 }

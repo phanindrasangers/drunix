@@ -13,9 +13,8 @@ import (
 type Deliver struct {
 	CloseSendStub        func() error
 	closeSendMutex       sync.RWMutex
-	closeSendArgsForCall []struct {
-	}
-	closeSendReturns struct {
+	closeSendArgsForCall []struct{}
+	closeSendReturns     struct {
 		result1 error
 	}
 	closeSendReturnsOnCall map[int]struct {
@@ -23,9 +22,8 @@ type Deliver struct {
 	}
 	ContextStub        func() context.Context
 	contextMutex       sync.RWMutex
-	contextArgsForCall []struct {
-	}
-	contextReturns struct {
+	contextArgsForCall []struct{}
+	contextReturns     struct {
 		result1 context.Context
 	}
 	contextReturnsOnCall map[int]struct {
@@ -33,9 +31,8 @@ type Deliver struct {
 	}
 	HeaderStub        func() (metadata.MD, error)
 	headerMutex       sync.RWMutex
-	headerArgsForCall []struct {
-	}
-	headerReturns struct {
+	headerArgsForCall []struct{}
+	headerReturns     struct {
 		result1 metadata.MD
 		result2 error
 	}
@@ -45,9 +42,8 @@ type Deliver struct {
 	}
 	RecvStub        func() (*peer.DeliverResponse, error)
 	recvMutex       sync.RWMutex
-	recvArgsForCall []struct {
-	}
-	recvReturns struct {
+	recvArgsForCall []struct{}
+	recvReturns     struct {
 		result1 *peer.DeliverResponse
 		result2 error
 	}
@@ -90,9 +86,8 @@ type Deliver struct {
 	}
 	TrailerStub        func() metadata.MD
 	trailerMutex       sync.RWMutex
-	trailerArgsForCall []struct {
-	}
-	trailerReturns struct {
+	trailerArgsForCall []struct{}
+	trailerReturns     struct {
 		result1 metadata.MD
 	}
 	trailerReturnsOnCall map[int]struct {
@@ -105,8 +100,7 @@ type Deliver struct {
 func (fake *Deliver) CloseSend() error {
 	fake.closeSendMutex.Lock()
 	ret, specificReturn := fake.closeSendReturnsOnCall[len(fake.closeSendArgsForCall)]
-	fake.closeSendArgsForCall = append(fake.closeSendArgsForCall, struct {
-	}{})
+	fake.closeSendArgsForCall = append(fake.closeSendArgsForCall, struct{}{})
 	fake.recordInvocation("CloseSend", []interface{}{})
 	fake.closeSendMutex.Unlock()
 	if fake.CloseSendStub != nil {
@@ -157,8 +151,7 @@ func (fake *Deliver) CloseSendReturnsOnCall(i int, result1 error) {
 func (fake *Deliver) Context() context.Context {
 	fake.contextMutex.Lock()
 	ret, specificReturn := fake.contextReturnsOnCall[len(fake.contextArgsForCall)]
-	fake.contextArgsForCall = append(fake.contextArgsForCall, struct {
-	}{})
+	fake.contextArgsForCall = append(fake.contextArgsForCall, struct{}{})
 	fake.recordInvocation("Context", []interface{}{})
 	fake.contextMutex.Unlock()
 	if fake.ContextStub != nil {
@@ -209,8 +202,7 @@ func (fake *Deliver) ContextReturnsOnCall(i int, result1 context.Context) {
 func (fake *Deliver) Header() (metadata.MD, error) {
 	fake.headerMutex.Lock()
 	ret, specificReturn := fake.headerReturnsOnCall[len(fake.headerArgsForCall)]
-	fake.headerArgsForCall = append(fake.headerArgsForCall, struct {
-	}{})
+	fake.headerArgsForCall = append(fake.headerArgsForCall, struct{}{})
 	fake.recordInvocation("Header", []interface{}{})
 	fake.headerMutex.Unlock()
 	if fake.HeaderStub != nil {
@@ -264,8 +256,7 @@ func (fake *Deliver) HeaderReturnsOnCall(i int, result1 metadata.MD, result2 err
 func (fake *Deliver) Recv() (*peer.DeliverResponse, error) {
 	fake.recvMutex.Lock()
 	ret, specificReturn := fake.recvReturnsOnCall[len(fake.recvArgsForCall)]
-	fake.recvArgsForCall = append(fake.recvArgsForCall, struct {
-	}{})
+	fake.recvArgsForCall = append(fake.recvArgsForCall, struct{}{})
 	fake.recordInvocation("Recv", []interface{}{})
 	fake.recvMutex.Unlock()
 	if fake.RecvStub != nil {
@@ -499,8 +490,7 @@ func (fake *Deliver) SendMsgReturnsOnCall(i int, result1 error) {
 func (fake *Deliver) Trailer() metadata.MD {
 	fake.trailerMutex.Lock()
 	ret, specificReturn := fake.trailerReturnsOnCall[len(fake.trailerArgsForCall)]
-	fake.trailerArgsForCall = append(fake.trailerArgsForCall, struct {
-	}{})
+	fake.trailerArgsForCall = append(fake.trailerArgsForCall, struct{}{})
 	fake.recordInvocation("Trailer", []interface{}{})
 	fake.trailerMutex.Unlock()
 	if fake.TrailerStub != nil {

@@ -66,8 +66,10 @@ func (s *SortableSpecs) Less(i, j int) bool {
 	return aNodes[len(aNodes)-1].ID < bNodes[len(bNodes)-1].ID
 }
 
-type GroupedSpecIndices []SpecIndices
-type SpecIndices []int
+type (
+	GroupedSpecIndices []SpecIndices
+	SpecIndices        []int
+)
 
 func OrderSpecs(specs Specs, suiteConfig types.SuiteConfig) (GroupedSpecIndices, GroupedSpecIndices) {
 	/*
@@ -120,7 +122,7 @@ func OrderSpecs(specs Specs, suiteConfig types.SuiteConfig) (GroupedSpecIndices,
 		nodeTypesToShuffle = types.NodeTypeIt
 	}
 
-	//so, for each execution group:
+	// so, for each execution group:
 	for _, groupID := range executionGroupIDs {
 		// pick out a representative spec
 		representativeSpec := specs[executionGroups[groupID][0]]
@@ -128,10 +130,10 @@ func OrderSpecs(specs Specs, suiteConfig types.SuiteConfig) (GroupedSpecIndices,
 		// and grab the node on the spec that will represent which shufflable group this execution group belongs tu
 		shufflableGroupingNode := representativeSpec.Nodes.FirstNodeWithType(nodeTypesToShuffle)
 
-		//add the execution group to its shufflable group
+		// add the execution group to its shufflable group
 		shufflableGroupingIDToGroupIDs[shufflableGroupingNode.ID] = append(shufflableGroupingIDToGroupIDs[shufflableGroupingNode.ID], groupID)
 
-		//and if it's the first one in
+		// and if it's the first one in
 		if len(shufflableGroupingIDToGroupIDs[shufflableGroupingNode.ID]) == 1 {
 			// record the shuffleable group ID
 			shufflableGroupingIDs = append(shufflableGroupingIDs, shufflableGroupingNode.ID)
@@ -142,7 +144,7 @@ func OrderSpecs(specs Specs, suiteConfig types.SuiteConfig) (GroupedSpecIndices,
 	orderedGroups := GroupedSpecIndices{}
 	permutation := r.Perm(len(shufflableGroupingIDs))
 	for _, j := range permutation {
-		//let's get the execution group IDs for this shufflable group:
+		// let's get the execution group IDs for this shufflable group:
 		executionGroupIDsForJ := shufflableGroupingIDToGroupIDs[shufflableGroupingIDs[j]]
 		// and we'll add their associated specindices to the orderedGroups slice:
 		for _, executionGroupID := range executionGroupIDsForJ {

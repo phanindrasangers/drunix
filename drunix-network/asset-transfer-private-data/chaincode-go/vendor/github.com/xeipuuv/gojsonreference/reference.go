@@ -40,11 +40,9 @@ const (
 )
 
 func NewJsonReference(jsonReferenceString string) (JsonReference, error) {
-
 	var r JsonReference
 	err := r.parse(jsonReferenceString)
 	return r, err
-
 }
 
 type JsonReference struct {
@@ -67,7 +65,6 @@ func (r *JsonReference) GetPointer() *gojsonpointer.JsonPointer {
 }
 
 func (r *JsonReference) String() string {
-
 	if r.referenceUrl != nil {
 		return r.referenceUrl.String()
 	}
@@ -85,7 +82,6 @@ func (r *JsonReference) IsCanonical() bool {
 
 // "Constructor", parses the given string JSON reference
 func (r *JsonReference) parse(jsonReferenceString string) (err error) {
-
 	r.referenceUrl, err = url.Parse(jsonReferenceString)
 	if err != nil {
 		return

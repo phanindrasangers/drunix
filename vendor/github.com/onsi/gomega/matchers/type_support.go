@@ -169,6 +169,7 @@ func lengthOf(a any) (int, bool) {
 		return 0, false
 	}
 }
+
 func capOf(a any) (int, bool) {
 	if a == nil {
 		return 0, false

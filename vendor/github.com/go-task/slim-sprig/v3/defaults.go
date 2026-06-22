@@ -24,7 +24,6 @@ func init() {
 //
 // For everything else, including pointers, a nil value is unset.
 func dfault(d interface{}, given ...interface{}) interface{} {
-
 	if empty(given) || empty(given[0]) {
 		return d
 	}

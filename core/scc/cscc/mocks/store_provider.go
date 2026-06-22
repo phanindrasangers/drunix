@@ -8,10 +8,9 @@ import (
 )
 
 type StoreProvider struct {
-	CloseStub        func()
-	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
+	CloseStub            func()
+	closeMutex           sync.RWMutex
+	closeArgsForCall     []struct{}
 	OpenStoreStub        func(string) (*transientstore.Store, error)
 	openStoreMutex       sync.RWMutex
 	openStoreArgsForCall []struct {
@@ -31,8 +30,7 @@ type StoreProvider struct {
 
 func (fake *StoreProvider) Close() {
 	fake.closeMutex.Lock()
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	fake.recordInvocation("Close", []interface{}{})
 	fake.closeMutex.Unlock()
 	if fake.CloseStub != nil {

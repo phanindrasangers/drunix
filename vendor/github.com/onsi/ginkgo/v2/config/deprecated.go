@@ -8,6 +8,7 @@ package config
 // GinkgoConfigType is still here so custom V1 reporters do not result in a compilation error
 // It will be removed in a future minor release of Ginkgo
 type GinkgoConfigType = DeprecatedGinkgoConfigType
+
 type DeprecatedGinkgoConfigType struct {
 	RandomSeed         int64
 	RandomizeAllSpecs  bool
@@ -36,6 +37,7 @@ type DeprecatedGinkgoConfigType struct {
 // DefaultReporterConfigType is still here so custom V1 reporters do not result in a compilation error
 // It will be removed in a future minor release of Ginkgo
 type DefaultReporterConfigType = DeprecatedDefaultReporterConfigType
+
 type DeprecatedDefaultReporterConfigType struct {
 	NoColor           bool
 	SlowSpecThreshold float64

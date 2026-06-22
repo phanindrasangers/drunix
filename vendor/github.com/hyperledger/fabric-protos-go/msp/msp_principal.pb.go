@@ -5,14 +5,17 @@ package msp
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -171,15 +174,19 @@ func (*MSPPrincipal) Descriptor() ([]byte, []int) {
 func (m *MSPPrincipal) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MSPPrincipal.Unmarshal(m, b)
 }
+
 func (m *MSPPrincipal) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MSPPrincipal.Marshal(b, m, deterministic)
 }
+
 func (m *MSPPrincipal) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_MSPPrincipal.Merge(m, src)
 }
+
 func (m *MSPPrincipal) XXX_Size() int {
 	return xxx_messageInfo_MSPPrincipal.Size(m)
 }
+
 func (m *MSPPrincipal) XXX_DiscardUnknown() {
 	xxx_messageInfo_MSPPrincipal.DiscardUnknown(m)
 }
@@ -228,15 +235,19 @@ func (*OrganizationUnit) Descriptor() ([]byte, []int) {
 func (m *OrganizationUnit) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_OrganizationUnit.Unmarshal(m, b)
 }
+
 func (m *OrganizationUnit) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_OrganizationUnit.Marshal(b, m, deterministic)
 }
+
 func (m *OrganizationUnit) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_OrganizationUnit.Merge(m, src)
 }
+
 func (m *OrganizationUnit) XXX_Size() int {
 	return xxx_messageInfo_OrganizationUnit.Size(m)
 }
+
 func (m *OrganizationUnit) XXX_DiscardUnknown() {
 	xxx_messageInfo_OrganizationUnit.DiscardUnknown(m)
 }
@@ -289,15 +300,19 @@ func (*MSPRole) Descriptor() ([]byte, []int) {
 func (m *MSPRole) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MSPRole.Unmarshal(m, b)
 }
+
 func (m *MSPRole) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MSPRole.Marshal(b, m, deterministic)
 }
+
 func (m *MSPRole) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_MSPRole.Merge(m, src)
 }
+
 func (m *MSPRole) XXX_Size() int {
 	return xxx_messageInfo_MSPRole.Size(m)
 }
+
 func (m *MSPRole) XXX_DiscardUnknown() {
 	xxx_messageInfo_MSPRole.DiscardUnknown(m)
 }
@@ -336,15 +351,19 @@ func (*MSPIdentityAnonymity) Descriptor() ([]byte, []int) {
 func (m *MSPIdentityAnonymity) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MSPIdentityAnonymity.Unmarshal(m, b)
 }
+
 func (m *MSPIdentityAnonymity) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MSPIdentityAnonymity.Marshal(b, m, deterministic)
 }
+
 func (m *MSPIdentityAnonymity) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_MSPIdentityAnonymity.Merge(m, src)
 }
+
 func (m *MSPIdentityAnonymity) XXX_Size() int {
 	return xxx_messageInfo_MSPIdentityAnonymity.Size(m)
 }
+
 func (m *MSPIdentityAnonymity) XXX_DiscardUnknown() {
 	xxx_messageInfo_MSPIdentityAnonymity.DiscardUnknown(m)
 }
@@ -379,15 +398,19 @@ func (*CombinedPrincipal) Descriptor() ([]byte, []int) {
 func (m *CombinedPrincipal) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CombinedPrincipal.Unmarshal(m, b)
 }
+
 func (m *CombinedPrincipal) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CombinedPrincipal.Marshal(b, m, deterministic)
 }
+
 func (m *CombinedPrincipal) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CombinedPrincipal.Merge(m, src)
 }
+
 func (m *CombinedPrincipal) XXX_Size() int {
 	return xxx_messageInfo_CombinedPrincipal.Size(m)
 }
+
 func (m *CombinedPrincipal) XXX_DiscardUnknown() {
 	xxx_messageInfo_CombinedPrincipal.DiscardUnknown(m)
 }

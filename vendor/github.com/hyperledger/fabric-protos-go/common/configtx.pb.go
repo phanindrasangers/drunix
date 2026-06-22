@@ -5,14 +5,17 @@ package common
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -59,15 +62,19 @@ func (*ConfigEnvelope) Descriptor() ([]byte, []int) {
 func (m *ConfigEnvelope) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfigEnvelope.Unmarshal(m, b)
 }
+
 func (m *ConfigEnvelope) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConfigEnvelope.Marshal(b, m, deterministic)
 }
+
 func (m *ConfigEnvelope) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConfigEnvelope.Merge(m, src)
 }
+
 func (m *ConfigEnvelope) XXX_Size() int {
 	return xxx_messageInfo_ConfigEnvelope.Size(m)
 }
+
 func (m *ConfigEnvelope) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConfigEnvelope.DiscardUnknown(m)
 }
@@ -107,15 +114,19 @@ func (*Config) Descriptor() ([]byte, []int) {
 func (m *Config) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Config.Unmarshal(m, b)
 }
+
 func (m *Config) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Config.Marshal(b, m, deterministic)
 }
+
 func (m *Config) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Config.Merge(m, src)
 }
+
 func (m *Config) XXX_Size() int {
 	return xxx_messageInfo_Config.Size(m)
 }
+
 func (m *Config) XXX_DiscardUnknown() {
 	xxx_messageInfo_Config.DiscardUnknown(m)
 }
@@ -154,15 +165,19 @@ func (*ConfigUpdateEnvelope) Descriptor() ([]byte, []int) {
 func (m *ConfigUpdateEnvelope) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfigUpdateEnvelope.Unmarshal(m, b)
 }
+
 func (m *ConfigUpdateEnvelope) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConfigUpdateEnvelope.Marshal(b, m, deterministic)
 }
+
 func (m *ConfigUpdateEnvelope) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConfigUpdateEnvelope.Merge(m, src)
 }
+
 func (m *ConfigUpdateEnvelope) XXX_Size() int {
 	return xxx_messageInfo_ConfigUpdateEnvelope.Size(m)
 }
+
 func (m *ConfigUpdateEnvelope) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConfigUpdateEnvelope.DiscardUnknown(m)
 }
@@ -212,15 +227,19 @@ func (*ConfigUpdate) Descriptor() ([]byte, []int) {
 func (m *ConfigUpdate) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfigUpdate.Unmarshal(m, b)
 }
+
 func (m *ConfigUpdate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConfigUpdate.Marshal(b, m, deterministic)
 }
+
 func (m *ConfigUpdate) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConfigUpdate.Merge(m, src)
 }
+
 func (m *ConfigUpdate) XXX_Size() int {
 	return xxx_messageInfo_ConfigUpdate.Size(m)
 }
+
 func (m *ConfigUpdate) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConfigUpdate.DiscardUnknown(m)
 }
@@ -277,15 +296,19 @@ func (*ConfigGroup) Descriptor() ([]byte, []int) {
 func (m *ConfigGroup) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfigGroup.Unmarshal(m, b)
 }
+
 func (m *ConfigGroup) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConfigGroup.Marshal(b, m, deterministic)
 }
+
 func (m *ConfigGroup) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConfigGroup.Merge(m, src)
 }
+
 func (m *ConfigGroup) XXX_Size() int {
 	return xxx_messageInfo_ConfigGroup.Size(m)
 }
+
 func (m *ConfigGroup) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConfigGroup.DiscardUnknown(m)
 }
@@ -347,15 +370,19 @@ func (*ConfigValue) Descriptor() ([]byte, []int) {
 func (m *ConfigValue) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfigValue.Unmarshal(m, b)
 }
+
 func (m *ConfigValue) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConfigValue.Marshal(b, m, deterministic)
 }
+
 func (m *ConfigValue) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConfigValue.Merge(m, src)
 }
+
 func (m *ConfigValue) XXX_Size() int {
 	return xxx_messageInfo_ConfigValue.Size(m)
 }
+
 func (m *ConfigValue) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConfigValue.DiscardUnknown(m)
 }
@@ -402,15 +429,19 @@ func (*ConfigPolicy) Descriptor() ([]byte, []int) {
 func (m *ConfigPolicy) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfigPolicy.Unmarshal(m, b)
 }
+
 func (m *ConfigPolicy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConfigPolicy.Marshal(b, m, deterministic)
 }
+
 func (m *ConfigPolicy) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConfigPolicy.Merge(m, src)
 }
+
 func (m *ConfigPolicy) XXX_Size() int {
 	return xxx_messageInfo_ConfigPolicy.Size(m)
 }
+
 func (m *ConfigPolicy) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConfigPolicy.DiscardUnknown(m)
 }
@@ -456,15 +487,19 @@ func (*ConfigSignature) Descriptor() ([]byte, []int) {
 func (m *ConfigSignature) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfigSignature.Unmarshal(m, b)
 }
+
 func (m *ConfigSignature) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConfigSignature.Marshal(b, m, deterministic)
 }
+
 func (m *ConfigSignature) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConfigSignature.Merge(m, src)
 }
+
 func (m *ConfigSignature) XXX_Size() int {
 	return xxx_messageInfo_ConfigSignature.Size(m)
 }
+
 func (m *ConfigSignature) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConfigSignature.DiscardUnknown(m)
 }

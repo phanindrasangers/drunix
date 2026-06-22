@@ -73,9 +73,7 @@ func (d *Schema) SetRootSchemaName(name string) {
 // Pretty long function ( sorry :) )... but pretty straight forward, repetitive and boring
 // Not much magic involved here, most of the job is to validate the key names and their values,
 // then the values are copied into subSchema struct
-//
 func (d *Schema) parseSchema(documentNode interface{}, currentSchema *subSchema) error {
-
 	if currentSchema.draft == nil {
 		if currentSchema.parent == nil {
 			return errors.New("Draft not set")
@@ -159,7 +157,6 @@ func (d *Schema) parseSchema(documentNode interface{}, currentSchema *subSchema)
 					newSchema := &subSchema{property: KEY_DEFINITIONS, parent: currentSchema}
 
 					err := d.parseSchema(dv, newSchema)
-
 					if err != nil {
 						return err
 					}
@@ -182,7 +179,6 @@ func (d *Schema) parseSchema(documentNode interface{}, currentSchema *subSchema)
 				},
 			))
 		}
-
 	}
 
 	// title
@@ -237,7 +233,6 @@ func (d *Schema) parseSchema(documentNode interface{}, currentSchema *subSchema)
 			currentSchema.refSchema = sch
 		} else {
 			err := d.parseReference(documentNode, currentSchema)
-
 			if err != nil {
 				return err
 			}
@@ -1004,11 +999,9 @@ func (d *Schema) parseReference(documentNode interface{}, currentSchema *subSche
 	currentSchema.refSchema = newSchema
 
 	return nil
-
 }
 
 func (d *Schema) parseProperties(documentNode interface{}, currentSchema *subSchema) error {
-
 	if !isKind(documentNode, reflect.Map) {
 		return errors.New(formatErrorDescription(
 			Locale.MustBeOfType(),
@@ -1031,7 +1024,6 @@ func (d *Schema) parseProperties(documentNode interface{}, currentSchema *subSch
 }
 
 func (d *Schema) parseDependencies(documentNode interface{}, currentSchema *subSchema) error {
-
 	if !isKind(documentNode, reflect.Map) {
 		return errors.New(formatErrorDescription(
 			Locale.MustBeOfType(),
@@ -1080,7 +1072,6 @@ func (d *Schema) parseDependencies(documentNode interface{}, currentSchema *subS
 				},
 			))
 		}
-
 	}
 
 	return nil

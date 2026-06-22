@@ -79,8 +79,8 @@ func Decrypt(key, iv, ciphertext []byte) ([]byte, error) {
 	}
 	var mode cipher.BlockMode
 
-	//If ciphertext is multiple of blocksize we just need to swap back the last two blocks and then do CBC
-	//If the ciphertext is just one block we can't swap so we just decrypt
+	// If ciphertext is multiple of blocksize we just need to swap back the last two blocks and then do CBC
+	// If the ciphertext is just one block we can't swap so we just decrypt
 	if len(ct)%aes.BlockSize == 0 {
 		if len(ct) > aes.BlockSize {
 			ct, _ = swapLastTwoBlocks(ct, aes.BlockSize)
@@ -98,7 +98,7 @@ func Decrypt(key, iv, ciphertext []byte) ([]byte, error) {
 	copy(v, iv)
 	var message []byte
 	if crb != nil {
-		//If there is more than just the last and the penultimate block we decrypt it and the last bloc of this becomes the iv for later
+		// If there is more than just the last and the penultimate block we decrypt it and the last bloc of this becomes the iv for later
 		rb := make([]byte, len(crb))
 		mode = cipher.NewCBCDecrypter(block, v)
 		v = crb[len(crb)-aes.BlockSize:]
@@ -113,7 +113,7 @@ func Decrypt(key, iv, ciphertext []byte) ([]byte, error) {
 	mode.CryptBlocks(pb, cpb)
 	// number of byte needed to pad
 	npb := aes.BlockSize - len(ct)%aes.BlockSize
-	//pad last block using the number of bytes needed from the tail of the plaintext 2nd to last (penultimate) block
+	// pad last block using the number of bytes needed from the tail of the plaintext 2nd to last (penultimate) block
 	clb = append(clb, pb[len(pb)-npb:]...)
 
 	// Now decrypt the last block in the penultimate position (iv will be from the crb, if the is no crb it's zeros)

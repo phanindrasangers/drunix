@@ -86,7 +86,7 @@ func (d2s dig2sources) keys() []privdatacommon.DigKey {
 // private data elements
 type Fetcher interface {
 	fetch(dig2src dig2sources) (*privdatacommon.FetchedPvtDataContainer, error)
-	//DRUNIX : fetch lite format transactions
+	// DRUNIX : fetch lite format transactions
 	ltxFetch(dig2src ltxDig2sources) (*privdatacommon.FetchedPvtDataContainer, error)
 }
 
@@ -139,7 +139,6 @@ type coordinator struct {
 // NewCoordinator creates a new instance of coordinator
 func NewCoordinator(mspID string, support Support, store *transientstore.Store, selfSignedData protoutil.SignedData, metrics *metrics.PrivdataMetrics,
 	config CoordinatorConfig, idDeserializerFactory IdentityDeserializerFactory) Coordinator {
-
 	if store.LitePeerEnabled {
 		l := logger.With("channel", support.ChainID)
 		go customPurge(l, config.LitePeerLevelDBTransientStorePurgeInterval, config.TransientBlockRetention, store)
@@ -160,7 +159,6 @@ func NewCoordinator(mspID string, support Support, store *transientstore.Store, 
 }
 
 func customPurge(logger util.Logger, interval time.Duration, transientBlockRetention uint64, transientStore *transientstore.Store) {
-
 	ticker := time.NewTicker(interval)
 	defer ticker.Stop()
 
@@ -174,7 +172,6 @@ func customPurge(logger util.Logger, interval time.Duration, transientBlockReten
 		_, blockNumber, err := transientStore.KVStore.GetMinHeight()
 		if err != nil {
 			logger.Errorf("Error in fetching the least block height CP. err:%+v", err)
-
 		}
 		blockNum := uint64(blockNumber)
 
@@ -186,7 +183,6 @@ func customPurge(logger util.Logger, interval time.Duration, transientBlockReten
 		}
 
 	}
-
 }
 
 // StoreBlock stores block with private data into the ledger
@@ -247,8 +243,8 @@ func (c *coordinator) StoreBlock(block *common.Block, privateDataSets util.PvtDa
 		idDeserializerFactory:                   c.idDeserializerFactory,
 	}
 
-	//DRUNIX : Based on whether lite format is enabled or not process retrieving private data
-	//DRUNIX-LTF-TODO : create coordinator adapter
+	// DRUNIX : Based on whether lite format is enabled or not process retrieving private data
+	// DRUNIX-LTF-TODO : create coordinator adapter
 	// DRUNIX-LTF-TODO : if ltx is enabled after some vanilla blocks and later your statedb is truncated, during statedb recommitting it will recommit from genesis block, but ltx format is enabled and vanilla blocks are processed as ltx. Test if this scenario fails.
 	// DRUNIX-LTF-TODO : try to get the type from envelope ranther than IsConfigBlock() method. For this need changes in lite-peer code
 	if c.CapabilityProvider.Capabilities().LeanFormatEnabled() && !protoutil.IsConfigBlock(block) {

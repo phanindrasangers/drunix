@@ -160,7 +160,7 @@ func (v *Version) Compare(other *Version) int {
 			// this means Other had the lower specificity
 			// Check to see if the remaining segments in Self are all zeros -
 			if !allZero(segmentsSelf[i:]) {
-				//if not, it means that Self has to be greater than Other
+				// if not, it means that Self has to be greater than Other
 				return 1
 			}
 			break

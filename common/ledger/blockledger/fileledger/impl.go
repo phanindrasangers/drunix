@@ -136,7 +136,7 @@ func (fl *FileLedger) Append(block *cb.Block) error {
 	if err == nil {
 		close(fl.signal)
 		fl.signal = make(chan struct{})
-		logger.Info("Going to put the fat block into the channel") //spbc
+		logger.Info("Going to put the fat block into the channel") // spbc
 		fl.sparseCh <- block
 	}
 	return err

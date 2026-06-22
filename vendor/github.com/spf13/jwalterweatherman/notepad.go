@@ -79,7 +79,6 @@ func NewNotepad(
 	prefix string, flags int,
 	logListeners ...LogListener,
 ) *Notepad {
-
 	n := &Notepad{logListeners: logListeners}
 
 	n.loggers = [7]**log.Logger{&n.TRACE, &n.DEBUG, &n.INFO, &n.WARN, &n.ERROR, &n.CRITICAL, &n.FATAL}

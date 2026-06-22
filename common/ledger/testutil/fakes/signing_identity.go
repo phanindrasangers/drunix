@@ -12,9 +12,8 @@ import (
 type SigningIdentity struct {
 	AnonymousStub        func() bool
 	anonymousMutex       sync.RWMutex
-	anonymousArgsForCall []struct {
-	}
-	anonymousReturns struct {
+	anonymousArgsForCall []struct{}
+	anonymousReturns     struct {
 		result1 bool
 	}
 	anonymousReturnsOnCall map[int]struct {
@@ -22,9 +21,8 @@ type SigningIdentity struct {
 	}
 	ExpiresAtStub        func() time.Time
 	expiresAtMutex       sync.RWMutex
-	expiresAtArgsForCall []struct {
-	}
-	expiresAtReturns struct {
+	expiresAtArgsForCall []struct{}
+	expiresAtReturns     struct {
 		result1 time.Time
 	}
 	expiresAtReturnsOnCall map[int]struct {
@@ -32,9 +30,8 @@ type SigningIdentity struct {
 	}
 	GetIdentifierStub        func() *msp.IdentityIdentifier
 	getIdentifierMutex       sync.RWMutex
-	getIdentifierArgsForCall []struct {
-	}
-	getIdentifierReturns struct {
+	getIdentifierArgsForCall []struct{}
+	getIdentifierReturns     struct {
 		result1 *msp.IdentityIdentifier
 	}
 	getIdentifierReturnsOnCall map[int]struct {
@@ -42,9 +39,8 @@ type SigningIdentity struct {
 	}
 	GetMSPIdentifierStub        func() string
 	getMSPIdentifierMutex       sync.RWMutex
-	getMSPIdentifierArgsForCall []struct {
-	}
-	getMSPIdentifierReturns struct {
+	getMSPIdentifierArgsForCall []struct{}
+	getMSPIdentifierReturns     struct {
 		result1 string
 	}
 	getMSPIdentifierReturnsOnCall map[int]struct {
@@ -52,9 +48,8 @@ type SigningIdentity struct {
 	}
 	GetOrganizationalUnitsStub        func() []*msp.OUIdentifier
 	getOrganizationalUnitsMutex       sync.RWMutex
-	getOrganizationalUnitsArgsForCall []struct {
-	}
-	getOrganizationalUnitsReturns struct {
+	getOrganizationalUnitsArgsForCall []struct{}
+	getOrganizationalUnitsReturns     struct {
 		result1 []*msp.OUIdentifier
 	}
 	getOrganizationalUnitsReturnsOnCall map[int]struct {
@@ -62,9 +57,8 @@ type SigningIdentity struct {
 	}
 	GetPublicVersionStub        func() msp.Identity
 	getPublicVersionMutex       sync.RWMutex
-	getPublicVersionArgsForCall []struct {
-	}
-	getPublicVersionReturns struct {
+	getPublicVersionArgsForCall []struct{}
+	getPublicVersionReturns     struct {
 		result1 msp.Identity
 	}
 	getPublicVersionReturnsOnCall map[int]struct {
@@ -83,9 +77,8 @@ type SigningIdentity struct {
 	}
 	SerializeStub        func() ([]byte, error)
 	serializeMutex       sync.RWMutex
-	serializeArgsForCall []struct {
-	}
-	serializeReturns struct {
+	serializeArgsForCall []struct{}
+	serializeReturns     struct {
 		result1 []byte
 		result2 error
 	}
@@ -108,9 +101,8 @@ type SigningIdentity struct {
 	}
 	ValidateStub        func() error
 	validateMutex       sync.RWMutex
-	validateArgsForCall []struct {
-	}
-	validateReturns struct {
+	validateArgsForCall []struct{}
+	validateReturns     struct {
 		result1 error
 	}
 	validateReturnsOnCall map[int]struct {
@@ -135,8 +127,7 @@ type SigningIdentity struct {
 func (fake *SigningIdentity) Anonymous() bool {
 	fake.anonymousMutex.Lock()
 	ret, specificReturn := fake.anonymousReturnsOnCall[len(fake.anonymousArgsForCall)]
-	fake.anonymousArgsForCall = append(fake.anonymousArgsForCall, struct {
-	}{})
+	fake.anonymousArgsForCall = append(fake.anonymousArgsForCall, struct{}{})
 	fake.recordInvocation("Anonymous", []interface{}{})
 	fake.anonymousMutex.Unlock()
 	if fake.AnonymousStub != nil {
@@ -187,8 +178,7 @@ func (fake *SigningIdentity) AnonymousReturnsOnCall(i int, result1 bool) {
 func (fake *SigningIdentity) ExpiresAt() time.Time {
 	fake.expiresAtMutex.Lock()
 	ret, specificReturn := fake.expiresAtReturnsOnCall[len(fake.expiresAtArgsForCall)]
-	fake.expiresAtArgsForCall = append(fake.expiresAtArgsForCall, struct {
-	}{})
+	fake.expiresAtArgsForCall = append(fake.expiresAtArgsForCall, struct{}{})
 	fake.recordInvocation("ExpiresAt", []interface{}{})
 	fake.expiresAtMutex.Unlock()
 	if fake.ExpiresAtStub != nil {
@@ -239,8 +229,7 @@ func (fake *SigningIdentity) ExpiresAtReturnsOnCall(i int, result1 time.Time) {
 func (fake *SigningIdentity) GetIdentifier() *msp.IdentityIdentifier {
 	fake.getIdentifierMutex.Lock()
 	ret, specificReturn := fake.getIdentifierReturnsOnCall[len(fake.getIdentifierArgsForCall)]
-	fake.getIdentifierArgsForCall = append(fake.getIdentifierArgsForCall, struct {
-	}{})
+	fake.getIdentifierArgsForCall = append(fake.getIdentifierArgsForCall, struct{}{})
 	fake.recordInvocation("GetIdentifier", []interface{}{})
 	fake.getIdentifierMutex.Unlock()
 	if fake.GetIdentifierStub != nil {
@@ -291,8 +280,7 @@ func (fake *SigningIdentity) GetIdentifierReturnsOnCall(i int, result1 *msp.Iden
 func (fake *SigningIdentity) GetMSPIdentifier() string {
 	fake.getMSPIdentifierMutex.Lock()
 	ret, specificReturn := fake.getMSPIdentifierReturnsOnCall[len(fake.getMSPIdentifierArgsForCall)]
-	fake.getMSPIdentifierArgsForCall = append(fake.getMSPIdentifierArgsForCall, struct {
-	}{})
+	fake.getMSPIdentifierArgsForCall = append(fake.getMSPIdentifierArgsForCall, struct{}{})
 	fake.recordInvocation("GetMSPIdentifier", []interface{}{})
 	fake.getMSPIdentifierMutex.Unlock()
 	if fake.GetMSPIdentifierStub != nil {
@@ -343,8 +331,7 @@ func (fake *SigningIdentity) GetMSPIdentifierReturnsOnCall(i int, result1 string
 func (fake *SigningIdentity) GetOrganizationalUnits() []*msp.OUIdentifier {
 	fake.getOrganizationalUnitsMutex.Lock()
 	ret, specificReturn := fake.getOrganizationalUnitsReturnsOnCall[len(fake.getOrganizationalUnitsArgsForCall)]
-	fake.getOrganizationalUnitsArgsForCall = append(fake.getOrganizationalUnitsArgsForCall, struct {
-	}{})
+	fake.getOrganizationalUnitsArgsForCall = append(fake.getOrganizationalUnitsArgsForCall, struct{}{})
 	fake.recordInvocation("GetOrganizationalUnits", []interface{}{})
 	fake.getOrganizationalUnitsMutex.Unlock()
 	if fake.GetOrganizationalUnitsStub != nil {
@@ -395,8 +382,7 @@ func (fake *SigningIdentity) GetOrganizationalUnitsReturnsOnCall(i int, result1 
 func (fake *SigningIdentity) GetPublicVersion() msp.Identity {
 	fake.getPublicVersionMutex.Lock()
 	ret, specificReturn := fake.getPublicVersionReturnsOnCall[len(fake.getPublicVersionArgsForCall)]
-	fake.getPublicVersionArgsForCall = append(fake.getPublicVersionArgsForCall, struct {
-	}{})
+	fake.getPublicVersionArgsForCall = append(fake.getPublicVersionArgsForCall, struct{}{})
 	fake.recordInvocation("GetPublicVersion", []interface{}{})
 	fake.getPublicVersionMutex.Unlock()
 	if fake.GetPublicVersionStub != nil {
@@ -507,8 +493,7 @@ func (fake *SigningIdentity) SatisfiesPrincipalReturnsOnCall(i int, result1 erro
 func (fake *SigningIdentity) Serialize() ([]byte, error) {
 	fake.serializeMutex.Lock()
 	ret, specificReturn := fake.serializeReturnsOnCall[len(fake.serializeArgsForCall)]
-	fake.serializeArgsForCall = append(fake.serializeArgsForCall, struct {
-	}{})
+	fake.serializeArgsForCall = append(fake.serializeArgsForCall, struct{}{})
 	fake.recordInvocation("Serialize", []interface{}{})
 	fake.serializeMutex.Unlock()
 	if fake.SerializeStub != nil {
@@ -630,8 +615,7 @@ func (fake *SigningIdentity) SignReturnsOnCall(i int, result1 []byte, result2 er
 func (fake *SigningIdentity) Validate() error {
 	fake.validateMutex.Lock()
 	ret, specificReturn := fake.validateReturnsOnCall[len(fake.validateArgsForCall)]
-	fake.validateArgsForCall = append(fake.validateArgsForCall, struct {
-	}{})
+	fake.validateArgsForCall = append(fake.validateArgsForCall, struct{}{})
 	fake.recordInvocation("Validate", []interface{}{})
 	fake.validateMutex.Unlock()
 	if fake.ValidateStub != nil {

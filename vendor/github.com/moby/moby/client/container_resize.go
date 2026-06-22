@@ -15,8 +15,7 @@ type ContainerResizeOptions struct {
 }
 
 // ContainerResizeResult holds the result of [Client.ContainerResize],
-type ContainerResizeResult struct {
-	// Add future fields here.
+type ContainerResizeResult struct { // Add future fields here.
 }
 
 // ContainerResize changes the size of the pseudo-TTY for a container.

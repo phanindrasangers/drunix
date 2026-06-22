@@ -11,10 +11,11 @@
 package peer
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -142,11 +143,14 @@ func file_peer_signed_cc_dep_spec_proto_rawDescGZIP() []byte {
 	return file_peer_signed_cc_dep_spec_proto_rawDescData
 }
 
-var file_peer_signed_cc_dep_spec_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_peer_signed_cc_dep_spec_proto_goTypes = []any{
-	(*SignedChaincodeDeploymentSpec)(nil), // 0: protos.SignedChaincodeDeploymentSpec
-	(*Endorsement)(nil),                   // 1: protos.Endorsement
-}
+var (
+	file_peer_signed_cc_dep_spec_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+	file_peer_signed_cc_dep_spec_proto_goTypes  = []any{
+		(*SignedChaincodeDeploymentSpec)(nil), // 0: protos.SignedChaincodeDeploymentSpec
+		(*Endorsement)(nil),                   // 1: protos.Endorsement
+	}
+)
+
 var file_peer_signed_cc_dep_spec_proto_depIdxs = []int32{
 	1, // 0: protos.SignedChaincodeDeploymentSpec.owner_endorsements:type_name -> protos.Endorsement
 	1, // [1:1] is the sub-list for method output_type

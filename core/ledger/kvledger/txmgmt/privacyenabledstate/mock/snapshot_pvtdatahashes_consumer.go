@@ -25,9 +25,8 @@ type SnapshotPvtdataHashesConsumer struct {
 	}
 	DoneStub        func() error
 	doneMutex       sync.RWMutex
-	doneArgsForCall []struct {
-	}
-	doneReturns struct {
+	doneArgsForCall []struct{}
+	doneReturns     struct {
 		result1 error
 	}
 	doneReturnsOnCall map[int]struct {
@@ -114,8 +113,7 @@ func (fake *SnapshotPvtdataHashesConsumer) ConsumeSnapshotDataReturnsOnCall(i in
 func (fake *SnapshotPvtdataHashesConsumer) Done() error {
 	fake.doneMutex.Lock()
 	ret, specificReturn := fake.doneReturnsOnCall[len(fake.doneArgsForCall)]
-	fake.doneArgsForCall = append(fake.doneArgsForCall, struct {
-	}{})
+	fake.doneArgsForCall = append(fake.doneArgsForCall, struct{}{})
 	fake.recordInvocation("Done", []interface{}{})
 	fake.doneMutex.Unlock()
 	if fake.DoneStub != nil {

@@ -10,18 +10,16 @@ import (
 type Factory struct {
 	ChannelIDsStub        func() []string
 	channelIDsMutex       sync.RWMutex
-	channelIDsArgsForCall []struct {
-	}
-	channelIDsReturns struct {
+	channelIDsArgsForCall []struct{}
+	channelIDsReturns     struct {
 		result1 []string
 	}
 	channelIDsReturnsOnCall map[int]struct {
 		result1 []string
 	}
-	CloseStub        func()
-	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
+	CloseStub              func()
+	closeMutex             sync.RWMutex
+	closeArgsForCall       []struct{}
 	GetOrCreateStub        func(string) (blockledger.ReadWriter, error)
 	getOrCreateMutex       sync.RWMutex
 	getOrCreateArgsForCall []struct {
@@ -53,8 +51,7 @@ type Factory struct {
 func (fake *Factory) ChannelIDs() []string {
 	fake.channelIDsMutex.Lock()
 	ret, specificReturn := fake.channelIDsReturnsOnCall[len(fake.channelIDsArgsForCall)]
-	fake.channelIDsArgsForCall = append(fake.channelIDsArgsForCall, struct {
-	}{})
+	fake.channelIDsArgsForCall = append(fake.channelIDsArgsForCall, struct{}{})
 	fake.recordInvocation("ChannelIDs", []interface{}{})
 	fake.channelIDsMutex.Unlock()
 	if fake.ChannelIDsStub != nil {
@@ -104,8 +101,7 @@ func (fake *Factory) ChannelIDsReturnsOnCall(i int, result1 []string) {
 
 func (fake *Factory) Close() {
 	fake.closeMutex.Lock()
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	fake.recordInvocation("Close", []interface{}{})
 	fake.closeMutex.Unlock()
 	if fake.CloseStub != nil {

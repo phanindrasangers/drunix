@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package txvalidator
@@ -148,7 +148,6 @@ func (v *TxValidatorPeerAdapter) validateLtx(block *common.Block) error {
 }
 
 func (v *TxValidator) checkLtxIdDupsLedger(tIdx int, txID string, ldgr LedgerResources) *blockValidationResult {
-
 	// Look for a transaction with the same identifier inside the ledger
 	exists, err := ldgr.TxIDExists(txID)
 	if err != nil {

@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package deliver
@@ -59,7 +59,6 @@ func OrdererUserSigner() *SigningIdentity {
 // Sign computes a SHA256 message digest, signs it with the associated private
 // key, and returns the signature after low-S normlization.
 func (s *SigningIdentity) Sign(msg []byte) ([]byte, error) {
-
 	digest := sha256.Sum256(msg)
 
 	// fmt.Printf("\ndata: %x, digest: %x\n", msg, digest)

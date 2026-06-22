@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 /*
@@ -33,7 +33,7 @@ type OrgChainsRegistrar struct { // parent of all channels
 type ChannelOrgChains struct {
 	channelID    string
 	orgChainMap  map[string]*OrgChain
-	chainSupport *multichannel.ChainSupport //reading the fat blocks - fat blockprocessor
+	chainSupport *multichannel.ChainSupport // reading the fat blocks - fat blockprocessor
 	versionDB    ordererstatedb.OrdererDBHandler
 }
 
@@ -106,7 +106,6 @@ func (orgRegistrar *OrgChainsRegistrar) InitializeSparseChains() {
 // GetChain returns the deliver-Chain for the given channelID and mspID,
 // initializing it if not found in the channel map and storing into the channelMap
 func (ocRegistrar *OrgChainsRegistrar) GetChain(channelID string, mspID string) deliver.Chain {
-
 	channelsMap, ok := ocRegistrar.ordererChannelMap[channelID]
 
 	if !ok {

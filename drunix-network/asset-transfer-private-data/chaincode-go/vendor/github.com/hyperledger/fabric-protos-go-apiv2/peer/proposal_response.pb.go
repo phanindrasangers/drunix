@@ -11,12 +11,13 @@
 package peer
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	common "github.com/hyperledger/fabric-protos-go-apiv2/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -569,17 +570,20 @@ func file_peer_proposal_response_proto_rawDescGZIP() []byte {
 	return file_peer_proposal_response_proto_rawDescData
 }
 
-var file_peer_proposal_response_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_peer_proposal_response_proto_goTypes = []any{
-	(*ProposalResponse)(nil),               // 0: protos.ProposalResponse
-	(*Response)(nil),                       // 1: protos.Response
-	(*ProposalResponsePayload)(nil),        // 2: protos.ProposalResponsePayload
-	(*Endorsement)(nil),                    // 3: protos.Endorsement
-	(*ChaincodeInterest)(nil),              // 4: protos.ChaincodeInterest
-	(*ChaincodeCall)(nil),                  // 5: protos.ChaincodeCall
-	(*timestamppb.Timestamp)(nil),          // 6: google.protobuf.Timestamp
-	(*common.SignaturePolicyEnvelope)(nil), // 7: common.SignaturePolicyEnvelope
-}
+var (
+	file_peer_proposal_response_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+	file_peer_proposal_response_proto_goTypes  = []any{
+		(*ProposalResponse)(nil),               // 0: protos.ProposalResponse
+		(*Response)(nil),                       // 1: protos.Response
+		(*ProposalResponsePayload)(nil),        // 2: protos.ProposalResponsePayload
+		(*Endorsement)(nil),                    // 3: protos.Endorsement
+		(*ChaincodeInterest)(nil),              // 4: protos.ChaincodeInterest
+		(*ChaincodeCall)(nil),                  // 5: protos.ChaincodeCall
+		(*timestamppb.Timestamp)(nil),          // 6: google.protobuf.Timestamp
+		(*common.SignaturePolicyEnvelope)(nil), // 7: common.SignaturePolicyEnvelope
+	}
+)
+
 var file_peer_proposal_response_proto_depIdxs = []int32{
 	6, // 0: protos.ProposalResponse.timestamp:type_name -> google.protobuf.Timestamp
 	1, // 1: protos.ProposalResponse.response:type_name -> protos.Response

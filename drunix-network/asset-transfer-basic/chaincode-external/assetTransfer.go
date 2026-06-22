@@ -187,7 +187,6 @@ func (s *SmartContract) TransferAsset(ctx contractapi.TransactionContextInterfac
 func (s *SmartContract) GetAllAssets(ctx contractapi.TransactionContextInterface) ([]QueryResult, error) {
 	// range query with empty string for startKey and endKey does an open-ended query of all assets in the chaincode namespace.
 	resultsIterator, err := ctx.GetStub().GetStateByRange("", "")
-
 	if err != nil {
 		return nil, err
 	}
@@ -197,7 +196,6 @@ func (s *SmartContract) GetAllAssets(ctx contractapi.TransactionContextInterface
 
 	for resultsIterator.HasNext() {
 		queryResponse, err := resultsIterator.Next()
-
 		if err != nil {
 			return nil, err
 		}
@@ -223,7 +221,6 @@ func main() {
 	}
 
 	chaincode, err := contractapi.NewChaincode(&SmartContract{})
-
 	if err != nil {
 		log.Panicf("error create asset-transfer-basic chaincode: %s", err)
 	}

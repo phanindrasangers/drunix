@@ -8,9 +8,8 @@ import (
 type WriteSyncer struct {
 	SyncStub        func() error
 	syncMutex       sync.RWMutex
-	syncArgsForCall []struct {
-	}
-	syncReturns struct {
+	syncArgsForCall []struct{}
+	syncReturns     struct {
 		result1 error
 	}
 	syncReturnsOnCall map[int]struct {
@@ -36,8 +35,7 @@ type WriteSyncer struct {
 func (fake *WriteSyncer) Sync() error {
 	fake.syncMutex.Lock()
 	ret, specificReturn := fake.syncReturnsOnCall[len(fake.syncArgsForCall)]
-	fake.syncArgsForCall = append(fake.syncArgsForCall, struct {
-	}{})
+	fake.syncArgsForCall = append(fake.syncArgsForCall, struct{}{})
 	fake.recordInvocation("Sync", []interface{}{})
 	fake.syncMutex.Unlock()
 	if fake.SyncStub != nil {

@@ -9,8 +9,10 @@ import (
 )
 
 // ColorableStdOut and ColorableStdErr enable color output support on Windows
-var ColorableStdOut = newColorable(os.Stdout)
-var ColorableStdErr = newColorable(os.Stderr)
+var (
+	ColorableStdOut = newColorable(os.Stdout)
+	ColorableStdErr = newColorable(os.Stderr)
+)
 
 const COLS = 80
 

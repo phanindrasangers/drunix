@@ -1,16 +1,14 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
-
 
 package statesqldb
 
 import (
 	"context"
 	"fmt"
-
 	"time"
 
 	redis "github.com/redis/go-redis/v9"

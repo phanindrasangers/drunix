@@ -99,9 +99,8 @@ type LegacyDeployedCCInfoProvider struct {
 	}
 	NamespacesStub        func() []string
 	namespacesMutex       sync.RWMutex
-	namespacesArgsForCall []struct {
-	}
-	namespacesReturns struct {
+	namespacesArgsForCall []struct{}
+	namespacesReturns     struct {
 		result1 []string
 	}
 	namespacesReturnsOnCall map[int]struct {
@@ -512,8 +511,7 @@ func (fake *LegacyDeployedCCInfoProvider) ImplicitCollectionsReturnsOnCall(i int
 func (fake *LegacyDeployedCCInfoProvider) Namespaces() []string {
 	fake.namespacesMutex.Lock()
 	ret, specificReturn := fake.namespacesReturnsOnCall[len(fake.namespacesArgsForCall)]
-	fake.namespacesArgsForCall = append(fake.namespacesArgsForCall, struct {
-	}{})
+	fake.namespacesArgsForCall = append(fake.namespacesArgsForCall, struct{}{})
 	fake.recordInvocation("Namespaces", []interface{}{})
 	fake.namespacesMutex.Unlock()
 	if fake.NamespacesStub != nil {

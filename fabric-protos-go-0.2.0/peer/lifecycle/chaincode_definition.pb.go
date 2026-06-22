@@ -5,14 +5,17 @@ package lifecycle
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -41,15 +44,19 @@ func (*ChaincodeEndorsementInfo) Descriptor() ([]byte, []int) {
 func (m *ChaincodeEndorsementInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeEndorsementInfo.Unmarshal(m, b)
 }
+
 func (m *ChaincodeEndorsementInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeEndorsementInfo.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeEndorsementInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeEndorsementInfo.Merge(m, src)
 }
+
 func (m *ChaincodeEndorsementInfo) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeEndorsementInfo.Size(m)
 }
+
 func (m *ChaincodeEndorsementInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeEndorsementInfo.DiscardUnknown(m)
 }
@@ -97,15 +104,19 @@ func (*ChaincodeValidationInfo) Descriptor() ([]byte, []int) {
 func (m *ChaincodeValidationInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeValidationInfo.Unmarshal(m, b)
 }
+
 func (m *ChaincodeValidationInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeValidationInfo.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeValidationInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeValidationInfo.Merge(m, src)
 }
+
 func (m *ChaincodeValidationInfo) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeValidationInfo.Size(m)
 }
+
 func (m *ChaincodeValidationInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeValidationInfo.DiscardUnknown(m)
 }

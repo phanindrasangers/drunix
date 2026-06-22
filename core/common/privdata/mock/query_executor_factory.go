@@ -10,9 +10,8 @@ import (
 type QueryExecutorFactory struct {
 	NewQueryExecutorStub        func() (ledger.QueryExecutor, error)
 	newQueryExecutorMutex       sync.RWMutex
-	newQueryExecutorArgsForCall []struct {
-	}
-	newQueryExecutorReturns struct {
+	newQueryExecutorArgsForCall []struct{}
+	newQueryExecutorReturns     struct {
 		result1 ledger.QueryExecutor
 		result2 error
 	}
@@ -27,8 +26,7 @@ type QueryExecutorFactory struct {
 func (fake *QueryExecutorFactory) NewQueryExecutor() (ledger.QueryExecutor, error) {
 	fake.newQueryExecutorMutex.Lock()
 	ret, specificReturn := fake.newQueryExecutorReturnsOnCall[len(fake.newQueryExecutorArgsForCall)]
-	fake.newQueryExecutorArgsForCall = append(fake.newQueryExecutorArgsForCall, struct {
-	}{})
+	fake.newQueryExecutorArgsForCall = append(fake.newQueryExecutorArgsForCall, struct{}{})
 	fake.recordInvocation("NewQueryExecutor", []interface{}{})
 	fake.newQueryExecutorMutex.Unlock()
 	if fake.NewQueryExecutorStub != nil {

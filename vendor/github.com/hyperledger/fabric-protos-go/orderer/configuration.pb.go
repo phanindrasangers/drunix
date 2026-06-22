@@ -5,14 +5,17 @@ package orderer
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -70,15 +73,19 @@ func (*ConsensusType) Descriptor() ([]byte, []int) {
 func (m *ConsensusType) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConsensusType.Unmarshal(m, b)
 }
+
 func (m *ConsensusType) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConsensusType.Marshal(b, m, deterministic)
 }
+
 func (m *ConsensusType) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConsensusType.Merge(m, src)
 }
+
 func (m *ConsensusType) XXX_Size() int {
 	return xxx_messageInfo_ConsensusType.Size(m)
 }
+
 func (m *ConsensusType) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConsensusType.DiscardUnknown(m)
 }
@@ -131,15 +138,19 @@ func (*BatchSize) Descriptor() ([]byte, []int) {
 func (m *BatchSize) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BatchSize.Unmarshal(m, b)
 }
+
 func (m *BatchSize) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BatchSize.Marshal(b, m, deterministic)
 }
+
 func (m *BatchSize) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BatchSize.Merge(m, src)
 }
+
 func (m *BatchSize) XXX_Size() int {
 	return xxx_messageInfo_BatchSize.Size(m)
 }
+
 func (m *BatchSize) XXX_DiscardUnknown() {
 	xxx_messageInfo_BatchSize.DiscardUnknown(m)
 }
@@ -186,15 +197,19 @@ func (*BatchTimeout) Descriptor() ([]byte, []int) {
 func (m *BatchTimeout) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BatchTimeout.Unmarshal(m, b)
 }
+
 func (m *BatchTimeout) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BatchTimeout.Marshal(b, m, deterministic)
 }
+
 func (m *BatchTimeout) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BatchTimeout.Merge(m, src)
 }
+
 func (m *BatchTimeout) XXX_Size() int {
 	return xxx_messageInfo_BatchTimeout.Size(m)
 }
+
 func (m *BatchTimeout) XXX_DiscardUnknown() {
 	xxx_messageInfo_BatchTimeout.DiscardUnknown(m)
 }
@@ -229,15 +244,19 @@ func (*KafkaBrokers) Descriptor() ([]byte, []int) {
 func (m *KafkaBrokers) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_KafkaBrokers.Unmarshal(m, b)
 }
+
 func (m *KafkaBrokers) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_KafkaBrokers.Marshal(b, m, deterministic)
 }
+
 func (m *KafkaBrokers) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_KafkaBrokers.Merge(m, src)
 }
+
 func (m *KafkaBrokers) XXX_Size() int {
 	return xxx_messageInfo_KafkaBrokers.Size(m)
 }
+
 func (m *KafkaBrokers) XXX_DiscardUnknown() {
 	xxx_messageInfo_KafkaBrokers.DiscardUnknown(m)
 }
@@ -269,15 +288,19 @@ func (*ChannelRestrictions) Descriptor() ([]byte, []int) {
 func (m *ChannelRestrictions) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChannelRestrictions.Unmarshal(m, b)
 }
+
 func (m *ChannelRestrictions) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChannelRestrictions.Marshal(b, m, deterministic)
 }
+
 func (m *ChannelRestrictions) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChannelRestrictions.Merge(m, src)
 }
+
 func (m *ChannelRestrictions) XXX_Size() int {
 	return xxx_messageInfo_ChannelRestrictions.Size(m)
 }
+
 func (m *ChannelRestrictions) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChannelRestrictions.DiscardUnknown(m)
 }

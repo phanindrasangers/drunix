@@ -232,7 +232,7 @@ func (cs *ChainSupport) GetOrgMetaValue(key []byte) ([]byte, error) {
 	return fl.GetOrgMetaValue(key)
 }
 
-func (cs *ChainSupport) GetSparseChannel() (chan *cb.Block, error) { //spbc
+func (cs *ChainSupport) GetSparseChannel() (chan *cb.Block, error) { // spbc
 	fl := cs.ledgerResources.ReadWriter.(blockledger.SparseMetadataReadWriter)
 	return fl.GetSparseChannel()
 }

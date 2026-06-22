@@ -46,7 +46,6 @@ type schemaPool struct {
 }
 
 func (p *schemaPool) parseReferences(document interface{}, ref gojsonreference.JsonReference, pooled bool) error {
-
 	var (
 		draft     *Draft
 		err       error
@@ -137,7 +136,6 @@ func (p *schemaPool) parseReferencesRecursive(document interface{}, ref gojsonre
 }
 
 func (p *schemaPool) GetDocument(reference gojsonreference.JsonReference) (*schemaPoolDocument, error) {
-
 	var (
 		spd   *schemaPoolDocument
 		draft *Draft
@@ -169,7 +167,6 @@ func (p *schemaPool) GetDocument(reference gojsonreference.JsonReference) (*sche
 
 	if cachedSpd, ok := p.schemaPoolDocuments[refToURL.String()]; ok {
 		document, _, err := reference.GetPointer().Get(cachedSpd.Document)
-
 		if err != nil {
 			return nil, err
 		}
@@ -194,7 +191,6 @@ func (p *schemaPool) GetDocument(reference gojsonreference.JsonReference) (*sche
 
 	jsonReferenceLoader := p.jsonLoaderFactory.New(reference.String())
 	document, err := jsonReferenceLoader.LoadJSON()
-
 	if err != nil {
 		return nil, err
 	}

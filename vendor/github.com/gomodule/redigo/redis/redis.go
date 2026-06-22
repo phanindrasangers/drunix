@@ -114,8 +114,10 @@ type ConnWithContext interface {
 	ReceiveContext(ctx context.Context) (reply interface{}, err error)
 }
 
-var errTimeoutNotSupported = errors.New("redis: connection does not support ConnWithTimeout")
-var errContextNotSupported = errors.New("redis: connection does not support ConnWithContext")
+var (
+	errTimeoutNotSupported = errors.New("redis: connection does not support ConnWithTimeout")
+	errContextNotSupported = errors.New("redis: connection does not support ConnWithContext")
+)
 
 // DoContext sends a command to server and returns the received reply.
 // min(ctx,DialReadTimeout()) will be used as the deadline.

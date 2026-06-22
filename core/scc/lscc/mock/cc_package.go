@@ -12,9 +12,8 @@ import (
 type CCPackage struct {
 	GetChaincodeDataStub        func() *ccprovider.ChaincodeData
 	getChaincodeDataMutex       sync.RWMutex
-	getChaincodeDataArgsForCall []struct {
-	}
-	getChaincodeDataReturns struct {
+	getChaincodeDataArgsForCall []struct{}
+	getChaincodeDataReturns     struct {
 		result1 *ccprovider.ChaincodeData
 	}
 	getChaincodeDataReturnsOnCall map[int]struct {
@@ -22,9 +21,8 @@ type CCPackage struct {
 	}
 	GetDepSpecStub        func() *peer.ChaincodeDeploymentSpec
 	getDepSpecMutex       sync.RWMutex
-	getDepSpecArgsForCall []struct {
-	}
-	getDepSpecReturns struct {
+	getDepSpecArgsForCall []struct{}
+	getDepSpecReturns     struct {
 		result1 *peer.ChaincodeDeploymentSpec
 	}
 	getDepSpecReturnsOnCall map[int]struct {
@@ -32,9 +30,8 @@ type CCPackage struct {
 	}
 	GetDepSpecBytesStub        func() []byte
 	getDepSpecBytesMutex       sync.RWMutex
-	getDepSpecBytesArgsForCall []struct {
-	}
-	getDepSpecBytesReturns struct {
+	getDepSpecBytesArgsForCall []struct{}
+	getDepSpecBytesReturns     struct {
 		result1 []byte
 	}
 	getDepSpecBytesReturnsOnCall map[int]struct {
@@ -42,9 +39,8 @@ type CCPackage struct {
 	}
 	GetIdStub        func() []byte
 	getIdMutex       sync.RWMutex
-	getIdArgsForCall []struct {
-	}
-	getIdReturns struct {
+	getIdArgsForCall []struct{}
+	getIdReturns     struct {
 		result1 []byte
 	}
 	getIdReturnsOnCall map[int]struct {
@@ -52,9 +48,8 @@ type CCPackage struct {
 	}
 	GetPackageObjectStub        func() proto.Message
 	getPackageObjectMutex       sync.RWMutex
-	getPackageObjectArgsForCall []struct {
-	}
-	getPackageObjectReturns struct {
+	getPackageObjectArgsForCall []struct{}
+	getPackageObjectReturns     struct {
 		result1 proto.Message
 	}
 	getPackageObjectReturnsOnCall map[int]struct {
@@ -75,9 +70,8 @@ type CCPackage struct {
 	}
 	PutChaincodeToFSStub        func() error
 	putChaincodeToFSMutex       sync.RWMutex
-	putChaincodeToFSArgsForCall []struct {
-	}
-	putChaincodeToFSReturns struct {
+	putChaincodeToFSArgsForCall []struct{}
+	putChaincodeToFSReturns     struct {
 		result1 error
 	}
 	putChaincodeToFSReturnsOnCall map[int]struct {
@@ -101,8 +95,7 @@ type CCPackage struct {
 func (fake *CCPackage) GetChaincodeData() *ccprovider.ChaincodeData {
 	fake.getChaincodeDataMutex.Lock()
 	ret, specificReturn := fake.getChaincodeDataReturnsOnCall[len(fake.getChaincodeDataArgsForCall)]
-	fake.getChaincodeDataArgsForCall = append(fake.getChaincodeDataArgsForCall, struct {
-	}{})
+	fake.getChaincodeDataArgsForCall = append(fake.getChaincodeDataArgsForCall, struct{}{})
 	fake.recordInvocation("GetChaincodeData", []interface{}{})
 	fake.getChaincodeDataMutex.Unlock()
 	if fake.GetChaincodeDataStub != nil {
@@ -153,8 +146,7 @@ func (fake *CCPackage) GetChaincodeDataReturnsOnCall(i int, result1 *ccprovider.
 func (fake *CCPackage) GetDepSpec() *peer.ChaincodeDeploymentSpec {
 	fake.getDepSpecMutex.Lock()
 	ret, specificReturn := fake.getDepSpecReturnsOnCall[len(fake.getDepSpecArgsForCall)]
-	fake.getDepSpecArgsForCall = append(fake.getDepSpecArgsForCall, struct {
-	}{})
+	fake.getDepSpecArgsForCall = append(fake.getDepSpecArgsForCall, struct{}{})
 	fake.recordInvocation("GetDepSpec", []interface{}{})
 	fake.getDepSpecMutex.Unlock()
 	if fake.GetDepSpecStub != nil {
@@ -205,8 +197,7 @@ func (fake *CCPackage) GetDepSpecReturnsOnCall(i int, result1 *peer.ChaincodeDep
 func (fake *CCPackage) GetDepSpecBytes() []byte {
 	fake.getDepSpecBytesMutex.Lock()
 	ret, specificReturn := fake.getDepSpecBytesReturnsOnCall[len(fake.getDepSpecBytesArgsForCall)]
-	fake.getDepSpecBytesArgsForCall = append(fake.getDepSpecBytesArgsForCall, struct {
-	}{})
+	fake.getDepSpecBytesArgsForCall = append(fake.getDepSpecBytesArgsForCall, struct{}{})
 	fake.recordInvocation("GetDepSpecBytes", []interface{}{})
 	fake.getDepSpecBytesMutex.Unlock()
 	if fake.GetDepSpecBytesStub != nil {
@@ -257,8 +248,7 @@ func (fake *CCPackage) GetDepSpecBytesReturnsOnCall(i int, result1 []byte) {
 func (fake *CCPackage) GetId() []byte {
 	fake.getIdMutex.Lock()
 	ret, specificReturn := fake.getIdReturnsOnCall[len(fake.getIdArgsForCall)]
-	fake.getIdArgsForCall = append(fake.getIdArgsForCall, struct {
-	}{})
+	fake.getIdArgsForCall = append(fake.getIdArgsForCall, struct{}{})
 	fake.recordInvocation("GetId", []interface{}{})
 	fake.getIdMutex.Unlock()
 	if fake.GetIdStub != nil {
@@ -309,8 +299,7 @@ func (fake *CCPackage) GetIdReturnsOnCall(i int, result1 []byte) {
 func (fake *CCPackage) GetPackageObject() proto.Message {
 	fake.getPackageObjectMutex.Lock()
 	ret, specificReturn := fake.getPackageObjectReturnsOnCall[len(fake.getPackageObjectArgsForCall)]
-	fake.getPackageObjectArgsForCall = append(fake.getPackageObjectArgsForCall, struct {
-	}{})
+	fake.getPackageObjectArgsForCall = append(fake.getPackageObjectArgsForCall, struct{}{})
 	fake.recordInvocation("GetPackageObject", []interface{}{})
 	fake.getPackageObjectMutex.Unlock()
 	if fake.GetPackageObjectStub != nil {
@@ -429,8 +418,7 @@ func (fake *CCPackage) InitFromBufferReturnsOnCall(i int, result1 *ccprovider.Ch
 func (fake *CCPackage) PutChaincodeToFS() error {
 	fake.putChaincodeToFSMutex.Lock()
 	ret, specificReturn := fake.putChaincodeToFSReturnsOnCall[len(fake.putChaincodeToFSArgsForCall)]
-	fake.putChaincodeToFSArgsForCall = append(fake.putChaincodeToFSArgsForCall, struct {
-	}{})
+	fake.putChaincodeToFSArgsForCall = append(fake.putChaincodeToFSArgsForCall, struct{}{})
 	fake.recordInvocation("PutChaincodeToFS", []interface{}{})
 	fake.putChaincodeToFSMutex.Unlock()
 	if fake.PutChaincodeToFSStub != nil {

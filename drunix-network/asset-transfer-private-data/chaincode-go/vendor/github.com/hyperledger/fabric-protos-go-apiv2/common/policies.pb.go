@@ -11,11 +11,12 @@
 package common
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	msp "github.com/hyperledger/fabric-protos-go-apiv2/msp"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -625,19 +626,22 @@ func file_common_policies_proto_rawDescGZIP() []byte {
 	return file_common_policies_proto_rawDescData
 }
 
-var file_common_policies_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_common_policies_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_common_policies_proto_goTypes = []any{
-	(Policy_PolicyType)(0),          // 0: common.Policy.PolicyType
-	(ImplicitMetaPolicy_Rule)(0),    // 1: common.ImplicitMetaPolicy.Rule
-	(*Policy)(nil),                  // 2: common.Policy
-	(*SignaturePolicyEnvelope)(nil), // 3: common.SignaturePolicyEnvelope
-	(*SignaturePolicy)(nil),         // 4: common.SignaturePolicy
-	(*ImplicitMetaPolicy)(nil),      // 5: common.ImplicitMetaPolicy
-	(*ApplicationPolicy)(nil),       // 6: common.ApplicationPolicy
-	(*SignaturePolicy_NOutOf)(nil),  // 7: common.SignaturePolicy.NOutOf
-	(*msp.MSPPrincipal)(nil),        // 8: common.MSPPrincipal
-}
+var (
+	file_common_policies_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+	file_common_policies_proto_msgTypes  = make([]protoimpl.MessageInfo, 6)
+	file_common_policies_proto_goTypes   = []any{
+		(Policy_PolicyType)(0),          // 0: common.Policy.PolicyType
+		(ImplicitMetaPolicy_Rule)(0),    // 1: common.ImplicitMetaPolicy.Rule
+		(*Policy)(nil),                  // 2: common.Policy
+		(*SignaturePolicyEnvelope)(nil), // 3: common.SignaturePolicyEnvelope
+		(*SignaturePolicy)(nil),         // 4: common.SignaturePolicy
+		(*ImplicitMetaPolicy)(nil),      // 5: common.ImplicitMetaPolicy
+		(*ApplicationPolicy)(nil),       // 6: common.ApplicationPolicy
+		(*SignaturePolicy_NOutOf)(nil),  // 7: common.SignaturePolicy.NOutOf
+		(*msp.MSPPrincipal)(nil),        // 8: common.MSPPrincipal
+	}
+)
+
 var file_common_policies_proto_depIdxs = []int32{
 	4, // 0: common.SignaturePolicyEnvelope.rule:type_name -> common.SignaturePolicy
 	8, // 1: common.SignaturePolicyEnvelope.identities:type_name -> common.MSPPrincipal

@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package txvalidator
@@ -49,7 +49,6 @@ func NewTxValidatorVSCCAdapter(
 	lcr plugindispatcher.LifecycleResources,
 	metricsProvider metrics.Provider,
 ) (*TxValidatorVSCCAdapter, error) {
-
 	qec := plugindispatcher.NewCustomQueryExecuterCreator(dbProvider)
 
 	// Encapsulates interface implementation
@@ -374,7 +373,6 @@ func (v *TxValidatorVSCCAdapter) validateLtxTxn(req *blockValidationRequestAdapt
 }
 
 func (v *TxValidatorVSCCAdapter) Validate(vsccRequest *common.VsccRequest) *common.VsccResponse {
-
 	logger.Debugf("[%s] START Block Validation for block [%d]", v.ChannelID, vsccRequest.BlockNum)
 
 	results := make(chan *blockValidationResult, len(vsccRequest.Transactions))

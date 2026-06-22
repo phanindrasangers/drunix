@@ -18,9 +18,7 @@ import (
 	"github.com/syndtr/goleveldb/leveldb/util"
 )
 
-var (
-	errInvalidInternalKey = errors.New("leveldb: Iterator: invalid internal key")
-)
+var errInvalidInternalKey = errors.New("leveldb: Iterator: invalid internal key")
 
 type memdbReleaser struct {
 	once sync.Once

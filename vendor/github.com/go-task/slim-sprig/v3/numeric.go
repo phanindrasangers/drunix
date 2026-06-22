@@ -39,7 +39,7 @@ func toFloat64(v interface{}) float64 {
 }
 
 func toInt(v interface{}) int {
-	//It's not optimal. Bud I don't want duplicate toInt64 code.
+	// It's not optimal. Bud I don't want duplicate toInt64 code.
 	return int(toInt64(v))
 }
 

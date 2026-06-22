@@ -5,15 +5,18 @@ package peer
 
 import (
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	common "github.com/hyperledger/fabric-protos-go/common"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -41,15 +44,19 @@ func (*CollectionConfigPackage) Descriptor() ([]byte, []int) {
 func (m *CollectionConfigPackage) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CollectionConfigPackage.Unmarshal(m, b)
 }
+
 func (m *CollectionConfigPackage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CollectionConfigPackage.Marshal(b, m, deterministic)
 }
+
 func (m *CollectionConfigPackage) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CollectionConfigPackage.Merge(m, src)
 }
+
 func (m *CollectionConfigPackage) XXX_Size() int {
 	return xxx_messageInfo_CollectionConfigPackage.Size(m)
 }
+
 func (m *CollectionConfigPackage) XXX_DiscardUnknown() {
 	xxx_messageInfo_CollectionConfigPackage.DiscardUnknown(m)
 }
@@ -86,15 +93,19 @@ func (*CollectionConfig) Descriptor() ([]byte, []int) {
 func (m *CollectionConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CollectionConfig.Unmarshal(m, b)
 }
+
 func (m *CollectionConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CollectionConfig.Marshal(b, m, deterministic)
 }
+
 func (m *CollectionConfig) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CollectionConfig.Merge(m, src)
 }
+
 func (m *CollectionConfig) XXX_Size() int {
 	return xxx_messageInfo_CollectionConfig.Size(m)
 }
+
 func (m *CollectionConfig) XXX_DiscardUnknown() {
 	xxx_messageInfo_CollectionConfig.DiscardUnknown(m)
 }
@@ -181,15 +192,19 @@ func (*StaticCollectionConfig) Descriptor() ([]byte, []int) {
 func (m *StaticCollectionConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_StaticCollectionConfig.Unmarshal(m, b)
 }
+
 func (m *StaticCollectionConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_StaticCollectionConfig.Marshal(b, m, deterministic)
 }
+
 func (m *StaticCollectionConfig) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_StaticCollectionConfig.Merge(m, src)
 }
+
 func (m *StaticCollectionConfig) XXX_Size() int {
 	return xxx_messageInfo_StaticCollectionConfig.Size(m)
 }
+
 func (m *StaticCollectionConfig) XXX_DiscardUnknown() {
 	xxx_messageInfo_StaticCollectionConfig.DiscardUnknown(m)
 }
@@ -276,15 +291,19 @@ func (*CollectionPolicyConfig) Descriptor() ([]byte, []int) {
 func (m *CollectionPolicyConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CollectionPolicyConfig.Unmarshal(m, b)
 }
+
 func (m *CollectionPolicyConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CollectionPolicyConfig.Marshal(b, m, deterministic)
 }
+
 func (m *CollectionPolicyConfig) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CollectionPolicyConfig.Merge(m, src)
 }
+
 func (m *CollectionPolicyConfig) XXX_Size() int {
 	return xxx_messageInfo_CollectionPolicyConfig.Size(m)
 }
+
 func (m *CollectionPolicyConfig) XXX_DiscardUnknown() {
 	xxx_messageInfo_CollectionPolicyConfig.DiscardUnknown(m)
 }

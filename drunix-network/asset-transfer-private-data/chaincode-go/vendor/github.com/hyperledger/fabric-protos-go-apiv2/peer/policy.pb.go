@@ -11,11 +11,12 @@
 package peer
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	common "github.com/hyperledger/fabric-protos-go-apiv2/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -156,11 +157,14 @@ func file_peer_policy_proto_rawDescGZIP() []byte {
 	return file_peer_policy_proto_rawDescData
 }
 
-var file_peer_policy_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_peer_policy_proto_goTypes = []any{
-	(*ApplicationPolicy)(nil),              // 0: protos.ApplicationPolicy
-	(*common.SignaturePolicyEnvelope)(nil), // 1: common.SignaturePolicyEnvelope
-}
+var (
+	file_peer_policy_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+	file_peer_policy_proto_goTypes  = []any{
+		(*ApplicationPolicy)(nil),              // 0: protos.ApplicationPolicy
+		(*common.SignaturePolicyEnvelope)(nil), // 1: common.SignaturePolicyEnvelope
+	}
+)
+
 var file_peer_policy_proto_depIdxs = []int32{
 	1, // 0: protos.ApplicationPolicy.signature_policy:type_name -> common.SignaturePolicyEnvelope
 	1, // [1:1] is the sub-list for method output_type

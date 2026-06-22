@@ -18,10 +18,10 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/hyperledger/fabric-config/configtx"
 	"github.com/hyperledger/fabric-protos-go/common"
+	dcli "github.com/moby/moby/client"
 	"github.com/npci/drunix/integration/nwo"
 	"github.com/npci/drunix/integration/nwo/commands"
 	"github.com/npci/drunix/integration/ordererclient"
-	dcli "github.com/moby/moby/client"
 	"github.com/tedsuo/ifrit"
 
 	. "github.com/onsi/ginkgo/v2"

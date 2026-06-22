@@ -10,7 +10,6 @@ import (
 	"context"
 	"fmt"
 	"sync"
-
 	"time"
 
 	"github.com/npci/drunix/common/flogging"
@@ -58,7 +57,6 @@ func GetKeyValueDBConnection() (*KeyValueDBConnection, error) {
 }
 
 func NewKeyValueDBConnection() error {
-
 	redisOptions := redis.Options{
 		Addr:            viper.GetString("peer.kvstore.address"),
 		Password:        viper.GetString("peer.kvstore.password"),

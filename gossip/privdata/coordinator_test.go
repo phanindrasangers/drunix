@@ -162,7 +162,6 @@ func (f *fetcherMock) ltxFetch(dig2src ltxDig2sources) (*privdatacommon.FetchedP
 		for _, endorsement := range endorsements {
 			endorserbytes, err := protopkg.Marshal(endorsement.Endorser)
 			if err != nil {
-
 			}
 			_, exists := f.expectedEndorsers[string(endorserbytes)]
 			if !exists {

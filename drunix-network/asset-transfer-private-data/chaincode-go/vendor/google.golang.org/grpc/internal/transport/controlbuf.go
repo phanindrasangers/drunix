@@ -185,8 +185,7 @@ type outgoingSettings struct {
 
 func (*outgoingSettings) isTransportResponseFrame() bool { return false }
 
-type incomingGoAway struct {
-}
+type incomingGoAway struct{}
 
 func (*incomingGoAway) isTransportResponseFrame() bool { return false }
 
@@ -776,7 +775,6 @@ func (l *loopyWriter) pingHandler(p *ping) error {
 		l.bdpEst.timesnap(p.data)
 	}
 	return l.framer.fr.WritePing(p.ack, p.data)
-
 }
 
 func (l *loopyWriter) outFlowControlSizeRequestHandler(o *outFlowControlSizeRequest) {

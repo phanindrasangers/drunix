@@ -8,8 +8,7 @@ import (
 )
 
 // SecretInspectOptions holds options for inspecting a secret.
-type SecretInspectOptions struct {
-	// Add future optional parameters here
+type SecretInspectOptions struct { // Add future optional parameters here
 }
 
 // SecretInspectResult holds the result from the [Client.SecretInspect]. method.

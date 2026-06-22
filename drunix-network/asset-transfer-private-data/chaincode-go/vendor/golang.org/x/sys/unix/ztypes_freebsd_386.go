@@ -311,6 +311,7 @@ type __Siginfo struct {
 	Value  [4]byte
 	_      [32]byte
 }
+
 type __PtraceSiginfo struct {
 	Signo  int32
 	Errno  int32

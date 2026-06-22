@@ -11,11 +11,12 @@
 package queryresult
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -213,12 +214,15 @@ func file_ledger_queryresult_kv_query_result_proto_rawDescGZIP() []byte {
 	return file_ledger_queryresult_kv_query_result_proto_rawDescData
 }
 
-var file_ledger_queryresult_kv_query_result_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_ledger_queryresult_kv_query_result_proto_goTypes = []any{
-	(*KV)(nil),                    // 0: queryresult.KV
-	(*KeyModification)(nil),       // 1: queryresult.KeyModification
-	(*timestamppb.Timestamp)(nil), // 2: google.protobuf.Timestamp
-}
+var (
+	file_ledger_queryresult_kv_query_result_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+	file_ledger_queryresult_kv_query_result_proto_goTypes  = []any{
+		(*KV)(nil),                    // 0: queryresult.KV
+		(*KeyModification)(nil),       // 1: queryresult.KeyModification
+		(*timestamppb.Timestamp)(nil), // 2: google.protobuf.Timestamp
+	}
+)
+
 var file_ledger_queryresult_kv_query_result_proto_depIdxs = []int32{
 	2, // 0: queryresult.KeyModification.timestamp:type_name -> google.protobuf.Timestamp
 	1, // [1:1] is the sub-list for method output_type

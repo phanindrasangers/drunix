@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -18,6 +18,7 @@ import (
 	"slices"
 	"strings"
 	"sync"
+	"time"
 
 	"gorm.io/datatypes"
 	gormLogger "gorm.io/gorm/logger"
@@ -25,8 +26,6 @@ import (
 	"github.com/npci/drunix/core/ledger"
 	"github.com/npci/drunix/core/ledger/internal/version"
 	"github.com/npci/drunix/core/ledger/kvledger/txmgmt/statedb"
-
-	"time"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -70,7 +69,6 @@ type SqlSchema interface {
 }
 
 func (sql *sqlClient) NewSchema(schema string, peerid string, litePeerEnabled bool) (SqlSchema, error) {
-
 	migration := fmt.Sprintf(`CREATE SCHEMA IF NOT EXISTS "%s";`, schema)
 
 	err := sql.Client.Exec(migration).Error
@@ -142,7 +140,6 @@ func (sql *sqlSchema) Exec(schemas []string) error {
 }
 
 func (sql *sqlSchema) Get(key string) (*statedb.VersionedValue, error) {
-
 	// defer TimeIt("SQL GET")()
 
 	var err error
@@ -191,12 +188,10 @@ func (sql *sqlSchema) Get(key string) (*statedb.VersionedValue, error) {
 }
 
 func (sql *sqlSchema) Scan(key string, cursor uint64, count int64) (*sql.Rows, error) {
-
 	return nil, nil
 }
 
 func (sql *sqlSchema) Set(data map[string]*statedb.VersionedValue) error {
-
 	// defer TimeIt("SQL SET")()
 
 	dataToBeCached := make(map[string]*statedb.VersionedValue)
@@ -289,7 +284,6 @@ func (sql *sqlSchema) Set(data map[string]*statedb.VersionedValue) error {
 }
 
 func (sql *sqlSchema) Delete(keys []string) error {
-
 	// defer TimeIt("SQL DELETE")()
 
 	if len(keys) == 0 {
@@ -356,7 +350,6 @@ func (sql *sqlSchema) Delete(keys []string) error {
 }
 
 func newSqlClient(config *ledger.SqlDbConfig) (SqlClient, error) {
-
 	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
 		config.Host, config.Port, config.User, config.Password, config.DBName, config.Sslmode)
 
@@ -402,7 +395,6 @@ func newSqlClient(config *ledger.SqlDbConfig) (SqlClient, error) {
 }
 
 func (sql *sqlSchema) Close() error {
-
 	sqlDb, err := sql.Client.DB()
 	if err != nil {
 		return err
@@ -415,7 +407,6 @@ func (sql *sqlSchema) Close() error {
 }
 
 func (sql *sqlSchema) Next(key string, cursor int, pagesize int) ([]byte, *statedb.VersionedValue, error) {
-
 	table, _, err := sql.GetTable(key)
 	if err != nil {
 		return nil, nil, err
@@ -444,7 +435,6 @@ func (sql *sqlSchema) Next(key string, cursor int, pagesize int) ([]byte, *state
 }
 
 func (sql *sqlSchema) NextKey(key string, cursor int, pagesize int) (string, error) {
-
 	table, _, err := sql.GetTable(key)
 	if err != nil {
 		return "", err
@@ -461,7 +451,6 @@ func (sql *sqlSchema) NextKey(key string, cursor int, pagesize int) (string, err
 }
 
 func (sql *sqlSchema) GetTable(key string) (string, bool, error) {
-
 	if lastLifecycleBlockNumberKey == key {
 		return fmt.Sprintf("%s.%s_lifecycle", sql.schema, sql.peerid), false, nil
 	}
@@ -483,7 +472,6 @@ func (sql *sqlSchema) GetTable(key string) (string, bool, error) {
 }
 
 func (sql *sqlSchema) filterKeys(table string, data map[string]interface{}) (map[string]interface{}, error) {
-
 	var columns []string
 
 	tableSplit := strings.Split(table, ".")
@@ -523,7 +511,6 @@ func (sql *sqlSchema) filterKeys(table string, data map[string]interface{}) (map
 */
 // GetQueryResult
 func (sql *sqlSchema) ExecuteNext(namespace string, query string, cursor int, pageSize int) ([]byte, *statedb.VersionedValue, error) {
-
 	// defer TimeIt("SQL EXECUTENEXT")()
 
 	type richQueryStruct struct {
@@ -652,7 +639,6 @@ func (sql *sqlSchema) ExecuteNext(namespace string, query string, cursor int, pa
 }*/
 
 func (sql *sqlSchema) GetTableFromNamespace(namespace string) (string, error) {
-
 	if strings.HasPrefix(namespace, "_lifecycle") || namespace == "lscc" {
 		return fmt.Sprintf("%s.%s_lifecycle", sql.schema, sql.peerid), nil
 	}
@@ -666,7 +652,6 @@ func (sql *sqlSchema) GetTableFromNamespace(namespace string) (string, error) {
 }
 
 func (sql *sqlSchema) GetVersions(keys []*statedb.CompositeKey) (map[statedb.CompositeKey]*version.Height, error) {
-
 	versionsMap := make(map[statedb.CompositeKey]*version.Height, len(keys))
 
 	tableDataMap := make(map[string][][]byte)
@@ -765,7 +750,6 @@ type fullDBScanner struct {
 }
 
 func (sql *sqlSchema) NewFullDBScanner(skipNamespace func(namespace string) bool) (*fullDBScanner, error) {
-
 	var tables []string
 	err := sql.Client.Table("information_schema.tables").Where("table_schema = ?", sql.schema).Pluck("table_name", &tables).Error
 	if err != nil {
@@ -796,7 +780,6 @@ func (sql *sqlSchema) NewFullDBScanner(skipNamespace func(namespace string) bool
 }
 
 func (s *fullDBScanner) Next() (*statedb.VersionedKV, error) {
-
 	table := s.tables[s.tableCursor]
 	cursor := s.cursor
 

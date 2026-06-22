@@ -12,9 +12,8 @@ import (
 type ChaincodeEventsServer struct {
 	ContextStub        func() context.Context
 	contextMutex       sync.RWMutex
-	contextArgsForCall []struct {
-	}
-	contextReturns struct {
+	contextArgsForCall []struct{}
+	contextReturns     struct {
 		result1 context.Context
 	}
 	contextReturnsOnCall map[int]struct {
@@ -87,8 +86,7 @@ type ChaincodeEventsServer struct {
 func (fake *ChaincodeEventsServer) Context() context.Context {
 	fake.contextMutex.Lock()
 	ret, specificReturn := fake.contextReturnsOnCall[len(fake.contextArgsForCall)]
-	fake.contextArgsForCall = append(fake.contextArgsForCall, struct {
-	}{})
+	fake.contextArgsForCall = append(fake.contextArgsForCall, struct{}{})
 	stub := fake.ContextStub
 	fakeReturns := fake.contextReturns
 	fake.recordInvocation("Context", []interface{}{})

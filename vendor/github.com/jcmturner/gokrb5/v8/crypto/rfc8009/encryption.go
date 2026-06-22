@@ -39,7 +39,7 @@ func EncryptMessage(key, message []byte, usage uint32, e etype.EType) ([]byte, [
 	}
 	if len(key) != e.GetKeyByteSize() {
 	}
-	//confounder
+	// confounder
 	c := make([]byte, e.GetConfounderByteSize())
 	_, err := rand.Read(c)
 	if err != nil {
@@ -87,7 +87,7 @@ func DecryptData(key, data []byte, e etype.EType) ([]byte, error) {
 // DecryptMessage decrypts the message provided using the methods specific to the etype provided as defined in RFC 8009.
 // The integrity of the message is also verified.
 func DecryptMessage(key, ciphertext []byte, usage uint32, e etype.EType) ([]byte, error) {
-	//Derive the key
+	// Derive the key
 	k, err := e.DeriveKey(key, common.GetUsageKe(usage))
 	if err != nil {
 		return nil, fmt.Errorf("error deriving key: %v", err)
@@ -97,11 +97,11 @@ func DecryptMessage(key, ciphertext []byte, usage uint32, e etype.EType) ([]byte
 	if err != nil {
 		return nil, err
 	}
-	//Verify checksum
+	// Verify checksum
 	if !e.VerifyIntegrity(key, ciphertext, b, usage) {
 		return nil, errors.New("integrity verification failed")
 	}
-	//Remove the confounder bytes
+	// Remove the confounder bytes
 	return b[e.GetConfounderByteSize():], nil
 }
 

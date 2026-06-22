@@ -5,13 +5,15 @@ import (
 	"math"
 )
 
-var errInvalidArrayLength = PacketDecodingError{"invalid array length"}
-var errInvalidByteSliceLength = PacketDecodingError{"invalid byteslice length"}
-var errInvalidByteSliceLengthType = PacketDecodingError{"invalid byteslice length type"}
-var errInvalidStringLength = PacketDecodingError{"invalid string length"}
-var errInvalidSubsetSize = PacketDecodingError{"invalid subset size"}
-var errVarintOverflow = PacketDecodingError{"varint overflow"}
-var errInvalidBool = PacketDecodingError{"invalid bool"}
+var (
+	errInvalidArrayLength         = PacketDecodingError{"invalid array length"}
+	errInvalidByteSliceLength     = PacketDecodingError{"invalid byteslice length"}
+	errInvalidByteSliceLengthType = PacketDecodingError{"invalid byteslice length type"}
+	errInvalidStringLength        = PacketDecodingError{"invalid string length"}
+	errInvalidSubsetSize          = PacketDecodingError{"invalid subset size"}
+	errVarintOverflow             = PacketDecodingError{"varint overflow"}
+	errInvalidBool                = PacketDecodingError{"invalid bool"}
+)
 
 type realDecoder struct {
 	raw   []byte

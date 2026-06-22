@@ -3,13 +3,11 @@ package client
 import "context"
 
 // ContainerPauseOptions holds options for [Client.ContainerPause].
-type ContainerPauseOptions struct {
-	// Add future optional parameters here.
+type ContainerPauseOptions struct { // Add future optional parameters here.
 }
 
 // ContainerPauseResult holds the result of [Client.ContainerPause],
-type ContainerPauseResult struct {
-	// Add future fields here.
+type ContainerPauseResult struct { // Add future fields here.
 }
 
 // ContainerPause pauses the main process of a given container without terminating it.

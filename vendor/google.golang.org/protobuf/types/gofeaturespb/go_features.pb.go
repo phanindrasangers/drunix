@@ -11,12 +11,13 @@
 package gofeaturespb
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	descriptorpb "google.golang.org/protobuf/types/descriptorpb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	descriptorpb "google.golang.org/protobuf/types/descriptorpb"
 )
 
 type GoFeatures_APILevel int32
@@ -264,14 +265,17 @@ func file_google_protobuf_go_features_proto_rawDescGZIP() []byte {
 	return file_google_protobuf_go_features_proto_rawDescData
 }
 
-var file_google_protobuf_go_features_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_google_protobuf_go_features_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_protobuf_go_features_proto_goTypes = []any{
-	(GoFeatures_APILevel)(0),        // 0: pb.GoFeatures.APILevel
-	(GoFeatures_StripEnumPrefix)(0), // 1: pb.GoFeatures.StripEnumPrefix
-	(*GoFeatures)(nil),              // 2: pb.GoFeatures
-	(*descriptorpb.FeatureSet)(nil), // 3: google.protobuf.FeatureSet
-}
+var (
+	file_google_protobuf_go_features_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+	file_google_protobuf_go_features_proto_msgTypes  = make([]protoimpl.MessageInfo, 1)
+	file_google_protobuf_go_features_proto_goTypes   = []any{
+		(GoFeatures_APILevel)(0),        // 0: pb.GoFeatures.APILevel
+		(GoFeatures_StripEnumPrefix)(0), // 1: pb.GoFeatures.StripEnumPrefix
+		(*GoFeatures)(nil),              // 2: pb.GoFeatures
+		(*descriptorpb.FeatureSet)(nil), // 3: google.protobuf.FeatureSet
+	}
+)
+
 var file_google_protobuf_go_features_proto_depIdxs = []int32{
 	0, // 0: pb.GoFeatures.api_level:type_name -> pb.GoFeatures.APILevel
 	1, // 1: pb.GoFeatures.strip_enum_prefix:type_name -> pb.GoFeatures.StripEnumPrefix

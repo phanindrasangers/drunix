@@ -24,10 +24,10 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/miekg/pkcs11"
 	bpkcs11 "github.com/npci/drunix/bccsp/pkcs11"
 	"github.com/npci/drunix/integration/nwo"
 	"github.com/npci/drunix/integration/nwo/fabricconfig"
-	"github.com/miekg/pkcs11"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	"github.com/tedsuo/ifrit"

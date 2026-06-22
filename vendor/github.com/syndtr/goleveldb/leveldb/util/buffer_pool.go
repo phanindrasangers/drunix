@@ -174,7 +174,6 @@ func (p *BufferPool) Put(b []byte) {
 	case pool <- b:
 	default:
 	}
-
 }
 
 func (p *BufferPool) Close() {

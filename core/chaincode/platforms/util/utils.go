@@ -13,10 +13,10 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/npci/drunix/common/flogging"
-	"github.com/npci/drunix/common/metadata"
 	dcontainer "github.com/moby/moby/api/types/container"
 	dcli "github.com/moby/moby/client"
+	"github.com/npci/drunix/common/flogging"
+	"github.com/npci/drunix/common/metadata"
 	"github.com/spf13/viper"
 )
 

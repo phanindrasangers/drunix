@@ -11,9 +11,8 @@ import (
 type Receiver struct {
 	RecvStub        func() (*common.Envelope, error)
 	recvMutex       sync.RWMutex
-	recvArgsForCall []struct {
-	}
-	recvReturns struct {
+	recvArgsForCall []struct{}
+	recvReturns     struct {
 		result1 *common.Envelope
 		result2 error
 	}
@@ -28,8 +27,7 @@ type Receiver struct {
 func (fake *Receiver) Recv() (*common.Envelope, error) {
 	fake.recvMutex.Lock()
 	ret, specificReturn := fake.recvReturnsOnCall[len(fake.recvArgsForCall)]
-	fake.recvArgsForCall = append(fake.recvArgsForCall, struct {
-	}{})
+	fake.recvArgsForCall = append(fake.recvArgsForCall, struct{}{})
 	fake.recordInvocation("Recv", []interface{}{})
 	fake.recvMutex.Unlock()
 	if fake.RecvStub != nil {

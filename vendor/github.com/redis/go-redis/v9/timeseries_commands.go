@@ -48,6 +48,7 @@ type TSOptions struct {
 	IgnoreMaxTimeDiff int64
 	IgnoreMaxValDiff  float64
 }
+
 type TSIncrDecrOptions struct {
 	Timestamp         int64
 	Retention         int
@@ -478,6 +479,7 @@ type TSTimestampValue struct {
 	Timestamp int64
 	Value     float64
 }
+
 type TSTimestampValueCmd struct {
 	baseCmd
 	val TSTimestampValue

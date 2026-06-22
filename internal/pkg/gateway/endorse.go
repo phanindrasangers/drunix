@@ -25,7 +25,6 @@ import (
 // Endorse will collect endorsements by invoking the transaction function specified in the SignedProposal against
 // sufficient Peers to satisfy the endorsement policy.
 func (gs *Server) Endorse(ctx context.Context, request *gp.EndorseRequest) (*gp.EndorseResponse, error) {
-
 	if txnVal.IsLtfEnabled.Load() {
 		logger.Warningf("Endorsing lean format txn as leanFormatEnabled: %v", txnVal.IsLtfEnabled.Load())
 		return gs.EndorseLeanTxn(ctx, request)

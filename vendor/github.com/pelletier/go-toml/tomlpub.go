@@ -6,15 +6,19 @@ type PubTOMLValue = tomlValue
 func (ptv *PubTOMLValue) Value() interface{} {
 	return ptv.value
 }
+
 func (ptv *PubTOMLValue) Comment() string {
 	return ptv.comment
 }
+
 func (ptv *PubTOMLValue) Commented() bool {
 	return ptv.commented
 }
+
 func (ptv *PubTOMLValue) Multiline() bool {
 	return ptv.multiline
 }
+
 func (ptv *PubTOMLValue) Position() Position {
 	return ptv.position
 }
@@ -22,15 +26,19 @@ func (ptv *PubTOMLValue) Position() Position {
 func (ptv *PubTOMLValue) SetValue(v interface{}) {
 	ptv.value = v
 }
+
 func (ptv *PubTOMLValue) SetComment(s string) {
 	ptv.comment = s
 }
+
 func (ptv *PubTOMLValue) SetCommented(c bool) {
 	ptv.commented = c
 }
+
 func (ptv *PubTOMLValue) SetMultiline(m bool) {
 	ptv.multiline = m
 }
+
 func (ptv *PubTOMLValue) SetPosition(p Position) {
 	ptv.position = p
 }

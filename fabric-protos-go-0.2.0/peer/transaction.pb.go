@@ -5,15 +5,18 @@ package peer
 
 import (
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	common "github.com/hyperledger/fabric-protos-go/common"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -176,15 +179,19 @@ func (*ProcessedTransaction) Descriptor() ([]byte, []int) {
 func (m *ProcessedTransaction) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ProcessedTransaction.Unmarshal(m, b)
 }
+
 func (m *ProcessedTransaction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ProcessedTransaction.Marshal(b, m, deterministic)
 }
+
 func (m *ProcessedTransaction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ProcessedTransaction.Merge(m, src)
 }
+
 func (m *ProcessedTransaction) XXX_Size() int {
 	return xxx_messageInfo_ProcessedTransaction.Size(m)
 }
+
 func (m *ProcessedTransaction) XXX_DiscardUnknown() {
 	xxx_messageInfo_ProcessedTransaction.DiscardUnknown(m)
 }
@@ -236,15 +243,19 @@ func (*Transaction) Descriptor() ([]byte, []int) {
 func (m *Transaction) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Transaction.Unmarshal(m, b)
 }
+
 func (m *Transaction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Transaction.Marshal(b, m, deterministic)
 }
+
 func (m *Transaction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Transaction.Merge(m, src)
 }
+
 func (m *Transaction) XXX_Size() int {
 	return xxx_messageInfo_Transaction.Size(m)
 }
+
 func (m *Transaction) XXX_DiscardUnknown() {
 	xxx_messageInfo_Transaction.DiscardUnknown(m)
 }
@@ -281,15 +292,19 @@ func (*TransactionAction) Descriptor() ([]byte, []int) {
 func (m *TransactionAction) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TransactionAction.Unmarshal(m, b)
 }
+
 func (m *TransactionAction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TransactionAction.Marshal(b, m, deterministic)
 }
+
 func (m *TransactionAction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_TransactionAction.Merge(m, src)
 }
+
 func (m *TransactionAction) XXX_Size() int {
 	return xxx_messageInfo_TransactionAction.Size(m)
 }
+
 func (m *TransactionAction) XXX_DiscardUnknown() {
 	xxx_messageInfo_TransactionAction.DiscardUnknown(m)
 }
@@ -341,15 +356,19 @@ func (*ChaincodeActionPayload) Descriptor() ([]byte, []int) {
 func (m *ChaincodeActionPayload) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeActionPayload.Unmarshal(m, b)
 }
+
 func (m *ChaincodeActionPayload) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeActionPayload.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeActionPayload) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeActionPayload.Merge(m, src)
 }
+
 func (m *ChaincodeActionPayload) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeActionPayload.Size(m)
 }
+
 func (m *ChaincodeActionPayload) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeActionPayload.DiscardUnknown(m)
 }
@@ -395,15 +414,19 @@ func (*ChaincodeEndorsedAction) Descriptor() ([]byte, []int) {
 func (m *ChaincodeEndorsedAction) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeEndorsedAction.Unmarshal(m, b)
 }
+
 func (m *ChaincodeEndorsedAction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeEndorsedAction.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeEndorsedAction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeEndorsedAction.Merge(m, src)
 }
+
 func (m *ChaincodeEndorsedAction) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeEndorsedAction.Size(m)
 }
+
 func (m *ChaincodeEndorsedAction) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeEndorsedAction.DiscardUnknown(m)
 }

@@ -25,9 +25,8 @@ type MembershipInfoProvider struct {
 	}
 	MyImplicitCollectionNameStub        func() string
 	myImplicitCollectionNameMutex       sync.RWMutex
-	myImplicitCollectionNameArgsForCall []struct {
-	}
-	myImplicitCollectionNameReturns struct {
+	myImplicitCollectionNameArgsForCall []struct{}
+	myImplicitCollectionNameReturns     struct {
 		result1 string
 	}
 	myImplicitCollectionNameReturnsOnCall map[int]struct {
@@ -104,8 +103,7 @@ func (fake *MembershipInfoProvider) AmMemberOfReturnsOnCall(i int, result1 bool,
 func (fake *MembershipInfoProvider) MyImplicitCollectionName() string {
 	fake.myImplicitCollectionNameMutex.Lock()
 	ret, specificReturn := fake.myImplicitCollectionNameReturnsOnCall[len(fake.myImplicitCollectionNameArgsForCall)]
-	fake.myImplicitCollectionNameArgsForCall = append(fake.myImplicitCollectionNameArgsForCall, struct {
-	}{})
+	fake.myImplicitCollectionNameArgsForCall = append(fake.myImplicitCollectionNameArgsForCall, struct{}{})
 	fake.recordInvocation("MyImplicitCollectionName", []interface{}{})
 	fake.myImplicitCollectionNameMutex.Unlock()
 	if fake.MyImplicitCollectionNameStub != nil {

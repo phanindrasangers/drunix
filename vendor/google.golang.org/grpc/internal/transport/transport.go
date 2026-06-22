@@ -428,8 +428,7 @@ func (s *Stream) read(n int) (data mem.BufferSlice, err error) {
 //
 // See https://golang.org/issues/8005#issuecomment-190753527
 // for details.
-type noCopy struct {
-}
+type noCopy struct{}
 
 func (*noCopy) Lock()   {}
 func (*noCopy) Unlock() {}

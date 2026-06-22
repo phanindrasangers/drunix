@@ -379,7 +379,6 @@ func (suite *Suite) generateProgressReport(fullReport bool) types.ProgressReport
 	additionalReports = append(additionalReports, suite.QueryProgressReporters(deadline, suite.failer)...)
 	gwOutput := suite.currentSpecReport.CapturedGinkgoWriterOutput + string(suite.writer.Bytes())
 	pr, err := NewProgressReport(suite.isRunningInParallel(), suite.currentSpecReport, suite.currentNode, suite.currentNodeStartTime, suite.currentByStep, gwOutput, timelineLocation, additionalReports, suite.config.SourceRoots, fullReport)
-
 	if err != nil {
 		fmt.Printf("{{red}}Failed to generate progress report:{{/}}\n%s\n", err.Error())
 	}
@@ -898,7 +897,7 @@ func (suite *Suite) runNode(node Node, specDeadline time.Time, text string) (typ
 	// progress polling timer and channel
 	var emitProgressNow <-chan time.Time
 	var progressPoller *time.Timer
-	var pollProgressAfter, pollProgressInterval = suite.config.PollProgressAfter, suite.config.PollProgressInterval
+	pollProgressAfter, pollProgressInterval := suite.config.PollProgressAfter, suite.config.PollProgressInterval
 	if node.PollProgressAfter >= 0 {
 		pollProgressAfter = node.PollProgressAfter
 	}

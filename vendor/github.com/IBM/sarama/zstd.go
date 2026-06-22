@@ -13,8 +13,8 @@ const zstdMaxBufferedEncoders = 1
 type ZstdEncoderParams struct {
 	Level int
 }
-type ZstdDecoderParams struct {
-}
+
+type ZstdDecoderParams struct{}
 
 var zstdDecMap sync.Map
 

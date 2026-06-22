@@ -549,15 +549,17 @@ type presenceList struct {
 	pvalueList
 	setPresence func(bool)
 }
+
 type pvalueList interface {
 	protoreflect.List
-	//Unwrapper
+	// Unwrapper
 }
 
 func (list presenceList) Append(v protoreflect.Value) {
 	list.pvalueList.Append(v)
 	list.setPresence(true)
 }
+
 func (list presenceList) Truncate(i int) {
 	list.pvalueList.Truncate(i)
 	list.setPresence(i > 0)

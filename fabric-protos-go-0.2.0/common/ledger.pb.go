@@ -5,14 +5,17 @@ package common
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -44,15 +47,19 @@ func (*BlockchainInfo) Descriptor() ([]byte, []int) {
 func (m *BlockchainInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BlockchainInfo.Unmarshal(m, b)
 }
+
 func (m *BlockchainInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BlockchainInfo.Marshal(b, m, deterministic)
 }
+
 func (m *BlockchainInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BlockchainInfo.Merge(m, src)
 }
+
 func (m *BlockchainInfo) XXX_Size() int {
 	return xxx_messageInfo_BlockchainInfo.Size(m)
 }
+
 func (m *BlockchainInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_BlockchainInfo.DiscardUnknown(m)
 }
@@ -105,15 +112,19 @@ func (*BootstrappingSnapshotInfo) Descriptor() ([]byte, []int) {
 func (m *BootstrappingSnapshotInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BootstrappingSnapshotInfo.Unmarshal(m, b)
 }
+
 func (m *BootstrappingSnapshotInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BootstrappingSnapshotInfo.Marshal(b, m, deterministic)
 }
+
 func (m *BootstrappingSnapshotInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BootstrappingSnapshotInfo.Merge(m, src)
 }
+
 func (m *BootstrappingSnapshotInfo) XXX_Size() int {
 	return xxx_messageInfo_BootstrappingSnapshotInfo.Size(m)
 }
+
 func (m *BootstrappingSnapshotInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_BootstrappingSnapshotInfo.DiscardUnknown(m)
 }

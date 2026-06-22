@@ -88,7 +88,7 @@ func multiDimensionalIndexPermutations(l []int) (ps [][]int) {
 	for i := len(l) - 1; i >= 0; i-- {
 		ws := make([][]int, len(ps))
 		copy(ws, ps)
-		//create a permutation for each of the iterations of the current dimension
+		// create a permutation for each of the iterations of the current dimension
 		for j := 1; j <= l[i]-1; j++ {
 			// For each existing permutation
 			for _, p := range ws {

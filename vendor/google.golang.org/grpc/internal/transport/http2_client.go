@@ -1517,7 +1517,7 @@ func (t *http2Client) operateHeaders(frame *http2.MetaHeadersFrame) {
 	// In case http status doesn't provide any error information (status : 200),
 	// then evalute response code to be Unknown.
 	if !isGRPC {
-		var grpcErrorCode = codes.Internal
+		grpcErrorCode := codes.Internal
 		if httpStatus == "" {
 			httpStatusErr = "malformed header: missing HTTP status"
 		} else {

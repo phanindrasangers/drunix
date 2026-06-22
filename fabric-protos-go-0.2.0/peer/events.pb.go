@@ -6,19 +6,22 @@ package peer
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	common "github.com/hyperledger/fabric-protos-go/common"
 	rwset "github.com/hyperledger/fabric-protos-go/ledger/rwset"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -46,15 +49,19 @@ func (*FilteredBlock) Descriptor() ([]byte, []int) {
 func (m *FilteredBlock) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FilteredBlock.Unmarshal(m, b)
 }
+
 func (m *FilteredBlock) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_FilteredBlock.Marshal(b, m, deterministic)
 }
+
 func (m *FilteredBlock) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_FilteredBlock.Merge(m, src)
 }
+
 func (m *FilteredBlock) XXX_Size() int {
 	return xxx_messageInfo_FilteredBlock.Size(m)
 }
+
 func (m *FilteredBlock) XXX_DiscardUnknown() {
 	xxx_messageInfo_FilteredBlock.DiscardUnknown(m)
 }
@@ -107,15 +114,19 @@ func (*FilteredTransaction) Descriptor() ([]byte, []int) {
 func (m *FilteredTransaction) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FilteredTransaction.Unmarshal(m, b)
 }
+
 func (m *FilteredTransaction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_FilteredTransaction.Marshal(b, m, deterministic)
 }
+
 func (m *FilteredTransaction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_FilteredTransaction.Merge(m, src)
 }
+
 func (m *FilteredTransaction) XXX_Size() int {
 	return xxx_messageInfo_FilteredTransaction.Size(m)
 }
+
 func (m *FilteredTransaction) XXX_DiscardUnknown() {
 	xxx_messageInfo_FilteredTransaction.DiscardUnknown(m)
 }
@@ -193,15 +204,19 @@ func (*FilteredTransactionActions) Descriptor() ([]byte, []int) {
 func (m *FilteredTransactionActions) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FilteredTransactionActions.Unmarshal(m, b)
 }
+
 func (m *FilteredTransactionActions) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_FilteredTransactionActions.Marshal(b, m, deterministic)
 }
+
 func (m *FilteredTransactionActions) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_FilteredTransactionActions.Merge(m, src)
 }
+
 func (m *FilteredTransactionActions) XXX_Size() int {
 	return xxx_messageInfo_FilteredTransactionActions.Size(m)
 }
+
 func (m *FilteredTransactionActions) XXX_DiscardUnknown() {
 	xxx_messageInfo_FilteredTransactionActions.DiscardUnknown(m)
 }
@@ -234,15 +249,19 @@ func (*FilteredChaincodeAction) Descriptor() ([]byte, []int) {
 func (m *FilteredChaincodeAction) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FilteredChaincodeAction.Unmarshal(m, b)
 }
+
 func (m *FilteredChaincodeAction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_FilteredChaincodeAction.Marshal(b, m, deterministic)
 }
+
 func (m *FilteredChaincodeAction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_FilteredChaincodeAction.Merge(m, src)
 }
+
 func (m *FilteredChaincodeAction) XXX_Size() int {
 	return xxx_messageInfo_FilteredChaincodeAction.Size(m)
 }
+
 func (m *FilteredChaincodeAction) XXX_DiscardUnknown() {
 	xxx_messageInfo_FilteredChaincodeAction.DiscardUnknown(m)
 }
@@ -276,15 +295,19 @@ func (*BlockAndPrivateData) Descriptor() ([]byte, []int) {
 func (m *BlockAndPrivateData) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BlockAndPrivateData.Unmarshal(m, b)
 }
+
 func (m *BlockAndPrivateData) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BlockAndPrivateData.Marshal(b, m, deterministic)
 }
+
 func (m *BlockAndPrivateData) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BlockAndPrivateData.Merge(m, src)
 }
+
 func (m *BlockAndPrivateData) XXX_Size() int {
 	return xxx_messageInfo_BlockAndPrivateData.Size(m)
 }
+
 func (m *BlockAndPrivateData) XXX_DiscardUnknown() {
 	xxx_messageInfo_BlockAndPrivateData.DiscardUnknown(m)
 }
@@ -329,15 +352,19 @@ func (*DeliverResponse) Descriptor() ([]byte, []int) {
 func (m *DeliverResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeliverResponse.Unmarshal(m, b)
 }
+
 func (m *DeliverResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeliverResponse.Marshal(b, m, deterministic)
 }
+
 func (m *DeliverResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeliverResponse.Merge(m, src)
 }
+
 func (m *DeliverResponse) XXX_Size() int {
 	return xxx_messageInfo_DeliverResponse.Size(m)
 }
+
 func (m *DeliverResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeliverResponse.DiscardUnknown(m)
 }
@@ -478,8 +505,10 @@ var fileDescriptor_5eedcc5fab2714e6 = []byte{
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -621,15 +650,16 @@ type DeliverServer interface {
 }
 
 // UnimplementedDeliverServer can be embedded to have forward compatible implementations.
-type UnimplementedDeliverServer struct {
-}
+type UnimplementedDeliverServer struct{}
 
 func (*UnimplementedDeliverServer) Deliver(srv Deliver_DeliverServer) error {
 	return status.Errorf(codes.Unimplemented, "method Deliver not implemented")
 }
+
 func (*UnimplementedDeliverServer) DeliverFiltered(srv Deliver_DeliverFilteredServer) error {
 	return status.Errorf(codes.Unimplemented, "method DeliverFiltered not implemented")
 }
+
 func (*UnimplementedDeliverServer) DeliverWithPrivateData(srv Deliver_DeliverWithPrivateDataServer) error {
 	return status.Errorf(codes.Unimplemented, "method DeliverWithPrivateData not implemented")
 }

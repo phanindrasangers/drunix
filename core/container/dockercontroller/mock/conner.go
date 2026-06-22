@@ -10,9 +10,8 @@ import (
 type Conner struct {
 	CloseStub        func() error
 	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
-	closeReturns struct {
+	closeArgsForCall []struct{}
+	closeReturns     struct {
 		result1 error
 	}
 	closeReturnsOnCall map[int]struct {
@@ -20,9 +19,8 @@ type Conner struct {
 	}
 	LocalAddrStub        func() net.Addr
 	localAddrMutex       sync.RWMutex
-	localAddrArgsForCall []struct {
-	}
-	localAddrReturns struct {
+	localAddrArgsForCall []struct{}
+	localAddrReturns     struct {
 		result1 net.Addr
 	}
 	localAddrReturnsOnCall map[int]struct {
@@ -43,9 +41,8 @@ type Conner struct {
 	}
 	RemoteAddrStub        func() net.Addr
 	remoteAddrMutex       sync.RWMutex
-	remoteAddrArgsForCall []struct {
-	}
-	remoteAddrReturns struct {
+	remoteAddrArgsForCall []struct{}
+	remoteAddrReturns     struct {
 		result1 net.Addr
 	}
 	remoteAddrReturnsOnCall map[int]struct {
@@ -104,8 +101,7 @@ type Conner struct {
 func (fake *Conner) Close() error {
 	fake.closeMutex.Lock()
 	ret, specificReturn := fake.closeReturnsOnCall[len(fake.closeArgsForCall)]
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	stub := fake.CloseStub
 	fakeReturns := fake.closeReturns
 	fake.recordInvocation("Close", []interface{}{})
@@ -157,8 +153,7 @@ func (fake *Conner) CloseReturnsOnCall(i int, result1 error) {
 func (fake *Conner) LocalAddr() net.Addr {
 	fake.localAddrMutex.Lock()
 	ret, specificReturn := fake.localAddrReturnsOnCall[len(fake.localAddrArgsForCall)]
-	fake.localAddrArgsForCall = append(fake.localAddrArgsForCall, struct {
-	}{})
+	fake.localAddrArgsForCall = append(fake.localAddrArgsForCall, struct{}{})
 	stub := fake.LocalAddrStub
 	fakeReturns := fake.localAddrReturns
 	fake.recordInvocation("LocalAddr", []interface{}{})
@@ -279,8 +274,7 @@ func (fake *Conner) ReadReturnsOnCall(i int, result1 int, result2 error) {
 func (fake *Conner) RemoteAddr() net.Addr {
 	fake.remoteAddrMutex.Lock()
 	ret, specificReturn := fake.remoteAddrReturnsOnCall[len(fake.remoteAddrArgsForCall)]
-	fake.remoteAddrArgsForCall = append(fake.remoteAddrArgsForCall, struct {
-	}{})
+	fake.remoteAddrArgsForCall = append(fake.remoteAddrArgsForCall, struct{}{})
 	stub := fake.RemoteAddrStub
 	fakeReturns := fake.remoteAddrReturns
 	fake.recordInvocation("RemoteAddr", []interface{}{})

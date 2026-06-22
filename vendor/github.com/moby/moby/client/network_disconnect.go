@@ -14,8 +14,7 @@ type NetworkDisconnectOptions struct {
 }
 
 // NetworkDisconnectResult represents the result of a NetworkDisconnect operation.
-type NetworkDisconnectResult struct {
-	// Currently empty; placeholder for future fields.
+type NetworkDisconnectResult struct { // Currently empty; placeholder for future fields.
 }
 
 // NetworkDisconnect disconnects a container from an existent network in the docker host.

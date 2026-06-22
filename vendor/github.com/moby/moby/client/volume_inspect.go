@@ -8,8 +8,7 @@ import (
 )
 
 // VolumeInspectOptions holds options for inspecting a volume.
-type VolumeInspectOptions struct {
-	// Add future optional parameters here
+type VolumeInspectOptions struct { // Add future optional parameters here
 }
 
 // VolumeInspectResult holds the result from the [Client.VolumeInspect] method.

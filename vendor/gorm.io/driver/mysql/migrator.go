@@ -286,7 +286,6 @@ func (m Migrator) RenameIndex(value interface{}, oldName, newName string) error 
 
 		return m.CreateIndex(value, newName)
 	})
-
 }
 
 func (m Migrator) DropTable(values ...interface{}) error {
@@ -319,7 +318,6 @@ func (m Migrator) ColumnTypes(value interface{}) ([]gorm.ColumnType, error) {
 		}
 
 		rawColumnTypes, err := rows.ColumnTypes()
-
 		if err != nil {
 			return err
 		}
@@ -424,7 +422,6 @@ func (m Migrator) GetTables() (tableList []string, err error) {
 func (m Migrator) GetIndexes(value interface{}) ([]gorm.Index, error) {
 	indexes := make([]gorm.Index, 0)
 	err := m.RunWithValue(value, func(stmt *gorm.Statement) error {
-
 		result := make([]*Index, 0)
 		schema, table := m.CurrentSchema(stmt, stmt.Table)
 		scanErr := m.DB.Table(table).Raw(indexSql, schema, table).Scan(&result).Error

@@ -7,19 +7,19 @@ SPDX-License-Identifier: Apache-2.0
 package main
 
 import (
-	. "github.com/onsi/gomega"
-	"github.com/onsi/gomega/gbytes"
-	"github.com/onsi/gomega/gexec"
 	"io/ioutil"
 	"os"
 	"os/exec"
 	"path"
 	"testing"
 	"time"
+
+	. "github.com/onsi/gomega"
+	"github.com/onsi/gomega/gbytes"
+	"github.com/onsi/gomega/gexec"
 )
 
 func TestArguements(t *testing.T) {
-
 	testCases := map[string]struct {
 		exitCode int
 		args     []string

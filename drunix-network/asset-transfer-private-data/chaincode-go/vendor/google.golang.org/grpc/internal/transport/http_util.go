@@ -393,8 +393,10 @@ type framer struct {
 	fr     *http2.Framer
 }
 
-var writeBufferPoolMap = make(map[int]*sync.Pool)
-var writeBufferMutex sync.Mutex
+var (
+	writeBufferPoolMap = make(map[int]*sync.Pool)
+	writeBufferMutex   sync.Mutex
+)
 
 func newFramer(conn net.Conn, writeBufferSize, readBufferSize int, sharedWriteBuffer bool, maxHeaderListSize uint32) *framer {
 	if writeBufferSize < 0 {

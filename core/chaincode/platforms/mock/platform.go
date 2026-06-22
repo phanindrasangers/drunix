@@ -23,9 +23,8 @@ type Platform struct {
 	}
 	GenerateDockerfileStub        func() (string, error)
 	generateDockerfileMutex       sync.RWMutex
-	generateDockerfileArgsForCall []struct {
-	}
-	generateDockerfileReturns struct {
+	generateDockerfileArgsForCall []struct{}
+	generateDockerfileReturns     struct {
 		result1 string
 		result2 error
 	}
@@ -35,9 +34,8 @@ type Platform struct {
 	}
 	NameStub        func() string
 	nameMutex       sync.RWMutex
-	nameArgsForCall []struct {
-	}
-	nameReturns struct {
+	nameArgsForCall []struct{}
+	nameReturns     struct {
 		result1 string
 	}
 	nameReturnsOnCall map[int]struct {
@@ -113,8 +111,7 @@ func (fake *Platform) DockerBuildOptionsReturnsOnCall(i int, result1 util.Docker
 func (fake *Platform) GenerateDockerfile() (string, error) {
 	fake.generateDockerfileMutex.Lock()
 	ret, specificReturn := fake.generateDockerfileReturnsOnCall[len(fake.generateDockerfileArgsForCall)]
-	fake.generateDockerfileArgsForCall = append(fake.generateDockerfileArgsForCall, struct {
-	}{})
+	fake.generateDockerfileArgsForCall = append(fake.generateDockerfileArgsForCall, struct{}{})
 	fake.recordInvocation("GenerateDockerfile", []interface{}{})
 	fake.generateDockerfileMutex.Unlock()
 	if fake.GenerateDockerfileStub != nil {
@@ -168,8 +165,7 @@ func (fake *Platform) GenerateDockerfileReturnsOnCall(i int, result1 string, res
 func (fake *Platform) Name() string {
 	fake.nameMutex.Lock()
 	ret, specificReturn := fake.nameReturnsOnCall[len(fake.nameArgsForCall)]
-	fake.nameArgsForCall = append(fake.nameArgsForCall, struct {
-	}{})
+	fake.nameArgsForCall = append(fake.nameArgsForCall, struct{}{})
 	fake.recordInvocation("Name", []interface{}{})
 	fake.nameMutex.Unlock()
 	if fake.NameStub != nil {

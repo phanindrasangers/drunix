@@ -11,8 +11,8 @@ import (
 )
 
 func BuildBuildCommand() command.Command {
-	var cliConfig = types.NewDefaultCLIConfig()
-	var goFlagsConfig = types.NewDefaultGoFlagsConfig()
+	cliConfig := types.NewDefaultCLIConfig()
+	goFlagsConfig := types.NewDefaultGoFlagsConfig()
 
 	flags, err := types.BuildBuildCommandFlagSet(&cliConfig, &goFlagsConfig)
 	if err != nil {

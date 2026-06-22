@@ -82,7 +82,7 @@ func (k *KerbValidationInfo) GetGroupMembershipSIDs() []string {
 		g = append(g, fmt.Sprintf("%s-%d", lSID, k.GroupIDs[i].RelativeID))
 	}
 	for _, s := range k.ExtraSIDs {
-		var exists = false
+		exists := false
 		for _, es := range g {
 			if es == s.SID.String() {
 				exists = true
@@ -94,7 +94,7 @@ func (k *KerbValidationInfo) GetGroupMembershipSIDs() []string {
 		}
 	}
 	for _, r := range k.ResourceGroupIDs {
-		var exists = false
+		exists := false
 		s := fmt.Sprintf("%s-%d", k.ResourceGroupDomainSID.String(), r.RelativeID)
 		for _, es := range g {
 			if es == s {

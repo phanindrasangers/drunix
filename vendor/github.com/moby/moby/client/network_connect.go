@@ -14,8 +14,7 @@ type NetworkConnectOptions struct {
 }
 
 // NetworkConnectResult represents the result of a NetworkConnect operation.
-type NetworkConnectResult struct {
-	// Currently empty; placeholder for future fields.
+type NetworkConnectResult struct { // Currently empty; placeholder for future fields.
 }
 
 // NetworkConnect connects a container to an existent network in the docker host.

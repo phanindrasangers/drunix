@@ -7,19 +7,19 @@ SPDX-License-Identifier: Apache-2.0
 package main
 
 import (
-	. "github.com/onsi/gomega"
-	"github.com/onsi/gomega/gbytes"
-	"github.com/onsi/gomega/gexec"
 	"io/ioutil"
 	"os"
 	"os/exec"
 	"path"
 	"testing"
 	"time"
+
+	. "github.com/onsi/gomega"
+	"github.com/onsi/gomega/gbytes"
+	"github.com/onsi/gomega/gexec"
 )
 
 func TestArugments(t *testing.T) {
-
 	testCases := map[string]struct {
 		exitCode int
 		args     []string
@@ -86,7 +86,6 @@ func TestGoodPath(t *testing.T) {
 	destConnectionJson := path.Join(testPath, "out-release-dir", "chaincode", "server", "connection.json")
 	_, err = os.Stat(destConnectionJson)
 	gt.Expect(err).NotTo(HaveOccurred())
-
 }
 
 func TestMissingConnection(t *testing.T) {

@@ -12,9 +12,8 @@ import (
 type OrdererConfig struct {
 	BatchSizeStub        func() *orderer.BatchSize
 	batchSizeMutex       sync.RWMutex
-	batchSizeArgsForCall []struct {
-	}
-	batchSizeReturns struct {
+	batchSizeArgsForCall []struct{}
+	batchSizeReturns     struct {
 		result1 *orderer.BatchSize
 	}
 	batchSizeReturnsOnCall map[int]struct {
@@ -22,9 +21,8 @@ type OrdererConfig struct {
 	}
 	BatchTimeoutStub        func() time.Duration
 	batchTimeoutMutex       sync.RWMutex
-	batchTimeoutArgsForCall []struct {
-	}
-	batchTimeoutReturns struct {
+	batchTimeoutArgsForCall []struct{}
+	batchTimeoutReturns     struct {
 		result1 time.Duration
 	}
 	batchTimeoutReturnsOnCall map[int]struct {
@@ -32,9 +30,8 @@ type OrdererConfig struct {
 	}
 	CapabilitiesStub        func() channelconfig.OrdererCapabilities
 	capabilitiesMutex       sync.RWMutex
-	capabilitiesArgsForCall []struct {
-	}
-	capabilitiesReturns struct {
+	capabilitiesArgsForCall []struct{}
+	capabilitiesReturns     struct {
 		result1 channelconfig.OrdererCapabilities
 	}
 	capabilitiesReturnsOnCall map[int]struct {
@@ -42,9 +39,8 @@ type OrdererConfig struct {
 	}
 	ConsensusMetadataStub        func() []byte
 	consensusMetadataMutex       sync.RWMutex
-	consensusMetadataArgsForCall []struct {
-	}
-	consensusMetadataReturns struct {
+	consensusMetadataArgsForCall []struct{}
+	consensusMetadataReturns     struct {
 		result1 []byte
 	}
 	consensusMetadataReturnsOnCall map[int]struct {
@@ -52,9 +48,8 @@ type OrdererConfig struct {
 	}
 	ConsensusStateStub        func() orderer.ConsensusType_State
 	consensusStateMutex       sync.RWMutex
-	consensusStateArgsForCall []struct {
-	}
-	consensusStateReturns struct {
+	consensusStateArgsForCall []struct{}
+	consensusStateReturns     struct {
 		result1 orderer.ConsensusType_State
 	}
 	consensusStateReturnsOnCall map[int]struct {
@@ -62,9 +57,8 @@ type OrdererConfig struct {
 	}
 	ConsensusTypeStub        func() string
 	consensusTypeMutex       sync.RWMutex
-	consensusTypeArgsForCall []struct {
-	}
-	consensusTypeReturns struct {
+	consensusTypeArgsForCall []struct{}
+	consensusTypeReturns     struct {
 		result1 string
 	}
 	consensusTypeReturnsOnCall map[int]struct {
@@ -72,9 +66,8 @@ type OrdererConfig struct {
 	}
 	KafkaBrokersStub        func() []string
 	kafkaBrokersMutex       sync.RWMutex
-	kafkaBrokersArgsForCall []struct {
-	}
-	kafkaBrokersReturns struct {
+	kafkaBrokersArgsForCall []struct{}
+	kafkaBrokersReturns     struct {
 		result1 []string
 	}
 	kafkaBrokersReturnsOnCall map[int]struct {
@@ -82,9 +75,8 @@ type OrdererConfig struct {
 	}
 	MaxChannelsCountStub        func() uint64
 	maxChannelsCountMutex       sync.RWMutex
-	maxChannelsCountArgsForCall []struct {
-	}
-	maxChannelsCountReturns struct {
+	maxChannelsCountArgsForCall []struct{}
+	maxChannelsCountReturns     struct {
 		result1 uint64
 	}
 	maxChannelsCountReturnsOnCall map[int]struct {
@@ -92,9 +84,8 @@ type OrdererConfig struct {
 	}
 	OrganizationsStub        func() map[string]channelconfig.OrdererOrg
 	organizationsMutex       sync.RWMutex
-	organizationsArgsForCall []struct {
-	}
-	organizationsReturns struct {
+	organizationsArgsForCall []struct{}
+	organizationsReturns     struct {
 		result1 map[string]channelconfig.OrdererOrg
 	}
 	organizationsReturnsOnCall map[int]struct {
@@ -107,8 +98,7 @@ type OrdererConfig struct {
 func (fake *OrdererConfig) BatchSize() *orderer.BatchSize {
 	fake.batchSizeMutex.Lock()
 	ret, specificReturn := fake.batchSizeReturnsOnCall[len(fake.batchSizeArgsForCall)]
-	fake.batchSizeArgsForCall = append(fake.batchSizeArgsForCall, struct {
-	}{})
+	fake.batchSizeArgsForCall = append(fake.batchSizeArgsForCall, struct{}{})
 	fake.recordInvocation("BatchSize", []interface{}{})
 	fake.batchSizeMutex.Unlock()
 	if fake.BatchSizeStub != nil {
@@ -159,8 +149,7 @@ func (fake *OrdererConfig) BatchSizeReturnsOnCall(i int, result1 *orderer.BatchS
 func (fake *OrdererConfig) BatchTimeout() time.Duration {
 	fake.batchTimeoutMutex.Lock()
 	ret, specificReturn := fake.batchTimeoutReturnsOnCall[len(fake.batchTimeoutArgsForCall)]
-	fake.batchTimeoutArgsForCall = append(fake.batchTimeoutArgsForCall, struct {
-	}{})
+	fake.batchTimeoutArgsForCall = append(fake.batchTimeoutArgsForCall, struct{}{})
 	fake.recordInvocation("BatchTimeout", []interface{}{})
 	fake.batchTimeoutMutex.Unlock()
 	if fake.BatchTimeoutStub != nil {
@@ -211,8 +200,7 @@ func (fake *OrdererConfig) BatchTimeoutReturnsOnCall(i int, result1 time.Duratio
 func (fake *OrdererConfig) Capabilities() channelconfig.OrdererCapabilities {
 	fake.capabilitiesMutex.Lock()
 	ret, specificReturn := fake.capabilitiesReturnsOnCall[len(fake.capabilitiesArgsForCall)]
-	fake.capabilitiesArgsForCall = append(fake.capabilitiesArgsForCall, struct {
-	}{})
+	fake.capabilitiesArgsForCall = append(fake.capabilitiesArgsForCall, struct{}{})
 	fake.recordInvocation("Capabilities", []interface{}{})
 	fake.capabilitiesMutex.Unlock()
 	if fake.CapabilitiesStub != nil {
@@ -263,8 +251,7 @@ func (fake *OrdererConfig) CapabilitiesReturnsOnCall(i int, result1 channelconfi
 func (fake *OrdererConfig) ConsensusMetadata() []byte {
 	fake.consensusMetadataMutex.Lock()
 	ret, specificReturn := fake.consensusMetadataReturnsOnCall[len(fake.consensusMetadataArgsForCall)]
-	fake.consensusMetadataArgsForCall = append(fake.consensusMetadataArgsForCall, struct {
-	}{})
+	fake.consensusMetadataArgsForCall = append(fake.consensusMetadataArgsForCall, struct{}{})
 	fake.recordInvocation("ConsensusMetadata", []interface{}{})
 	fake.consensusMetadataMutex.Unlock()
 	if fake.ConsensusMetadataStub != nil {
@@ -315,8 +302,7 @@ func (fake *OrdererConfig) ConsensusMetadataReturnsOnCall(i int, result1 []byte)
 func (fake *OrdererConfig) ConsensusState() orderer.ConsensusType_State {
 	fake.consensusStateMutex.Lock()
 	ret, specificReturn := fake.consensusStateReturnsOnCall[len(fake.consensusStateArgsForCall)]
-	fake.consensusStateArgsForCall = append(fake.consensusStateArgsForCall, struct {
-	}{})
+	fake.consensusStateArgsForCall = append(fake.consensusStateArgsForCall, struct{}{})
 	fake.recordInvocation("ConsensusState", []interface{}{})
 	fake.consensusStateMutex.Unlock()
 	if fake.ConsensusStateStub != nil {
@@ -367,8 +353,7 @@ func (fake *OrdererConfig) ConsensusStateReturnsOnCall(i int, result1 orderer.Co
 func (fake *OrdererConfig) ConsensusType() string {
 	fake.consensusTypeMutex.Lock()
 	ret, specificReturn := fake.consensusTypeReturnsOnCall[len(fake.consensusTypeArgsForCall)]
-	fake.consensusTypeArgsForCall = append(fake.consensusTypeArgsForCall, struct {
-	}{})
+	fake.consensusTypeArgsForCall = append(fake.consensusTypeArgsForCall, struct{}{})
 	fake.recordInvocation("ConsensusType", []interface{}{})
 	fake.consensusTypeMutex.Unlock()
 	if fake.ConsensusTypeStub != nil {
@@ -419,8 +404,7 @@ func (fake *OrdererConfig) ConsensusTypeReturnsOnCall(i int, result1 string) {
 func (fake *OrdererConfig) KafkaBrokers() []string {
 	fake.kafkaBrokersMutex.Lock()
 	ret, specificReturn := fake.kafkaBrokersReturnsOnCall[len(fake.kafkaBrokersArgsForCall)]
-	fake.kafkaBrokersArgsForCall = append(fake.kafkaBrokersArgsForCall, struct {
-	}{})
+	fake.kafkaBrokersArgsForCall = append(fake.kafkaBrokersArgsForCall, struct{}{})
 	fake.recordInvocation("KafkaBrokers", []interface{}{})
 	fake.kafkaBrokersMutex.Unlock()
 	if fake.KafkaBrokersStub != nil {
@@ -471,8 +455,7 @@ func (fake *OrdererConfig) KafkaBrokersReturnsOnCall(i int, result1 []string) {
 func (fake *OrdererConfig) MaxChannelsCount() uint64 {
 	fake.maxChannelsCountMutex.Lock()
 	ret, specificReturn := fake.maxChannelsCountReturnsOnCall[len(fake.maxChannelsCountArgsForCall)]
-	fake.maxChannelsCountArgsForCall = append(fake.maxChannelsCountArgsForCall, struct {
-	}{})
+	fake.maxChannelsCountArgsForCall = append(fake.maxChannelsCountArgsForCall, struct{}{})
 	fake.recordInvocation("MaxChannelsCount", []interface{}{})
 	fake.maxChannelsCountMutex.Unlock()
 	if fake.MaxChannelsCountStub != nil {
@@ -523,8 +506,7 @@ func (fake *OrdererConfig) MaxChannelsCountReturnsOnCall(i int, result1 uint64) 
 func (fake *OrdererConfig) Organizations() map[string]channelconfig.OrdererOrg {
 	fake.organizationsMutex.Lock()
 	ret, specificReturn := fake.organizationsReturnsOnCall[len(fake.organizationsArgsForCall)]
-	fake.organizationsArgsForCall = append(fake.organizationsArgsForCall, struct {
-	}{})
+	fake.organizationsArgsForCall = append(fake.organizationsArgsForCall, struct{}{})
 	fake.recordInvocation("Organizations", []interface{}{})
 	fake.organizationsMutex.Unlock()
 	if fake.OrganizationsStub != nil {

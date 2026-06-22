@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -16,7 +16,6 @@ import (
 )
 
 func (p *Peer) InitializeChannel(channelID string, cryptoProvider bccsp.BCCSP, dbProvider statedb.VersionedDB) (*Channel, error) {
-
 	chanConf, err := fetchChannelConfig(dbProvider)
 	if err != nil {
 		return nil, err
@@ -71,7 +70,6 @@ func (p *Peer) InitializeChannel(channelID string, cryptoProvider bccsp.BCCSP, d
 }
 
 func fetchChannelConfig(dbProvider statedb.VersionedDB) (*common.Config, error) {
-
 	versionedValue, err := dbProvider.GetState(peerNamespace, channelConfigKey)
 	if err != nil {
 		return nil, err

@@ -16,9 +16,8 @@ import (
 
 // ReadAsset reads the information from collection
 func (s *SmartContract) ReadAsset(ctx contractapi.TransactionContextInterface, assetID string) (*Asset, error) {
-
 	log.Printf("ReadAsset: collection %v, ID %v", assetCollection, assetID)
-	assetJSON, err := ctx.GetStub().GetPrivateData(assetCollection, assetID) //get the asset from chaincode state
+	assetJSON, err := ctx.GetStub().GetPrivateData(assetCollection, assetID) // get the asset from chaincode state
 	if err != nil {
 		return nil, fmt.Errorf("failed to read asset: %v", err)
 	}
@@ -87,7 +86,6 @@ func (s *SmartContract) ReadTransferAgreement(ctx contractapi.TransactionContext
 // queries can be used to read data from private data collections, but can not be used in
 // a transaction that also writes to private data.
 func (s *SmartContract) GetAssetByRange(ctx contractapi.TransactionContextInterface, startKey string, endKey string) ([]*Asset, error) {
-
 	resultsIterator, err := ctx.GetStub().GetPrivateDataByRange(assetCollection, startKey, endKey)
 	if err != nil {
 		return nil, err
@@ -112,7 +110,6 @@ func (s *SmartContract) GetAssetByRange(ctx contractapi.TransactionContextInterf
 	}
 
 	return results, nil
-
 }
 
 // =======Rich queries =========================================================================
@@ -136,7 +133,6 @@ func (s *SmartContract) GetAssetByRange(ctx contractapi.TransactionContextInterf
 // Only available on state databases that support rich query (e.g. CouchDB)
 // =========================================================================================
 func (s *SmartContract) QueryAssetByOwner(ctx contractapi.TransactionContextInterface, assetType string, owner string) ([]*Asset, error) {
-
 	queryString := fmt.Sprintf("{\"selector\":{\"objectType\":\"%v\",\"owner\":\"%v\"}}", assetType, owner)
 
 	queryResults, err := s.getQueryResultForQueryString(ctx, queryString)
@@ -152,7 +148,6 @@ func (s *SmartContract) QueryAssetByOwner(ctx contractapi.TransactionContextInte
 // If this is not desired, follow the QueryAssetByOwner example for parameterized queries.
 // Only available on state databases that support rich query (e.g. CouchDB)
 func (s *SmartContract) QueryAssets(ctx contractapi.TransactionContextInterface, queryString string) ([]*Asset, error) {
-
 	queryResults, err := s.getQueryResultForQueryString(ctx, queryString)
 	if err != nil {
 		return nil, err
@@ -162,7 +157,6 @@ func (s *SmartContract) QueryAssets(ctx contractapi.TransactionContextInterface,
 
 // getQueryResultForQueryString executes the passed in query string.
 func (s *SmartContract) getQueryResultForQueryString(ctx contractapi.TransactionContextInterface, queryString string) ([]*Asset, error) {
-
 	resultsIterator, err := ctx.GetStub().GetPrivateDataQueryResult(assetCollection, queryString)
 	if err != nil {
 		return nil, err

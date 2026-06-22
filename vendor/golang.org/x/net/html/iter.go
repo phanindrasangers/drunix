@@ -31,7 +31,6 @@ func (n *Node) ChildNodes() iter.Seq[*Node] {
 		for c := n.FirstChild; c != nil && yield(c); c = c.NextSibling {
 		}
 	}
-
 }
 
 // Descendants returns an iterator over all nodes recursively beneath

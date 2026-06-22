@@ -11,10 +11,11 @@
 package msp
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -217,11 +218,14 @@ func file_msp_identities_proto_rawDescGZIP() []byte {
 	return file_msp_identities_proto_rawDescData
 }
 
-var file_msp_identities_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_msp_identities_proto_goTypes = []any{
-	(*SerializedIdentity)(nil),       // 0: msp.SerializedIdentity
-	(*SerializedIdemixIdentity)(nil), // 1: msp.SerializedIdemixIdentity
-}
+var (
+	file_msp_identities_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+	file_msp_identities_proto_goTypes  = []any{
+		(*SerializedIdentity)(nil),       // 0: msp.SerializedIdentity
+		(*SerializedIdemixIdentity)(nil), // 1: msp.SerializedIdemixIdentity
+	}
+)
+
 var file_msp_identities_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type

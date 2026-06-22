@@ -10,9 +10,8 @@ import (
 type SelfDescribingSysCC struct {
 	ChaincodeStub        func() shim.Chaincode
 	chaincodeMutex       sync.RWMutex
-	chaincodeArgsForCall []struct {
-	}
-	chaincodeReturns struct {
+	chaincodeArgsForCall []struct{}
+	chaincodeReturns     struct {
 		result1 shim.Chaincode
 	}
 	chaincodeReturnsOnCall map[int]struct {
@@ -20,9 +19,8 @@ type SelfDescribingSysCC struct {
 	}
 	NameStub        func() string
 	nameMutex       sync.RWMutex
-	nameArgsForCall []struct {
-	}
-	nameReturns struct {
+	nameArgsForCall []struct{}
+	nameReturns     struct {
 		result1 string
 	}
 	nameReturnsOnCall map[int]struct {
@@ -35,8 +33,7 @@ type SelfDescribingSysCC struct {
 func (fake *SelfDescribingSysCC) Chaincode() shim.Chaincode {
 	fake.chaincodeMutex.Lock()
 	ret, specificReturn := fake.chaincodeReturnsOnCall[len(fake.chaincodeArgsForCall)]
-	fake.chaincodeArgsForCall = append(fake.chaincodeArgsForCall, struct {
-	}{})
+	fake.chaincodeArgsForCall = append(fake.chaincodeArgsForCall, struct{}{})
 	fake.recordInvocation("Chaincode", []interface{}{})
 	fake.chaincodeMutex.Unlock()
 	if fake.ChaincodeStub != nil {
@@ -87,8 +84,7 @@ func (fake *SelfDescribingSysCC) ChaincodeReturnsOnCall(i int, result1 shim.Chai
 func (fake *SelfDescribingSysCC) Name() string {
 	fake.nameMutex.Lock()
 	ret, specificReturn := fake.nameReturnsOnCall[len(fake.nameArgsForCall)]
-	fake.nameArgsForCall = append(fake.nameArgsForCall, struct {
-	}{})
+	fake.nameArgsForCall = append(fake.nameArgsForCall, struct{}{})
 	fake.recordInvocation("Name", []interface{}{})
 	fake.nameMutex.Unlock()
 	if fake.NameStub != nil {

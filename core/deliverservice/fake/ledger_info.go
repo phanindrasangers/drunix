@@ -8,9 +8,8 @@ import (
 type LedgerInfo struct {
 	LedgerHeightStub        func() (uint64, error)
 	ledgerHeightMutex       sync.RWMutex
-	ledgerHeightArgsForCall []struct {
-	}
-	ledgerHeightReturns struct {
+	ledgerHeightArgsForCall []struct{}
+	ledgerHeightReturns     struct {
 		result1 uint64
 		result2 error
 	}
@@ -25,8 +24,7 @@ type LedgerInfo struct {
 func (fake *LedgerInfo) LedgerHeight() (uint64, error) {
 	fake.ledgerHeightMutex.Lock()
 	ret, specificReturn := fake.ledgerHeightReturnsOnCall[len(fake.ledgerHeightArgsForCall)]
-	fake.ledgerHeightArgsForCall = append(fake.ledgerHeightArgsForCall, struct {
-	}{})
+	fake.ledgerHeightArgsForCall = append(fake.ledgerHeightArgsForCall, struct{}{})
 	fake.recordInvocation("LedgerHeight", []interface{}{})
 	fake.ledgerHeightMutex.Unlock()
 	if fake.LedgerHeightStub != nil {

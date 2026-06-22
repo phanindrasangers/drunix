@@ -193,9 +193,11 @@ func (l fnlogger) GetUnderlying() func(prefix, args string) {
 }
 
 // Assert conformance to the interfaces.
-var _ logr.LogSink = &fnlogger{}
-var _ logr.CallDepthLogSink = &fnlogger{}
-var _ Underlier = &fnlogger{}
+var (
+	_ logr.LogSink          = &fnlogger{}
+	_ logr.CallDepthLogSink = &fnlogger{}
+	_ Underlier             = &fnlogger{}
+)
 
 // NewFormatter constructs a Formatter which emits a JSON-like key=value format.
 func NewFormatter(opts Options) Formatter {
@@ -208,8 +210,10 @@ func NewFormatterJSON(opts Options) Formatter {
 }
 
 // Defaults for Options.
-const defaultTimestampFormat = "2006-01-02 15:04:05.000000"
-const defaultMaxLogDepth = 16
+const (
+	defaultTimestampFormat = "2006-01-02 15:04:05.000000"
+	defaultMaxLogDepth     = 16
+)
 
 func newFormatter(opts Options, outfmt outputFormat) Formatter {
 	if opts.TimestampFormat == "" {

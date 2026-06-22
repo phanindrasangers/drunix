@@ -26,7 +26,6 @@ func NewClientConn(
 	tlsConf *tls.Config,
 	kaOpts keepalive.ClientParameters,
 ) (*grpc.ClientConn, error) {
-
 	dialOpts := []grpc.DialOption{
 		grpc.WithKeepaliveParams(kaOpts),
 		grpc.WithBlock(),

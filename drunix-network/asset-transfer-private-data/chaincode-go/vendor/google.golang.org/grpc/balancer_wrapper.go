@@ -366,7 +366,6 @@ func (acbw *acBalancerWrapper) NewStream(ctx context.Context, desc *StreamDesc, 
 	transport := acbw.ac.getReadyTransport()
 	if transport == nil {
 		return nil, status.Errorf(codes.Unavailable, "SubConn state is not Ready")
-
 	}
 	return newNonRetryClientStream(ctx, desc, method, transport, acbw.ac, opts...)
 }

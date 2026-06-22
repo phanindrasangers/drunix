@@ -110,7 +110,6 @@ func TestQueryAssetByOwner(t *testing.T) {
 	assets, err = assetTransferCC.QueryAssetByOwner(transactionContext, "valuableasset", "user1")
 	require.EqualError(t, err, "failed retrieving next item")
 	require.Nil(t, assets)
-
 }
 
 func TestQueryAssets(t *testing.T) {
@@ -181,5 +180,4 @@ func TestGetAssetByRange(t *testing.T) {
 	assets, err = assetTransferCC.GetAssetByRange(transactionContext, "st", "end")
 	require.NoError(t, err)
 	require.Equal(t, []*chaincode.Asset{asset}, assets)
-
 }

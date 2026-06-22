@@ -17,7 +17,7 @@ type Program struct {
 	DefaultCommand     Command
 	DeprecatedCommands []DeprecatedCommand
 
-	//For testing - leave as nil in production
+	// For testing - leave as nil in production
 	OutWriter io.Writer
 	ErrWriter io.Writer
 	Exiter    func(code int)

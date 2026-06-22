@@ -10,13 +10,11 @@ import (
 type ResultsIterator struct {
 	CloseStub        func()
 	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
-	NextStub        func() (ledger.QueryResult, error)
-	nextMutex       sync.RWMutex
-	nextArgsForCall []struct {
-	}
-	nextReturns struct {
+	closeArgsForCall []struct{}
+	NextStub         func() (ledger.QueryResult, error)
+	nextMutex        sync.RWMutex
+	nextArgsForCall  []struct{}
+	nextReturns      struct {
 		result1 ledger.QueryResult
 		result2 error
 	}
@@ -30,8 +28,7 @@ type ResultsIterator struct {
 
 func (fake *ResultsIterator) Close() {
 	fake.closeMutex.Lock()
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	stub := fake.CloseStub
 	fake.recordInvocation("Close", []interface{}{})
 	fake.closeMutex.Unlock()
@@ -55,8 +52,7 @@ func (fake *ResultsIterator) CloseCalls(stub func()) {
 func (fake *ResultsIterator) Next() (ledger.QueryResult, error) {
 	fake.nextMutex.Lock()
 	ret, specificReturn := fake.nextReturnsOnCall[len(fake.nextArgsForCall)]
-	fake.nextArgsForCall = append(fake.nextArgsForCall, struct {
-	}{})
+	fake.nextArgsForCall = append(fake.nextArgsForCall, struct{}{})
 	stub := fake.NextStub
 	fakeReturns := fake.nextReturns
 	fake.recordInvocation("Next", []interface{}{})

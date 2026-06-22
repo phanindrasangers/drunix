@@ -25,7 +25,7 @@ import (
 )
 
 const (
-	minUnicodeRuneValue   = 0 //U+0000
+	minUnicodeRuneValue   = 0 // U+0000
 	compositeKeyNamespace = "\x00"
 )
 
@@ -300,10 +300,10 @@ func (stub *MockStub) GetStateByRange(startKey, endKey string) (shim.StateQueryI
 	return NewMockStateRangeQueryIterator(stub, startKey, endKey), nil
 }
 
-//To ensure that simple keys do not go into composite key namespace,
-//we validate simplekey to check whether the key starts with 0x00 (which
-//is the namespace for compositeKey). This helps in avoding simple/composite
-//key collisions.
+// To ensure that simple keys do not go into composite key namespace,
+// we validate simplekey to check whether the key starts with 0x00 (which
+// is the namespace for compositeKey). This helps in avoding simple/composite
+// key collisions.
 func validateSimpleKeys(simpleKeys ...string) error {
 	for _, key := range simpleKeys {
 		if len(key) > 0 && key[0] == compositeKeyNamespace[0] {
@@ -515,7 +515,7 @@ func NewMockStub(name string, cc shim.Chaincode) *MockStub {
 	s.EndorsementPolicies = make(map[string]map[string][]byte)
 	s.Invokables = make(map[string]*MockStub)
 	s.Keys = list.New()
-	s.ChaincodeEventsChannel = make(chan *pb.ChaincodeEvent, 100) //define large capacity for non-blocking setEvent calls.
+	s.ChaincodeEventsChannel = make(chan *pb.ChaincodeEvent, 100) // define large capacity for non-blocking setEvent calls.
 	s.Decorations = make(map[string][]byte)
 
 	return s

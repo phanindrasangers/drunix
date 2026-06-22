@@ -244,7 +244,7 @@ func retrieveRwsetForTx(blkNum uint64, txNum uint64, blockStore *blkstorage.Bloc
 	if err != nil {
 		return nil, err
 	}
-	//DRUNIX : if the txn is in lite format use process rwset directly from lean envelope
+	// DRUNIX : if the txn is in lite format use process rwset directly from lean envelope
 	if txEnvelope.LeanEnv != nil {
 		return retrieveRwsetForLtx(blkNum, txNum, blockStore)
 	}

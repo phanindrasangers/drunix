@@ -59,10 +59,10 @@ func StartNew(total int) *ProgressBar {
 
 // Callback for custom output
 // For example:
-// bar.Callback = func(s string) {
-//     mySuperPrint(s)
-// }
 //
+//	bar.Callback = func(s string) {
+//	    mySuperPrint(s)
+//	}
 type Callback func(out string)
 
 type ProgressBar struct {
@@ -87,7 +87,7 @@ type ProgressBar struct {
 	UnitsWidth   int
 	TimeBoxWidth int
 
-	finishOnce sync.Once //Guards isFinish
+	finishOnce sync.Once // Guards isFinish
 	finish     chan struct{}
 	isFinish   bool
 
@@ -223,7 +223,7 @@ func (pb *ProgressBar) SetWidth(width int) *ProgressBar {
 
 // End print
 func (pb *ProgressBar) Finish() {
-	//Protect multiple calls
+	// Protect multiple calls
 	pb.finishOnce.Do(func() {
 		close(pb.finish)
 		pb.write(atomic.LoadInt64(&pb.Total), atomic.LoadInt64(&pb.current))

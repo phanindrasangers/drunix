@@ -12,9 +12,11 @@ import (
 	"weak"
 )
 
-var weakMu sync.Mutex
-var simpleEnc weak.Pointer[Encoder]
-var simpleDec weak.Pointer[Decoder]
+var (
+	weakMu    sync.Mutex
+	simpleEnc weak.Pointer[Encoder]
+	simpleDec weak.Pointer[Decoder]
+)
 
 // EncodeTo appends the encoded data from src to dst.
 func EncodeTo(dst []byte, src []byte) []byte {

@@ -140,7 +140,6 @@ func split(str string) []string {
 	poolOfSplitters.RedeemSplitter(s)
 
 	return result
-
 }
 
 func newSplitter(options ...splitterOption) splitter {

@@ -1,10 +1,8 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
-
-
 
 package peer
 
@@ -38,7 +36,6 @@ func (p *Peer) createChannelOnConfigUpdate(
 	legacyLifecycleValidation plugindispatcher.LifecycleResources,
 	newLifecycleValidation plugindispatcher.CollectionAndLifecycleResources,
 ) error {
-
 	isDone := make(chan error, 1)
 	defer close(isDone)
 
@@ -48,7 +45,6 @@ func (p *Peer) createChannelOnConfigUpdate(
 }
 
 func newCommittingPeerClient(config *CommittingPeerConfig) (gateway.GatewayClient, error) {
-
 	certificatePEM, err := os.ReadFile(config.TlsCertPath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read TLS certificate file [%s]: %w", config.TlsCertPath, err)
@@ -92,7 +88,6 @@ func (p *Peer) configEventListener(
 	newLifecycleValidation plugindispatcher.CollectionAndLifecycleResources,
 	isDone chan<- error,
 ) {
-
 	failureCounter := 0
 	backoffExponentBase := 2.0
 	maxFailures := int(math.Ceil(math.Log(float64(p.CommittingPeerConfig.MaxRetryDelay)/float64(p.CommittingPeerConfig.InitialRetryDelay)) / math.Log(backoffExponentBase)))
@@ -122,7 +117,6 @@ func (p *Peer) configEventListener(
 			PeerId:    p.PeerId,
 			ChannelId: cid,
 		})
-
 		if err != nil {
 			peerLogger.Errorf("Error ConfigEventListener: %v", err)
 			failureCounter++

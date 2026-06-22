@@ -415,7 +415,8 @@ func (c *Chain) Order(env *common.Envelope, configSeq uint64) error {
 	return c.Submit(&orderer.SubmitRequest{
 		LastValidationSeq: configSeq,
 		Payload:           env,
-		Channel:           c.channelID}, 0)
+		Channel:           c.channelID,
+	}, 0)
 }
 
 /*
@@ -965,7 +966,7 @@ func (c *Chain) runBatch() {
 	cancelProp = func() {} // no-op as initial value
 
 	batchDoneC := make(chan struct{})
-	go c.batcher(batchDoneC) //FB
+	go c.batcher(batchDoneC) // FB
 
 	becomeLeader := func() (chan<- *common.Block, context.CancelFunc) {
 		c.Metrics.IsLeader.Set(1)
@@ -1312,7 +1313,6 @@ func (c *Chain) ordered(msg *orderer.SubmitRequest) (batches [][]*common.Envelop
 }
 
 func (c *Chain) orderedBatch(msg *orderer.SubmitRequest) (batches []*orderer.Batch, pending bool, err error) {
-
 	seq := c.support.Sequence()
 
 	if msg.IsConfig {
@@ -1974,14 +1974,11 @@ func (c *Chain) batcher(batchDoneC chan struct{}) {
 			// fmt.Printf("-------Calling ordered for batches \n")
 
 			batches, pending, err := c.orderedBatch(req)
-
 			// for _, batch := range batches {
 			// 	fmt.Printf("-------The batch has so many req---- %v\n", len(batch.Reqs))
 			// 	// batchesToSubmit = append(batchesToSubmit, &orderer.Batch{Batch: batch})
 			// }
-
 			// fmt.Printf("-------err: %v---length of batches: %v\n", err, len(batches))
-
 			if err != nil {
 				c.logger.Errorf("Failed to order message: %s", err)
 				continue
@@ -1999,7 +1996,7 @@ func (c *Chain) batcher(batchDoneC chan struct{}) {
 			// 	batchesToSubmit = append(batchesToSubmit, &orderer.Batch{Batch: batch})
 
 			// }
-			//TODO: Handle the config envelope
+			// TODO: Handle the config envelope
 			if len(batches) > 0 && len(batches[0].Reqs) > 0 {
 				err = c.Submit(&orderer.SubmitRequest{
 					Channel: c.channelID,
@@ -2029,7 +2026,7 @@ func (c *Chain) batcher(batchDoneC chan struct{}) {
 
 			err := c.Submit(&orderer.SubmitRequest{
 				Channel: c.channelID,
-				//LastValidationSeq: req.LastValidationSeq,
+				// LastValidationSeq: req.LastValidationSeq,
 				Type:    orderer.SubmitRequestType_BATCHES,
 				Batches: batchesToSubmit,
 			}, 0)
@@ -2048,7 +2045,6 @@ DRUNIX:checkValidationStatusOfTxns checks the validation status of transactions 
 a batch by checking req.LastValidationSeq < seq
 */
 func (c *Chain) checkValidationStatusOfTxns(inbatch *orderer.Batch) (*orderer.Batch, error) {
-
 	seq := c.support.Sequence()
 	var err error
 
@@ -2072,7 +2068,7 @@ func (c *Chain) checkValidationStatusOfTxns(inbatch *orderer.Batch) (*orderer.Ba
 			c.logger.Errorf("Normal message was validated against %d, although current config seq has advanced (%d)", inbatch.Reqs[0].LastValidationSeq, seq)
 			if _, err := c.support.ProcessNormalMsg(req.Payload); err != nil {
 				c.Metrics.ProposalFailures.Add(1)
-				//return nil, true, errors.Errorf("bad normal message: %s", err)
+				// return nil, true, errors.Errorf("bad normal message: %s", err)
 				continue
 			}
 		}

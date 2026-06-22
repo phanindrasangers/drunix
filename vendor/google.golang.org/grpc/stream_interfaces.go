@@ -166,9 +166,11 @@ type GenericClientStream[Req any, Res any] struct {
 	ClientStream
 }
 
-var _ ServerStreamingClient[string] = (*GenericClientStream[int, string])(nil)
-var _ ClientStreamingClient[int, string] = (*GenericClientStream[int, string])(nil)
-var _ BidiStreamingClient[int, string] = (*GenericClientStream[int, string])(nil)
+var (
+	_ ServerStreamingClient[string]      = (*GenericClientStream[int, string])(nil)
+	_ ClientStreamingClient[int, string] = (*GenericClientStream[int, string])(nil)
+	_ BidiStreamingClient[int, string]   = (*GenericClientStream[int, string])(nil)
+)
 
 // Send pushes one message into the stream of requests to be consumed by the
 // server. The type of message which can be sent is determined by the Req type
@@ -208,9 +210,11 @@ type GenericServerStream[Req any, Res any] struct {
 	ServerStream
 }
 
-var _ ServerStreamingServer[string] = (*GenericServerStream[int, string])(nil)
-var _ ClientStreamingServer[int, string] = (*GenericServerStream[int, string])(nil)
-var _ BidiStreamingServer[int, string] = (*GenericServerStream[int, string])(nil)
+var (
+	_ ServerStreamingServer[string]      = (*GenericServerStream[int, string])(nil)
+	_ ClientStreamingServer[int, string] = (*GenericServerStream[int, string])(nil)
+	_ BidiStreamingServer[int, string]   = (*GenericServerStream[int, string])(nil)
+)
 
 // Send pushes one message into the stream of responses to be consumed by the
 // client. The type of message which can be sent is determined by the Res

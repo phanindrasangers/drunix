@@ -37,9 +37,8 @@ type FakeConsenterSupport struct {
 	}
 	BlockCutterStub        func() blockcutter.Receiver
 	blockCutterMutex       sync.RWMutex
-	blockCutterArgsForCall []struct {
-	}
-	blockCutterReturns struct {
+	blockCutterArgsForCall []struct{}
+	blockCutterReturns     struct {
 		result1 blockcutter.Receiver
 	}
 	blockCutterReturnsOnCall map[int]struct {
@@ -47,9 +46,8 @@ type FakeConsenterSupport struct {
 	}
 	ChannelConfigStub        func() channelconfig.Channel
 	channelConfigMutex       sync.RWMutex
-	channelConfigArgsForCall []struct {
-	}
-	channelConfigReturns struct {
+	channelConfigArgsForCall []struct{}
+	channelConfigReturns     struct {
 		result1 channelconfig.Channel
 	}
 	channelConfigReturnsOnCall map[int]struct {
@@ -57,9 +55,8 @@ type FakeConsenterSupport struct {
 	}
 	ChannelIDStub        func() string
 	channelIDMutex       sync.RWMutex
-	channelIDArgsForCall []struct {
-	}
-	channelIDReturns struct {
+	channelIDArgsForCall []struct{}
+	channelIDReturns     struct {
 		result1 string
 	}
 	channelIDReturnsOnCall map[int]struct {
@@ -89,9 +86,8 @@ type FakeConsenterSupport struct {
 	}
 	HeightStub        func() uint64
 	heightMutex       sync.RWMutex
-	heightArgsForCall []struct {
-	}
-	heightReturns struct {
+	heightArgsForCall []struct{}
+	heightReturns     struct {
 		result1 uint64
 	}
 	heightReturnsOnCall map[int]struct {
@@ -142,9 +138,8 @@ type FakeConsenterSupport struct {
 	}
 	SequenceStub        func() uint64
 	sequenceMutex       sync.RWMutex
-	sequenceArgsForCall []struct {
-	}
-	sequenceReturns struct {
+	sequenceArgsForCall []struct{}
+	sequenceReturns     struct {
 		result1 uint64
 	}
 	sequenceReturnsOnCall map[int]struct {
@@ -152,9 +147,8 @@ type FakeConsenterSupport struct {
 	}
 	SerializeStub        func() ([]byte, error)
 	serializeMutex       sync.RWMutex
-	serializeArgsForCall []struct {
-	}
-	serializeReturns struct {
+	serializeArgsForCall []struct{}
+	serializeReturns     struct {
 		result1 []byte
 		result2 error
 	}
@@ -164,9 +158,8 @@ type FakeConsenterSupport struct {
 	}
 	SharedConfigStub        func() channelconfig.Orderer
 	sharedConfigMutex       sync.RWMutex
-	sharedConfigArgsForCall []struct {
-	}
-	sharedConfigReturns struct {
+	sharedConfigArgsForCall []struct{}
+	sharedConfigReturns     struct {
 		result1 channelconfig.Orderer
 	}
 	sharedConfigReturnsOnCall map[int]struct {
@@ -336,8 +329,7 @@ func (fake *FakeConsenterSupport) BlockReturnsOnCall(i int, result1 *common.Bloc
 func (fake *FakeConsenterSupport) BlockCutter() blockcutter.Receiver {
 	fake.blockCutterMutex.Lock()
 	ret, specificReturn := fake.blockCutterReturnsOnCall[len(fake.blockCutterArgsForCall)]
-	fake.blockCutterArgsForCall = append(fake.blockCutterArgsForCall, struct {
-	}{})
+	fake.blockCutterArgsForCall = append(fake.blockCutterArgsForCall, struct{}{})
 	fake.recordInvocation("BlockCutter", []interface{}{})
 	fake.blockCutterMutex.Unlock()
 	if fake.BlockCutterStub != nil {
@@ -388,8 +380,7 @@ func (fake *FakeConsenterSupport) BlockCutterReturnsOnCall(i int, result1 blockc
 func (fake *FakeConsenterSupport) ChannelConfig() channelconfig.Channel {
 	fake.channelConfigMutex.Lock()
 	ret, specificReturn := fake.channelConfigReturnsOnCall[len(fake.channelConfigArgsForCall)]
-	fake.channelConfigArgsForCall = append(fake.channelConfigArgsForCall, struct {
-	}{})
+	fake.channelConfigArgsForCall = append(fake.channelConfigArgsForCall, struct{}{})
 	fake.recordInvocation("ChannelConfig", []interface{}{})
 	fake.channelConfigMutex.Unlock()
 	if fake.ChannelConfigStub != nil {
@@ -440,8 +431,7 @@ func (fake *FakeConsenterSupport) ChannelConfigReturnsOnCall(i int, result1 chan
 func (fake *FakeConsenterSupport) ChannelID() string {
 	fake.channelIDMutex.Lock()
 	ret, specificReturn := fake.channelIDReturnsOnCall[len(fake.channelIDArgsForCall)]
-	fake.channelIDArgsForCall = append(fake.channelIDArgsForCall, struct {
-	}{})
+	fake.channelIDArgsForCall = append(fake.channelIDArgsForCall, struct{}{})
 	fake.recordInvocation("ChannelID", []interface{}{})
 	fake.channelIDMutex.Unlock()
 	if fake.ChannelIDStub != nil {
@@ -617,8 +607,7 @@ func (fake *FakeConsenterSupport) CreateNextBlockReturnsOnCall(i int, result1 *c
 func (fake *FakeConsenterSupport) Height() uint64 {
 	fake.heightMutex.Lock()
 	ret, specificReturn := fake.heightReturnsOnCall[len(fake.heightArgsForCall)]
-	fake.heightArgsForCall = append(fake.heightArgsForCall, struct {
-	}{})
+	fake.heightArgsForCall = append(fake.heightArgsForCall, struct{}{})
 	fake.recordInvocation("Height", []interface{}{})
 	fake.heightMutex.Unlock()
 	if fake.HeightStub != nil {
@@ -864,8 +853,7 @@ func (fake *FakeConsenterSupport) ProcessNormalMsgReturnsOnCall(i int, result1 u
 func (fake *FakeConsenterSupport) Sequence() uint64 {
 	fake.sequenceMutex.Lock()
 	ret, specificReturn := fake.sequenceReturnsOnCall[len(fake.sequenceArgsForCall)]
-	fake.sequenceArgsForCall = append(fake.sequenceArgsForCall, struct {
-	}{})
+	fake.sequenceArgsForCall = append(fake.sequenceArgsForCall, struct{}{})
 	fake.recordInvocation("Sequence", []interface{}{})
 	fake.sequenceMutex.Unlock()
 	if fake.SequenceStub != nil {
@@ -916,8 +904,7 @@ func (fake *FakeConsenterSupport) SequenceReturnsOnCall(i int, result1 uint64) {
 func (fake *FakeConsenterSupport) Serialize() ([]byte, error) {
 	fake.serializeMutex.Lock()
 	ret, specificReturn := fake.serializeReturnsOnCall[len(fake.serializeArgsForCall)]
-	fake.serializeArgsForCall = append(fake.serializeArgsForCall, struct {
-	}{})
+	fake.serializeArgsForCall = append(fake.serializeArgsForCall, struct{}{})
 	fake.recordInvocation("Serialize", []interface{}{})
 	fake.serializeMutex.Unlock()
 	if fake.SerializeStub != nil {
@@ -971,8 +958,7 @@ func (fake *FakeConsenterSupport) SerializeReturnsOnCall(i int, result1 []byte, 
 func (fake *FakeConsenterSupport) SharedConfig() channelconfig.Orderer {
 	fake.sharedConfigMutex.Lock()
 	ret, specificReturn := fake.sharedConfigReturnsOnCall[len(fake.sharedConfigArgsForCall)]
-	fake.sharedConfigArgsForCall = append(fake.sharedConfigArgsForCall, struct {
-	}{})
+	fake.sharedConfigArgsForCall = append(fake.sharedConfigArgsForCall, struct{}{})
 	fake.recordInvocation("SharedConfig", []interface{}{})
 	fake.sharedConfigMutex.Unlock()
 	if fake.SharedConfigStub != nil {

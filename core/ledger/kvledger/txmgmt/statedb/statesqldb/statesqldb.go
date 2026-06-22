@@ -1,9 +1,8 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
-
 
 package statesqldb
 
@@ -32,7 +31,6 @@ var (
 )
 
 func NewVersionedDBProvider(config *ledger.SqlDbConfig, metricsProvider metrics.Provider, sysNamespaces []string) (*VersionedDBProvider, error) {
-
 	logger.Info("NewVersionedDBProvider : STATE SQL DB")
 
 	sqlClient, err := newSqlClient(config)
@@ -92,7 +90,6 @@ func (provider *VersionedDBProvider) GetDBHandle(dbName string, nsProvider state
 
 // To create newVersionedDB instance
 func (provider *VersionedDBProvider) newVersionedDB(dbName string, nsProvider statedb.NamespaceProvider, metricsProvider metrics.Provider) (*versionedDB, error) {
-
 	// DRUNIX TODO:
 	// Remove lifecycle segregation based on peer ID.
 	sqlSchema, err := provider.sqlClient.NewSchema(dbName, "peer", provider.conf.LitePeerEnabled)
@@ -121,12 +118,12 @@ func (provider *VersionedDBProvider) newVersionedDB(dbName string, nsProvider st
 		litePeerEnabled: provider.conf.LitePeerEnabled,
 	}, nil
 }
+
 func (provider *VersionedDBProvider) ImportFromSnapshot(
 	dbName string,
 	savepoint *version.Height,
 	itr statedb.FullScanIterator,
 ) error {
-
 	db, err := provider.newVersionedDB(dbName, nil, nil)
 	if err != nil {
 		return err
@@ -161,6 +158,7 @@ func (provider *VersionedDBProvider) ImportFromSnapshot(
 
 	return nil
 }
+
 func (provider *VersionedDBProvider) BytesKeySupported() bool {
 	return false
 }
@@ -169,6 +167,7 @@ func (provider *VersionedDBProvider) BytesKeySupported() bool {
 DRUNIX: This function is there to satisfy the interface method impl
 */
 func (provider *VersionedDBProvider) Close() {}
+
 func (provider *VersionedDBProvider) Drop(dbName string) error {
 	return nil
 }
@@ -184,14 +183,13 @@ type versionedDB struct {
 }
 
 func (db *versionedDB) GetState(namespace string, key string) (*statedb.VersionedValue, error) {
-
 	encodedDataKey := string(encodeDataKey(namespace, key))
 
-	//TODO :- add metrices
+	// TODO :- add metrices
 	return db.sqlSchema.Get(encodedDataKey)
 }
-func (db *versionedDB) GetVersion(namespace string, key string) (*version.Height, error) {
 
+func (db *versionedDB) GetVersion(namespace string, key string) (*version.Height, error) {
 	if height, found := db.GetCachedVersion(namespace, key); found {
 		return height, nil
 	}
@@ -221,8 +219,8 @@ func (db *versionedDB) GetStateMultipleKeys(namespace string, keys []string) ([]
 func (db *versionedDB) GetStateRangeScanIterator(namespace string, startKey string, endKey string) (statedb.ResultsIterator, error) {
 	return db.GetStateRangeScanIteratorWithPagination(namespace, startKey, endKey, 10)
 }
-func (db *versionedDB) GetStateRangeScanIteratorWithPagination(namespace string, startKey string, endKey string, pageSize int32) (statedb.QueryResultsIterator, error) {
 
+func (db *versionedDB) GetStateRangeScanIteratorWithPagination(namespace string, startKey string, endKey string, pageSize int32) (statedb.QueryResultsIterator, error) {
 	if bytes.Equal([]byte(startKey), []byte{'\x01'}) {
 		startKey = ""
 	}
@@ -361,6 +359,7 @@ func (db *versionedDB) ApplyUpdates(batch *statedb.UpdateBatch, height *version.
 	}
 	return nil
 }
+
 func (db *versionedDB) GetLatestSavePoint() (*version.Height, error) {
 	startTime := time.Now()
 	versionedValue, err := db.sqlSchema.Get(savePointKey)
@@ -445,7 +444,6 @@ type SqlScanner struct {
 }
 
 func (db *versionedDB) newSqlScanner(compositeKey string, cursor int, pageSize int, namespace string, key string) *SqlScanner {
-
 	return &SqlScanner{
 		CompositeKey: compositeKey,
 		Cursor:       cursor,
@@ -457,13 +455,11 @@ func (db *versionedDB) newSqlScanner(compositeKey string, cursor int, pageSize i
 }
 
 func (s *SqlScanner) Next() (*statedb.VersionedKV, error) {
-
 	if s.Cursor >= s.PageSize {
 		return nil, nil
 	}
 
 	encodedkey, versionedValue, err := s.db.sqlSchema.Next(s.CompositeKey, s.Cursor, s.PageSize)
-
 	if err != nil {
 		return nil, err
 	}
@@ -483,14 +479,12 @@ func (s *SqlScanner) Next() (*statedb.VersionedKV, error) {
 		},
 		VersionedValue: versionedValue,
 	}, nil
-
 }
 
 func (s *SqlScanner) Close() {
 }
 
 func (s *SqlScanner) GetBookmarkAndClose() string {
-
 	key, err := s.db.sqlSchema.NextKey(s.Key, s.Cursor, s.PageSize)
 	if err != nil {
 		logger.Errorf("GetBookmarkAndClose: error querying next key. key:%s, cursor:%d, error:%+v", s.Key, s.Cursor, err)
@@ -510,7 +504,6 @@ type SqlExecuter struct {
 }
 
 func (db *versionedDB) newSqlExecuter(namespace string, query string, bookmark string, pageSize int) *SqlExecuter {
-
 	return &SqlExecuter{
 		Namespace: namespace,
 		Query:     query,
@@ -522,7 +515,6 @@ func (db *versionedDB) newSqlExecuter(namespace string, query string, bookmark s
 }
 
 func (s *SqlExecuter) Next() (*statedb.VersionedKV, error) {
-
 	if s.Cursor >= s.PageSize {
 		return nil, nil
 	}
@@ -553,7 +545,6 @@ func (s *SqlExecuter) Close() {
 }
 
 func (s *SqlExecuter) GetBookmarkAndClose() string {
-
 	keyBytes, _, err := s.db.sqlSchema.ExecuteNext(s.Namespace, s.Query, s.Cursor, s.PageSize)
 	if err != nil {
 		logger.Errorf("err GetBookmarkAndClose : %v\n", err)

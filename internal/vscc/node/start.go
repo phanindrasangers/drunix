@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 
@@ -311,7 +311,7 @@ func serve(args []string) error {
 		return errors.WithMessage(err, "could not decode peer handlers configuration")
 	}
 
-	//DRUNIX : changed vscc validation handler in config from DefaultValidation to DefaultValidationAdapter
+	// DRUNIX : changed vscc validation handler in config from DefaultValidation to DefaultValidationAdapter
 	libConf.Validators["vscc"].Name = "DefaultValidationAdapter"
 
 	reg := library.InitRegistryAdapter(libConf)

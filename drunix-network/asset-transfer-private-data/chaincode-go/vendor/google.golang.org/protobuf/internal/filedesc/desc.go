@@ -210,6 +210,7 @@ func (ed *Enum) Options() protoreflect.ProtoMessage {
 	}
 	return descopts.Enum
 }
+
 func (ed *Enum) Values() protoreflect.EnumValueDescriptors {
 	if ed.L1.eagerValues {
 		return &ed.L2.Values
@@ -224,6 +225,7 @@ func (ed *Enum) lazyInit() *EnumL2 {
 	ed.L0.ParentFile.lazyInit() // implicitly initializes L2
 	return ed.L2
 }
+
 func (ed *Enum) IsClosed() bool {
 	return !ed.L1.EditionFeatures.IsOpenEnum
 }
@@ -355,9 +357,11 @@ func (fd *Field) HasPresence() bool {
 	}
 	return fd.IsExtension() || fd.L1.EditionFeatures.IsFieldPresence || fd.L1.Message != nil || fd.L1.ContainingOneof != nil
 }
+
 func (fd *Field) HasOptionalKeyword() bool {
 	return (fd.L0.ParentFile.L1.Syntax == protoreflect.Proto2 && fd.L1.Cardinality == protoreflect.Optional && fd.L1.ContainingOneof == nil) || fd.L1.IsProto3Optional
 }
+
 func (fd *Field) IsPacked() bool {
 	if fd.L1.Cardinality != protoreflect.Repeated {
 		return false
@@ -379,6 +383,7 @@ func (fd *Field) MapKey() protoreflect.FieldDescriptor {
 	}
 	return fd.Message().Fields().ByNumber(genid.MapEntry_Key_field_number)
 }
+
 func (fd *Field) MapValue() protoreflect.FieldDescriptor {
 	if !fd.IsMap() {
 		return nil
@@ -392,9 +397,11 @@ func (fd *Field) ContainingOneof() protoreflect.OneofDescriptor      { return fd
 func (fd *Field) ContainingMessage() protoreflect.MessageDescriptor {
 	return fd.L0.Parent.(protoreflect.MessageDescriptor)
 }
+
 func (fd *Field) Enum() protoreflect.EnumDescriptor {
 	return fd.L1.Enum
 }
+
 func (fd *Field) Message() protoreflect.MessageDescriptor {
 	if fd.L1.IsWeak {
 		if d, _ := protoregistry.GlobalFiles.FindDescriptorByName(fd.L1.Message.FullName()); d != nil {
@@ -403,6 +410,7 @@ func (fd *Field) Message() protoreflect.MessageDescriptor {
 	}
 	return fd.L1.Message
 }
+
 func (fd *Field) IsMapEntry() bool {
 	parent, ok := fd.L0.Parent.(protoreflect.MessageDescriptor)
 	return ok && parent.IsMapEntry()
@@ -424,6 +432,7 @@ func (fd *Field) EnforceUTF8() bool {
 func (od *Oneof) IsSynthetic() bool {
 	return od.L0.ParentFile.L1.Syntax == protoreflect.Proto3 && len(od.L1.Fields.List) == 1 && od.L1.Fields.List[0].HasOptionalKeyword()
 }
+
 func (od *Oneof) Options() protoreflect.ProtoMessage {
 	if f := od.L1.Options; f != nil {
 		return f()
@@ -474,6 +483,7 @@ func (xd *Extension) HasPresence() bool                     { return xd.L1.Cardi
 func (xd *Extension) HasOptionalKeyword() bool {
 	return (xd.L0.ParentFile.L1.Syntax == protoreflect.Proto2 && xd.L1.Cardinality == protoreflect.Optional) || xd.lazyInit().IsProto3Optional
 }
+
 func (xd *Extension) IsPacked() bool {
 	if xd.L1.Cardinality != protoreflect.Repeated {
 		return false

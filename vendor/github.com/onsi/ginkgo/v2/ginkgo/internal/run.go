@@ -247,7 +247,7 @@ func runParallel(suite TestSuite, ginkgoConfig types.SuiteConfig, reporterConfig
 	case <-server.GetSuiteDone():
 		fmt.Println("")
 	case <-time.After(time.Second):
-		//one of the nodes never finished reporting to the server.  Something must have gone wrong.
+		// one of the nodes never finished reporting to the server.  Something must have gone wrong.
 		fmt.Fprint(formatter.ColorableStdErr, formatter.F("\n{{bold}}{{red}}Ginkgo timed out waiting for all parallel procs to report back{{/}}\n"))
 		fmt.Fprint(formatter.ColorableStdErr, formatter.F("{{gray}}Test suite:{{/}} %s (%s)\n\n", suite.PackageName, suite.Path))
 		fmt.Fprint(formatter.ColorableStdErr, formatter.Fiw(0, formatter.COLS, "This occurs if a parallel process exits before it reports its results to the Ginkgo CLI.  The CLI will now print out all the stdout/stderr output it's collected from the running processes.  However you may not see anything useful in these logs because the individual test processes usually intercept output to stdout/stderr in order to capture it in the spec reports.\n\nYou may want to try rerunning your test suite with {{light-gray}}--output-interceptor-mode=none{{/}} to see additional output here and debug your suite.\n"))

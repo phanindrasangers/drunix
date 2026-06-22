@@ -11,11 +11,12 @@
 package common
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -1222,28 +1223,31 @@ func file_common_common_proto_rawDescGZIP() []byte {
 	return file_common_common_proto_rawDescData
 }
 
-var file_common_common_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_common_common_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
-var file_common_common_proto_goTypes = []any{
-	(Status)(0),                   // 0: common.Status
-	(HeaderType)(0),               // 1: common.HeaderType
-	(BlockMetadataIndex)(0),       // 2: common.BlockMetadataIndex
-	(*LastConfig)(nil),            // 3: common.LastConfig
-	(*Metadata)(nil),              // 4: common.Metadata
-	(*MetadataSignature)(nil),     // 5: common.MetadataSignature
-	(*IdentifierHeader)(nil),      // 6: common.IdentifierHeader
-	(*Header)(nil),                // 7: common.Header
-	(*ChannelHeader)(nil),         // 8: common.ChannelHeader
-	(*SignatureHeader)(nil),       // 9: common.SignatureHeader
-	(*Payload)(nil),               // 10: common.Payload
-	(*Envelope)(nil),              // 11: common.Envelope
-	(*Block)(nil),                 // 12: common.Block
-	(*BlockHeader)(nil),           // 13: common.BlockHeader
-	(*BlockData)(nil),             // 14: common.BlockData
-	(*BlockMetadata)(nil),         // 15: common.BlockMetadata
-	(*OrdererBlockMetadata)(nil),  // 16: common.OrdererBlockMetadata
-	(*timestamppb.Timestamp)(nil), // 17: google.protobuf.Timestamp
-}
+var (
+	file_common_common_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+	file_common_common_proto_msgTypes  = make([]protoimpl.MessageInfo, 14)
+	file_common_common_proto_goTypes   = []any{
+		(Status)(0),                   // 0: common.Status
+		(HeaderType)(0),               // 1: common.HeaderType
+		(BlockMetadataIndex)(0),       // 2: common.BlockMetadataIndex
+		(*LastConfig)(nil),            // 3: common.LastConfig
+		(*Metadata)(nil),              // 4: common.Metadata
+		(*MetadataSignature)(nil),     // 5: common.MetadataSignature
+		(*IdentifierHeader)(nil),      // 6: common.IdentifierHeader
+		(*Header)(nil),                // 7: common.Header
+		(*ChannelHeader)(nil),         // 8: common.ChannelHeader
+		(*SignatureHeader)(nil),       // 9: common.SignatureHeader
+		(*Payload)(nil),               // 10: common.Payload
+		(*Envelope)(nil),              // 11: common.Envelope
+		(*Block)(nil),                 // 12: common.Block
+		(*BlockHeader)(nil),           // 13: common.BlockHeader
+		(*BlockData)(nil),             // 14: common.BlockData
+		(*BlockMetadata)(nil),         // 15: common.BlockMetadata
+		(*OrdererBlockMetadata)(nil),  // 16: common.OrdererBlockMetadata
+		(*timestamppb.Timestamp)(nil), // 17: google.protobuf.Timestamp
+	}
+)
+
 var file_common_common_proto_depIdxs = []int32{
 	5,  // 0: common.Metadata.signatures:type_name -> common.MetadataSignature
 	17, // 1: common.ChannelHeader.timestamp:type_name -> google.protobuf.Timestamp

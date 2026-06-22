@@ -93,9 +93,8 @@ type Support struct {
 	}
 	GetDeployedCCInfoProviderStub        func() ledger.DeployedChaincodeInfoProvider
 	getDeployedCCInfoProviderMutex       sync.RWMutex
-	getDeployedCCInfoProviderArgsForCall []struct {
-	}
-	getDeployedCCInfoProviderReturns struct {
+	getDeployedCCInfoProviderArgsForCall []struct{}
+	getDeployedCCInfoProviderReturns     struct {
 		result1 ledger.DeployedChaincodeInfoProvider
 	}
 	getDeployedCCInfoProviderReturnsOnCall map[int]struct {
@@ -168,9 +167,8 @@ type Support struct {
 	}
 	SerializeStub        func() ([]byte, error)
 	serializeMutex       sync.RWMutex
-	serializeArgsForCall []struct {
-	}
-	serializeReturns struct {
+	serializeArgsForCall []struct{}
+	serializeReturns     struct {
 		result1 []byte
 		result2 error
 	}
@@ -535,8 +533,7 @@ func (fake *Support) ExecuteLegacyInitReturnsOnCall(i int, result1 *peer.Respons
 func (fake *Support) GetDeployedCCInfoProvider() ledger.DeployedChaincodeInfoProvider {
 	fake.getDeployedCCInfoProviderMutex.Lock()
 	ret, specificReturn := fake.getDeployedCCInfoProviderReturnsOnCall[len(fake.getDeployedCCInfoProviderArgsForCall)]
-	fake.getDeployedCCInfoProviderArgsForCall = append(fake.getDeployedCCInfoProviderArgsForCall, struct {
-	}{})
+	fake.getDeployedCCInfoProviderArgsForCall = append(fake.getDeployedCCInfoProviderArgsForCall, struct{}{})
 	fake.recordInvocation("GetDeployedCCInfoProvider", []interface{}{})
 	fake.getDeployedCCInfoProviderMutex.Unlock()
 	if fake.GetDeployedCCInfoProviderStub != nil {
@@ -901,8 +898,7 @@ func (fake *Support) IsSysCCReturnsOnCall(i int, result1 bool) {
 func (fake *Support) Serialize() ([]byte, error) {
 	fake.serializeMutex.Lock()
 	ret, specificReturn := fake.serializeReturnsOnCall[len(fake.serializeArgsForCall)]
-	fake.serializeArgsForCall = append(fake.serializeArgsForCall, struct {
-	}{})
+	fake.serializeArgsForCall = append(fake.serializeArgsForCall, struct{}{})
 	fake.recordInvocation("Serialize", []interface{}{})
 	fake.serializeMutex.Unlock()
 	if fake.SerializeStub != nil {

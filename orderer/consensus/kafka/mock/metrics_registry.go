@@ -24,9 +24,8 @@ type MetricsRegistry struct {
 	}
 	GetAllStub        func() map[string]map[string]interface{}
 	getAllMutex       sync.RWMutex
-	getAllArgsForCall []struct {
-	}
-	getAllReturns struct {
+	getAllArgsForCall []struct{}
+	getAllReturns     struct {
 		result1 map[string]map[string]interface{}
 	}
 	getAllReturnsOnCall map[int]struct {
@@ -58,19 +57,17 @@ type MetricsRegistry struct {
 	}
 	RunHealthchecksStub        func()
 	runHealthchecksMutex       sync.RWMutex
-	runHealthchecksArgsForCall []struct {
-	}
-	UnregisterStub        func(string)
-	unregisterMutex       sync.RWMutex
-	unregisterArgsForCall []struct {
+	runHealthchecksArgsForCall []struct{}
+	UnregisterStub             func(string)
+	unregisterMutex            sync.RWMutex
+	unregisterArgsForCall      []struct {
 		arg1 string
 	}
 	UnregisterAllStub        func()
 	unregisterAllMutex       sync.RWMutex
-	unregisterAllArgsForCall []struct {
-	}
-	invocations      map[string][][]interface{}
-	invocationsMutex sync.RWMutex
+	unregisterAllArgsForCall []struct{}
+	invocations              map[string][][]interface{}
+	invocationsMutex         sync.RWMutex
 }
 
 func (fake *MetricsRegistry) Each(arg1 func(string, interface{})) {
@@ -167,8 +164,7 @@ func (fake *MetricsRegistry) GetReturnsOnCall(i int, result1 interface{}) {
 func (fake *MetricsRegistry) GetAll() map[string]map[string]interface{} {
 	fake.getAllMutex.Lock()
 	ret, specificReturn := fake.getAllReturnsOnCall[len(fake.getAllArgsForCall)]
-	fake.getAllArgsForCall = append(fake.getAllArgsForCall, struct {
-	}{})
+	fake.getAllArgsForCall = append(fake.getAllArgsForCall, struct{}{})
 	fake.recordInvocation("GetAll", []interface{}{})
 	fake.getAllMutex.Unlock()
 	if fake.GetAllStub != nil {
@@ -340,8 +336,7 @@ func (fake *MetricsRegistry) RegisterReturnsOnCall(i int, result1 error) {
 
 func (fake *MetricsRegistry) RunHealthchecks() {
 	fake.runHealthchecksMutex.Lock()
-	fake.runHealthchecksArgsForCall = append(fake.runHealthchecksArgsForCall, struct {
-	}{})
+	fake.runHealthchecksArgsForCall = append(fake.runHealthchecksArgsForCall, struct{}{})
 	fake.recordInvocation("RunHealthchecks", []interface{}{})
 	fake.runHealthchecksMutex.Unlock()
 	if fake.RunHealthchecksStub != nil {
@@ -394,8 +389,7 @@ func (fake *MetricsRegistry) UnregisterArgsForCall(i int) string {
 
 func (fake *MetricsRegistry) UnregisterAll() {
 	fake.unregisterAllMutex.Lock()
-	fake.unregisterAllArgsForCall = append(fake.unregisterAllArgsForCall, struct {
-	}{})
+	fake.unregisterAllArgsForCall = append(fake.unregisterAllArgsForCall, struct{}{})
 	fake.recordInvocation("UnregisterAll", []interface{}{})
 	fake.unregisterAllMutex.Unlock()
 	if fake.UnregisterAllStub != nil {

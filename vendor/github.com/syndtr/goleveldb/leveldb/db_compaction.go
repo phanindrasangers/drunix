@@ -16,9 +16,7 @@ import (
 	"github.com/syndtr/goleveldb/leveldb/storage"
 )
 
-var (
-	errCompactionTransactExiting = errors.New("leveldb: compaction transact exiting")
-)
+var errCompactionTransactExiting = errors.New("leveldb: compaction transact exiting")
 
 type cStat struct {
 	duration time.Duration

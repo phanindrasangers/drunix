@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package txvalidator
@@ -34,7 +34,7 @@ func (v *TxValidator) validateLtxTx(req *blockValidationRequest, results chan<- 
 			validationCode: peer.TxValidationCode_INVALID_OTHER_REASON,
 		}
 		return
-		//DRUNIX: for config, approve, commit, vanila txns, lean env is nil, so txn goes to vanila validation flow
+		// DRUNIX: for config, approve, commit, vanila txns, lean env is nil, so txn goes to vanila validation flow
 	} else if env != nil && env.LeanEnv == nil {
 		v.validateTx(req, results)
 		return

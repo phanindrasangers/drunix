@@ -15,7 +15,7 @@ func NewReportEntry(name string, cl types.CodeLocation, args ...any) (ReportEntr
 		Location:   cl,
 		Time:       time.Now(),
 	}
-	var didSetValue = false
+	didSetValue := false
 	for _, arg := range args {
 		switch x := arg.(type) {
 		case types.ReportEntryVisibility:

@@ -6,9 +6,7 @@ import (
 	"strings"
 )
 
-var (
-	siUnits = []string{"", "K", "M", "G", "T", "P", "E"}
-)
+var siUnits = []string{"", "K", "M", "G", "T", "P", "E"}
 
 func ToString(n int64, scale int64, suffix, baseSuffix string) string {
 	mn := len(siUnits)

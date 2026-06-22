@@ -20,6 +20,7 @@ import (
 	"github.com/hyperledger/fabric-protos-go/common"
 	"github.com/hyperledger/fabric-protos-go/orderer"
 	"github.com/hyperledger/fabric-protos-go/orderer/etcdraft"
+	"github.com/mitchellh/mapstructure"
 	"github.com/npci/drunix/bccsp"
 	"github.com/npci/drunix/common/channelconfig"
 	"github.com/npci/drunix/common/crypto"
@@ -32,7 +33,6 @@ import (
 	"github.com/npci/drunix/orderer/consensus"
 	"github.com/npci/drunix/orderer/consensus/inactive"
 	"github.com/npci/drunix/protoutil"
-	"github.com/mitchellh/mapstructure"
 	"github.com/pkg/errors"
 	"go.etcd.io/etcd/raft/v3"
 )

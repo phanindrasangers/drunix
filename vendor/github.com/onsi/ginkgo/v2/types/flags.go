@@ -122,12 +122,12 @@ func NewAttachedGinkgoFlagSet(flagSet *flag.FlagSet, flags GinkgoFlags, bindings
 func bindFlagSet(f GinkgoFlagSet, flagSet *flag.FlagSet) (GinkgoFlagSet, error) {
 	if flagSet == nil {
 		f.flagSet = flag.NewFlagSet("", flag.ContinueOnError)
-		//suppress all output as Ginkgo is responsible for formatting usage
+		// suppress all output as Ginkgo is responsible for formatting usage
 		f.flagSet.SetOutput(io.Discard)
 	} else {
 		f.flagSet = flagSet
-		//we're piggybacking on an existing flagset (typically go test) so we have limited control
-		//on user feedback
+		// we're piggybacking on an existing flagset (typically go test) so we have limited control
+		// on user feedback
 		f.flagSet.Usage = f.substituteUsage
 	}
 
@@ -406,7 +406,7 @@ func (f GinkgoFlagSet) usageForFlag(flag GinkgoFlag, style string) string {
 }
 
 func (f GinkgoFlagSet) usageForGoFlag(goFlag *flag.Flag) string {
-	//Taken directly from the flag package
+	// Taken directly from the flag package
 	out := fmt.Sprintf("  -%s", goFlag.Name)
 	name, usage := flag.UnquoteUsage(goFlag)
 	if len(name) > 0 {

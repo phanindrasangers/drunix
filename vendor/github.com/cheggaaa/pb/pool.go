@@ -1,3 +1,4 @@
+//go:build linux || darwin || freebsd || netbsd || openbsd || solaris || dragonfly || windows || plan9
 // +build linux darwin freebsd netbsd openbsd solaris dragonfly windows plan9
 
 package pb
@@ -62,7 +63,7 @@ func (p *Pool) Start() (err error) {
 }
 
 func (p *Pool) writer() {
-	var first = true
+	first := true
 	defer func() {
 		if first == false {
 			p.print(false)

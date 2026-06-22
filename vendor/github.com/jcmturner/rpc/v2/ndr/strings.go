@@ -52,14 +52,14 @@ func (dec *Decoder) readStringsArray(v reflect.Value, tag reflect.StructTag, def
 	d, _ := sliceDimensions(v.Type())
 	ndrTag := parseTags(tag)
 	var m []int
-	//var ms int
+	// var ms int
 	if ndrTag.HasValue(TagConformant) {
 		for i := 0; i < d; i++ {
 			m = append(m, int(dec.precedingMax()))
 		}
-		//common max size
+		// common max size
 		_ = dec.precedingMax()
-		//ms = int(n)
+		// ms = int(n)
 	}
 	tag = reflect.StructTag(subStringArrayTag)
 	err := dec.fillVaryingArray(v, tag, def)

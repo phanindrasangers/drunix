@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package plugindispatcher
@@ -40,7 +40,7 @@ func (v *dispatcherImplAdapter) DispatchLtx(seq int, env *common.Envelope, block
 	// _, cHdr, _, err := light.GetChannelAndSignatureHeader(env)
 
 	// get channel header
-	//chdr, err := protoutil.UnmarshalChannelHeader(payload.Header.ChannelHeader)
+	// chdr, err := protoutil.UnmarshalChannelHeader(payload.Header.ChannelHeader)
 	// if err != nil {
 	// 	return peer.TxValidationCode_BAD_CHANNEL_HEADER, err
 	// }

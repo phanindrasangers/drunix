@@ -772,6 +772,7 @@ static inline CK_VOID_PTR getAttributePval(CK_ATTRIBUTE_PTR a)
 
 */
 import "C"
+
 import (
 	"strings"
 	"unsafe"
@@ -985,7 +986,8 @@ func (c *Ctx) CloseAllSessions(slotID uint) error {
 func (c *Ctx) GetSessionInfo(sh SessionHandle) (SessionInfo, error) {
 	var csi C.CK_SESSION_INFO
 	e := C.GetSessionInfo(c.ctx, C.CK_SESSION_HANDLE(sh), &csi)
-	s := SessionInfo{SlotID: uint(csi.slotID),
+	s := SessionInfo{
+		SlotID:      uint(csi.slotID),
 		State:       uint(csi.state),
 		Flags:       uint(csi.flags),
 		DeviceError: uint(csi.ulDeviceError),

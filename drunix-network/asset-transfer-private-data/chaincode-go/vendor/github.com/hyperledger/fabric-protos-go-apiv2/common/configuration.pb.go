@@ -11,10 +11,11 @@
 package common
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -558,18 +559,21 @@ func file_common_configuration_proto_rawDescGZIP() []byte {
 	return file_common_configuration_proto_rawDescData
 }
 
-var file_common_configuration_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
-var file_common_configuration_proto_goTypes = []any{
-	(*HashingAlgorithm)(nil),          // 0: common.HashingAlgorithm
-	(*BlockDataHashingStructure)(nil), // 1: common.BlockDataHashingStructure
-	(*OrdererAddresses)(nil),          // 2: common.OrdererAddresses
-	(*Consenter)(nil),                 // 3: common.Consenter
-	(*Orderers)(nil),                  // 4: common.Orderers
-	(*Consortium)(nil),                // 5: common.Consortium
-	(*Capabilities)(nil),              // 6: common.Capabilities
-	(*Capability)(nil),                // 7: common.Capability
-	nil,                               // 8: common.Capabilities.CapabilitiesEntry
-}
+var (
+	file_common_configuration_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+	file_common_configuration_proto_goTypes  = []any{
+		(*HashingAlgorithm)(nil),          // 0: common.HashingAlgorithm
+		(*BlockDataHashingStructure)(nil), // 1: common.BlockDataHashingStructure
+		(*OrdererAddresses)(nil),          // 2: common.OrdererAddresses
+		(*Consenter)(nil),                 // 3: common.Consenter
+		(*Orderers)(nil),                  // 4: common.Orderers
+		(*Consortium)(nil),                // 5: common.Consortium
+		(*Capabilities)(nil),              // 6: common.Capabilities
+		(*Capability)(nil),                // 7: common.Capability
+		nil,                               // 8: common.Capabilities.CapabilitiesEntry
+	}
+)
+
 var file_common_configuration_proto_depIdxs = []int32{
 	3, // 0: common.Orderers.consenter_mapping:type_name -> common.Consenter
 	8, // 1: common.Capabilities.capabilities:type_name -> common.Capabilities.CapabilitiesEntry

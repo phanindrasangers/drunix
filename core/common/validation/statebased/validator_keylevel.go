@@ -347,7 +347,6 @@ func (klv *KeyLevelValidator) ValidateLtx(cc string,
 	prp *common.ProposalResponsePayload,
 	ccEP []byte,
 	endorsements []*common.Endorsement) commonerrors.TxValidationError {
-
 	prpBytes, err := proto.Marshal(prp)
 	if err != nil {
 		return policyErr(errors.WithMessagef(err, "common.ProposalResponsePayload failed Marshalling (%d,%d)", blockNum, txNum))
@@ -360,7 +359,6 @@ func (klv *KeyLevelValidator) ValidateLtx(cc string,
 		// logger.Info("endorsement.Endorser.Mspid", endorsement.Endorser.Mspid)
 		// logger.Infof("endorsement.Endorser.IdBytes %x", endorsement.Endorser.IdBytes)
 		// logger.Infof("endorsement.Signature %x", endorsement.Signature)
-
 		// endBytes, err := proto.Marshal(endorsement.Endorser)
 		if err != nil {
 			return policyErr(errors.WithMessagef(err, "common.Endorsement failed Marshalling (%d,%d)", blockNum, txNum))
@@ -429,7 +427,7 @@ func (klv *KeyLevelValidator) ValidateLtx(cc string,
 		endorsementPolicy := &peer.ApplicationPolicy{}
 		proto.Unmarshal(ccEP, endorsementPolicy)
 		logger.Warnw("Endorsment policy failure", "error", err1, "chaincode", cc, "endorsementPolicy", endorsementPolicy, "endorsingIdentities", protoutil.LogMessageForSerializedIdentities(signatureSet))
-		//if cc == "_lifecycle" {
+		// if cc == "_lifecycle" {
 		logger.Debug("Non Light transaction Format : TODO: LigntEnv should be used for the txn")
 		// err1 = nil
 		//}

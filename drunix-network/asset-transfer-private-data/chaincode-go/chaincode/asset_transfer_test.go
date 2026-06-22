@@ -47,14 +47,16 @@ type clientIdentity interface {
 	cid.ClientIdentity
 }
 
-const assetCollectionName = "assetCollection"
-const transferAgreementObjectType = "transferAgreement"
-const myOrg1Msp = "Org1Testmsp"
-const myOrg1Clientid = "myOrg1Userid"
-const myOrg1PrivCollection = "Org1TestmspPrivateCollection"
-const myOrg2Msp = "Org2Testmsp"
-const myOrg2Clientid = "myOrg2Userid"
-const myOrg2PrivCollection = "Org2TestmspPrivateCollection"
+const (
+	assetCollectionName         = "assetCollection"
+	transferAgreementObjectType = "transferAgreement"
+	myOrg1Msp                   = "Org1Testmsp"
+	myOrg1Clientid              = "myOrg1Userid"
+	myOrg1PrivCollection        = "Org1TestmspPrivateCollection"
+	myOrg2Msp                   = "Org2Testmsp"
+	myOrg2Clientid              = "myOrg2Userid"
+	myOrg2PrivCollection        = "Org2TestmspPrivateCollection"
+)
 
 type assetTransientInput struct {
 	Type           string `json:"objectType"`
@@ -215,6 +217,7 @@ func TestAgreeToTransferSuccessful(t *testing.T) {
 	require.Equal(t, transferAgreementObjectType+"id1", calledId)
 	require.Equal(t, []byte(myOrg1Clientid), calledWithDataBytes)
 }
+
 func TestTransferAssetBadInput(t *testing.T) {
 	transactionContext, chaincodeStub := prepMocksAsOrg1()
 	assetTransferCC := chaincode.SmartContract{}
@@ -279,7 +282,6 @@ func TestTransferAssetSuccessful(t *testing.T) {
 	calledCollection, calledId = chaincodeStub.DelPrivateDataArgsForCall(1)
 	require.Equal(t, assetCollectionName, calledCollection)
 	require.Equal(t, transferAgreementObjectType+"id1", calledId)
-
 }
 
 func TestTransferAssetByNonOwner(t *testing.T) {
@@ -359,9 +361,11 @@ func TestTransferAssetNonMatchingAppraisalValue(t *testing.T) {
 func prepMocksAsOrg1() (*mocks.TransactionContext, *mocks.ChaincodeStub) {
 	return prepMocks(myOrg1Msp, myOrg1Clientid)
 }
+
 func prepMocksAsOrg2() (*mocks.TransactionContext, *mocks.ChaincodeStub) {
 	return prepMocks(myOrg2Msp, myOrg2Clientid)
 }
+
 func prepMocks(orgMSP, clientId string) (*mocks.TransactionContext, *mocks.ChaincodeStub) {
 	chaincodeStub := &mocks.ChaincodeStub{}
 	transactionContext := &mocks.TransactionContext{}

@@ -51,7 +51,6 @@ func structOfValidType(obj reflect.Type, additionalTypes []reflect.Type) error {
 		}
 
 		err := typeIsValid(field.Type, additionalTypes, false)
-
 		if err != nil {
 			return err
 		}

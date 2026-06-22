@@ -122,7 +122,7 @@ func CheckDirPermission(dir string, perm os.FileMode) error {
 	if !Exist(dir) {
 		return fmt.Errorf("directory %q empty, cannot check permission", dir)
 	}
-	//check the existing permission on the directory
+	// check the existing permission on the directory
 	dirInfo, err := os.Stat(dir)
 	if err != nil {
 		return err

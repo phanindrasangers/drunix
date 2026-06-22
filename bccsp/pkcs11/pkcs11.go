@@ -19,11 +19,11 @@ import (
 	"sync"
 	"time"
 
+	"github.com/miekg/pkcs11"
 	"github.com/npci/drunix/bccsp"
 	"github.com/npci/drunix/bccsp/sw"
 	"github.com/npci/drunix/bccsp/utils"
 	"github.com/npci/drunix/common/flogging"
-	"github.com/miekg/pkcs11"
 	"github.com/pkg/errors"
 	"go.uber.org/zap/zapcore"
 )

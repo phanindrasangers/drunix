@@ -58,7 +58,6 @@ type JsonPointer struct {
 
 // NewJsonPointer parses the given string JSON pointer and returns an object
 func NewJsonPointer(jsonPointerString string) (p JsonPointer, err error) {
-
 	// Pointer to the root of the document
 	if len(jsonPointerString) == 0 {
 		// Keep referenceTokens nil
@@ -74,20 +73,16 @@ func NewJsonPointer(jsonPointerString string) (p JsonPointer, err error) {
 
 // Uses the pointer to retrieve a value from a JSON document
 func (p *JsonPointer) Get(document interface{}) (interface{}, reflect.Kind, error) {
-
 	is := &implStruct{mode: "GET", inDocument: document}
 	p.implementation(is)
 	return is.getOutNode, is.getOutKind, is.outError
-
 }
 
 // Uses the pointer to update a value from a JSON document
 func (p *JsonPointer) Set(document interface{}, value interface{}) (interface{}, error) {
-
 	is := &implStruct{mode: "SET", inDocument: document, setInValue: value}
 	p.implementation(is)
 	return document, is.outError
-
 }
 
 // Uses the pointer to delete a value from a JSON document
@@ -99,7 +94,6 @@ func (p *JsonPointer) Delete(document interface{}) (interface{}, error) {
 
 // Both Get and Set functions use the same implementation to avoid code duplication
 func (p *JsonPointer) implementation(i *implStruct) {
-
 	kind := reflect.Invalid
 
 	// Full document when empty
@@ -183,7 +177,6 @@ func (p *JsonPointer) implementation(i *implStruct) {
 
 // Pointer to string representation function
 func (p *JsonPointer) String() string {
-
 	if len(p.referenceTokens) == 0 {
 		return const_empty_pointer
 	}

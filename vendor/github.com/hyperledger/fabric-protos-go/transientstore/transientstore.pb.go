@@ -5,16 +5,19 @@ package transientstore
 
 import (
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	rwset "github.com/hyperledger/fabric-protos-go/ledger/rwset"
 	peer "github.com/hyperledger/fabric-protos-go/peer"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -44,15 +47,19 @@ func (*TxPvtReadWriteSetWithConfigInfo) Descriptor() ([]byte, []int) {
 func (m *TxPvtReadWriteSetWithConfigInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TxPvtReadWriteSetWithConfigInfo.Unmarshal(m, b)
 }
+
 func (m *TxPvtReadWriteSetWithConfigInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TxPvtReadWriteSetWithConfigInfo.Marshal(b, m, deterministic)
 }
+
 func (m *TxPvtReadWriteSetWithConfigInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_TxPvtReadWriteSetWithConfigInfo.Merge(m, src)
 }
+
 func (m *TxPvtReadWriteSetWithConfigInfo) XXX_Size() int {
 	return xxx_messageInfo_TxPvtReadWriteSetWithConfigInfo.Size(m)
 }
+
 func (m *TxPvtReadWriteSetWithConfigInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_TxPvtReadWriteSetWithConfigInfo.DiscardUnknown(m)
 }

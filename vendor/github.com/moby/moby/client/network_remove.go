@@ -5,13 +5,11 @@ import (
 )
 
 // NetworkRemoveOptions specifies options for removing a network.
-type NetworkRemoveOptions struct {
-	// No options currently; placeholder for future use.
+type NetworkRemoveOptions struct { // No options currently; placeholder for future use.
 }
 
 // NetworkRemoveResult represents the result of a network removal operation.
-type NetworkRemoveResult struct {
-	// No fields currently; placeholder for future use.
+type NetworkRemoveResult struct { // No fields currently; placeholder for future use.
 }
 
 // NetworkRemove removes an existent network from the docker host.

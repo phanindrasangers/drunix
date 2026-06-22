@@ -5,15 +5,18 @@ package peer
 
 import (
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	common "github.com/hyperledger/fabric-protos-go/common"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -42,15 +45,19 @@ func (*ChaincodeIdentifier) Descriptor() ([]byte, []int) {
 func (m *ChaincodeIdentifier) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeIdentifier.Unmarshal(m, b)
 }
+
 func (m *ChaincodeIdentifier) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeIdentifier.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeIdentifier) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeIdentifier.Merge(m, src)
 }
+
 func (m *ChaincodeIdentifier) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeIdentifier.Size(m)
 }
+
 func (m *ChaincodeIdentifier) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeIdentifier.DiscardUnknown(m)
 }
@@ -94,15 +101,19 @@ func (*ChaincodeValidation) Descriptor() ([]byte, []int) {
 func (m *ChaincodeValidation) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeValidation.Unmarshal(m, b)
 }
+
 func (m *ChaincodeValidation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeValidation.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeValidation) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeValidation.Merge(m, src)
 }
+
 func (m *ChaincodeValidation) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeValidation.Size(m)
 }
+
 func (m *ChaincodeValidation) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeValidation.DiscardUnknown(m)
 }
@@ -142,15 +153,19 @@ func (*VSCCArgs) Descriptor() ([]byte, []int) {
 func (m *VSCCArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_VSCCArgs.Unmarshal(m, b)
 }
+
 func (m *VSCCArgs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_VSCCArgs.Marshal(b, m, deterministic)
 }
+
 func (m *VSCCArgs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_VSCCArgs.Merge(m, src)
 }
+
 func (m *VSCCArgs) XXX_Size() int {
 	return xxx_messageInfo_VSCCArgs.Size(m)
 }
+
 func (m *VSCCArgs) XXX_DiscardUnknown() {
 	xxx_messageInfo_VSCCArgs.DiscardUnknown(m)
 }
@@ -185,15 +200,19 @@ func (*ChaincodeEndorsement) Descriptor() ([]byte, []int) {
 func (m *ChaincodeEndorsement) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeEndorsement.Unmarshal(m, b)
 }
+
 func (m *ChaincodeEndorsement) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeEndorsement.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeEndorsement) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeEndorsement.Merge(m, src)
 }
+
 func (m *ChaincodeEndorsement) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeEndorsement.Size(m)
 }
+
 func (m *ChaincodeEndorsement) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeEndorsement.DiscardUnknown(m)
 }
@@ -227,15 +246,19 @@ func (*ConfigTree) Descriptor() ([]byte, []int) {
 func (m *ConfigTree) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfigTree.Unmarshal(m, b)
 }
+
 func (m *ConfigTree) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConfigTree.Marshal(b, m, deterministic)
 }
+
 func (m *ConfigTree) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConfigTree.Merge(m, src)
 }
+
 func (m *ConfigTree) XXX_Size() int {
 	return xxx_messageInfo_ConfigTree.Size(m)
 }
+
 func (m *ConfigTree) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConfigTree.DiscardUnknown(m)
 }

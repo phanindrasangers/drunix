@@ -5,15 +5,18 @@ package lifecycle
 
 import (
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	peer "github.com/hyperledger/fabric-protos-go/peer"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -40,15 +43,19 @@ func (*InstallChaincodeArgs) Descriptor() ([]byte, []int) {
 func (m *InstallChaincodeArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_InstallChaincodeArgs.Unmarshal(m, b)
 }
+
 func (m *InstallChaincodeArgs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_InstallChaincodeArgs.Marshal(b, m, deterministic)
 }
+
 func (m *InstallChaincodeArgs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_InstallChaincodeArgs.Merge(m, src)
 }
+
 func (m *InstallChaincodeArgs) XXX_Size() int {
 	return xxx_messageInfo_InstallChaincodeArgs.Size(m)
 }
+
 func (m *InstallChaincodeArgs) XXX_DiscardUnknown() {
 	xxx_messageInfo_InstallChaincodeArgs.DiscardUnknown(m)
 }
@@ -82,15 +89,19 @@ func (*InstallChaincodeResult) Descriptor() ([]byte, []int) {
 func (m *InstallChaincodeResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_InstallChaincodeResult.Unmarshal(m, b)
 }
+
 func (m *InstallChaincodeResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_InstallChaincodeResult.Marshal(b, m, deterministic)
 }
+
 func (m *InstallChaincodeResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_InstallChaincodeResult.Merge(m, src)
 }
+
 func (m *InstallChaincodeResult) XXX_Size() int {
 	return xxx_messageInfo_InstallChaincodeResult.Size(m)
 }
+
 func (m *InstallChaincodeResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_InstallChaincodeResult.DiscardUnknown(m)
 }
@@ -130,15 +141,19 @@ func (*QueryInstalledChaincodeArgs) Descriptor() ([]byte, []int) {
 func (m *QueryInstalledChaincodeArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryInstalledChaincodeArgs.Unmarshal(m, b)
 }
+
 func (m *QueryInstalledChaincodeArgs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryInstalledChaincodeArgs.Marshal(b, m, deterministic)
 }
+
 func (m *QueryInstalledChaincodeArgs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryInstalledChaincodeArgs.Merge(m, src)
 }
+
 func (m *QueryInstalledChaincodeArgs) XXX_Size() int {
 	return xxx_messageInfo_QueryInstalledChaincodeArgs.Size(m)
 }
+
 func (m *QueryInstalledChaincodeArgs) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryInstalledChaincodeArgs.DiscardUnknown(m)
 }
@@ -173,15 +188,19 @@ func (*QueryInstalledChaincodeResult) Descriptor() ([]byte, []int) {
 func (m *QueryInstalledChaincodeResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryInstalledChaincodeResult.Unmarshal(m, b)
 }
+
 func (m *QueryInstalledChaincodeResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryInstalledChaincodeResult.Marshal(b, m, deterministic)
 }
+
 func (m *QueryInstalledChaincodeResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryInstalledChaincodeResult.Merge(m, src)
 }
+
 func (m *QueryInstalledChaincodeResult) XXX_Size() int {
 	return xxx_messageInfo_QueryInstalledChaincodeResult.Size(m)
 }
+
 func (m *QueryInstalledChaincodeResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryInstalledChaincodeResult.DiscardUnknown(m)
 }
@@ -228,15 +247,19 @@ func (*QueryInstalledChaincodeResult_References) Descriptor() ([]byte, []int) {
 func (m *QueryInstalledChaincodeResult_References) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryInstalledChaincodeResult_References.Unmarshal(m, b)
 }
+
 func (m *QueryInstalledChaincodeResult_References) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryInstalledChaincodeResult_References.Marshal(b, m, deterministic)
 }
+
 func (m *QueryInstalledChaincodeResult_References) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryInstalledChaincodeResult_References.Merge(m, src)
 }
+
 func (m *QueryInstalledChaincodeResult_References) XXX_Size() int {
 	return xxx_messageInfo_QueryInstalledChaincodeResult_References.Size(m)
 }
+
 func (m *QueryInstalledChaincodeResult_References) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryInstalledChaincodeResult_References.DiscardUnknown(m)
 }
@@ -270,15 +293,19 @@ func (*QueryInstalledChaincodeResult_Chaincode) Descriptor() ([]byte, []int) {
 func (m *QueryInstalledChaincodeResult_Chaincode) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryInstalledChaincodeResult_Chaincode.Unmarshal(m, b)
 }
+
 func (m *QueryInstalledChaincodeResult_Chaincode) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryInstalledChaincodeResult_Chaincode.Marshal(b, m, deterministic)
 }
+
 func (m *QueryInstalledChaincodeResult_Chaincode) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryInstalledChaincodeResult_Chaincode.Merge(m, src)
 }
+
 func (m *QueryInstalledChaincodeResult_Chaincode) XXX_Size() int {
 	return xxx_messageInfo_QueryInstalledChaincodeResult_Chaincode.Size(m)
 }
+
 func (m *QueryInstalledChaincodeResult_Chaincode) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryInstalledChaincodeResult_Chaincode.DiscardUnknown(m)
 }
@@ -318,15 +345,19 @@ func (*GetInstalledChaincodePackageArgs) Descriptor() ([]byte, []int) {
 func (m *GetInstalledChaincodePackageArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetInstalledChaincodePackageArgs.Unmarshal(m, b)
 }
+
 func (m *GetInstalledChaincodePackageArgs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetInstalledChaincodePackageArgs.Marshal(b, m, deterministic)
 }
+
 func (m *GetInstalledChaincodePackageArgs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetInstalledChaincodePackageArgs.Merge(m, src)
 }
+
 func (m *GetInstalledChaincodePackageArgs) XXX_Size() int {
 	return xxx_messageInfo_GetInstalledChaincodePackageArgs.Size(m)
 }
+
 func (m *GetInstalledChaincodePackageArgs) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetInstalledChaincodePackageArgs.DiscardUnknown(m)
 }
@@ -359,15 +390,19 @@ func (*GetInstalledChaincodePackageResult) Descriptor() ([]byte, []int) {
 func (m *GetInstalledChaincodePackageResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetInstalledChaincodePackageResult.Unmarshal(m, b)
 }
+
 func (m *GetInstalledChaincodePackageResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetInstalledChaincodePackageResult.Marshal(b, m, deterministic)
 }
+
 func (m *GetInstalledChaincodePackageResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetInstalledChaincodePackageResult.Merge(m, src)
 }
+
 func (m *GetInstalledChaincodePackageResult) XXX_Size() int {
 	return xxx_messageInfo_GetInstalledChaincodePackageResult.Size(m)
 }
+
 func (m *GetInstalledChaincodePackageResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetInstalledChaincodePackageResult.DiscardUnknown(m)
 }
@@ -400,15 +435,19 @@ func (*QueryInstalledChaincodesArgs) Descriptor() ([]byte, []int) {
 func (m *QueryInstalledChaincodesArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryInstalledChaincodesArgs.Unmarshal(m, b)
 }
+
 func (m *QueryInstalledChaincodesArgs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryInstalledChaincodesArgs.Marshal(b, m, deterministic)
 }
+
 func (m *QueryInstalledChaincodesArgs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryInstalledChaincodesArgs.Merge(m, src)
 }
+
 func (m *QueryInstalledChaincodesArgs) XXX_Size() int {
 	return xxx_messageInfo_QueryInstalledChaincodesArgs.Size(m)
 }
+
 func (m *QueryInstalledChaincodesArgs) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryInstalledChaincodesArgs.DiscardUnknown(m)
 }
@@ -436,15 +475,19 @@ func (*QueryInstalledChaincodesResult) Descriptor() ([]byte, []int) {
 func (m *QueryInstalledChaincodesResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryInstalledChaincodesResult.Unmarshal(m, b)
 }
+
 func (m *QueryInstalledChaincodesResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryInstalledChaincodesResult.Marshal(b, m, deterministic)
 }
+
 func (m *QueryInstalledChaincodesResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryInstalledChaincodesResult.Merge(m, src)
 }
+
 func (m *QueryInstalledChaincodesResult) XXX_Size() int {
 	return xxx_messageInfo_QueryInstalledChaincodesResult.Size(m)
 }
+
 func (m *QueryInstalledChaincodesResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryInstalledChaincodesResult.DiscardUnknown(m)
 }
@@ -470,6 +513,7 @@ type QueryInstalledChaincodesResult_InstalledChaincode struct {
 func (m *QueryInstalledChaincodesResult_InstalledChaincode) Reset() {
 	*m = QueryInstalledChaincodesResult_InstalledChaincode{}
 }
+
 func (m *QueryInstalledChaincodesResult_InstalledChaincode) String() string {
 	return proto.CompactTextString(m)
 }
@@ -481,15 +525,19 @@ func (*QueryInstalledChaincodesResult_InstalledChaincode) Descriptor() ([]byte, 
 func (m *QueryInstalledChaincodesResult_InstalledChaincode) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryInstalledChaincodesResult_InstalledChaincode.Unmarshal(m, b)
 }
+
 func (m *QueryInstalledChaincodesResult_InstalledChaincode) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryInstalledChaincodesResult_InstalledChaincode.Marshal(b, m, deterministic)
 }
+
 func (m *QueryInstalledChaincodesResult_InstalledChaincode) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryInstalledChaincodesResult_InstalledChaincode.Merge(m, src)
 }
+
 func (m *QueryInstalledChaincodesResult_InstalledChaincode) XXX_Size() int {
 	return xxx_messageInfo_QueryInstalledChaincodesResult_InstalledChaincode.Size(m)
 }
+
 func (m *QueryInstalledChaincodesResult_InstalledChaincode) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryInstalledChaincodesResult_InstalledChaincode.DiscardUnknown(m)
 }
@@ -527,6 +575,7 @@ type QueryInstalledChaincodesResult_References struct {
 func (m *QueryInstalledChaincodesResult_References) Reset() {
 	*m = QueryInstalledChaincodesResult_References{}
 }
+
 func (m *QueryInstalledChaincodesResult_References) String() string {
 	return proto.CompactTextString(m)
 }
@@ -538,15 +587,19 @@ func (*QueryInstalledChaincodesResult_References) Descriptor() ([]byte, []int) {
 func (m *QueryInstalledChaincodesResult_References) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryInstalledChaincodesResult_References.Unmarshal(m, b)
 }
+
 func (m *QueryInstalledChaincodesResult_References) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryInstalledChaincodesResult_References.Marshal(b, m, deterministic)
 }
+
 func (m *QueryInstalledChaincodesResult_References) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryInstalledChaincodesResult_References.Merge(m, src)
 }
+
 func (m *QueryInstalledChaincodesResult_References) XXX_Size() int {
 	return xxx_messageInfo_QueryInstalledChaincodesResult_References.Size(m)
 }
+
 func (m *QueryInstalledChaincodesResult_References) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryInstalledChaincodesResult_References.DiscardUnknown(m)
 }
@@ -580,15 +633,19 @@ func (*QueryInstalledChaincodesResult_Chaincode) Descriptor() ([]byte, []int) {
 func (m *QueryInstalledChaincodesResult_Chaincode) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryInstalledChaincodesResult_Chaincode.Unmarshal(m, b)
 }
+
 func (m *QueryInstalledChaincodesResult_Chaincode) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryInstalledChaincodesResult_Chaincode.Marshal(b, m, deterministic)
 }
+
 func (m *QueryInstalledChaincodesResult_Chaincode) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryInstalledChaincodesResult_Chaincode.Merge(m, src)
 }
+
 func (m *QueryInstalledChaincodesResult_Chaincode) XXX_Size() int {
 	return xxx_messageInfo_QueryInstalledChaincodesResult_Chaincode.Size(m)
 }
+
 func (m *QueryInstalledChaincodesResult_Chaincode) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryInstalledChaincodesResult_Chaincode.DiscardUnknown(m)
 }
@@ -638,15 +695,19 @@ func (*ApproveChaincodeDefinitionForMyOrgArgs) Descriptor() ([]byte, []int) {
 func (m *ApproveChaincodeDefinitionForMyOrgArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ApproveChaincodeDefinitionForMyOrgArgs.Unmarshal(m, b)
 }
+
 func (m *ApproveChaincodeDefinitionForMyOrgArgs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ApproveChaincodeDefinitionForMyOrgArgs.Marshal(b, m, deterministic)
 }
+
 func (m *ApproveChaincodeDefinitionForMyOrgArgs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ApproveChaincodeDefinitionForMyOrgArgs.Merge(m, src)
 }
+
 func (m *ApproveChaincodeDefinitionForMyOrgArgs) XXX_Size() int {
 	return xxx_messageInfo_ApproveChaincodeDefinitionForMyOrgArgs.Size(m)
 }
+
 func (m *ApproveChaincodeDefinitionForMyOrgArgs) XXX_DiscardUnknown() {
 	xxx_messageInfo_ApproveChaincodeDefinitionForMyOrgArgs.DiscardUnknown(m)
 }
@@ -737,15 +798,19 @@ func (*ChaincodeSource) Descriptor() ([]byte, []int) {
 func (m *ChaincodeSource) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeSource.Unmarshal(m, b)
 }
+
 func (m *ChaincodeSource) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeSource.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeSource) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeSource.Merge(m, src)
 }
+
 func (m *ChaincodeSource) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeSource.Size(m)
 }
+
 func (m *ChaincodeSource) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeSource.DiscardUnknown(m)
 }
@@ -813,15 +878,19 @@ func (*ChaincodeSource_Unavailable) Descriptor() ([]byte, []int) {
 func (m *ChaincodeSource_Unavailable) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeSource_Unavailable.Unmarshal(m, b)
 }
+
 func (m *ChaincodeSource_Unavailable) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeSource_Unavailable.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeSource_Unavailable) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeSource_Unavailable.Merge(m, src)
 }
+
 func (m *ChaincodeSource_Unavailable) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeSource_Unavailable.Size(m)
 }
+
 func (m *ChaincodeSource_Unavailable) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeSource_Unavailable.DiscardUnknown(m)
 }
@@ -845,15 +914,19 @@ func (*ChaincodeSource_Local) Descriptor() ([]byte, []int) {
 func (m *ChaincodeSource_Local) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChaincodeSource_Local.Unmarshal(m, b)
 }
+
 func (m *ChaincodeSource_Local) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChaincodeSource_Local.Marshal(b, m, deterministic)
 }
+
 func (m *ChaincodeSource_Local) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ChaincodeSource_Local.Merge(m, src)
 }
+
 func (m *ChaincodeSource_Local) XXX_Size() int {
 	return xxx_messageInfo_ChaincodeSource_Local.Size(m)
 }
+
 func (m *ChaincodeSource_Local) XXX_DiscardUnknown() {
 	xxx_messageInfo_ChaincodeSource_Local.DiscardUnknown(m)
 }
@@ -888,15 +961,19 @@ func (*ApproveChaincodeDefinitionForMyOrgResult) Descriptor() ([]byte, []int) {
 func (m *ApproveChaincodeDefinitionForMyOrgResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ApproveChaincodeDefinitionForMyOrgResult.Unmarshal(m, b)
 }
+
 func (m *ApproveChaincodeDefinitionForMyOrgResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ApproveChaincodeDefinitionForMyOrgResult.Marshal(b, m, deterministic)
 }
+
 func (m *ApproveChaincodeDefinitionForMyOrgResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ApproveChaincodeDefinitionForMyOrgResult.Merge(m, src)
 }
+
 func (m *ApproveChaincodeDefinitionForMyOrgResult) XXX_Size() int {
 	return xxx_messageInfo_ApproveChaincodeDefinitionForMyOrgResult.Size(m)
 }
+
 func (m *ApproveChaincodeDefinitionForMyOrgResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_ApproveChaincodeDefinitionForMyOrgResult.DiscardUnknown(m)
 }
@@ -929,15 +1006,19 @@ func (*CommitChaincodeDefinitionArgs) Descriptor() ([]byte, []int) {
 func (m *CommitChaincodeDefinitionArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CommitChaincodeDefinitionArgs.Unmarshal(m, b)
 }
+
 func (m *CommitChaincodeDefinitionArgs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CommitChaincodeDefinitionArgs.Marshal(b, m, deterministic)
 }
+
 func (m *CommitChaincodeDefinitionArgs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CommitChaincodeDefinitionArgs.Merge(m, src)
 }
+
 func (m *CommitChaincodeDefinitionArgs) XXX_Size() int {
 	return xxx_messageInfo_CommitChaincodeDefinitionArgs.Size(m)
 }
+
 func (m *CommitChaincodeDefinitionArgs) XXX_DiscardUnknown() {
 	xxx_messageInfo_CommitChaincodeDefinitionArgs.DiscardUnknown(m)
 }
@@ -1019,15 +1100,19 @@ func (*CommitChaincodeDefinitionResult) Descriptor() ([]byte, []int) {
 func (m *CommitChaincodeDefinitionResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CommitChaincodeDefinitionResult.Unmarshal(m, b)
 }
+
 func (m *CommitChaincodeDefinitionResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CommitChaincodeDefinitionResult.Marshal(b, m, deterministic)
 }
+
 func (m *CommitChaincodeDefinitionResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CommitChaincodeDefinitionResult.Merge(m, src)
 }
+
 func (m *CommitChaincodeDefinitionResult) XXX_Size() int {
 	return xxx_messageInfo_CommitChaincodeDefinitionResult.Size(m)
 }
+
 func (m *CommitChaincodeDefinitionResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_CommitChaincodeDefinitionResult.DiscardUnknown(m)
 }
@@ -1060,15 +1145,19 @@ func (*CheckCommitReadinessArgs) Descriptor() ([]byte, []int) {
 func (m *CheckCommitReadinessArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CheckCommitReadinessArgs.Unmarshal(m, b)
 }
+
 func (m *CheckCommitReadinessArgs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CheckCommitReadinessArgs.Marshal(b, m, deterministic)
 }
+
 func (m *CheckCommitReadinessArgs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CheckCommitReadinessArgs.Merge(m, src)
 }
+
 func (m *CheckCommitReadinessArgs) XXX_Size() int {
 	return xxx_messageInfo_CheckCommitReadinessArgs.Size(m)
 }
+
 func (m *CheckCommitReadinessArgs) XXX_DiscardUnknown() {
 	xxx_messageInfo_CheckCommitReadinessArgs.DiscardUnknown(m)
 }
@@ -1152,15 +1241,19 @@ func (*CheckCommitReadinessResult) Descriptor() ([]byte, []int) {
 func (m *CheckCommitReadinessResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CheckCommitReadinessResult.Unmarshal(m, b)
 }
+
 func (m *CheckCommitReadinessResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CheckCommitReadinessResult.Marshal(b, m, deterministic)
 }
+
 func (m *CheckCommitReadinessResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CheckCommitReadinessResult.Merge(m, src)
 }
+
 func (m *CheckCommitReadinessResult) XXX_Size() int {
 	return xxx_messageInfo_CheckCommitReadinessResult.Size(m)
 }
+
 func (m *CheckCommitReadinessResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_CheckCommitReadinessResult.DiscardUnknown(m)
 }
@@ -1194,15 +1287,19 @@ func (*QueryApprovedChaincodeDefinitionArgs) Descriptor() ([]byte, []int) {
 func (m *QueryApprovedChaincodeDefinitionArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryApprovedChaincodeDefinitionArgs.Unmarshal(m, b)
 }
+
 func (m *QueryApprovedChaincodeDefinitionArgs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryApprovedChaincodeDefinitionArgs.Marshal(b, m, deterministic)
 }
+
 func (m *QueryApprovedChaincodeDefinitionArgs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryApprovedChaincodeDefinitionArgs.Merge(m, src)
 }
+
 func (m *QueryApprovedChaincodeDefinitionArgs) XXX_Size() int {
 	return xxx_messageInfo_QueryApprovedChaincodeDefinitionArgs.Size(m)
 }
+
 func (m *QueryApprovedChaincodeDefinitionArgs) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryApprovedChaincodeDefinitionArgs.DiscardUnknown(m)
 }
@@ -1251,15 +1348,19 @@ func (*QueryApprovedChaincodeDefinitionResult) Descriptor() ([]byte, []int) {
 func (m *QueryApprovedChaincodeDefinitionResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryApprovedChaincodeDefinitionResult.Unmarshal(m, b)
 }
+
 func (m *QueryApprovedChaincodeDefinitionResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryApprovedChaincodeDefinitionResult.Marshal(b, m, deterministic)
 }
+
 func (m *QueryApprovedChaincodeDefinitionResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryApprovedChaincodeDefinitionResult.Merge(m, src)
 }
+
 func (m *QueryApprovedChaincodeDefinitionResult) XXX_Size() int {
 	return xxx_messageInfo_QueryApprovedChaincodeDefinitionResult.Size(m)
 }
+
 func (m *QueryApprovedChaincodeDefinitionResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryApprovedChaincodeDefinitionResult.DiscardUnknown(m)
 }
@@ -1341,15 +1442,19 @@ func (*QueryChaincodeDefinitionArgs) Descriptor() ([]byte, []int) {
 func (m *QueryChaincodeDefinitionArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryChaincodeDefinitionArgs.Unmarshal(m, b)
 }
+
 func (m *QueryChaincodeDefinitionArgs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryChaincodeDefinitionArgs.Marshal(b, m, deterministic)
 }
+
 func (m *QueryChaincodeDefinitionArgs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryChaincodeDefinitionArgs.Merge(m, src)
 }
+
 func (m *QueryChaincodeDefinitionArgs) XXX_Size() int {
 	return xxx_messageInfo_QueryChaincodeDefinitionArgs.Size(m)
 }
+
 func (m *QueryChaincodeDefinitionArgs) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryChaincodeDefinitionArgs.DiscardUnknown(m)
 }
@@ -1389,15 +1494,19 @@ func (*QueryChaincodeDefinitionResult) Descriptor() ([]byte, []int) {
 func (m *QueryChaincodeDefinitionResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryChaincodeDefinitionResult.Unmarshal(m, b)
 }
+
 func (m *QueryChaincodeDefinitionResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryChaincodeDefinitionResult.Marshal(b, m, deterministic)
 }
+
 func (m *QueryChaincodeDefinitionResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryChaincodeDefinitionResult.Merge(m, src)
 }
+
 func (m *QueryChaincodeDefinitionResult) XXX_Size() int {
 	return xxx_messageInfo_QueryChaincodeDefinitionResult.Size(m)
 }
+
 func (m *QueryChaincodeDefinitionResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryChaincodeDefinitionResult.DiscardUnknown(m)
 }
@@ -1478,15 +1587,19 @@ func (*QueryChaincodeDefinitionsArgs) Descriptor() ([]byte, []int) {
 func (m *QueryChaincodeDefinitionsArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryChaincodeDefinitionsArgs.Unmarshal(m, b)
 }
+
 func (m *QueryChaincodeDefinitionsArgs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryChaincodeDefinitionsArgs.Marshal(b, m, deterministic)
 }
+
 func (m *QueryChaincodeDefinitionsArgs) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryChaincodeDefinitionsArgs.Merge(m, src)
 }
+
 func (m *QueryChaincodeDefinitionsArgs) XXX_Size() int {
 	return xxx_messageInfo_QueryChaincodeDefinitionsArgs.Size(m)
 }
+
 func (m *QueryChaincodeDefinitionsArgs) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryChaincodeDefinitionsArgs.DiscardUnknown(m)
 }
@@ -1512,15 +1625,19 @@ func (*QueryChaincodeDefinitionsResult) Descriptor() ([]byte, []int) {
 func (m *QueryChaincodeDefinitionsResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryChaincodeDefinitionsResult.Unmarshal(m, b)
 }
+
 func (m *QueryChaincodeDefinitionsResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryChaincodeDefinitionsResult.Marshal(b, m, deterministic)
 }
+
 func (m *QueryChaincodeDefinitionsResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryChaincodeDefinitionsResult.Merge(m, src)
 }
+
 func (m *QueryChaincodeDefinitionsResult) XXX_Size() int {
 	return xxx_messageInfo_QueryChaincodeDefinitionsResult.Size(m)
 }
+
 func (m *QueryChaincodeDefinitionsResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryChaincodeDefinitionsResult.DiscardUnknown(m)
 }
@@ -1551,6 +1668,7 @@ type QueryChaincodeDefinitionsResult_ChaincodeDefinition struct {
 func (m *QueryChaincodeDefinitionsResult_ChaincodeDefinition) Reset() {
 	*m = QueryChaincodeDefinitionsResult_ChaincodeDefinition{}
 }
+
 func (m *QueryChaincodeDefinitionsResult_ChaincodeDefinition) String() string {
 	return proto.CompactTextString(m)
 }
@@ -1562,15 +1680,19 @@ func (*QueryChaincodeDefinitionsResult_ChaincodeDefinition) Descriptor() ([]byte
 func (m *QueryChaincodeDefinitionsResult_ChaincodeDefinition) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QueryChaincodeDefinitionsResult_ChaincodeDefinition.Unmarshal(m, b)
 }
+
 func (m *QueryChaincodeDefinitionsResult_ChaincodeDefinition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_QueryChaincodeDefinitionsResult_ChaincodeDefinition.Marshal(b, m, deterministic)
 }
+
 func (m *QueryChaincodeDefinitionsResult_ChaincodeDefinition) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryChaincodeDefinitionsResult_ChaincodeDefinition.Merge(m, src)
 }
+
 func (m *QueryChaincodeDefinitionsResult_ChaincodeDefinition) XXX_Size() int {
 	return xxx_messageInfo_QueryChaincodeDefinitionsResult_ChaincodeDefinition.Size(m)
 }
+
 func (m *QueryChaincodeDefinitionsResult_ChaincodeDefinition) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryChaincodeDefinitionsResult_ChaincodeDefinition.DiscardUnknown(m)
 }

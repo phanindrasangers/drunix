@@ -20,11 +20,12 @@
 package io_prometheus_client
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -1180,24 +1181,27 @@ func file_io_prometheus_client_metrics_proto_rawDescGZIP() []byte {
 	return file_io_prometheus_client_metrics_proto_rawDescData
 }
 
-var file_io_prometheus_client_metrics_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_io_prometheus_client_metrics_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
-var file_io_prometheus_client_metrics_proto_goTypes = []interface{}{
-	(MetricType)(0),               // 0: io.prometheus.client.MetricType
-	(*LabelPair)(nil),             // 1: io.prometheus.client.LabelPair
-	(*Gauge)(nil),                 // 2: io.prometheus.client.Gauge
-	(*Counter)(nil),               // 3: io.prometheus.client.Counter
-	(*Quantile)(nil),              // 4: io.prometheus.client.Quantile
-	(*Summary)(nil),               // 5: io.prometheus.client.Summary
-	(*Untyped)(nil),               // 6: io.prometheus.client.Untyped
-	(*Histogram)(nil),             // 7: io.prometheus.client.Histogram
-	(*Bucket)(nil),                // 8: io.prometheus.client.Bucket
-	(*BucketSpan)(nil),            // 9: io.prometheus.client.BucketSpan
-	(*Exemplar)(nil),              // 10: io.prometheus.client.Exemplar
-	(*Metric)(nil),                // 11: io.prometheus.client.Metric
-	(*MetricFamily)(nil),          // 12: io.prometheus.client.MetricFamily
-	(*timestamppb.Timestamp)(nil), // 13: google.protobuf.Timestamp
-}
+var (
+	file_io_prometheus_client_metrics_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+	file_io_prometheus_client_metrics_proto_msgTypes  = make([]protoimpl.MessageInfo, 12)
+	file_io_prometheus_client_metrics_proto_goTypes   = []interface{}{
+		(MetricType)(0),               // 0: io.prometheus.client.MetricType
+		(*LabelPair)(nil),             // 1: io.prometheus.client.LabelPair
+		(*Gauge)(nil),                 // 2: io.prometheus.client.Gauge
+		(*Counter)(nil),               // 3: io.prometheus.client.Counter
+		(*Quantile)(nil),              // 4: io.prometheus.client.Quantile
+		(*Summary)(nil),               // 5: io.prometheus.client.Summary
+		(*Untyped)(nil),               // 6: io.prometheus.client.Untyped
+		(*Histogram)(nil),             // 7: io.prometheus.client.Histogram
+		(*Bucket)(nil),                // 8: io.prometheus.client.Bucket
+		(*BucketSpan)(nil),            // 9: io.prometheus.client.BucketSpan
+		(*Exemplar)(nil),              // 10: io.prometheus.client.Exemplar
+		(*Metric)(nil),                // 11: io.prometheus.client.Metric
+		(*MetricFamily)(nil),          // 12: io.prometheus.client.MetricFamily
+		(*timestamppb.Timestamp)(nil), // 13: google.protobuf.Timestamp
+	}
+)
+
 var file_io_prometheus_client_metrics_proto_depIdxs = []int32{
 	10, // 0: io.prometheus.client.Counter.exemplar:type_name -> io.prometheus.client.Exemplar
 	13, // 1: io.prometheus.client.Counter.created_timestamp:type_name -> google.protobuf.Timestamp

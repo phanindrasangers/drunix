@@ -43,7 +43,6 @@ func main() {
 		os.Exit(1)
 	}
 	logger.Printf("::Release phase completed")
-
 }
 
 func run() error {
@@ -81,7 +80,6 @@ func run() error {
 	}
 
 	return nil
-
 }
 
 // Copy the src file to dst. Any existing file will be overwritten and will not

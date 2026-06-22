@@ -20,7 +20,6 @@ import (
 // filtering of events: only nodes whose type matches an
 // element of the types slice are included in the sequence.
 func (in *Inspector) PreorderSeq(types ...ast.Node) iter.Seq[ast.Node] {
-
 	// This implementation is identical to Preorder,
 	// except that it supports breaking out of the loop.
 
@@ -57,7 +56,6 @@ func All[N interface {
 	*S
 	ast.Node
 }, S any](in *Inspector) iter.Seq[N] {
-
 	// To avoid additional dynamic call overheads,
 	// we duplicate rather than call the logic of PreorderSeq.
 

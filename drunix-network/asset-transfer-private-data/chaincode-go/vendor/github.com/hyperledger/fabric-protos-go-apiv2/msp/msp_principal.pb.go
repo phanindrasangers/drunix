@@ -11,10 +11,11 @@
 package msp
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -591,18 +592,21 @@ func file_msp_msp_principal_proto_rawDescGZIP() []byte {
 	return file_msp_msp_principal_proto_rawDescData
 }
 
-var file_msp_msp_principal_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_msp_msp_principal_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_msp_msp_principal_proto_goTypes = []any{
-	(MSPPrincipal_Classification)(0),                   // 0: common.MSPPrincipal.Classification
-	(MSPRole_MSPRoleType)(0),                           // 1: common.MSPRole.MSPRoleType
-	(MSPIdentityAnonymity_MSPIdentityAnonymityType)(0), // 2: common.MSPIdentityAnonymity.MSPIdentityAnonymityType
-	(*MSPPrincipal)(nil),                               // 3: common.MSPPrincipal
-	(*OrganizationUnit)(nil),                           // 4: common.OrganizationUnit
-	(*MSPRole)(nil),                                    // 5: common.MSPRole
-	(*MSPIdentityAnonymity)(nil),                       // 6: common.MSPIdentityAnonymity
-	(*CombinedPrincipal)(nil),                          // 7: common.CombinedPrincipal
-}
+var (
+	file_msp_msp_principal_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+	file_msp_msp_principal_proto_msgTypes  = make([]protoimpl.MessageInfo, 5)
+	file_msp_msp_principal_proto_goTypes   = []any{
+		(MSPPrincipal_Classification)(0),                   // 0: common.MSPPrincipal.Classification
+		(MSPRole_MSPRoleType)(0),                           // 1: common.MSPRole.MSPRoleType
+		(MSPIdentityAnonymity_MSPIdentityAnonymityType)(0), // 2: common.MSPIdentityAnonymity.MSPIdentityAnonymityType
+		(*MSPPrincipal)(nil),                               // 3: common.MSPPrincipal
+		(*OrganizationUnit)(nil),                           // 4: common.OrganizationUnit
+		(*MSPRole)(nil),                                    // 5: common.MSPRole
+		(*MSPIdentityAnonymity)(nil),                       // 6: common.MSPIdentityAnonymity
+		(*CombinedPrincipal)(nil),                          // 7: common.CombinedPrincipal
+	}
+)
+
 var file_msp_msp_principal_proto_depIdxs = []int32{
 	0, // 0: common.MSPPrincipal.principal_classification:type_name -> common.MSPPrincipal.Classification
 	1, // 1: common.MSPRole.role:type_name -> common.MSPRole.MSPRoleType

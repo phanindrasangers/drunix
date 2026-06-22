@@ -59,8 +59,7 @@ type JSONLoaderFactory interface {
 }
 
 // DefaultJSONLoaderFactory is the default JSON loader factory
-type DefaultJSONLoaderFactory struct {
-}
+type DefaultJSONLoaderFactory struct{}
 
 // FileSystemJSONLoaderFactory is a JSON loader factory that uses http.FileSystem
 type FileSystemJSONLoaderFactory struct {
@@ -130,7 +129,6 @@ func NewReferenceLoaderFileSystem(source string, fs http.FileSystem) JSONLoader 
 }
 
 func (l *jsonReferenceLoader) LoadJSON() (interface{}, error) {
-
 	var err error
 
 	reference, err := gojsonreference.NewJsonReference(l.JsonSource().(string))
@@ -174,11 +172,9 @@ func (l *jsonReferenceLoader) LoadJSON() (interface{}, error) {
 	}
 
 	return document, nil
-
 }
 
 func (l *jsonReferenceLoader) loadFromHTTP(address string) (interface{}, error) {
-
 	// returned cached versions for metaschemas for drafts 4, 6 and 7
 	// for performance and allow for easier offline use
 	if metaSchema := drafts.GetMetaSchema(address); metaSchema != "" {
@@ -216,7 +212,6 @@ func (l *jsonReferenceLoader) loadFromFile(path string) (interface{}, error) {
 	}
 
 	return decodeJSONUsingNumber(bytes.NewReader(bodyBuff))
-
 }
 
 // JSON string loader
@@ -243,9 +238,7 @@ func NewStringLoader(source string) JSONLoader {
 }
 
 func (l *jsonStringLoader) LoadJSON() (interface{}, error) {
-
 	return decodeJSONUsingNumber(strings.NewReader(l.JsonSource().(string)))
-
 }
 
 // JSON bytes loader
@@ -300,7 +293,6 @@ func NewGoLoader(source interface{}) JSONLoader {
 }
 
 func (l *jsonGoLoader) LoadJSON() (interface{}, error) {
-
 	// convert it to a compliant JSON first to avoid types "mismatches"
 
 	jsonBytes, err := json.Marshal(l.JsonSource())
@@ -309,7 +301,6 @@ func (l *jsonGoLoader) LoadJSON() (interface{}, error) {
 	}
 
 	return decodeJSONUsingNumber(bytes.NewReader(jsonBytes))
-
 }
 
 type jsonIOLoader struct {
@@ -356,21 +347,24 @@ type jsonRawLoader struct {
 func NewRawLoader(source interface{}) JSONLoader {
 	return &jsonRawLoader{source: source}
 }
+
 func (l *jsonRawLoader) JsonSource() interface{} {
 	return l.source
 }
+
 func (l *jsonRawLoader) LoadJSON() (interface{}, error) {
 	return l.source, nil
 }
+
 func (l *jsonRawLoader) JsonReference() (gojsonreference.JsonReference, error) {
 	return gojsonreference.NewJsonReference("#")
 }
+
 func (l *jsonRawLoader) LoaderFactory() JSONLoaderFactory {
 	return &DefaultJSONLoaderFactory{}
 }
 
 func decodeJSONUsingNumber(r io.Reader) (interface{}, error) {
-
 	var document interface{}
 
 	decoder := json.NewDecoder(r)
@@ -382,5 +376,4 @@ func decodeJSONUsingNumber(r io.Reader) (interface{}, error) {
 	}
 
 	return document, nil
-
 }

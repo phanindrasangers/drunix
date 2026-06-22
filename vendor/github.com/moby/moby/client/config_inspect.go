@@ -8,8 +8,7 @@ import (
 )
 
 // ConfigInspectOptions holds options for inspecting a config.
-type ConfigInspectOptions struct {
-	// Add future optional parameters here
+type ConfigInspectOptions struct { // Add future optional parameters here
 }
 
 // ConfigInspectResult holds the result from the ConfigInspect method.

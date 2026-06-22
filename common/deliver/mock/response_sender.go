@@ -12,9 +12,8 @@ import (
 type ResponseSender struct {
 	DataTypeStub        func() string
 	dataTypeMutex       sync.RWMutex
-	dataTypeArgsForCall []struct {
-	}
-	dataTypeReturns struct {
+	dataTypeArgsForCall []struct{}
+	dataTypeReturns     struct {
 		result1 string
 	}
 	dataTypeReturnsOnCall map[int]struct {
@@ -52,8 +51,7 @@ type ResponseSender struct {
 func (fake *ResponseSender) DataType() string {
 	fake.dataTypeMutex.Lock()
 	ret, specificReturn := fake.dataTypeReturnsOnCall[len(fake.dataTypeArgsForCall)]
-	fake.dataTypeArgsForCall = append(fake.dataTypeArgsForCall, struct {
-	}{})
+	fake.dataTypeArgsForCall = append(fake.dataTypeArgsForCall, struct{}{})
 	fake.recordInvocation("DataType", []interface{}{})
 	fake.dataTypeMutex.Unlock()
 	if fake.DataTypeStub != nil {

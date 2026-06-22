@@ -10,9 +10,8 @@ import (
 type StateFetcher struct {
 	FetchStateStub        func() (validation.State, error)
 	fetchStateMutex       sync.RWMutex
-	fetchStateArgsForCall []struct {
-	}
-	fetchStateReturns struct {
+	fetchStateArgsForCall []struct{}
+	fetchStateReturns     struct {
 		result1 validation.State
 		result2 error
 	}
@@ -27,8 +26,7 @@ type StateFetcher struct {
 func (fake *StateFetcher) FetchState() (validation.State, error) {
 	fake.fetchStateMutex.Lock()
 	ret, specificReturn := fake.fetchStateReturnsOnCall[len(fake.fetchStateArgsForCall)]
-	fake.fetchStateArgsForCall = append(fake.fetchStateArgsForCall, struct {
-	}{})
+	fake.fetchStateArgsForCall = append(fake.fetchStateArgsForCall, struct{}{})
 	fake.recordInvocation("FetchState", []interface{}{})
 	fake.fetchStateMutex.Unlock()
 	if fake.FetchStateStub != nil {

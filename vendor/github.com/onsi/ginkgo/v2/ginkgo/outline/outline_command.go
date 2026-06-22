@@ -30,7 +30,8 @@ func BuildOutlineCommand() command.Command {
 	}
 	flags, err := types.NewGinkgoFlagSet(
 		types.GinkgoFlags{
-			{Name: "format", KeyPath: "Format",
+			{
+				Name: "format", KeyPath: "Format",
 				Usage:             "Format of outline",
 				UsageArgument:     "one of 'csv', 'indent', or 'json'",
 				UsageDefaultValue: conf.Format,

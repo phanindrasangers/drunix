@@ -11,9 +11,8 @@ import (
 type Instance struct {
 	ChaincodeServerInfoStub        func() (*ccintf.ChaincodeServerInfo, error)
 	chaincodeServerInfoMutex       sync.RWMutex
-	chaincodeServerInfoArgsForCall []struct {
-	}
-	chaincodeServerInfoReturns struct {
+	chaincodeServerInfoArgsForCall []struct{}
+	chaincodeServerInfoReturns     struct {
 		result1 *ccintf.ChaincodeServerInfo
 		result2 error
 	}
@@ -34,9 +33,8 @@ type Instance struct {
 	}
 	StopStub        func() error
 	stopMutex       sync.RWMutex
-	stopArgsForCall []struct {
-	}
-	stopReturns struct {
+	stopArgsForCall []struct{}
+	stopReturns     struct {
 		result1 error
 	}
 	stopReturnsOnCall map[int]struct {
@@ -44,9 +42,8 @@ type Instance struct {
 	}
 	WaitStub        func() (int, error)
 	waitMutex       sync.RWMutex
-	waitArgsForCall []struct {
-	}
-	waitReturns struct {
+	waitArgsForCall []struct{}
+	waitReturns     struct {
 		result1 int
 		result2 error
 	}
@@ -61,8 +58,7 @@ type Instance struct {
 func (fake *Instance) ChaincodeServerInfo() (*ccintf.ChaincodeServerInfo, error) {
 	fake.chaincodeServerInfoMutex.Lock()
 	ret, specificReturn := fake.chaincodeServerInfoReturnsOnCall[len(fake.chaincodeServerInfoArgsForCall)]
-	fake.chaincodeServerInfoArgsForCall = append(fake.chaincodeServerInfoArgsForCall, struct {
-	}{})
+	fake.chaincodeServerInfoArgsForCall = append(fake.chaincodeServerInfoArgsForCall, struct{}{})
 	fake.recordInvocation("ChaincodeServerInfo", []interface{}{})
 	fake.chaincodeServerInfoMutex.Unlock()
 	if fake.ChaincodeServerInfoStub != nil {
@@ -176,8 +172,7 @@ func (fake *Instance) StartReturnsOnCall(i int, result1 error) {
 func (fake *Instance) Stop() error {
 	fake.stopMutex.Lock()
 	ret, specificReturn := fake.stopReturnsOnCall[len(fake.stopArgsForCall)]
-	fake.stopArgsForCall = append(fake.stopArgsForCall, struct {
-	}{})
+	fake.stopArgsForCall = append(fake.stopArgsForCall, struct{}{})
 	fake.recordInvocation("Stop", []interface{}{})
 	fake.stopMutex.Unlock()
 	if fake.StopStub != nil {
@@ -228,8 +223,7 @@ func (fake *Instance) StopReturnsOnCall(i int, result1 error) {
 func (fake *Instance) Wait() (int, error) {
 	fake.waitMutex.Lock()
 	ret, specificReturn := fake.waitReturnsOnCall[len(fake.waitArgsForCall)]
-	fake.waitArgsForCall = append(fake.waitArgsForCall, struct {
-	}{})
+	fake.waitArgsForCall = append(fake.waitArgsForCall, struct{}{})
 	fake.recordInvocation("Wait", []interface{}{})
 	fake.waitMutex.Unlock()
 	if fake.WaitStub != nil {

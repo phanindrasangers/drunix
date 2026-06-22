@@ -53,7 +53,6 @@ func (p presence) raceDetectHookClearPresent(num uint32) {
 	sp := atomicLoadShadowPresence(&data.shadowPresence)
 	if sp != nil {
 		(*sp)[num] = 0
-
 	}
 }
 

@@ -13,10 +13,10 @@ import (
 )
 
 func BuildWatchCommand() command.Command {
-	var suiteConfig = types.NewDefaultSuiteConfig()
-	var reporterConfig = types.NewDefaultReporterConfig()
-	var cliConfig = types.NewDefaultCLIConfig()
-	var goFlagsConfig = types.NewDefaultGoFlagsConfig()
+	suiteConfig := types.NewDefaultSuiteConfig()
+	reporterConfig := types.NewDefaultReporterConfig()
+	cliConfig := types.NewDefaultCLIConfig()
+	goFlagsConfig := types.NewDefaultGoFlagsConfig()
 
 	flags, err := types.BuildWatchCommandFlagSet(&suiteConfig, &reporterConfig, &cliConfig, &goFlagsConfig)
 	if err != nil {

@@ -1,6 +1,6 @@
 /*
 Copyright National Payments Corporation of India. All Rights Reserved.
- 
+
 SPDX-License-Identifier: Apache-2.0
 */
 package node
@@ -42,7 +42,6 @@ DRUNIX:
 		- the passive committing peer keeps on trying to acquire lock after every `passiveRetryInterval`
 */
 func acquireDistributedLockAndServe(args []string) error {
-
 	config := loadDistributedLockConfig()
 
 	if config.litePeerEnabled || !config.enabled {
@@ -98,7 +97,7 @@ func acquireDistributedLockAndServe(args []string) error {
 					if err != nil || !isExtended {
 						isExtended, err := lock.Extend()
 						if err != nil || !isExtended {
-							//DRUNIX: when lock extension retry fails unlock and panic
+							// DRUNIX: when lock extension retry fails unlock and panic
 							lock.Unlock()
 							logger.Panicf("Failed to extend lock, isExtended %v with err : %v", isExtended, err)
 						}

@@ -11,10 +11,11 @@
 package peer
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -276,14 +277,17 @@ func file_peer_configuration_proto_rawDescGZIP() []byte {
 	return file_peer_configuration_proto_rawDescData
 }
 
-var file_peer_configuration_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_peer_configuration_proto_goTypes = []any{
-	(*AnchorPeers)(nil), // 0: protos.AnchorPeers
-	(*AnchorPeer)(nil),  // 1: protos.AnchorPeer
-	(*APIResource)(nil), // 2: protos.APIResource
-	(*ACLs)(nil),        // 3: protos.ACLs
-	nil,                 // 4: protos.ACLs.AclsEntry
-}
+var (
+	file_peer_configuration_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+	file_peer_configuration_proto_goTypes  = []any{
+		(*AnchorPeers)(nil), // 0: protos.AnchorPeers
+		(*AnchorPeer)(nil),  // 1: protos.AnchorPeer
+		(*APIResource)(nil), // 2: protos.APIResource
+		(*ACLs)(nil),        // 3: protos.ACLs
+		nil,                 // 4: protos.ACLs.AclsEntry
+	}
+)
+
 var file_peer_configuration_proto_depIdxs = []int32{
 	1, // 0: protos.AnchorPeers.anchor_peers:type_name -> protos.AnchorPeer
 	4, // 1: protos.ACLs.acls:type_name -> protos.ACLs.AclsEntry

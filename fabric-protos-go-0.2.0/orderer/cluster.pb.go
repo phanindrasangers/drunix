@@ -6,18 +6,21 @@ package orderer
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	common "github.com/hyperledger/fabric-protos-go/common"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -76,15 +79,19 @@ func (*StepRequest) Descriptor() ([]byte, []int) {
 func (m *StepRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_StepRequest.Unmarshal(m, b)
 }
+
 func (m *StepRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_StepRequest.Marshal(b, m, deterministic)
 }
+
 func (m *StepRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_StepRequest.Merge(m, src)
 }
+
 func (m *StepRequest) XXX_Size() int {
 	return xxx_messageInfo_StepRequest.Size(m)
 }
+
 func (m *StepRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_StepRequest.DiscardUnknown(m)
 }
@@ -171,15 +178,19 @@ func (*StepResponse) Descriptor() ([]byte, []int) {
 func (m *StepResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_StepResponse.Unmarshal(m, b)
 }
+
 func (m *StepResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_StepResponse.Marshal(b, m, deterministic)
 }
+
 func (m *StepResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_StepResponse.Merge(m, src)
 }
+
 func (m *StepResponse) XXX_Size() int {
 	return xxx_messageInfo_StepResponse.Size(m)
 }
+
 func (m *StepResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_StepResponse.DiscardUnknown(m)
 }
@@ -237,15 +248,19 @@ func (*ConsensusRequest) Descriptor() ([]byte, []int) {
 func (m *ConsensusRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConsensusRequest.Unmarshal(m, b)
 }
+
 func (m *ConsensusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ConsensusRequest.Marshal(b, m, deterministic)
 }
+
 func (m *ConsensusRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ConsensusRequest.Merge(m, src)
 }
+
 func (m *ConsensusRequest) XXX_Size() int {
 	return xxx_messageInfo_ConsensusRequest.Size(m)
 }
+
 func (m *ConsensusRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_ConsensusRequest.DiscardUnknown(m)
 }
@@ -303,15 +318,19 @@ func (*SubmitRequest) Descriptor() ([]byte, []int) {
 func (m *SubmitRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubmitRequest.Unmarshal(m, b)
 }
+
 func (m *SubmitRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SubmitRequest.Marshal(b, m, deterministic)
 }
+
 func (m *SubmitRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SubmitRequest.Merge(m, src)
 }
+
 func (m *SubmitRequest) XXX_Size() int {
 	return xxx_messageInfo_SubmitRequest.Size(m)
 }
+
 func (m *SubmitRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_SubmitRequest.DiscardUnknown(m)
 }
@@ -390,15 +409,19 @@ func (*SubmitResponse) Descriptor() ([]byte, []int) {
 func (m *SubmitResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubmitResponse.Unmarshal(m, b)
 }
+
 func (m *SubmitResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SubmitResponse.Marshal(b, m, deterministic)
 }
+
 func (m *SubmitResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SubmitResponse.Merge(m, src)
 }
+
 func (m *SubmitResponse) XXX_Size() int {
 	return xxx_messageInfo_SubmitResponse.Size(m)
 }
+
 func (m *SubmitResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_SubmitResponse.DiscardUnknown(m)
 }
@@ -443,15 +466,19 @@ func (*Batch) Descriptor() ([]byte, []int) {
 func (m *Batch) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Batch.Unmarshal(m, b)
 }
+
 func (m *Batch) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Batch.Marshal(b, m, deterministic)
 }
+
 func (m *Batch) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Batch.Merge(m, src)
 }
+
 func (m *Batch) XXX_Size() int {
 	return xxx_messageInfo_Batch.Size(m)
 }
+
 func (m *Batch) XXX_DiscardUnknown() {
 	xxx_messageInfo_Batch.DiscardUnknown(m)
 }
@@ -491,15 +518,19 @@ func (*SubmitPayload) Descriptor() ([]byte, []int) {
 func (m *SubmitPayload) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubmitPayload.Unmarshal(m, b)
 }
+
 func (m *SubmitPayload) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SubmitPayload.Marshal(b, m, deterministic)
 }
+
 func (m *SubmitPayload) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SubmitPayload.Merge(m, src)
 }
+
 func (m *SubmitPayload) XXX_Size() int {
 	return xxx_messageInfo_SubmitPayload.Size(m)
 }
+
 func (m *SubmitPayload) XXX_DiscardUnknown() {
 	xxx_messageInfo_SubmitPayload.DiscardUnknown(m)
 }
@@ -590,8 +621,10 @@ var fileDescriptor_e3b50707fd3a71f2 = []byte{
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -651,8 +684,7 @@ type ClusterServer interface {
 }
 
 // UnimplementedClusterServer can be embedded to have forward compatible implementations.
-type UnimplementedClusterServer struct {
-}
+type UnimplementedClusterServer struct{}
 
 func (*UnimplementedClusterServer) Step(srv Cluster_StepServer) error {
 	return status.Errorf(codes.Unimplemented, "method Step not implemented")

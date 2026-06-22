@@ -9,10 +9,9 @@ import (
 )
 
 type QueryExecutor struct {
-	DoneStub        func()
-	doneMutex       sync.RWMutex
-	doneArgsForCall []struct {
-	}
+	DoneStub                func()
+	doneMutex               sync.RWMutex
+	doneArgsForCall         []struct{}
 	ExecuteQueryStub        func(string, string) (ledgera.ResultsIterator, error)
 	executeQueryMutex       sync.RWMutex
 	executeQueryArgsForCall []struct {
@@ -228,8 +227,7 @@ type QueryExecutor struct {
 
 func (fake *QueryExecutor) Done() {
 	fake.doneMutex.Lock()
-	fake.doneArgsForCall = append(fake.doneArgsForCall, struct {
-	}{})
+	fake.doneArgsForCall = append(fake.doneArgsForCall, struct{}{})
 	fake.recordInvocation("Done", []interface{}{})
 	fake.doneMutex.Unlock()
 	if fake.DoneStub != nil {

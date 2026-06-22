@@ -35,8 +35,10 @@ const (
 	gatewayPeer  = "peer0.org1.example.com"
 )
 
-var now = time.Now()
-var assetId = fmt.Sprintf("asset%d", now.Unix()*1e3+int64(now.Nanosecond())/1e6)
+var (
+	now     = time.Now()
+	assetId = fmt.Sprintf("asset%d", now.Unix()*1e3+int64(now.Nanosecond())/1e6)
+)
 
 func main() {
 	// The gRPC client connection should be shared by all Gateway connections to this endpoint

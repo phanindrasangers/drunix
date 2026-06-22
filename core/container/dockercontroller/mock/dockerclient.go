@@ -87,9 +87,8 @@ type DockerClient struct {
 	}
 	ClientVersionStub        func() string
 	clientVersionMutex       sync.RWMutex
-	clientVersionArgsForCall []struct {
-	}
-	clientVersionReturns struct {
+	clientVersionArgsForCall []struct{}
+	clientVersionReturns     struct {
 		result1 string
 	}
 	clientVersionReturnsOnCall map[int]struct {
@@ -97,9 +96,8 @@ type DockerClient struct {
 	}
 	CloseStub        func() error
 	closeMutex       sync.RWMutex
-	closeArgsForCall []struct {
-	}
-	closeReturns struct {
+	closeArgsForCall []struct{}
+	closeReturns     struct {
 		result1 error
 	}
 	closeReturnsOnCall map[int]struct {
@@ -550,9 +548,8 @@ type DockerClient struct {
 	}
 	DaemonHostStub        func() string
 	daemonHostMutex       sync.RWMutex
-	daemonHostArgsForCall []struct {
-	}
-	daemonHostReturns struct {
+	daemonHostArgsForCall []struct{}
+	daemonHostReturns     struct {
 		result1 string
 	}
 	daemonHostReturnsOnCall map[int]struct {
@@ -576,9 +573,8 @@ type DockerClient struct {
 	}
 	DialerStub        func() func(context.Context) (net.Conn, error)
 	dialerMutex       sync.RWMutex
-	dialerArgsForCall []struct {
-	}
-	dialerReturns struct {
+	dialerArgsForCall []struct{}
+	dialerReturns     struct {
 		result1 func(context.Context) (net.Conn, error)
 	}
 	dialerReturnsOnCall map[int]struct {
@@ -1985,8 +1981,7 @@ func (fake *DockerClient) CheckpointRemoveReturnsOnCall(i int, result1 client.Ch
 func (fake *DockerClient) ClientVersion() string {
 	fake.clientVersionMutex.Lock()
 	ret, specificReturn := fake.clientVersionReturnsOnCall[len(fake.clientVersionArgsForCall)]
-	fake.clientVersionArgsForCall = append(fake.clientVersionArgsForCall, struct {
-	}{})
+	fake.clientVersionArgsForCall = append(fake.clientVersionArgsForCall, struct{}{})
 	stub := fake.ClientVersionStub
 	fakeReturns := fake.clientVersionReturns
 	fake.recordInvocation("ClientVersion", []interface{}{})
@@ -2038,8 +2033,7 @@ func (fake *DockerClient) ClientVersionReturnsOnCall(i int, result1 string) {
 func (fake *DockerClient) Close() error {
 	fake.closeMutex.Lock()
 	ret, specificReturn := fake.closeReturnsOnCall[len(fake.closeArgsForCall)]
-	fake.closeArgsForCall = append(fake.closeArgsForCall, struct {
-	}{})
+	fake.closeArgsForCall = append(fake.closeArgsForCall, struct{}{})
 	stub := fake.CloseStub
 	fakeReturns := fake.closeReturns
 	fake.recordInvocation("Close", []interface{}{})
@@ -4063,8 +4057,7 @@ func (fake *DockerClient) CopyToContainerReturnsOnCall(i int, result1 client.Cop
 func (fake *DockerClient) DaemonHost() string {
 	fake.daemonHostMutex.Lock()
 	ret, specificReturn := fake.daemonHostReturnsOnCall[len(fake.daemonHostArgsForCall)]
-	fake.daemonHostArgsForCall = append(fake.daemonHostArgsForCall, struct {
-	}{})
+	fake.daemonHostArgsForCall = append(fake.daemonHostArgsForCall, struct{}{})
 	stub := fake.DaemonHostStub
 	fakeReturns := fake.daemonHostReturns
 	fake.recordInvocation("DaemonHost", []interface{}{})
@@ -4183,8 +4176,7 @@ func (fake *DockerClient) DialHijackReturnsOnCall(i int, result1 net.Conn, resul
 func (fake *DockerClient) Dialer() func(context.Context) (net.Conn, error) {
 	fake.dialerMutex.Lock()
 	ret, specificReturn := fake.dialerReturnsOnCall[len(fake.dialerArgsForCall)]
-	fake.dialerArgsForCall = append(fake.dialerArgsForCall, struct {
-	}{})
+	fake.dialerArgsForCall = append(fake.dialerArgsForCall, struct{}{})
 	stub := fake.DialerStub
 	fakeReturns := fake.dialerReturns
 	fake.recordInvocation("Dialer", []interface{}{})

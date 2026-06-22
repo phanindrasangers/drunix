@@ -5,14 +5,17 @@ package pvtdatastorage
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
+
+	proto "github.com/golang/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -37,15 +40,19 @@ func (*ExpiryData) Descriptor() ([]byte, []int) {
 func (m *ExpiryData) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExpiryData.Unmarshal(m, b)
 }
+
 func (m *ExpiryData) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ExpiryData.Marshal(b, m, deterministic)
 }
+
 func (m *ExpiryData) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ExpiryData.Merge(m, src)
 }
+
 func (m *ExpiryData) XXX_Size() int {
 	return xxx_messageInfo_ExpiryData.Size(m)
 }
+
 func (m *ExpiryData) XXX_DiscardUnknown() {
 	xxx_messageInfo_ExpiryData.DiscardUnknown(m)
 }
@@ -66,7 +73,7 @@ type NamespaceExpiryData struct {
 	// for any number of missing pvt data of a collection,
 	// there would be an entry in the map
 	MissingData map[string]bool `protobuf:"bytes,2,rep,name=missingData,proto3" json:"missingData,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3"`
-	//entries for hashes for the pvtdata key-values (loaded from snapshot data)
+	// entries for hashes for the pvtdata key-values (loaded from snapshot data)
 	BootKVHashes         map[string]*TxNums `protobuf:"bytes,3,rep,name=bootKVHashes,proto3" json:"bootKVHashes,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
@@ -83,15 +90,19 @@ func (*NamespaceExpiryData) Descriptor() ([]byte, []int) {
 func (m *NamespaceExpiryData) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NamespaceExpiryData.Unmarshal(m, b)
 }
+
 func (m *NamespaceExpiryData) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_NamespaceExpiryData.Marshal(b, m, deterministic)
 }
+
 func (m *NamespaceExpiryData) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_NamespaceExpiryData.Merge(m, src)
 }
+
 func (m *NamespaceExpiryData) XXX_Size() int {
 	return xxx_messageInfo_NamespaceExpiryData.Size(m)
 }
+
 func (m *NamespaceExpiryData) XXX_DiscardUnknown() {
 	xxx_messageInfo_NamespaceExpiryData.DiscardUnknown(m)
 }
@@ -137,15 +148,19 @@ func (*BootKVHash) Descriptor() ([]byte, []int) {
 func (m *BootKVHash) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BootKVHash.Unmarshal(m, b)
 }
+
 func (m *BootKVHash) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BootKVHash.Marshal(b, m, deterministic)
 }
+
 func (m *BootKVHash) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BootKVHash.Merge(m, src)
 }
+
 func (m *BootKVHash) XXX_Size() int {
 	return xxx_messageInfo_BootKVHash.Size(m)
 }
+
 func (m *BootKVHash) XXX_DiscardUnknown() {
 	xxx_messageInfo_BootKVHash.DiscardUnknown(m)
 }
@@ -183,15 +198,19 @@ func (*BootKVHashes) Descriptor() ([]byte, []int) {
 func (m *BootKVHashes) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BootKVHashes.Unmarshal(m, b)
 }
+
 func (m *BootKVHashes) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BootKVHashes.Marshal(b, m, deterministic)
 }
+
 func (m *BootKVHashes) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BootKVHashes.Merge(m, src)
 }
+
 func (m *BootKVHashes) XXX_Size() int {
 	return xxx_messageInfo_BootKVHashes.Size(m)
 }
+
 func (m *BootKVHashes) XXX_DiscardUnknown() {
 	xxx_messageInfo_BootKVHashes.DiscardUnknown(m)
 }
@@ -222,15 +241,19 @@ func (*TxNums) Descriptor() ([]byte, []int) {
 func (m *TxNums) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TxNums.Unmarshal(m, b)
 }
+
 func (m *TxNums) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TxNums.Marshal(b, m, deterministic)
 }
+
 func (m *TxNums) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_TxNums.Merge(m, src)
 }
+
 func (m *TxNums) XXX_Size() int {
 	return xxx_messageInfo_TxNums.Size(m)
 }
+
 func (m *TxNums) XXX_DiscardUnknown() {
 	xxx_messageInfo_TxNums.DiscardUnknown(m)
 }
@@ -261,15 +284,19 @@ func (*CollElgInfo) Descriptor() ([]byte, []int) {
 func (m *CollElgInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CollElgInfo.Unmarshal(m, b)
 }
+
 func (m *CollElgInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CollElgInfo.Marshal(b, m, deterministic)
 }
+
 func (m *CollElgInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CollElgInfo.Merge(m, src)
 }
+
 func (m *CollElgInfo) XXX_Size() int {
 	return xxx_messageInfo_CollElgInfo.Size(m)
 }
+
 func (m *CollElgInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_CollElgInfo.DiscardUnknown(m)
 }
@@ -300,15 +327,19 @@ func (*CollNames) Descriptor() ([]byte, []int) {
 func (m *CollNames) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CollNames.Unmarshal(m, b)
 }
+
 func (m *CollNames) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CollNames.Marshal(b, m, deterministic)
 }
+
 func (m *CollNames) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CollNames.Merge(m, src)
 }
+
 func (m *CollNames) XXX_Size() int {
 	return xxx_messageInfo_CollNames.Size(m)
 }
+
 func (m *CollNames) XXX_DiscardUnknown() {
 	xxx_messageInfo_CollNames.DiscardUnknown(m)
 }

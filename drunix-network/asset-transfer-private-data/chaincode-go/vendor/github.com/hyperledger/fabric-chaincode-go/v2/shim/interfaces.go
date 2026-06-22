@@ -312,8 +312,8 @@ type ChaincodeStubInterface interface {
 	// Call Close() on the returned StateQueryIteratorInterface object when done.
 	// The query is re-executed during validation phase to ensure result set
 	// has not changed since transaction endorsement (phantom reads detected). This function should be used only for
-	//a partial composite key. For a full composite key, an iter with empty response
-	//would be returned.
+	// a partial composite key. For a full composite key, an iter with empty response
+	// would be returned.
 	GetPrivateDataByPartialCompositeKey(collection, objectType string, keys []string) (StateQueryIteratorInterface, error)
 
 	// GetPrivateDataQueryResult performs a "rich" query against a given private
